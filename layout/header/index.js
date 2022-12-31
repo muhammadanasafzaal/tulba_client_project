@@ -92,7 +92,7 @@ const Header = () => {
                       <a>Events</a>
                     </li> */}
                       <li className={style.nav__submenu_item}>
-                        <Link href={""}>Checklist</Link>
+                        <Link href={"/checklist"}>Checklist</Link>
                       </li>
                       <li className={style.nav__submenu_item}>
                         <Link href={"/Rsvp"}>Rsvp</Link>
@@ -127,15 +127,15 @@ const Header = () => {
                   onClick={() => setOpen(true)}
                   className={`${open ? style.menu_btn : `${style.menu_btn} ${style.menu_btn} `
                     }`}
-                    style={{padding:"0px !important", marginBottom: '30px'}}
+                  style={{ padding: "0px !important", marginBottom: '30px' }}
                 >
                   <div className={style.menu_childSidebar}></div>
                 </div>
                 <div
                   onClick={() => setModalShow(true)}
-                  className={`cursor-pointer ${style.cart} m-0 p-0`}
+                  className={`cursor-pointer ${style.cart} `}
                 >
-                  <Image src={cart} alt="cart" loading="lazy" />
+                  <Image src={cart} className={style.cartImage} alt="cart" loading="lazy" />
                 </div>
               </div>
 

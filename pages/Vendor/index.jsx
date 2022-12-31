@@ -11,7 +11,7 @@ import { IoIosArrowDropleft } from "react-icons/io";
 // import Button from 'react-bootstrap/Button';
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, FloatingLabel } from "react-bootstrap";
 import { RiTodoFill } from "react-icons/ri";
 // import styles from "/styles/modal/modal.module.scss";
 
@@ -117,7 +117,7 @@ const Vendor = (props) => {
               <Form.Control type="file" placeholder="Upload Pics" />
             </Form.Group>
           </div>
-          <div className={styles.signup_inputbox}>
+          {/* <div className={styles.signup_inputbox}>
             <InputField
               placeholder="Enter Category"
               type="text"
@@ -125,7 +125,27 @@ const Vendor = (props) => {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             />
-          </div>
+          </div> */}
+         <div className={styles.signup_inputbox}>
+            <Form.Label>Select Category</Form.Label>
+            <Row>
+              <Col 
+                className={styles.category}>
+                <FloatingLabel
+                  controlId="floatingSelect"
+                >
+                
+                  <Form.Select aria-label="Floating label select example" className="py-3"  >
+                    <option className="hidden">Select Category</option>
+                    <option value="Catering">Catering</option>
+                    <option value="Decoration">Decoration</option>
+                    <option value="Venue">Venue</option>
+                    <option value="Florist">Florist</option>
+                  </Form.Select>
+                </FloatingLabel>
+              </Col>
+            </Row>
+          </div> 
           <div className={styles.signup_inputbox}>
             <InputField
               placeholder="Enter Contact"
@@ -175,7 +195,7 @@ const Vendor = (props) => {
         </form>
         <div className={` text-center ${styles.login_link}`}>
           {/* Already have an account! <Link href="/loginin"> Log in now</Link> */}
-         
+
         </div>
       </div>
       {/* <Row>

@@ -16,7 +16,7 @@ const Sidebar = ({ setOpen, open }) => {
 
   const handleSubMenu1 = () => {
     setOpen(false)
-    router.push('/store')
+    router.push('/shop-invitation')
   }
   const handleSubMenu2 = () => {
     setOpen(false)
@@ -85,13 +85,13 @@ const Sidebar = ({ setOpen, open }) => {
 
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/store"><a className={style.item}>Shop Invitation </a></Link>
+              <Link href="/shop-invitation"><a className={style.item}>Shop Invitation </a></Link>
             </div>
           </div>
 
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/store"><a className={style.item}>Nikkah Templates </a></Link>
+              <Link href="/shop-invitation"><a className={style.item}>Nikkah Templates </a></Link>
             </div>
           </div>
 
@@ -121,7 +121,7 @@ export default Sidebar;
               </span>{" "}
               <ul className={classes.nav__submenu}>
                 <li className={classes.nav__submenu_item}>
-                  <Link href={"/store"}>Wedding Store</Link>
+                  <Link href={"/shop-invitation"}>Wedding Store</Link>
                 </li>
                 <li className={classes.nav__submenu_item}>
                   <Link href={"/Rsvp"}>Rsvp</Link>
@@ -149,7 +149,7 @@ export default Sidebar;
               <a href="#/">Event Website</a>
             </li>
             <li>
-              <Link href={"/store"}>Shop Invitation</Link>
+              <Link href={"/shop-invitation"}>Shop Invitation</Link>
             </li>
             <li>
               <a href="#/">Nikkah Templates</a>{" "}
@@ -165,7 +165,7 @@ export default Sidebar;
 //                     </span>{" "}
 //                     <ul className={style.nav__submenu}>
 //                       <li className={style.nav__submenu_item}>
-//                         <Link href={"/store"}>Wedding Store</Link>
+//                         <Link href={"/shop-invitation"}>Wedding Store</Link>
 //                       </li>
 //                       <li className={style.nav__submenu_item}>
 //                         <Link href={"/Rsvp"}>Rsvp</Link>
@@ -196,7 +196,7 @@ export default Sidebar;
 //                     <a href="#/">Event Website</a>
 //                   </li>
 //                   <li>
-//                     <Link href={"/store"}>Shop Invitation</Link>
+//                     <Link href={"/shop-invitation"}>Shop Invitation</Link>
 //                   </li>
 //                   <li>
 //                     <a href="#/">Nikkah Templates</a>{" "}

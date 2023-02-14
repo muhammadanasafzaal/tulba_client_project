@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {MyCard,MyCardBlue,MyCardYellow, MyCardOne} from "./MyCard";
+import {MyCard,MyCardBlue,MyCardYellow, MyCardOne,MyCardYellow2} from "./MyCard";
 import styles from "/styles/home/Index.module.scss";
 import imageone from "public/assests/home_img/Download.svg"
 import arabian2 from "public/assests/home_img/arabian.jpg"
@@ -48,7 +48,7 @@ const Plan = () => {
               head="Shop Invitation Card"
               para="Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true."
               btn="Browse Invitation"
-              path='/store'
+              path='/shop-invitation'
             />
           </Col>
         <Col lg={4} md={6} sm={6} xs={6}>
@@ -63,8 +63,9 @@ const Plan = () => {
             />
           </Col>
           <Col lg={4} md={6} sm={6} xs={6}>
-          <MyCardYellow
+          <MyCardYellow2
               imgsrc={checklist}
+              // imgsrc2={checklist}
               head="Checklist Creation"
               para="Browse through venues, catering, decor & more 
                     with our most economical platform for make your dream

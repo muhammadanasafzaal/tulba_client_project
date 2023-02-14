@@ -10,10 +10,10 @@ const MyCard = (props) => {
   return (
     <>
       <div className={styles.redbox}>
-        <div style={{overflow:'hidden'}} className={` ${styles.back}`}>
+        <div  className={` ${styles.back}`}>
           <Image
             src={props.imgsrc}
-            width={"350px"}
+            width={"300px"}
             height={"250px"}
             layout="fixed"
             alt="template"
@@ -39,12 +39,14 @@ const MyCardOne = (props) => {
   return (
     <>
       <div className={styles.redbox}>
-        <div style={{overflow:'hidden'}} className={` ${styles.back1}`}>
+        <div  className={` ${styles.back1}`}>
           <Image
+            // src={props.imgsrc}
+            // width={"432px"}
+            // height={"280px"}
             src={props.imgsrc}
-            width={"432px"}
-            height={"280px"}
-           
+            width={"400px"}
+            height={"250px"}
            
             layout="fixed"
             alt="template"
@@ -77,6 +79,34 @@ const MyCardYellow = (props) => {
             src={props.imgsrc}
             width={"480px"}
             height={"480px"}
+            alt="template"
+            layout="fixed"
+            className={`img-fluid ${styles.plan_img}`}
+          />
+
+        </div>
+        <div className={styles.box}>
+          <h6>{props.head}</h6>
+          <p>{props.para}</p>
+          <button onClick={() => router.push(props.path)} className='px-2 py-2 d-flex'>{props.btn}
+            <AiOutlineArrowRight className="my-1 mx-2" />
+          </button>
+        </div>
+      </div>
+    </>
+  )
+}
+const MyCardYellow2 = (props) => {
+  const router = useRouter()
+
+  return (
+    <>
+      <div className={styles.yellowbox}>
+        <div className={`${styles.backgroundYellow2} `}>
+          <Image
+            src={props.imgsrc}
+            width={"400px"}
+            height={"300px"}
             alt="template"
             layout="fixed"
             className={`img-fluid ${styles.plan_img}`}
@@ -128,4 +158,4 @@ const MyCardBlue = (props) => {
   )
 }
 
-export { MyCard, MyCardBlue, MyCardYellow, MyCardOne }
+export { MyCard, MyCardBlue, MyCardYellow,MyCardYellow2, MyCardOne }

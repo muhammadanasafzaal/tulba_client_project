@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import Pagination from 'react-bootstrap/Pagination';
 import styles from "/styles/vendors/vendor.module.scss";
-import Vector from "public/assests/store/weddingcard.png";
+import Vector from "public/assests/shop-invitation/weddingcard.png";
 import stylesButton from "/styles/modal/modal.module.scss";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { AiFillStar, AiOutlineUsergroupAdd, AiOutlineRight, AiOutlineDown } from "react-icons/ai";

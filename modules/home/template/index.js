@@ -6,11 +6,12 @@ import styles from "/styles/home/Index.module.scss";
 const Template = () => {
   return (
     <>
-      <div className={` my-5 ${styles.temp}`}>
-        <Container className="my-5">
+      <div className={` my-5 ${styles.temp}`} >
+        <Container className="my-0">
           <Row>
             <Col>
               <Content
+              
                 imgsrc="/../assests/home_img/1-02.svg"
                 head="Advanced Website Templates"
                 ques="Choose the template website of event."

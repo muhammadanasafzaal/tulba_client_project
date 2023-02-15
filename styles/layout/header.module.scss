@@ -94,6 +94,7 @@
           font-weight: 500;
           font-size: 12px;
           line-height: 47px;
+          z-index: 20;
 
           /* identical to box height, or 335% */
 
@@ -164,16 +165,16 @@
 
         button {
           padding: 8px 0px;
-          border: 0.5px solid #7c7c7c;
+          border: 0.5px solid #f85757;
           border-radius: 5px;
-          color: black;
+          color: white;
           font-family: "Poppins", sans-serif;
           font-style: normal;
           font-weight: 500;
           font-size: 12px;
           //   line-height: 47px;
           /* identical to box height, or 293% */
-
+           background-color: #f85757;
           text-transform: capitalize;
 
           &:hover {
@@ -182,6 +183,39 @@
             border: 0.5px solid #fa5856;
           }
         }
+        
+        @media (max-width: 1120px) {
+          width: 80px;
+        }
+        @media (max-width: 1065px) {
+          display: none;
+        }
+      }
+      .btn_header2 {
+        // margin: 0px 4px;
+        width: 70px;
+
+        button {
+          padding: 8px 0px;
+          border: 0.5px solid #f85757;
+          border-radius: 5px;
+          color: #f85757;
+          font-family: "Poppins", sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          //   line-height: 47px;
+          /* identical to box height, or 293% */
+          //  background-color: #f85757;
+          text-transform: capitalize;
+
+          &:hover {
+            color: #ffffff;
+            background: #fa5856;
+            border: 0.5px solid #fa5856;
+          }
+        }
+        
         @media (max-width: 1120px) {
           width: 80px;
         }

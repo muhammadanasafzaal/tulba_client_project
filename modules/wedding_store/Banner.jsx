@@ -15,7 +15,7 @@ const Banner = () => {
             </Breadcrumb>
             <div >
               {/* <h5>We got the best tools for your event, so hop on.</h5> */}
-              <h1>Wedding Store </h1>
+              <h1>Shop Invitation Cards </h1>
               <p className={styles.bannerText}>
               Get your items according to your budegt with our classic budget 
               planner

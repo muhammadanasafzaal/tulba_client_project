@@ -69,16 +69,17 @@ const Header = () => {
                     </span>{" "}
                     <ul className={style.nav__submenu}>
                       <li className={style.nav__submenu_item}>
-                        <Link href={"/store"}>Catering</Link>
+                        <Link href={"/shop-invitation"}>Catering</Link>
                       </li>
                       <li className={style.nav__submenu_item}>
                         <Link href={"/Rsvp"}>Decoration</Link>
                       </li>
-                      <li className={style.nav__submenu_item}>
-                        <Link href={"/checkout"}>Venue</Link>
-                      </li>
+                     
                       <li className={style.nav__submenu_item}>
                         <Link href={"/checkout"}>Florist</Link>
+                      </li>
+                      <li className={style.nav__submenu_item}>
+                        <Link href={"/checkout"}>Venue</Link>
                       </li>
                     </ul>
                   </li>
@@ -103,13 +104,13 @@ const Header = () => {
                     <a href="#/">Event Website</a>
                   </li>
                   <li>
-                    <Link href={"/store"}>Shop Invitation</Link>
+                    <Link href={"/shop-invitation"}>Shop Invitation</Link>
                   </li>
                   <li>
                     <Link href={"/nikkah-templates"}>Nikkah Template</Link>
                   </li>
                 </ul>
-                <div className={style.btn_header}>
+                <div className={style.btn_header2}>
                   <Link href={"/loginin"}>
                     <Button value={"Log in"} />
                   </Link>
@@ -215,7 +216,7 @@ export default Header;
 //                   </span>{" "}
 //                   <ul className={style.nav__submenu}>
 //                     <li className={style.nav__submenu_item}>
-//                       <Link href={"/store"}>Wedding Store</Link>
+//                       <Link href={"/shop-invitation"}>Wedding Store</Link>
 //                     </li>
 //                     <li className={style.nav__submenu_item}>
 //                       <Link href={"/Rsvp"}>Rsvp</Link>
@@ -245,7 +246,7 @@ export default Header;
 //                   <a href="#/">Event Website</a>
 //                 </li>
 //                 <li>
-//                   <Link href={"/store"} >Shop Invitation</Link>
+//                   <Link href={"/shop-invitation"} >Shop Invitation</Link>
 //                 </li>
 //                 <li>
 //                   <a href="#/">Nikkah Templates</a>{" "}

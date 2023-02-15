@@ -477,6 +477,9 @@
     @media (max-width: 767px) {
       height: 100px;
       width: 100px;
+     
+      // margin: 0 auto;
+      
     }
 
     @media (min-width: 1024px) {
@@ -489,6 +492,7 @@
 .plan_img1 {
   min-width: 80%;
   min-height: 60%;
+ 
 
   @media (max-width: 767px) {
     height: 100px;
@@ -703,6 +707,7 @@
 
 .yellowbox {
   margin: 24px 0;
+  // border: 1px solid green;
 
   .backgroundYellow {
     // background-image: url("../../public/assests/home_img/Ellipse\ 1348.svg");
@@ -712,6 +717,39 @@
     border-radius: 100%;
     background: #f5c989;
     margin: 0 auto;
+    // border: 1px solid green;
+   
+
+    @media (max-width: 767px) {
+      height: 150px;
+      width: 150px;
+    }
+    img {
+      position: absolute;
+      top: -170px !important;
+      left: -180px !important;
+      @media (max-width: 767px) {
+        top: 0px !important;
+        left: 0px !important;
+      }
+    }
+    span {
+      @media (max-width: 767px) {
+        height: 150px !important;
+        width: 150px !important;
+      }
+    }
+  }
+  .backgroundYellow2 {
+    // background-image: url("../../public/assests/home_img/Ellipse\ 1348.svg");
+    // background-size: cover;
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    background: #f5c989;
+    margin: 0 auto;
+    // border: 1px solid green;
+   padding-top: 12%;
 
     @media (max-width: 767px) {
       height: 150px;
@@ -909,8 +947,10 @@
     font-size: 10px;
     line-height: 18px;
     text-transform: capitalize;
-    color: #f85757;
-    background: #fef0f0;
+    // color: #f85757;
+    // background: #fef0f0;
+     color: #fef0f0;
+    background: #f85757;
     border-radius: 50px;
     border: none;
     width: 125px;

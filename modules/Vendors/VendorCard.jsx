@@ -149,6 +149,7 @@ const VendorCard = () => {
                                         btn="Indoor and OutDoor"
                                         icon="/../assests/home_img/Vector.svg"
                                         price="300 $/"
+                                        
                                     />
                                 </div>
                             </Col>

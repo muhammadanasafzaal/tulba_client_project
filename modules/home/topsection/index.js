@@ -77,7 +77,7 @@ const HomeTopSection = () => {
               </Row>
               <p className='my-2 '>We got the best event planners and most economical setup for event so lets
                 do this together and make your event memorable.</p>
-              <Row className={`g-2 my-5 flex gap-1 ${styles.form}`}>
+              <Row className={`g-2 my-5 flex gap-0 ${styles.form}`}>
                 <Col md={4} className="btstrp p-0">
                   <FloatingLabel
                     controlId="floatingInputGrid"
@@ -105,7 +105,7 @@ const HomeTopSection = () => {
 
 
                       placeholder="Search Vendors, Catering"
-                      className={styles.input}
+                      className={styles.input2}
                     // <AiOutlineSearch />
 
                     />

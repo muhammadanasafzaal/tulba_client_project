@@ -9,10 +9,14 @@ import MyVerticallyCenteredModal from "components/popup/profile_popup";
 import Sidebar from "layout/sidebar";
 import Link from "next/link";
 import { Container, Row, Col, Navbar } from "react-bootstrap";
+import searchIcon from "public/assests/searchIcon.png"
+
+
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [modalShow, setModalShow] = React.useState(false);
+  const [showSearch, setShowSearch] = React.useState(false)
 
   return (
     // <Container fluid className='px-5'>
@@ -22,7 +26,7 @@ const Header = () => {
         onHide={() => setModalShow(false)}
       />
 
-      <div className={`  ${style.Header_section} w-full border-2 border-black`}>
+      {!showSearch ? <div className={`  ${style.Header_section} w-full border-2 border-black`}>
         <div className={style.nested_header}>
           <div
             className={`flex items-center justify-between  ${style.header_top}`}
@@ -51,7 +55,7 @@ const Header = () => {
             <div
               className={` flex items-center justify-between w-full ${style.header_bottom}`}
             >
-              <div>
+              <div >
                 <Link href="/">
                   <Image
                     src={tulbalogo}
@@ -61,8 +65,8 @@ const Header = () => {
                   />
                 </Link>
               </div>
-              <div className={`flex  gap-2 !sm:hidden !md:hidden ${style.mobile}`}>
-                <ul className={`flex items-center ${style.ui_list}`}>
+              <div  className={`flex  gap-2 !sm:hidden !md:hidden ${style.mobile}`}>
+                <ul  className={`flex items-center ${style.ui_list}`}>
                   <li className={style.vendros}>
                     <span className="flex gap-1 items-center">
                       <Link href="/Vendors">Vendors</Link> <IoIosArrowDown />
@@ -123,6 +127,10 @@ const Header = () => {
                 {/* Cart */}
 
               </div>
+              <div className={style.searchicon}>
+                {/* <Image alt="search" src={searchIcon} width={1} className={style.searchicon}/> */}
+                <Image alt="search" src={searchIcon} onClick={()=>setShowSearch(!showSearch)}/>
+              </div>
               <div className="flex align-items-center  justify-center">
                 <div
                   onClick={() => setOpen(true)}
@@ -139,6 +147,7 @@ const Header = () => {
                   <Image src={cart} className={style.cartImage} alt="cart" loading="lazy" />
                 </div>
               </div>
+              
 
             </div>
           </Navbar>
@@ -147,7 +156,17 @@ const Header = () => {
         <div className={style.sidebar_option}>
           <Sidebar setOpen={setOpen} open={open} />
         </div>
+      </div>:
+      <div className={style.searchContainer}>
+        <div>
+          <input placeholder="Search"/>
+          
+        </div>
+        <div className={style.cancelicon} onClick={()=>setShowSearch(!showSearch)}>
+          close
+          </div>
       </div>
+      }
     </Container>
   );
 };

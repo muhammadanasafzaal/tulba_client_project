@@ -241,27 +241,19 @@ const SideBar = () => {
               <div className={styles.expandable}>
                 <div>
                   <input type="checkbox" />
-                  <span>Matte</span>
+                  <span>Catering</span>
                 </div>
                 <div>
                   <input type="checkbox" />
-                  <span>Glossy</span>
+                  <span>Decoration</span>
                 </div>
                 <div>
                   <input type="checkbox" />
-                  <span>Handmade</span>
+                  <span>Florist</span>
                 </div>
                 <div>
                   <input type="checkbox" />
-                  <span>Mylar</span>
-                </div>
-                <div>
-                  <input type="checkbox" />
-                  <span>Recycled</span>
-                </div>
-                <div>
-                  <input type="checkbox" />
-                  <span>Parchment</span>
+                  <span>Venue</span>
                 </div>
               </div>
             )}
@@ -333,17 +325,17 @@ const SideBar = () => {
                   </datalist>
                 </FloatingLabel>
                 {/* <div>
-                                    <input className={styles.input} type='checkbox' />
-                                    <span>Cards</span>
-                                </div>
-                                <div>
-                                    <input type='checkbox' />
-                                    <span>Boxed Gifting</span>
-                                </div>
-                                <div>
-                                    <input type='checkbox' />
-                                    <span>Novel Concepts</span>
-                                </div> */}
+                        <input className={styles.input} type='checkbox' />
+                        <span>Cards</span>
+                    </div>
+                    <div>
+                        <input type='checkbox' />
+                        <span>Boxed Gifting</span>
+                    </div>
+                    <div>
+                        <input type='checkbox' />
+                        <span>Novel Concepts</span>
+                    </div> */}
               </div>
             )}
           </div>

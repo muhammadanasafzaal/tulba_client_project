@@ -3,8 +3,8 @@
 
 .searchicon{
   // border: 2px solid lightgray;
-  width: 32px !important;
-  height: 32px !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
  
 }
 .searchContainer{
@@ -36,8 +36,6 @@
 }
 
 .Header_section {
-  padding: 0 6%;
-
   .nested_header {
     // width: 90%;
     margin: 0 auto;
@@ -270,7 +268,7 @@
         }
       }
       .cart {
-        width: 36px;
+        width: 1.5rem;
         margin-left: 4px;
         
         .cartImage {

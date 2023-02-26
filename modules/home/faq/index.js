@@ -14,7 +14,7 @@ const Faq = () => {
           <Col>
             <div
               className={`${styles.faq} ${
-                faq ? styles.faqCardsHalf : styles.faqCardsFull
+                faq ? styles.faqCardsFull : styles.faqCardsHalf
               } `}
             >
               <h6 className="text-center text-primary text-uppercase">

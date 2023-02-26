@@ -9,7 +9,8 @@ import MyVerticallyCenteredModal from "components/popup/profile_popup";
 import Sidebar from "layout/sidebar";
 import Link from "next/link";
 import { Container, Row, Col, Navbar } from "react-bootstrap";
-import searchIcon from "public/assests/searchIcon.png";
+import searchIcon from "public/assests/searchIcon.svg";
+import closeIcon from "public/assests/close.svg";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -24,37 +25,35 @@ const Header = () => {
         onHide={() => setModalShow(false)}
       />
 
-      {!showSearch ? (
-        <div
-          className={`  ${style.Header_section} w-full border-2 border-black`}
-        >
-          <div className={style.nested_header}>
-            <div
-              className={`flex items-center justify-between  ${style.header_top}`}
-            >
-              <div className={`${style.reg_date}`}>
-                <p>7 Shaaban 1443AH &nbsp;</p>
-                <p> |&nbsp; Thursday , 10 March 2022</p>
-              </div>
-              {/* <div className={style.headerTop_vendor}  onClick={() => setModalShow(true)}>Are You A Vendor? */}
-              {/* </div> */}
-              <div
-                className={style.headerTop_vendor}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <Link href="/Vendor">
-                  <a
-                    style={{
-                      textDecoration: "none !important",
-                      color: "black",
-                    }}
-                  >
-                    {" "}
-                    Are You A Vendor?
-                  </a>
-                </Link>
-              </div>
+      <div className={`${style.Header_section} w-full border-2 border-black`}>
+        <div className={style.nested_header}>
+          <div
+            className={`flex items-center justify-between  ${style.header_top}`}
+          >
+            <div className={`${style.reg_date}`}>
+              <p>7 Shaaban 1443AH &nbsp;</p>
+              <p> |&nbsp; Thursday , 10 March 2022</p>
             </div>
+            {/* <div className={style.headerTop_vendor}  onClick={() => setModalShow(true)}>Are You A Vendor? */}
+            {/* </div> */}
+            <div
+              className={style.headerTop_vendor}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <Link href="/Vendor">
+                <a
+                  style={{
+                    textDecoration: "none !important",
+                    color: "black",
+                  }}
+                >
+                  {" "}
+                  Are You A Vendor?
+                </a>
+              </Link>
+            </div>
+          </div>
+          {!showSearch ? (
             <Navbar>
               <div
                 className={` flex items-center justify-between w-full ${style.header_bottom}`}
@@ -130,8 +129,7 @@ const Header = () => {
                       <Button value={"Sign up"} />
                     </Link>
                   </div>
-                  <div className={style.searchicon}>
-                    {/* <Image alt="search" src={searchIcon} width={1} className={style.searchicon}/> */}
+                  <div className={style.searchIcon}>
                     <Image
                       alt="search"
                       src={searchIcon}
@@ -169,24 +167,28 @@ const Header = () => {
                 </div>
               </div>
             </Navbar>
-          </div>
-          <div className={style.sidebar_option}>
-            <Sidebar setOpen={setOpen} open={open} />
-          </div>
+          ) : (
+            <div className={style.searchContainer}>
+              <div>
+                <input placeholder="Search" />
+              </div>
+              <div
+                className={style.closeIcon}
+                onClick={() => setShowSearch(!showSearch)}
+              >
+                <Image
+                  alt="close"
+                  src={closeIcon}
+                  onClick={() => setShowSearch(!showSearch)}
+                />
+              </div>
+            </div>
+          )}
         </div>
-      ) : (
-        <div className={style.searchContainer}>
-          <div>
-            <input placeholder="Search" />
-          </div>
-          <div
-            className={style.cancelicon}
-            onClick={() => setShowSearch(!showSearch)}
-          >
-            close
-          </div>
+        <div className={style.sidebar_option}>
+          <Sidebar setOpen={setOpen} open={open} />
         </div>
-      )}
+      </div>
     </Container>
   );
 };

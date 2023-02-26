@@ -29,7 +29,7 @@ const Footer = () => {
                 className="cursor-pointer"
               />
             </Link>
-            <div>
+            <div className="my-4">
               <p className={`text-xl ${style.Footer_text}`}>
                 We got the best event planners and most economical setup for
                 event so lets do this together and make your event memorable.
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
           <div className={style.section_two}>
-            <p className=""> Register</p>
+            <p> Register</p>
             <ul>
               <li>
                 {" "}
@@ -150,7 +150,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className={style.section_three}>
-            <p>Explore by city</p>
+            <p>Explore by country</p>
           </div>
         </div>
 

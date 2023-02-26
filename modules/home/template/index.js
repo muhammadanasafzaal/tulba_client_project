@@ -6,12 +6,11 @@ import styles from "/styles/home/Index.module.scss";
 const Template = () => {
   return (
     <>
-      <div className={` my-5 ${styles.temp}`} >
+      <div className={styles.temp}>
         <Container className="my-0">
           <Row>
             <Col>
               <Content
-              
                 imgsrc="/../assests/home_img/1-02.svg"
                 head="Advanced Website Templates"
                 ques="Choose the template website of event."
@@ -33,7 +32,7 @@ const Template = () => {
                 ques="Manage all your things with Checklist manager."
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
-                li_three="Designed to match your wedding website " 
+                li_three="Designed to match your wedding website "
               />
               <Content2
                 imgsrc="/../assests/home_img/1-03.svg"

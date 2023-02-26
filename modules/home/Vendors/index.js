@@ -19,72 +19,69 @@ const Vendors = () => {
           slidesToShow: 2,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <>
-      <Container
-        className="my-5"
-      >
+      <Container className="my-2">
         <Row>
           <Col>
-
             <div className={`text-center my-5 ${styles.vendors}`}>
               <h5>Easy access of cards, amd essentials on the go</h5>
-              <h1>Browse Our Store for <br /> Nikkah and Invitations</h1>
+              <h1>
+                Browse Our Store for <br /> Nikkah and Invitations
+              </h1>
             </div>
             <div>
               <Slider {...settings}>
                 <div>
                   <VendorCard
                     imgsrc="/../assests/home_img/card.svg"
-                    title="Nikkah Name Style 1"
-                    onclick='/nikkah-templates'
+                    title="Nikkah Nama Style 1"
+                    onclick="/nikkah-templates"
                   />
                 </div>
                 <div>
                   <VendorCard
                     imgsrc="/../assests/home_img/card.svg"
-                    title="Nikkah Name Style 2"
-                    onclick='/nikkah-templates'
+                    title="Nikkah Nama Style 2"
+                    onclick="/nikkah-templates"
                   />
                 </div>
                 <div>
                   <VendorCard
                     imgsrc="/../assests/home_img/invitationcard.svg"
-                    title="Nikkah Template Style 1"
-                    onclick='/nikkah-templates'
+                    title="Invitation Card 1"
+                    onclick="/nikkah-templates"
                   />
                 </div>
                 <div>
                   <VendorCard
                     imgsrc="/../assests/home_img/invitationcard.svg"
-                    title="Nikkah Template Style 2"
-                    onclick='/nikkah-templates'
+                    title="Invitation Card 1"
+                    onclick="/nikkah-templates"
                   />
                 </div>
               </Slider>
             </div>
-
-
           </Col>
         </Row>
       </Container>

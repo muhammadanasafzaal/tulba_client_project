@@ -1,18 +1,23 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {MyCard,MyCardBlue,MyCardYellow, MyCardOne,MyCardYellow2} from "./MyCard";
+import {
+  MyCard,
+  MyCardBlue,
+  MyCardYellow,
+  MyCardOne,
+  MyCardYellow2,
+} from "./MyCard";
 import styles from "/styles/home/Index.module.scss";
-import imageone from "public/assests/home_img/Download.svg"
-import arabian2 from "public/assests/home_img/arabian.jpg"
-import invitation from 'public/assests/home_img/invitation.png'
-import nikkah from 'public/assests/home_img/nikkah.png'
-import checklist from 'public/assests/home_img/Checklist.jpg'
-
+import imageone from "public/assests/home_img/Download.svg";
+import arabian2 from "public/assests/home_img/arabian.jpg";
+import invitation from "public/assests/home_img/invitation.png";
+import nikkah from "public/assests/home_img/nikkah.png";
+import checklist from "public/assests/home_img/Checklist.jpg";
 
 const Plan = () => {
   return (
     <>
-      <Container  className="my-5">
+      <Container className="mb-5">
         <Row className="my-5">
           <Col md={12}>
             <div className={`text-center ${styles.plan}`}>
@@ -23,9 +28,8 @@ const Plan = () => {
           <Col lg={4} md={6} sm={6} xs={6}>
             <MyCard
               // imgsrc={imageone}
-              path='/Vendor'
+              path="/Vendor"
               imgsrc={arabian2}
-              
               head="Vendor Search"
               para="Browse through venues, catering, decor & more 
                     with our most economical platform for make your dream
@@ -34,36 +38,36 @@ const Plan = () => {
             />
           </Col>
           <Col lg={4} md={6} sm={6} xs={6}>
-          <MyCardYellow
+            <MyCardYellow
               imgsrc="/../assests/home_img/temp1.svg"
               head="Event Website"
               para="Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true."
               btn="Create Free Site"
-              path='/event'
+              path="/event"
             />
           </Col>
           <Col lg={4} md={6} sm={6} xs={6}>
-          <MyCardBlue
+            <MyCardBlue
               imgsrc={invitation}
               head="Shop Invitation Card"
               para="Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true."
               btn="Browse Invitation"
-              path='/shop-invitation'
+              path="/shop-invitation"
             />
           </Col>
-        <Col lg={4} md={6} sm={6} xs={6}>
-          <MyCardBlue
+          <Col lg={4} md={6} sm={6} xs={6}>
+            <MyCardBlue
               imgsrc={nikkah}
               head="Nikkah Template"
               para="Browse through venues, catering, decor & more 
                     with our most economical platform for make your dream
                     wedding comes true."
               btn="Browse Card"
-              path='/template'
+              path="/template"
             />
           </Col>
           <Col lg={4} md={6} sm={6} xs={6}>
-          <MyCardYellow2
+            <MyCardYellow2
               imgsrc={checklist}
               // imgsrc2={checklist}
               head="Checklist Creation"
@@ -71,10 +75,10 @@ const Plan = () => {
                     with our most economical platform for make your dream
                     wedding comes true."
               btn="Start Planning"
-              path='/template'
+              path="/template"
             />
           </Col>
-          <Col lg={4} md={6}  sm={6} xs={6}>
+          <Col lg={4} md={6} sm={6} xs={6}>
             <MyCardOne
               imgsrc="/../assests/home_img/Download.svg"
               head="Guest List/RSVP"
@@ -82,8 +86,7 @@ const Plan = () => {
                     with our most economical platform for make your dream
                     wedding comes true."
               btn="Rsvp Invites"
-              path='/Rsvp'
-
+              path="/Rsvp"
             />
           </Col>
         </Row>

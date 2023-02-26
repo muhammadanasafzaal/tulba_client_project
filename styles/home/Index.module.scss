@@ -2,6 +2,9 @@
 @import "../fonts/font.scss";
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 
+.text-uppercase {
+  text-transform: uppercase;
+}
 
 .star {
   color: #ffc200;
@@ -274,9 +277,9 @@
     }
   }
 
-  h3 {
+  h4 {
     color: #f85757;
-    font-size: 50px;
+    font-size: 2.5rem;
     font-family: " DM Serif Display";
     @media (max-width: 767px) {
       font-size: 30px;
@@ -1106,12 +1109,6 @@
     color: #f85757;
     background: #fef0f0;
     border: none;
-  }
-}
-
-.imgSize {
-  &:hover {
-    transform: scale(70%);
   }
 }
 

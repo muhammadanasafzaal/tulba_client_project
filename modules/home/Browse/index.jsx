@@ -70,7 +70,7 @@ const Browse = () => {
                 </li>
               </ul>
             </div>
-            <Slider {...settings} className="carousel">
+            <Slider {...settings} className="carousel mb-5">
               <div>
                 <BrowseCard
                   imgsrc="/../assests/home_img/plan1.svg"
@@ -129,7 +129,7 @@ const Browse = () => {
                 />
               </div>
             </Slider>
-            <div className="text-center my-5 ">
+            <div className="text-center">
               <Link href="/Vendors">
                 <Button className={styles.btn}>See all vendors</Button>
               </Link>

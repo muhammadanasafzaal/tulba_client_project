@@ -3,11 +3,10 @@
 .footer_section {
   padding: 20px 0px;
   .nested_footer {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     display: grid;
     grid-template-columns: 1.2fr 150px 150px repeat(3,1fr);
-    gap: 20px;
+    gap: 1.25rem;
 
     .section_two,
     .section_one,
@@ -40,6 +39,7 @@
     }
     .section_one {
       .Footer_text {
+        text-align: justify;
         font-family: $GiloryMedium;
         opacity: 0.7;
         padding: 16px 0px;

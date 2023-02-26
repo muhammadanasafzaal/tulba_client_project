@@ -42,34 +42,33 @@ const Testimonial = () => {
 
   return (
     <>
-      <div className={`py-5 my-5 ${styles.testimonial}`}>
+      <div className={`py-5 ${styles.testimonial}`}>
         <Container>
           <Row>
             <Col>
               <div className={`text-center ${styles.template}`}>
                 <h5>Commnets about our clients / lets see them</h5>
-                <h1>What our customer says</h1>
+                <h1 className="mt-3">What our customer says</h1>
               </div>
               <div>
                 <Slider {...settings}>
-                  <div>
+                  <div className="px-4">
                     <Content
                       comment="“ Easy to use and keeps the user Privacy Perfectly. This platform really gives me ideas of my wedding. “"
                       // imgsrc="/../assests/home_img/Vector.svg"
                       client="/../assests/home_img/Male 1.svg"
                       clientName="Shahrukh Ali"
-                    /> 
+                    />
                   </div>
-                  <div>
+                  <div className="px-4">
                     <Content
                       comment="“ Easy to use and keeps the user Privacy Perfectly. This platform really gives me ideas of my wedding. “"
                       // imgsrc="/../assests/home_img/Vector.svg"
                       client="/../assests/home_img/Female 1.svg"
                       clientName="Alina Paul"
-
                     />
                   </div>
-                  <div>
+                  <div className="px-4">
                     <Content
                       comment="“ Easy to use and keeps the user Privacy Perfectly. This platform really gives me ideas of my wedding. “"
                       // imgsrc="/../assests/home_img/Vector.svg"
@@ -77,31 +76,28 @@ const Testimonial = () => {
                       clientName="Ali Al Mairaj"
                     />
                   </div>
-                  <div>
+                  <div className="px-4">
                     <Content
                       comment="“ Easy to use and keeps the user Privacy Perfectly. This platform really gives me ideas of my wedding. “"
                       // imgsrc="/../assests/home_img/Vector.svg"
                       client="/../assests/home_img/Female 1.svg"
                       clientName="Shahrukh Ali"
-
                     />
                   </div>
-                  <div>
+                  <div className="px-4">
                     <Content
                       comment="“ Easy to use and keeps the user Privacy Perfectly. This platform really gives me ideas of my wedding. “"
                       // imgsrc="/../assests/home_img/Vector.svg"
                       client="/../assests/home_img/Male 1.svg"
                       clientName="Alina Paul"
-
                     />
                   </div>
-                  <div>
+                  <div className="px-4">
                     <Content
                       comment="“ Easy to use and keeps the user Privacy Perfectly. This platform really gives me ideas of my wedding. “"
                       // imgsrc="/../assests/home_img/Vector.svg"
                       client="/../assests/home_img/Female 1.svg"
-                                            clientName="Shahrukh Ali"
-
+                      clientName="Shahrukh Ali"
                     />
                   </div>
                 </Slider>

@@ -256,6 +256,11 @@ $deviceMaxWidth: 1024px;
   width: 100%;
 }
 
+/* .bannerText {
+  line-height: 1.875rem;
+  font-weight: 400;
+} */
+
 @media (max-width: 767px) {
   .bannerText {
     display: none;

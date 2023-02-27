@@ -17,6 +17,7 @@ import {
   GiNestedHearts,
   GiLargeDress,
 } from "react-icons/gi";
+import MultiRangeSlider from "components/multi_range_slider";
 
 let active = 2;
 let items = [];
@@ -50,99 +51,112 @@ const Wedcard = () => {
             </div>
             <div
               onClick={() => showPaper(!paper)}
-              className={`${styles.sideBarList} ${paper && styles.actvelink} `}
+              className={`flex justify-between items-center ${
+                styles.sideBarList
+              } ${paper && styles.actvelink} `}
             >
+              <span>Paper</span>
+
               {!paper ? (
                 <AiOutlineRight size={20} />
               ) : (
                 <AiOutlineDown size={20} />
               )}
-              <span> Paper </span>
             </div>
 
             {paper && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" />
-                  <span>Matte</span>
+                  <input type="checkbox" id="matte" />
+                  <label htmlFor="matte">Matte</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Glossy</span>
+                  <input type="checkbox" id="glossy" />
+                  <label htmlFor="glossy">Glossy</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Handmade</span>
+                  <input type="checkbox" id="handmade" />
+                  <label htmlFor="handmade">Handmade</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Mylar</span>
+                  <input type="checkbox" id="mylar" />
+                  <label htmlFor="mylar">Mylar</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Recycled</span>
+                  <input type="checkbox" id="recycled" />
+                  <label htmlFor="recycled">Recycled</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Parchment</span>
+                  <input type="checkbox" id="parchment" />
+                  <label htmlFor="parchment">Parchment</label>
                 </div>
               </div>
             )}
+
             <div
               onClick={() => showPrice(!price)}
-              className={`${styles.sideBarList} ${price && styles.actvelink} `}
+              className={`flex justify-between items-center ${
+                styles.sideBarList
+              } ${price && styles.actvelink} `}
             >
+              <span>Price</span>
+
               {!price ? (
                 <AiOutlineRight size={20} />
               ) : (
                 <AiOutlineDown size={20} />
               )}
-              <span> Price </span>
             </div>
+
             {price && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" />
-                  <span>$1-$10</span>
+                  <input type="checkbox" id="1-10" />
+                  <label htmlFor="1-10">$1-$10</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>$11-$20</span>
+                  <input type="checkbox" id="11-20" />
+                  <label htmlFor="11-20">$11-$20</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>$20-$30</span>
+                  <input type="checkbox" id="20-30" />
+                  <label htmlFor="20-30">$20-$30</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>$30-$50</span>
+                  <input type="checkbox" id="30-50" />
+                  <label htmlFor="30-50">$30-$50</label>
                 </div>
               </div>
             )}
+
             <div
               onClick={() => showType(!type)}
-              className={`${styles.sideBarList} ${type && styles.actvelink} `}
+              className={`flex justify-between items-center ${
+                styles.sideBarList
+              } ${type && styles.actvelink} `}
             >
+              <span>Type</span>
+
               {!type ? (
                 <AiOutlineRight size={20} />
               ) : (
                 <AiOutlineDown size={20} />
               )}
-              <span>Type </span>
             </div>
+
             {type && (
               <div className={styles.expandable}>
                 <div>
-                  <input className={styles.input} type="checkbox" />
-                  <span>Cards</span>
+                  <input type="checkbox" id="cards" />
+                  <label htmlFor="cards">Cards</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Boxed Gifting</span>
+                  <input type="checkbox" id="boxed-gifting" />
+                  <label htmlFor="boxed-gifting">Boxed Gifting</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Novel Concepts</span>
+                  <input type="checkbox" id="novel-concepts" />
+                  <label htmlFor="novel-concepts">Novel Concepts</label>
                 </div>
               </div>
             )}
@@ -154,19 +168,21 @@ const Wedcard = () => {
         <Row>
           <Col md={3} className={styles.filterContainer}>
             <h1>Categories</h1>
+
             <div>
               <div
                 onClick={() => showPaper(!paper)}
-                className={`${styles.sideBarList} ${
-                  paper && styles.actvelink
-                } `}
+                className={`flex justify-between items-center ${
+                  styles.sideBarList
+                } ${paper && styles.actvelink} `}
               >
+                <span>Paper</span>
+
                 {!paper ? (
                   <AiOutlineRight size={20} />
                 ) : (
                   <AiOutlineDown size={20} />
                 )}
-                <span> Paper </span>
               </div>
 
               {paper && (
@@ -197,20 +213,29 @@ const Wedcard = () => {
                   </div>
                 </div>
               )}
+
               <div
                 onClick={() => showPrice(!price)}
-                className={`${styles.sideBarList} ${
-                  price && styles.actvelink
-                } `}
+                className={`flex justify-between items-center ${
+                  styles.sideBarList
+                } ${price && styles.actvelink} `}
               >
+                <span>Price</span>
+
                 {!price ? (
                   <AiOutlineRight size={20} />
                 ) : (
                   <AiOutlineDown size={20} />
                 )}
-                <span> Price </span>
               </div>
+
               {price && (
+                <div className={`p-0 ${styles.expandable}`}>
+                  <MultiRangeSlider min="0" max="1000" step="10" />
+                </div>
+              )}
+
+              {/* {price && (
                 <div className={styles.expandable}>
                   <div>
                     <input type="checkbox" id="1-10" />
@@ -229,18 +254,23 @@ const Wedcard = () => {
                     <label htmlFor="30-50">$30-$50</label>
                   </div>
                 </div>
-              )}
+              )} */}
+
               <div
                 onClick={() => showType(!type)}
-                className={`${styles.sideBarList} ${type && styles.actvelink} `}
+                className={`flex justify-between items-center ${
+                  styles.sideBarList
+                } ${type && styles.actvelink} `}
               >
+                <span>Type</span>
+
                 {!type ? (
                   <AiOutlineRight size={20} />
                 ) : (
                   <AiOutlineDown size={20} />
                 )}
-                <span>Type </span>
               </div>
+
               {type && (
                 <div className={styles.expandable}>
                   <div>

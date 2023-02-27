@@ -19,7 +19,7 @@ const Banner = () => {
             </Breadcrumb>
             <div>
               <h5>We got the best tools for your event, so hop on.</h5>
-              <h1>NIKKAH TEMPLATE CARDS</h1>
+              <h1>NIKKAH TEMPLATES</h1>
               <p>
                 Get your items according to your budegt with our classic budget
                 planner

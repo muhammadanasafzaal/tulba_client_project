@@ -7,20 +7,20 @@ const Banner = () => {
   return (
     <>
       <Container fluid className="my-5">
-        <Row>
-          <Col lg={6} className={` ${styles.banner}`}>
+        <Row style={{ marginTop: "-50px" }}>
+          <Col lg={6} className={styles.banner}>
             <Breadcrumb>
               <Breadcrumb.Item href="/" className={styles.brdcrumb}>
                 Home
               </Breadcrumb.Item>
               <Breadcrumb.Item active className={styles.actbrdcrumb}>
-                Shop Invites
+                Nikkah Templates
               </Breadcrumb.Item>
             </Breadcrumb>
             <div>
               <h5>We got the best tools for your event, so hop on.</h5>
               <h1>NIKKAH TEMPLATES</h1>
-              <p>
+              <p className={styles.bannerText}>
                 Get your items according to your budegt with our classic budget
                 planner
               </p>

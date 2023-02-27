@@ -109,23 +109,8 @@ const Wedcard = () => {
             </div>
 
             {price && (
-              <div className={styles.expandable}>
-                <div>
-                  <input type="checkbox" id="1-10" />
-                  <label htmlFor="1-10">$1-$10</label>
-                </div>
-                <div>
-                  <input type="checkbox" id="11-20" />
-                  <label htmlFor="11-20">$11-$20</label>
-                </div>
-                <div>
-                  <input type="checkbox" id="20-30" />
-                  <label htmlFor="20-30">$20-$30</label>
-                </div>
-                <div>
-                  <input type="checkbox" id="30-50" />
-                  <label htmlFor="30-50">$30-$50</label>
-                </div>
+              <div className={`p-0 ${styles.expandable}`}>
+                <MultiRangeSlider min="0" max="1000" step="10" />
               </div>
             )}
 
@@ -235,27 +220,6 @@ const Wedcard = () => {
                 </div>
               )}
 
-              {/* {price && (
-                <div className={styles.expandable}>
-                  <div>
-                    <input type="checkbox" id="1-10" />
-                    <label htmlFor="1-10">$1-$10</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="11-20" />
-                    <label htmlFor="11-20">$11-$20</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="20-30" />
-                    <label htmlFor="20-30">$20-$30</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="30-50" />
-                    <label htmlFor="30-50">$30-$50</label>
-                  </div>
-                </div>
-              )} */}
-
               <div
                 onClick={() => showType(!type)}
                 className={`flex justify-between items-center ${
@@ -291,7 +255,10 @@ const Wedcard = () => {
           </Col>
 
           <Col md={3} className={styles.filterButton}>
-            <span>1,000+ relevant results</span>
+            <h5 className="text-capitalize">
+              Shop Our hand crafted Invitations
+            </h5>
+            <span>(1,000+ relevant results)</span>
             <button
               onClick={() => {
                 showMobileCard(!mobileCard);

@@ -18,6 +18,7 @@ import {
   GiLargeDress,
 } from "react-icons/gi";
 import Link from "next/link";
+import MultiRangeSlider from "components/multi_range_slider";
 
 let active = 2;
 let items = [];
@@ -35,7 +36,7 @@ const Wedcard = () => {
   const [mobileCard, showMobileCard] = useState(false);
 
   return (
-    <div className="border">
+    <Container>
       {mobileCard && (
         <div className="w-screen">
           <div className={styles.mobileCard}>
@@ -52,99 +53,97 @@ const Wedcard = () => {
             </div>
             <div
               onClick={() => showPaper(!paper)}
-              className={`${styles.sideBarList} ${paper && styles.actvelink} `}
+              className={`flex justify-between items-center ${
+                styles.sideBarList
+              } ${paper && styles.actvelink} `}
             >
+              <span>Paper</span>
+
               {!paper ? (
                 <AiOutlineRight size={20} />
               ) : (
                 <AiOutlineDown size={20} />
               )}
-              <span> Paper </span>
             </div>
 
             {paper && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" />
-                  <span>Matte</span>
+                  <input type="checkbox" id="matte" />
+                  <label htmlFor="matte">Matte</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Glossy</span>
+                  <input type="checkbox" id="glossy" />
+                  <label htmlFor="glossy">Glossy</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Handmade</span>
+                  <input type="checkbox" id="handmade" />
+                  <label htmlFor="handmade">Handmade</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Mylar</span>
+                  <input type="checkbox" id="mylar" />
+                  <label htmlFor="mylar">Mylar</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Recycled</span>
+                  <input type="checkbox" id="recycled" />
+                  <label htmlFor="recycled">Recycled</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Parchment</span>
+                  <input type="checkbox" id="parchment" />
+                  <label htmlFor="parchment">Parchment</label>
                 </div>
               </div>
             )}
+
             <div
               onClick={() => showPrice(!price)}
-              className={`${styles.sideBarList} ${price && styles.actvelink} `}
+              className={`flex justify-between items-center ${
+                styles.sideBarList
+              } ${price && styles.actvelink}`}
             >
+              <span>Price</span>
+
               {!price ? (
                 <AiOutlineRight size={20} />
               ) : (
                 <AiOutlineDown size={20} />
               )}
-              <span> Price </span>
             </div>
+
             {price && (
-              <div className={styles.expandable}>
-                <div>
-                  <input type="checkbox" />
-                  <span>$1-$10</span>
-                </div>
-                <div>
-                  <input type="checkbox" />
-                  <span>$11-$20</span>
-                </div>
-                <div>
-                  <input type="checkbox" />
-                  <span>$20-$30</span>
-                </div>
-                <div>
-                  <input type="checkbox" />
-                  <span>$30-$50</span>
-                </div>
+              <div className={`p-0 ${styles.expandable}`}>
+                <MultiRangeSlider min="0" max="1000" step="10" />
               </div>
             )}
+
             <div
               onClick={() => showType(!type)}
-              className={`${styles.sideBarList} ${type && styles.actvelink} `}
+              className={`flex justify-between items-center ${
+                styles.sideBarList
+              } ${type && styles.actvelink} `}
             >
+              <span>Type</span>
+
               {!type ? (
                 <AiOutlineRight size={20} />
               ) : (
                 <AiOutlineDown size={20} />
               )}
-              <span>Type </span>
             </div>
+
             {type && (
               <div className={styles.expandable}>
                 <div>
-                  <input className={styles.input} type="checkbox" />
-                  <span>Cards</span>
+                  <input type="checkbox" id="cards" />
+                  <label htmlFor="cards">Cards</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Boxed Gifting</span>
+                  <input type="checkbox" id="boxed-gifting" />
+                  <label htmlFor="boxed-gifting">Boxed Gifting</label>
                 </div>
                 <div>
-                  <input type="checkbox" />
-                  <span>Novel Concepts</span>
+                  <input type="checkbox" id="novel-concepts" />
+                  <label htmlFor="novel-concepts">Novel Concepts</label>
                 </div>
               </div>
             )}
@@ -152,110 +151,105 @@ const Wedcard = () => {
         </div>
       )}
 
-      <Container fluid>
+      <Container>
         <Row>
           <Col md={3} className={styles.filterContainer}>
             <h1>Categories</h1>
+
             <div>
               <div
                 onClick={() => showPaper(!paper)}
-                className={`${styles.sideBarList} ${
-                  paper && styles.actvelink
-                } `}
+                className={`flex justify-between items-center ${
+                  styles.sideBarList
+                } ${paper && styles.actvelink} `}
               >
+                <span>Paper</span>
+
                 {!paper ? (
                   <AiOutlineRight size={20} />
                 ) : (
                   <AiOutlineDown size={20} />
                 )}
-                <span> Paper </span>
               </div>
 
               {paper && (
                 <div className={styles.expandable}>
                   <div>
-                    <input type="checkbox" />
-                    <span>Matte</span>
+                    <input type="checkbox" id="matte" />
+                    <label htmlFor="matte">Matte</label>
                   </div>
                   <div>
-                    <input type="checkbox" />
-                    <span>Glossy</span>
+                    <input type="checkbox" id="glossy" />
+                    <label htmlFor="glossy">Glossy</label>
                   </div>
                   <div>
-                    <input type="checkbox" />
-                    <span>Handmade</span>
+                    <input type="checkbox" id="handmade" />
+                    <label htmlFor="handmade">Handmade</label>
                   </div>
                   <div>
-                    <input type="checkbox" />
-                    <span>Mylar</span>
+                    <input type="checkbox" id="mylar" />
+                    <label htmlFor="mylar">Mylar</label>
                   </div>
                   <div>
-                    <input type="checkbox" />
-                    <span>Recycled</span>
+                    <input type="checkbox" id="recycled" />
+                    <label htmlFor="recycled">Recycled</label>
                   </div>
                   <div>
-                    <input type="checkbox" />
-                    <span>Parchment</span>
+                    <input type="checkbox" id="parchment" />
+                    <label htmlFor="parchment">Parchment</label>
                   </div>
                 </div>
               )}
+
               <div
                 onClick={() => showPrice(!price)}
-                className={`${styles.sideBarList} ${
-                  price && styles.actvelink
-                } `}
+                className={`flex justify-between items-center ${
+                  styles.sideBarList
+                } ${price && styles.actvelink} `}
               >
+                <span>Price</span>
+
                 {!price ? (
                   <AiOutlineRight size={20} />
                 ) : (
                   <AiOutlineDown size={20} />
                 )}
-                <span> Price </span>
               </div>
+
               {price && (
                 <div className={styles.expandable}>
-                  <div>
-                    <input type="checkbox" />
-                    <span>$1-$10</span>
-                  </div>
-                  <div>
-                    <input type="checkbox" />
-                    <span>$11-$20</span>
-                  </div>
-                  <div>
-                    <input type="checkbox" />
-                    <span>$20-$30</span>
-                  </div>
-                  <div>
-                    <input type="checkbox" />
-                    <span>$30-$50</span>
-                  </div>
+                  <MultiRangeSlider min="0" max="1000" step="10" />
                 </div>
               )}
+
               <div
                 onClick={() => showType(!type)}
-                className={`${styles.sideBarList} ${type && styles.actvelink} `}
+                className={`flex justify-between items-center ${
+                  styles.sideBarList
+                } ${type && styles.actvelink} `}
               >
+                <span>Type</span>
+
                 {!type ? (
                   <AiOutlineRight size={20} />
                 ) : (
                   <AiOutlineDown size={20} />
                 )}
-                <span>Type </span>
               </div>
+
               {type && (
                 <div className={styles.expandable}>
                   <div>
-                    <input className={styles.input} type="checkbox" />
-                    <span>Cards</span>
+                    <input type="checkbox" id="cards" />
+                    <label htmlFor="cards">Cards</label>
                   </div>
                   <div>
-                    <input type="checkbox" />
-                    <span>Boxed Gifting</span>
+                    <input type="checkbox" id="boxed-gifting" />
+                    <label htmlFor="boxed-gifting">Boxed Gifting</label>
                   </div>
                   <div>
-                    <input type="checkbox" />
-                    <span>Novel Concepts</span>
+                    <input type="checkbox" id="novel-concepts" />
+                    <label htmlFor="novel-concepts">Novel Concepts</label>
                   </div>
                 </div>
               )}
@@ -263,7 +257,10 @@ const Wedcard = () => {
           </Col>
 
           <Col md={3} className={styles.filterButton}>
-            <span>1,000+ relevant results</span>
+            <h5 className="text-capitalize">
+              Shop Our hand crafted Invitations
+            </h5>
+            <span>(1,000+ relevant results)</span>
             <button
               onClick={() => {
                 showMobileCard(!mobileCard);
@@ -275,9 +272,11 @@ const Wedcard = () => {
           </Col>
 
           <Col lg={9}>
-            <div className="d-flex align-items-center">
-              {/* <h1>Shop Our hand crafted Invitations</h1> */}
-              <h5 className={`mt-2 mb-5 mx-1 ${styles.number}`}>
+            <div className="flex items-center my-2">
+              <h3 className="text-capitalize">
+                Shop Our hand crafted Invitations
+              </h3>
+              <h5 className={`m-1 ${styles.number}`}>
                 (1,000+ relevant results )
               </h5>
             </div>
@@ -306,7 +305,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -354,7 +353,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -401,7 +400,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -448,7 +447,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -496,7 +495,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -543,7 +542,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -591,7 +590,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -638,7 +637,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -686,7 +685,7 @@ const Wedcard = () => {
                 </div>
                 <div className="d-flex justify-content-start">
                   <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1 mx-2">( 20% off )</h6>
+                  <h6 className="my-1">( 20% off )</h6>
                 </div>
                 <div className="d-flex justify-content-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
@@ -719,7 +718,7 @@ const Wedcard = () => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Container>
   );
 };
 

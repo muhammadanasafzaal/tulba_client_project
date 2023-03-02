@@ -164,7 +164,6 @@ input[type="checkbox"] {
   padding-top: 0.5em !important;
 }
 
-.rsvptable .form-floating>.form-control,
 .form-floating>.form-control-plaintext,
 .form-floating>.form-select {
   height: 7% !important;
@@ -179,6 +178,7 @@ input[type="checkbox"] {
 }
 .rsvptable .form-select {
   width: 80%;
+  height: 100% !important;
   float: right;
   background-image: url("../public/assests/RSVP/bi_filter.svg");
   background-size: 20px;

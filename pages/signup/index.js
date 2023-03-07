@@ -9,7 +9,6 @@ import { useState } from "react";
 import { api } from "./../../services/api";
 import { IoIosArrowDropleft } from "react-icons/io";
 
-
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,11 +32,11 @@ const Signup = () => {
     >
       <div className={`${styles.signup_nested} bg-white p-6`}>
         <div className={styles.signup_heading}>
-        <div className={`${styles.backpage}`}>
-          <Link href="/">
-            <IoIosArrowDropleft className="text-3xl cursor-pointer ml-2" />
-          </Link>
-        </div>
+          <div className={`${styles.backpage}`}>
+            <Link href="/">
+              <IoIosArrowDropleft className="text-3xl cursor-pointer ml-2" />
+            </Link>
+          </div>
           <h1 className="text-center text-black text-2xl leading-10">
             Create Your New Account
           </h1>
@@ -125,14 +124,14 @@ const Signup = () => {
           <div className={` ${styles.btn_signup}`}>
             <Button
               type="button"
-              value={"Create Account"}
+              value={"Sign up"}
               onClick={() => handleSignup()}
               padding="12px 0px"
             />
           </div>
         </form>
         <div className={` text-center ${styles.login_link}`}>
-          Already have an account! <Link href="/loginin"> Log in now</Link>
+          Already have an account! <Link href="/loginin">Log in</Link>
         </div>
       </div>
     </div>

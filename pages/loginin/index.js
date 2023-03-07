@@ -26,14 +26,13 @@ const Login = () => {
     <div
       className={`${styles.loginin_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
     >
-       
       <div className={`${styles.login_nested} bg-white p-6`}>
         <div className={styles.login_heading}>
-        <div className={`${styles.backpage}`}>
-          <Link href="/">
-            <IoIosArrowDropleft className="text-3xl cursor-pointer ml-2" />
-          </Link>
-        </div>
+          <div className={`${styles.backpage}`}>
+            <Link href="/">
+              <IoIosArrowDropleft className="text-3xl cursor-pointer ml-2" />
+            </Link>
+          </div>
           <h1 className="text-center text-black text-2xl leading-10">Log in</h1>
           <p className="text-center leading-4">
             Enter your details to get started
@@ -117,11 +116,11 @@ const Login = () => {
             </div>
           </div>
           <div className={` ${styles.btn_login}`} onClick={() => handleLogin()}>
-            <Button type="button" value={"Create Account"} padding="12px 0px" />
+            <Button type="button" value={"Login"} padding="12px 0px" />
           </div>
         </form>
         <div className={` text-center ${styles.login_link}`}>
-          Don’t have an account ? <Link href="/signup">Create New Now</Link>
+          Don’t have an account ? <Link href="/signup">Sign up</Link>
         </div>
       </div>
     </div>

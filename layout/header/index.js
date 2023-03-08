@@ -25,7 +25,7 @@ const Header = () => {
         onHide={() => setModalShow(false)}
       />
 
-      <div className={`${style.Header_section} w-full border-2 border-black`}>
+      <div className={`${style.Header_section} w-full`}>
         <div className={style.nested_header}>
           <div
             className={`flex items-center justify-between  ${style.header_top}`}

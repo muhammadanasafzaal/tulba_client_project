@@ -1,19 +1,17 @@
-import React from 'react';
 import Footer from "layout/footer";
 import Header from "layout/header";
-import Main from "modules/profile/Main";
+import Banner from "modules/profile/Banner";
+import Temp from "modules/profile/Temp";
 
-
-
-const Profile = () => {
-    return (
-        <div>
-            <Header />
-            <Main />
-            <Footer />
-
-        </div>
-    );
+const index = () => {
+  return (
+    <div>
+      <Header />
+      <Banner />
+      <Temp />
+      <Footer />
+    </div>
+  );
 };
 
-export default Profile;
+export default index;

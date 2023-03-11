@@ -5,13 +5,11 @@ import "react-circular-progressbar/dist/styles.css";
 import Venue_content from "./Content";
 import styles from "/styles/profile/profile.module.scss";
 // import { Stepper, Step } from 'react-form-stepper';
+import Congrates from "../../components/stepper_form/steps/Congrates";
 import Stepper from "./../../components/stepper_form/Stepper";
 import StepperControl from "./../../components/stepper_form/StepperControl";
 import Account from "./../../components/stepper_form/steps/Account";
 import Details from "./../../components/stepper_form/steps/Details";
-import GuestAccount from "./../../components/stepper_form/steps/GuestAccount";
-import NikkahTemplate from "./../../components/stepper_form/steps/NikkahTemplate";
-import ShopInvites from "./../../components/stepper_form/steps/ShopInvites";
 import { StepperContext } from "./contexts/StepperContext";
 
 const percentage = 75;
@@ -21,13 +19,7 @@ const Banner = () => {
   const [userData, setUserData] = useState("");
   const [finalData, setFinalData] = useState([]);
 
-  const steps = [
-    "Complete Your Profile",
-    "Add Your Event",
-    "Shop Invites",
-    "Nikkah Template",
-    "Guest account",
-  ];
+  const steps = ["Complete Your Profile", "Add Your Event", "Congrates"];
 
   const displaySteps = (step) => {
     switch (step) {
@@ -36,11 +28,7 @@ const Banner = () => {
       case 2:
         return <Details />;
       case 3:
-        return <ShopInvites />;
-      case 4:
-        return <NikkahTemplate />;
-      case 5:
-        return <GuestAccount />;
+        return <Congrates />;
     }
   };
 

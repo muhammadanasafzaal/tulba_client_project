@@ -240,19 +240,19 @@ const SideBar = () => {
             {paper && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="bg-white" />
                   <span>Catering</span>
                 </div>
                 <div>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="bg-white" />
                   <span>Decoration</span>
                 </div>
                 <div>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="bg-white" />
                   <span>Florist</span>
                 </div>
                 <div>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="bg-white" />
                   <span>Venue</span>
                 </div>
               </div>
@@ -271,19 +271,19 @@ const SideBar = () => {
             {price && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="bg-white" />
                   <span>$1-$10</span>
                 </div>
                 <div>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="bg-white" />
                   <span>$11-$20</span>
                 </div>
                 <div>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="bg-white" />
                   <span>$20-$30</span>
                 </div>
                 <div>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="bg-white" />
                   <span>$30-$50</span>
                 </div>
               </div>
@@ -366,27 +366,27 @@ const SideBar = () => {
           {paper && (
             <div className={styles.expandable}>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>Matte</span>
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>Glossy</span>
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>Handmade</span>
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>Mylar</span>
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>Recycled</span>
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>Parchment</span>
               </div>
             </div>
@@ -405,19 +405,19 @@ const SideBar = () => {
           {price && (
             <div className={styles.expandable}>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>$1-$10</span>
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>$11-$20</span>
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>$20-$30</span>
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="bg-white" />
                 <span>$30-$50</span>
               </div>
             </div>

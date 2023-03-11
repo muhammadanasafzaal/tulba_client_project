@@ -41,8 +41,8 @@ const Asthetical = () => {
           <Col lg={6} md={8} sm={12} className={`px-3 ${styles.asthetical}`}>
             <div className="d-flex">
               <h2>The Asthetical</h2>
-              <h6 className="my-4 mx-3">
-                Starting from <span> $29</span>
+              <h6 className="py-3 mx-3 my-0">
+                Starting from <span className="flex my-3"> $29</span>
               </h6>
             </div>
             <p>Made by Tulba Designers</p>

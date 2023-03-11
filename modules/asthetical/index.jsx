@@ -334,7 +334,7 @@ const Asthetical = () => {
               </div>
               <div className={styles.last}>
                 <div className={styles.select}>
-                  <select name="" id="">
+                  <select name="" className="bg-white" id="">
                     <option value="1">1</option>
                     <option value="1">1</option>
                     <option value="1">1</option>

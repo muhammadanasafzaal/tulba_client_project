@@ -1,8 +1,9 @@
-import Banner from 'modules/Rsvp/Banner'
-import BasicExample from 'modules/Rsvp/table'
-import React from 'react'
+import Banner from "modules/Rsvp/Banner";
+import BasicExample from "modules/Rsvp/table";
+import React from "react";
 import Footer from "layout/footer";
 import Header from "layout/header";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Rsvp = () => {
   return (
@@ -12,7 +13,7 @@ const Rsvp = () => {
       <BasicExample />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Rsvp
+export default Rsvp;

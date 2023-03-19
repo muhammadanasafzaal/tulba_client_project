@@ -14,6 +14,7 @@ import Form from "react-bootstrap/Form";
 import { Row, Col, FloatingLabel } from "react-bootstrap";
 import { RiTodoFill } from "react-icons/ri";
 // import styles from "/styles/modal/modal.module.scss";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Vendor = (props) => {
   const [businessName, setBusinessName] = useState("");
@@ -126,16 +127,15 @@ const Vendor = (props) => {
               onChange={(e) => setCategory(e.target.value)}
             />
           </div> */}
-         <div className={styles.signup_inputbox}>
+          <div className={styles.signup_inputbox}>
             <Form.Label>Select Category</Form.Label>
             <Row>
-              <Col 
-                className={styles.category}>
-                <FloatingLabel
-                  controlId="floatingSelect"
-                >
-                
-                  <Form.Select aria-label="Floating label select example" className="py-3"  >
+              <Col className={styles.category}>
+                <FloatingLabel controlId="floatingSelect">
+                  <Form.Select
+                    aria-label="Floating label select example"
+                    className="py-3"
+                  >
                     <option className="hidden">Select Category</option>
                     <option value="Catering">Catering</option>
                     <option value="Decoration">Decoration</option>
@@ -145,7 +145,7 @@ const Vendor = (props) => {
                 </FloatingLabel>
               </Col>
             </Row>
-          </div> 
+          </div>
           <div className={styles.signup_inputbox}>
             <InputField
               placeholder="Enter Contact"
@@ -195,7 +195,6 @@ const Vendor = (props) => {
         </form>
         <div className={` text-center ${styles.login_link}`}>
           {/* Already have an account! <Link href="/loginin"> Log in now</Link> */}
-
         </div>
       </div>
       {/* <Row>

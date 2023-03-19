@@ -1,35 +1,36 @@
 import style from "styles/layout/sidebar.module.scss";
-import classes from "styles/layout/header.module.scss"
+import classes from "styles/layout/header.module.scss";
 import Button from "components/form/button";
 import logo from "public/assests/tulbalogo.svg";
 import Image from "next/image";
 import { ImCross } from "react-icons/im";
 import Link from "next/link";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Sidebar = ({ setOpen, open }) => {
-  const router = useRouter()
-  const [vendors, setVendors] = useState(false)
-  const [planningTools, setPlanningTools] = useState(false)
+  const router = useRouter();
+  const [vendors, setVendors] = useState(false);
+  const [planningTools, setPlanningTools] = useState(false);
 
   const handleSubMenu1 = () => {
-    setOpen(false)
-    router.push('/shop-invitation')
-  }
+    setOpen(false);
+    router.push("/shop-invitation");
+  };
   const handleSubMenu2 = () => {
-    setOpen(false)
-    router.push('/Rsvp')
-  }
+    setOpen(false);
+    router.push("/Rsvp");
+  };
   const handleSubMenu3 = () => {
-    setOpen(false)
-    router.push('/checkout')
-  }
+    setOpen(false);
+    router.push("/checkout");
+  };
   const handleSubMenu4 = () => {
     // setOpen(false)
     // router.push('/checkout')
-  }
+  };
 
   return (
     <div>
@@ -49,11 +50,19 @@ const Sidebar = ({ setOpen, open }) => {
           </div>
         </div>
         <div className={style.sd_body}>
-
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/Vendors"><a className={style.item}>Vendors </a></Link>
-              <div onClick={() => { setVendors(!vendors) }}> <IoIosArrowDown style={{ color: 'red' }} /></div>
+              <Link href="/Vendors">
+                <a className={style.item}>Vendors </a>
+              </Link>
+              <div
+                onClick={() => {
+                  setVendors(!vendors);
+                }}
+              >
+                {" "}
+                <IoIosArrowDown style={{ color: "red" }} />
+              </div>
             </div>
             {vendors && (
               <div className={style.submenu}>
@@ -63,11 +72,20 @@ const Sidebar = ({ setOpen, open }) => {
               </div>
             )}
           </div>
-          
+
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/event"><a className={style.item}>Planning Tools </a></Link>
-              <div onClick={() => {setPlanningTools(!planningTools) }}> <IoIosArrowDown style={{ color: 'red' }} /></div>
+              <Link href="/event">
+                <a className={style.item}>Planning Tools </a>
+              </Link>
+              <div
+                onClick={() => {
+                  setPlanningTools(!planningTools);
+                }}
+              >
+                {" "}
+                <IoIosArrowDown style={{ color: "red" }} />
+              </div>
             </div>
             {planningTools && (
               <div className={style.submenu}>
@@ -79,41 +97,43 @@ const Sidebar = ({ setOpen, open }) => {
 
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/event"><a className={style.item}>Event Website </a></Link>
+              <Link href="/event">
+                <a className={style.item}>Event Website </a>
+              </Link>
             </div>
           </div>
 
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/shop-invitation"><a className={style.item}>Shop Invitation </a></Link>
+              <Link href="/shop-invitation">
+                <a className={style.item}>Shop Invitation </a>
+              </Link>
             </div>
           </div>
 
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/shop-invitation"><a className={style.item}>Nikkah Templates </a></Link>
+              <Link href="/shop-invitation">
+                <a className={style.item}>Nikkah Templates </a>
+              </Link>
             </div>
           </div>
-
-
-
-
         </div>
       </div>
       <div
-        className={`${style.sidebar_overlay} ${open == true ? `${style.active}` : ""
-          }`}
+        className={`${style.sidebar_overlay} ${
+          open == true ? `${style.active}` : ""
+        }`}
         onClick={setOpen}
       ></div>
- 
     </div>
   );
 };
 
 export default Sidebar;
 
-
-{/* 
+{
+  /* 
            <ul className={`flex items-center ${classes.ui_list}`}>
             <li className={classes.vendros}>
               <span className="flex gap-1 items-center">
@@ -154,7 +174,8 @@ export default Sidebar;
             <li>
               <a href="#/">Nikkah Templates</a>{" "}
             </li>
-          </ul>  */}
+          </ul>  */
+}
 
 // setOpen, open
 

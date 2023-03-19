@@ -1,18 +1,19 @@
-import Banner from 'modules/wedding_store/Banner'
-import Wedcard from 'modules/wedding_store/Wedcard'
-import React from 'react'
+import Banner from "modules/wedding_store/Banner";
+import Wedcard from "modules/wedding_store/Wedcard";
+import React from "react";
 import Footer from "layout/footer";
 import Header from "layout/header";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Store = () => {
   return (
     <div>
       <Header />
-        <Banner />
-        <Wedcard />
-        <Footer />
+      <Banner />
+      <Wedcard />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Store
+export default Store;

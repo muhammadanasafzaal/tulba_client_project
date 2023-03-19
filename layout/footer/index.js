@@ -13,6 +13,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Footer = () => {
   return (

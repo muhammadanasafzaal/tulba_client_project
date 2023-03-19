@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Container, Row, Col, Navbar } from "react-bootstrap";
 import searchIcon from "public/assests/searchIcon.svg";
 import closeIcon from "public/assests/close.svg";
+// import "bootstrap/dist/css/bootstrap.css";
 
 const Header = () => {
   const [open, setOpen] = useState(false);

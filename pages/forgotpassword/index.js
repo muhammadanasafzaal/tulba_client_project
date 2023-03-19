@@ -6,6 +6,7 @@ import googlelogo from "public/assests/GoogleLogo.svg";
 import facebooklogo from "public/assests/facebooklogo.svg";
 import { IoIosArrowDropleft } from "react-icons/io";
 import Link from "next/link";
+import "bootstrap/dist/css/bootstrap.css";
 
 import { useState } from "react";
 import { api } from "./../../services/api";

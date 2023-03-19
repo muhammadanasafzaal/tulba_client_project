@@ -1,28 +1,28 @@
-import Footer from 'layout/footer'
-import Header from 'layout/header'
-import About from 'modules/Castle/About'
-import Banner from 'modules/Castle/Banner'
-import Carousel from 'modules/Castle/Carousel'
-import Property from 'modules/Castle/Property'
-import Reviews from 'modules/Castle/Reviews'
-import Vendor from 'modules/Castle/Vendor'
-import Faq from 'modules/home/faq'
-import React from 'react'
+import Footer from "layout/footer";
+import Header from "layout/header";
+import About from "modules/Castle/About";
+import Banner from "modules/Castle/Banner";
+import Carousel from "modules/Castle/Carousel";
+import Property from "modules/Castle/Property";
+import Reviews from "modules/Castle/Reviews";
+import Vendor from "modules/Castle/Vendor";
+import Faq from "modules/home/faq";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
 
 const index = () => {
   return (
     <div>
-        <Header />
-        <Banner />
-        <Vendor />
-        <About />
-        <Property />
-        <Reviews />
-        <Faq />
-        <Footer />
-
+      <Header />
+      <Banner />
+      <Vendor />
+      <About />
+      <Property />
+      <Reviews />
+      <Faq />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default index
+export default index;

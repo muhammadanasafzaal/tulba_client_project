@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { api } from "./../../services/api";
 import { IoIosArrowDropleft } from "react-icons/io";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Signup = () => {
   const [name, setName] = useState("");

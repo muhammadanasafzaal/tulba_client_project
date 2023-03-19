@@ -1,18 +1,19 @@
-import Banner from 'modules/wedding_template/Banner'
-import React from 'react'
+import Banner from "modules/wedding_template/Banner";
+import React from "react";
 import Footer from "layout/footer";
 import Header from "layout/header";
-import Template from 'modules/wedding_template/Template';
+import Template from "modules/wedding_template/Template";
+import "bootstrap/dist/css/bootstrap.css";
 
 const index = () => {
   return (
     <div>
-        <Header />
-        <Banner />
-        <Template />
-        <Footer />
+      <Header />
+      <Banner />
+      <Template />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default index
+export default index;

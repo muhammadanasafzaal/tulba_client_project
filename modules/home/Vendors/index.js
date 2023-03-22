@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import VendorCard from "./VendorCard";
 import styles from "/styles/home/Index.module.scss";
 import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Vendors = () => {
   var settings = {

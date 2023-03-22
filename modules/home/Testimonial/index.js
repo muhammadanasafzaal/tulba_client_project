@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import Content from "./Content";
 import styles from "/styles/home/Index.module.scss";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Testimonial = () => {
   var settings = {

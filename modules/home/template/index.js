@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Content, Content2 } from "./content";
 import styles from "/styles/home/Index.module.scss";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Template = () => {
   return (

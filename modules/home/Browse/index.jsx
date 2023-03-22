@@ -5,6 +5,7 @@ import Slider from "react-slick";
 // import "styles/global.scss"
 import styles from "/styles/home/Index.module.scss";
 import Link from "next/link";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Browse = () => {
   var settings = {

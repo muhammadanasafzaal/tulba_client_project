@@ -86,9 +86,9 @@
 
   .input {
     // box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
-   border: 1px solid lightgrey !important;
-   border-right: 1px solid #f85757 !important;
-    
+    border: 1px solid lightgrey !important;
+    border-right: 1px solid #f85757 !important;
+
     background-color: "white";
     // height: 100%;
     color: "black";
@@ -96,16 +96,15 @@
     padding: 5px 0px;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    
   }
-  .input:focus{
+  .input:focus {
     outline-style: none !important;
   }
- 
+
   .input2 {
     // box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
-   border: 1px solid lightgrey !important;
-   border-left: 1px solid #f85757 !important;
+    border: 1px solid lightgrey !important;
+    border-left: 1px solid #f85757 !important;
     outline: none;
     background-color: "white";
     // height: 100%;
@@ -114,7 +113,6 @@
     padding: 5px 0px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-   
   }
 
   .input::placeholder {
@@ -129,7 +127,6 @@
     transform: translateX(-15px);
     font-size: 15px;
     width: 150px;
-    
 
     &:hover {
       color: #f85757;
@@ -503,9 +500,8 @@
     @media (max-width: 767px) {
       height: 100px;
       width: 100px;
-     
+
       // margin: 0 auto;
-      
     }
 
     @media (min-width: 1024px) {
@@ -518,7 +514,6 @@
 .plan_img1 {
   min-width: 80%;
   min-height: 60%;
- 
 
   @media (max-width: 767px) {
     height: 100px;
@@ -744,7 +739,6 @@
     background: #f5c989;
     margin: 0 auto;
     // border: 1px solid green;
-   
 
     @media (max-width: 767px) {
       height: 150px;
@@ -775,7 +769,7 @@
     background: #f5c989;
     margin: 0 auto;
     // border: 1px solid green;
-   padding-top: 12%;
+    padding-top: 12%;
 
     @media (max-width: 767px) {
       height: 150px;
@@ -975,7 +969,7 @@
     text-transform: capitalize;
     // color: #f85757;
     // background: #fef0f0;
-     color: #fef0f0;
+    color: #fef0f0;
     background: #f85757;
     border-radius: 50px;
     border: none;

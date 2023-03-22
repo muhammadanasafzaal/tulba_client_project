@@ -13,7 +13,7 @@ import Browse from "modules/home/Browse";
 ////////////////////
 import { store } from "./../redux/store";
 import { Provider } from "react-redux";
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 
 // import Signup from "./signup";
 // import Login from "./loginin";

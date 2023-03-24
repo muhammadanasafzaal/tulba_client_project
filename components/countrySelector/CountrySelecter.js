@@ -40,6 +40,10 @@ const CountrySelecter = () => {
   function closeModal() {
     setIsOpen(false);
   }
+  const countrySelecthandler = (item) => {
+    setCurrent(item);
+    closeModal();
+  };
 
   return (
     <div className="mt-3 ">
@@ -53,7 +57,7 @@ const CountrySelecter = () => {
         </div>
         <div className="text-[#f85757]">&#x21a7;</div>
       </div>
-      <div className="">
+      <div className="relative">
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -62,8 +66,25 @@ const CountrySelecter = () => {
           contentLabel="Example Modal"
         >
           {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}
-          <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
+          <div className="flex justify-between items-center">
+            <div className="text-4xl font-bold"> Select a Country </div>
+            <button
+              className="bg-[#f85757] px-3 py-1 rounded-xl text-white text-sm font-semibold hover:opacity-90  "
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+          {countries.map((item) => (
+            <div
+              className="flex items-center gap-2 my-4 cursor-pointer hover:text-[#f85757]"
+              key={item.id}
+              onClick={() => countrySelecthandler(item)}
+            >
+              <Image src={item.flag} width="30px" height="30px" />
+              <span className="font-bold ">{item.name}</span>
+            </div>
+          ))}
         </Modal>
       </div>
     </div>

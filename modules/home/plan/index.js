@@ -79,7 +79,7 @@ const Plan = () => {
   ];
 
   return (
-    <div className="border-8 flex flex-wrap justify-evenly p-5 ">
+    <div className="flex flex-wrap justify-evenly p-5 ">
       {planCardsData?.map((e, i) => (
         <PlanCards
           key={e.id}

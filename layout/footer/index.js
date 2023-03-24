@@ -13,7 +13,8 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
+import CountrySelecter from "components/countrySelector/CountrySelecter";
+// import "bootstrap/dist/css/bootstrap.css";
 
 const Footer = () => {
   return (
@@ -152,6 +153,7 @@ const Footer = () => {
           </div>
           <div className={style.section_three}>
             <p>Explore by country</p>
+            <CountrySelecter />
           </div>
         </div>
 

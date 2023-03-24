@@ -1,3 +1,6 @@
+import DatalistInput, { useComboboxControls } from "react-datalist-input";
+import "react-datalist-input/dist/styles.css";
+import { cities } from "utils/CitiList";
 import React, { useState } from "react";
 import Image from "next/image";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
@@ -8,18 +11,8 @@ import styles from "/styles/vendors/vendor.module.scss";
 import Vector from "public/assests/shop-invitation/weddingcard.png";
 import stylesButton from "/styles/modal/modal.module.scss";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import {
-  AiFillStar,
-  AiOutlineUsergroupAdd,
-  AiOutlineRight,
-  AiOutlineDown,
-} from "react-icons/ai";
-import {
-  GiElvenCastle,
-  GiCastle,
-  GiNestedHearts,
-  GiLargeDress,
-} from "react-icons/gi";
+import { AiOutlineRight, AiOutlineDown } from "react-icons/ai";
+import {} from "react-icons/gi";
 
 let active = 2;
 let items = [];
@@ -31,184 +24,14 @@ for (let number = 1; number <= 5; number++) {
   );
 }
 
-const cities = [
-  "Abbottabad",
-  "Astore",
-  "Attock",
-  "Awaran",
-  "Badin",
-  "Bagh",
-  "Bahawalnagar",
-  "Bahawalpur",
-  "Bajaur",
-  "Bannu",
-  "Barkhan",
-  "Batagram",
-  "Bhakkar",
-  "Bhimber",
-  "Buner",
-  "Chagai",
-  "Chakwal",
-  "Charsadda",
-  "Chiniot",
-  "Dadu",
-  "Darel",
-  "Dera-Bugti",
-  "Dera-Ghazi-Khan",
-  "Dera-Ismail-Khan",
-  "Diamer",
-  "Duki",
-  "Faisalabad",
-  "",
-  "Ghizer",
-  "Ghotki",
-  "Gilgit",
-  "Gujranwala",
-  "Gujrat",
-  "Gupis",
-  "Yasin",
-  "Gwadar",
-  "Hafizabad",
-  "Hangu",
-  "Haripur",
-  "Harnai",
-  "Hattian",
-  "Haveli",
-  "Hunza",
-  "Hyderabad",
-  "Islamabad",
-  "Jacobabad",
-  "Jafarabad",
-  "Jamshoro",
-  "JhalMagsi",
-  "Jhang",
-  "Jhelum",
-  "Kachhi",
-  "Kalat",
-  "Karachi-Central",
-  "Karachi-East",
-  "Karachi-South",
-  "Karachi-West",
-  "Karak",
-  "Kashmore",
-  "Kasur",
-  "Kech",
-  "Khairpur",
-  "Khanewal",
-  "Kharan",
-  "Kharmang",
-  "Khushab",
-  "Khuzdar",
-  "Khyber",
-  "Killa-Abdullah",
-  "Kohat",
-  "Kohlu",
-  "Kolai-Pallas",
-  "Korangi",
-  "Kotli",
-  "Kurram",
-  "Lahore",
-  "Lakki-Marwat",
-  "Larkana",
-  "Lasbela",
-  "Layyah",
-  "Lodhran",
-  "Loralai",
-  "Lower-Chitral",
-  "Lower-Dir",
-  "Lower-Kohistan",
-  "Malakand",
-  "Malir",
-  "Mandi-Bahauddin",
-  "Mansehra",
-  "Mardan",
-  "Mastung",
-  "Matiari",
-  "Mianwali",
-  "Mirpur-Khas",
-  "Mirpur",
-  "Mohmand",
-  "Multan",
-  "Musakhel",
-  "Muzaffarabad",
-  "Muzaffargarh",
-  "Nagar",
-  "Nankana-Sahib",
-  "Narowal",
-  "Naseerabad",
-  "Naushahro-Firoze",
-  "Neelum",
-  "North-Waziristan",
-  "Nowshera",
-  "Nushki",
-  "Okara",
-  "Orakzai",
-  "Pakpattan",
-  "Panjgur",
-  "Peshawar",
-  "Pishin",
-  "Poonch",
-  "Qambar-Shahdadkot",
-  "Qilla-Saifullah",
-  "Quetta",
-  "Rahim-Yar-Khan",
-  "Rajanpur",
-  "Rawalpindi",
-  "Roundu",
-  "Sahiwal",
-  "Sanghar",
-  "Sargodha",
-  "Shaheed-Benazirabad",
-  "Shaheed",
-  "Sikandarabad",
-  "Shangla",
-  "Sheikhupura",
-  "Sherani",
-  "Shigar",
-  "Shikarpur",
-  "Sialkot",
-  "Sibi",
-  "Skardu",
-  "Sohbatpur",
-  "South",
-  "Waziristan",
-  "Sudhnutti",
-  "Sujawal",
-  "Sukkur",
-  "Swabi",
-  "Swat",
-  "Tando",
-  "Allahyar",
-  "Tando",
-  "Muhammad",
-  "Khan",
-  "Tangir",
-  "Tank",
-  "Tharparkar",
-  "Thatta",
-  "Toba",
-  "Tek",
-  "Singh",
-  "Tor",
-  "Ghar",
-  "Umerkot",
-  "Upper",
-  "Chitral",
-  "Upper",
-  "Dir",
-  "Upper",
-  "Kohistan",
-  "Vehari",
-  "Washuk",
-  "Zhob",
-  "Ziarat",
-];
-
 const SideBar = () => {
   const [paper, showPaper] = useState(false);
   const [price, showPrice] = useState(false);
   const [type, showType] = useState(false);
   const [mobileCard, showMobileCard] = useState(false);
+  const [, setCity] = useState("");
+  const { setValue, value } = useComboboxControls({ initialValue: "" });
+  const [isExpanded, setIsExpanded] = useState(true);
 
   return (
     <div className="mt-5">
@@ -253,7 +76,7 @@ const SideBar = () => {
                 </div>
                 <div>
                   <input type="checkbox" className="bg-white" />
-                  <span>Venue</span>
+                  <span> sdds</span>
                 </div>
               </div>
             )}
@@ -324,26 +147,12 @@ const SideBar = () => {
                     ))}
                   </datalist>
                 </FloatingLabel>
-                {/* <div>
-                        <input className={styles.input} type='checkbox' />
-                        <span>Cards</span>
-                    </div>
-                    <div>
-                        <input type='checkbox' />
-                        <span>Boxed Gifting</span>
-                    </div>
-                    <div>
-                        <input type='checkbox' />
-                        <span>Novel Concepts</span>
-                    </div> */}
               </div>
             )}
           </div>
         </div>
       )}
 
-      {/* <Container fluid>
-                <Row> */}
       <Col md={12} className={styles.filterContainer}>
         <h1>Categories</h1>
         <div>
@@ -353,13 +162,11 @@ const SideBar = () => {
               paper && styles.actvelink
             } `}
           >
-            {/* <div> */}
             {!paper ? (
               <AiOutlineRight size={20} />
             ) : (
               <AiOutlineDown size={20} />
             )}
-            {/* </div> */}
             <span> Wedding Vendors </span>
           </div>
 
@@ -367,27 +174,19 @@ const SideBar = () => {
             <div className={styles.expandable}>
               <div>
                 <input type="checkbox" className="bg-white" />
-                <span>Matte</span>
+                <span>Catering </span>
               </div>
               <div>
                 <input type="checkbox" className="bg-white" />
-                <span>Glossy</span>
+                <span>Decoration</span>
               </div>
               <div>
                 <input type="checkbox" className="bg-white" />
-                <span>Handmade</span>
+                <span>Florist</span>
               </div>
               <div>
                 <input type="checkbox" className="bg-white" />
-                <span>Mylar</span>
-              </div>
-              <div>
-                <input type="checkbox" className="bg-white" />
-                <span>Recycled</span>
-              </div>
-              <div>
-                <input type="checkbox" className="bg-white" />
-                <span>Parchment</span>
+                <span>Venue</span>
               </div>
             </div>
           )}
@@ -431,30 +230,41 @@ const SideBar = () => {
           </div>
 
           {type && (
-            <div className={styles.expandable}>
-              <FloatingLabel
-                controlId="floatingInputGrid"
-                label="Search Location"
+            <div
+              // className={styles.expandable}
+              className="p-2"
+              style={{ position: "relative", zIndex: 10 }}
+            >
+              <div
+                style={{
+                  zIndex: 10,
+                  height: "50px",
+                  marginRight: "100px",
+                }}
               >
-                <Form.Control
-                  type="text"
-                  list="locations"
-                  placeholder="Search Vendors, Catering"
-                  className={styles.input}
-                  // <AiOutlineSearch />
+                <DatalistInput
+                  placeholder="Location"
+                  items={cities}
+                  value={value}
+                  setValue={setValue}
+                  onSelect={(item) => {
+                    setCity(item.value);
+                  }}
+                  isExpanded={false}
+                  isCollapsedStyle={{
+                    border: "none",
+                    outline: "none",
+                    maxHeight: "50vh",
+                    overflowY: "scroll",
+                  }}
+                  isExpandedStyle={{
+                    maxHeight: "50vh",
+                    overflowY: "scroll",
+                    border: "none",
+                    outline: "none",
+                  }}
                 />
-
-                <datalist
-                  id="locations"
-                  className={`hidden text-black bg-white`}
-                >
-                  {cities.map((item, index) => (
-                    <option className="bg-white" key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </datalist>
-              </FloatingLabel>
+              </div>
             </div>
           )}
         </div>
@@ -471,10 +281,6 @@ const SideBar = () => {
           Filters{" "}
         </button>
       </Col>
-
-      {/* 
-                </Row>
-            </Container> */}
     </div>
   );
 };

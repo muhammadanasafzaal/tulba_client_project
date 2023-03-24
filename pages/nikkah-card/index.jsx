@@ -14,7 +14,7 @@ const NikkahTemplate = () => {
       <SpecialEvent />
       <AboutEvent />
       <InfoForm />
-      <Footer />
+
     </div>
   );
 };

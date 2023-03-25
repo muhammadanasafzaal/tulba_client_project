@@ -52,6 +52,11 @@ const InfoForm = () => {
             rows={5}
           />
         </div>
+        <div className=" flex justify-center lg:justify-end">
+          <div className="bg-[#f85757] px-5 cursor-pointer py-2  rounded-lg hover:opacity-80">
+            Submit
+          </div>
+        </div>
       </div>
     </div>
   );

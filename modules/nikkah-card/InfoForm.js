@@ -31,15 +31,23 @@ const InfoForm = () => {
       <div className=" w-full mt-[75px]">
         <div className="w-full my-[12px]">
           <label className="text-white font-sans">Name</label>
-          <input className="w-full bg-transparent border-b border-[#f85757] outline-0" />
+          <input
+            autoComplete="off"
+            className="w-full bg-transparent border-b border-[#f85757] outline-0"
+          />
         </div>
         <div className="w-full my-[12px]">
           <label className="text-white font-sans">Email</label>
-          <input className="w-full bg-transparent border-b border-[#f85757] outline-0" />
+          <input
+            autoComplete="off"
+            className="w-full bg-transparent border-b border-[#f85757] outline-0"
+            type="email"
+          />
         </div>
         <div className="w-full my-[12px]">
           <label className="text-white font-sans">Message</label>
           <textarea
+            autoComplete="off"
             className="w-full bg-transparent border-b border-[#f85757] outline-0"
             rows={5}
           />

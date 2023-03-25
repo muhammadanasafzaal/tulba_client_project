@@ -6,6 +6,7 @@ import NikkahCardBg from "../../public/assests/nikkah-card/NikkahCardBg.png";
 const CardSection = () => {
   return (
     <div className="flex justify-center items-center w-screen relative  bg-[#f85757]  ">
+      <Image src={NikkahCardBg} alt="spiral" layout="fill" objectFit="cover" />
       <div className="  border-[12px] z-10 border-[#253659]  bg-white px-12 py-16 flex  flex-col items-center justify-between gap-12 my-14 ">
         <div>
           <Image className="h-auto max-w-full" src={BMText} />
@@ -47,7 +48,6 @@ const CardSection = () => {
           </h2>
         </div>
       </div>
-      {/* <Image className="w-full  border-2 border-black" src={NikkahCardBg} /> */}
     </div>
   );
 };

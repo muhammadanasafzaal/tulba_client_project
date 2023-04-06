@@ -959,6 +959,7 @@
   background: #ffffff;
   border: 0.7px solid #cccccc;
   border-radius: 25px;
+  overflow: hidden;
 
   .cardbtn {
     font-family: "Poppins";
@@ -1039,7 +1040,7 @@
   .myspan {
     font-size: 20px;
     font-weight: 600;
-    margin-top: 29px;
+    // margin-top: 29px;
   }
   .actbtn {
     background-color: #fff;

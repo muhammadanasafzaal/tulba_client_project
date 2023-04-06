@@ -46,6 +46,9 @@ const Plan = () => {
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
     },
+  ];
+
+  const planCardsData2 = [
     {
       id: 4,
       primaryColor: "#2A5CB9",
@@ -81,6 +84,18 @@ const Plan = () => {
   return (
     <div className="flex flex-wrap justify-evenly p-5 ">
       {planCardsData?.map((e, i) => (
+        <PlanCards
+          key={e.id}
+          primaryColor={e.primaryColor}
+          secondaryColor={e.secondaryColor}
+          image={e.image}
+          headingText={e.headingText}
+          text={e.text}
+          btnTextColor={e.btnTextColor}
+        />
+      ))}
+      <div></div>
+      {planCardsData2?.map((e, i) => (
         <PlanCards
           key={e.id}
           primaryColor={e.primaryColor}

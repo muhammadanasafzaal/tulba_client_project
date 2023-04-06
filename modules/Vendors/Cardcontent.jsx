@@ -96,7 +96,7 @@ const Cardcontent = (props) => {
                 <Button className={`mx-3  ${styles.cardbtn}`}>
                   {props.btn}
                 </Button>
-                <div className="flex items-center gap-2 ">
+                <div className="flex items-center gap-2 mx-2 ">
                   <AiFillStar className={`  ${styles.star}`} />
                   <span className={`  ${styles.myspan}`}>5</span>
                 </div>

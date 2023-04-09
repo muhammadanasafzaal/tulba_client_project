@@ -266,3 +266,22 @@ $deviceMaxWidth: 1024px;
     display: none;
   }
 }
+
+.inputShadow {
+  box-shadow: -19px 5px 57px -12px rgba(31, 30, 30, 0.75);
+  -webkit-box-shadow: -19px 5px 57px -12px rgba(31, 30, 30, 0.75);
+  -moz-box-shadow: -19px 5px 57px -12px rgba(31, 30, 30, 0.75);
+}
+.inputShadow2 {
+  box-shadow: 10px 5px 57px -12px rgba(31, 30, 30, 0.75);
+  -webkit-box-shadow: 10px 5px 57px -12px rgba(31, 30, 30, 0.75);
+  -moz-box-shadow: 10px 5px 57px -12px rgba(31, 30, 30, 0.75);
+}
+.banner_img {
+  background-image: url("../../public/assests/RSVP/banner.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}

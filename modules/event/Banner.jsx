@@ -1,15 +1,14 @@
+import Link from "next/link";
+import Image from "next/image";
+import fb from "public/assests/fb.svg";
+import React, { useState } from "react";
+import SignupPopup from "./SignupPopup";
+import { FaUser } from "react-icons/fa";
+import apple from "public/assests/apple.svg";
+import { BsEnvelopeFill } from "react-icons/bs";
 import styles from "/styles/Rsvp/Rsvp.module.scss";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Image from "next/image";
 import googlelogo from "public/assests/GoogleLogo.svg";
-import fb from "public/assests/fb.svg";
-import apple from "public/assests/apple.svg";
-import { Container, Row, Col } from "react-bootstrap";
-import { BsEnvelopeFill } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
-import Link from "next/link";
-import SignupPopup from "./SignupPopup";
-import React, { useState } from "react";
 
 const Banner = () => {
   const [modal, setModal] = useState(false);
@@ -17,7 +16,7 @@ const Banner = () => {
   return (
     <>
       {modal && <SignupPopup modal={modal} setModal={setModal} />}
-      <div className="flex flex-1">
+      <div className="flex flex-1  ">
         <div className="flex-1 lg:flex-[0.5] px-[6%] md:pl-[6%] z-10 ">
           <div>
             <Breadcrumb>
@@ -138,8 +137,8 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex flex-[0.5] relative">
-          <div className="absolute h-full w-[70%] right-[65%]  bg-white rounded-full"></div>
+        <div className="hidden lg:flex flex-[0.5] relative ">
+          {/* <div className="absolute h-full w-[70%] right-[65%]  bg-white rounded-full"></div> */}
           <div className={styles.banner_img}></div>
         </div>
       </div>
@@ -148,12 +147,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-// .banner_img {
-//   background-image: url("../../public/assests/RSVP/banner.svg");
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   height: 100%;
-//   width: 100%;
-// }

@@ -127,7 +127,7 @@ const Banner = () => {
                   className="text-base leading-10 "
                 >
                   Already have an account?{" "}
-                  <Link href="/loginin">
+                  <Link href="/login">
                     <span className="text-[#f85757]  cursor-pointer">
                       Log in
                     </span>

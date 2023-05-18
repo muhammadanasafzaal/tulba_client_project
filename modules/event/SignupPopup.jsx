@@ -132,7 +132,7 @@ const SignupPopup = ({ modal, setModal }) => {
                     </div>
                 </form>
                 <div className={` text-center ${styles.login_link}`}>
-                    Already have an account! <Link href="/loginin"> Log in now</Link>
+                    Already have an account! <Link href="/login"> Log in now</Link>
                 </div>
             </div>
         </div>

@@ -121,7 +121,7 @@ const Header = () => {
                     </li>
                   </ul>
                   <div className={style.btn_header2}>
-                    <Link href={"/loginin"}>
+                    <Link href={"/login"}>
                       <Button value={"Log in"} />
                     </Link>
                   </div>

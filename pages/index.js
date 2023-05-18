@@ -11,7 +11,7 @@ import Vendors from "modules/home/Vendors";
 import Testimonial from "modules/home/Testimonial";
 import Browse from "modules/home/Browse";
 ////////////////////
-import { store } from "./../redux/store";
+import { store } from "../redux/store";
 import { Provider } from "react-redux";
 // import "bootstrap/dist/css/bootstrap.css";
 
@@ -19,22 +19,22 @@ import { Provider } from "react-redux";
 // import Login from "./loginin";
 // import ForgotPassword from "./forgotpassword";
 export default function Home() {
-  return (
-    <Provider store={store}>
-      <div className={styles.mainPage_section}>
-        <Header />
-        <HomeTopSection />
-        <Plan />
-        <Browse />
-        <Template />
-        <Testimonial />
-        <Vendors />
-        <Faq />
-        <Footer />
-        {/* <Signup /> */}
-        {/* <Login/> */}
-        {/* <ForgotPassword/> */}
-      </div>
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<div className={styles.mainPage_section}>
+				<Header />
+				<HomeTopSection />
+				<Plan />
+				<Browse />
+				<Template />
+				<Testimonial />
+				<Vendors />
+				<Faq />
+				<Footer />
+				{/* <Signup /> */}
+				{/* <Login/> */}
+				{/* <ForgotPassword/> */}
+			</div>
+		</Provider>
+	);
 }

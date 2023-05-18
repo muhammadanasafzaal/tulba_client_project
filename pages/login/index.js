@@ -1,67 +1,58 @@
 import Button from "components/form/button";
 import InputField from "components/form/inputfield";
-import styles from "/styles/authentication/Signup.module.scss";
+import styles from "/styles/authentication/Login.module.scss";
 import Image from "next/image";
 import googlelogo from "public/assests/GoogleLogo.svg";
 import facebooklogo from "public/assests/facebooklogo.svg";
 import Link from "next/link";
 import { useState } from "react";
+import { api } from "../../services/api";
 import { IoIosArrowDropleft } from "react-icons/io";
 import "bootstrap/dist/css/bootstrap.css";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "redux/auth/authActions";
+import { userLogin } from "redux/auth/authActions";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-const Signup = () => {
-	const [name, setName] = useState("");
+const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [passwordConfirm, setpasswordConfirm] = useState("");
-	const router = useRouter();
+  const router = useRouter()
 
-	const { loading, userInfo, error, success } = useSelector(
+	const { loading, userInfo, error } = useSelector(
 		(state) => state.auth
 	);
 	const dispatch = useDispatch();
 
-	console.log(loading, userInfo, error, success);
-
-	const handleSignup = async () => {
+	const handleLogin = async () => {
 		let body = {
-			name,
 			email,
 			password,
-			passwordConfirm,
-			userRole: "user",
-			status: "active",
 		};
 
-		dispatch(registerUser(body));
+		dispatch(userLogin(body));
 	};
 
-	useEffect(() => {
-		success && userInfo && router.push("/profile");
-	}, [success, userInfo, router]);
-  
   useEffect(() => {
-    error && alert(error)
-  }, [error])
+		userInfo && router.push("/profile");
+	}, [userInfo, router]);
+
+	useEffect(() => {
+		error && alert(error);
+	}, [error]);
 
 	return (
 		<div
-			className={`${styles.signup_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
+			className={`${styles.loginin_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
 		>
-			<div className={`${styles.signup_nested} bg-white p-6`}>
-				<div className={styles.signup_heading}>
+			<div className={`${styles.login_nested} bg-white p-6`}>
+				<div className={styles.login_heading}>
 					<div className={`${styles.backpage}`}>
 						<Link href='/'>
 							<IoIosArrowDropleft className='text-3xl cursor-pointer ml-2' />
 						</Link>
 					</div>
-					<h1 className='text-center text-black text-2xl leading-10'>
-						Create Your New Account
-					</h1>
+					<h1 className='text-center text-black text-2xl leading-10'>Log in</h1>
 					<p className='text-center leading-4'>
 						Enter your details to get started
 					</p>
@@ -108,17 +99,8 @@ const Signup = () => {
 					<div></div>
 				</div>
 				{/* From section */}
-				<form className={` ${styles.form_signup}`}>
-					<div className={styles.signup_inputbox}>
-						<InputField
-							placeholder='Name'
-							type='text'
-							label='Name'
-							value={name}
-							onChange={(e) => setName(e.target.value)}
-						/>
-					</div>
-					<div className={styles.signup_inputbox}>
+				<form className={` ${styles.form_login}`}>
+					<div className={styles.login_inputbox}>
 						<InputField
 							placeholder='Email'
 							type='email'
@@ -127,7 +109,7 @@ const Signup = () => {
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</div>
-					<div className={styles.signup_inputbox}>
+					<div className={styles.login_inputbox}>
 						<InputField
 							placeholder='Password'
 							type='password'
@@ -136,31 +118,36 @@ const Signup = () => {
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
-					<div className={styles.signup_inputbox}>
-						<InputField
-							placeholder='Confirm password'
-							type='password'
-							label='Confirm Password'
-							value={passwordConfirm}
-							onChange={(e) => setpasswordConfirm(e.target.value)}
-						/>
+					<div
+						className={`flex justify-between py-2 px-4 my-3 items-center ${styles.btnlink}`}
+					>
+						<label
+							htmlFor='remindercheck'
+							className='flex items-center text-base leading-5'
+						>
+							<input
+								type='checkbox'
+								id='remindercheck'
+								className='mr-2 bg-white mb-1'
+							/>
+							Remember Me
+						</label>
+						<div>
+							<Link href='/forgotpassword' className='text-base leading-5'>
+								Forgot Password?
+							</Link>
+						</div>
 					</div>
-					<div className={` ${styles.btn_signup}`}>
-						<Button
-							type='button'
-							value={"Sign up"}
-							onClick={() => handleSignup()}
-							padding='12px 0px'
-							disabled={loading}
-						/>
+					<div className={` ${styles.btn_login}`} onClick={() => handleLogin()}>
+						<Button disabled = {loading} type='button' value={"Login"} padding='12px 0px' />
 					</div>
 				</form>
 				<div className={` text-center ${styles.login_link}`}>
-					Already have an account! <Link href='/login'>Log in</Link>
+					Don’t have an account ? <Link href='/signup'>Sign up</Link>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Signup;
+export default Login;

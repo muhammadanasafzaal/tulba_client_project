@@ -28,7 +28,7 @@ const ForgotPassword = () => {
     >
       <div className={`${styles.forgotpassword_nested} bg-white p-6`}>
         <div className={`${styles.backpage}`}>
-          <Link href="/loginin">
+          <Link href="/login">
             <IoIosArrowDropleft className="text-3xl cursor-pointer ml-2" />
           </Link>
         </div>

@@ -3,8 +3,13 @@ import Header from "layout/header";
 import Banner from "modules/profile/Banner";
 import Temp from "modules/profile/Temp";
 import "bootstrap/dist/css/bootstrap.css";
+import { useSelector } from "react-redux";
 
-const index = () => {
+const Profile = () => {
+  const { userInfo } = useSelector(
+		(state) => state.auth
+	);
+  console.log("From Profile", userInfo);
   return (
     <div>
       <Header />
@@ -15,4 +20,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Profile;

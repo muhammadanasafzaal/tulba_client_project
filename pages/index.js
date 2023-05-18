@@ -11,8 +11,8 @@ import Vendors from "modules/home/Vendors";
 import Testimonial from "modules/home/Testimonial";
 import Browse from "modules/home/Browse";
 ////////////////////
-import { store } from "../redux/store";
 import { Provider } from "react-redux";
+import store from "redux/store";
 // import "bootstrap/dist/css/bootstrap.css";
 
 // import Signup from "./signup";

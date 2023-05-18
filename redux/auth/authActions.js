@@ -6,6 +6,9 @@ export const registerUser = createAsyncThunk(
 	async (data, { rejectWithValue }) => {
 		try {
 			const res = await api.post("/api/v1/auth/signup", data);
+			typeof window !== undefined &&
+				localStorage.setItem("token", res.data.userToken);
+
 			return res.data;
 		} catch (error) {
 			// return custom error message from backend if present
@@ -23,6 +26,9 @@ export const userLogin = createAsyncThunk(
 	async (data, { rejectWithValue }) => {
 		try {
 			const res = await api.post("/api/v1/auth/login", data);
+			typeof window !== undefined &&
+				localStorage.setItem("token", res.data.userToken);
+				
 			return res.data;
 		} catch (error) {
 			// return custom error message from API if any

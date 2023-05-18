@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "styles/layout/header.module.scss";
 import tulbalogo from "public/assests/Headerlogo.svg";
 import cart from "public/assests/cart.svg";
@@ -12,11 +12,25 @@ import { Container, Row, Col, Navbar } from "react-bootstrap";
 import searchIcon from "public/assests/searchIcon.svg";
 import closeIcon from "public/assests/close.svg";
 import "bootstrap/dist/css/bootstrap.css";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "redux/auth/authActions";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [modalShow, setModalShow] = React.useState(false);
   const [showSearch, setShowSearch] = React.useState(false);
+  const { userInfo, loggedOut } = useSelector((state) => state.auth);
+	const dispatch = useDispatch()
+	const router = useRouter()
+
+	const handleLogout = () => {
+		dispatch(userLogout())
+	}
+
+	useEffect(() => {
+		loggedOut && router.push("/")
+	}, [loggedOut]);
 
   return (
     // <Container fluid className='px-5'>
@@ -120,16 +134,25 @@ const Header = () => {
                       <Link href={"/nikkah-templates"}>Nikkah Template</Link>
                     </li>
                   </ul>
-                  <div className={style.btn_header2}>
-                    <Link href={"/login"}>
-                      <Button value={"Log in"} />
-                    </Link>
-                  </div>
-                  <div className={style.btn_header}>
-                    <Link href={"/signup"}>
-                      <Button value={"Sign up"} />
-                    </Link>
-                  </div>
+                  {userInfo ? 
+									<>
+										<div className={style.btn_header} onClick={handleLogout}>
+                      <Button value={"Log out"} />
+                  	</div>
+									</> 
+									: 
+									<>
+                  	<div className={style.btn_header2}>
+                    	<Link href={"/login"}>
+                      	<Button value={"Log in"} />
+                    	</Link>
+                  	</div>
+										<div className={style.btn_header}>
+											<Link href={"/signup"}>
+												<Button value={"Sign up"} />
+											</Link>
+										</div>
+                  </>}
                   <div className={style.searchIcon}>
                     <Image
                       alt="search"

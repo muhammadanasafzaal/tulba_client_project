@@ -9,7 +9,7 @@ const Profile = () => {
   const { userInfo } = useSelector(
 		(state) => state.auth
 	);
-  console.log("From Profile", userInfo);
+
   return (
     <div>
       <Header />

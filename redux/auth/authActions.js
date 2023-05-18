@@ -1,13 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "services/api";
+import { getToken, setToken } from "utils/tokens";
 
 export const registerUser = createAsyncThunk(
 	"auth/register",
 	async (data, { rejectWithValue }) => {
 		try {
 			const res = await api.post("/api/v1/auth/signup", data);
-			typeof window !== undefined &&
-				localStorage.setItem("token", res.data.userToken);
+			setToken(res.data.token);
 
 			return res.data;
 		} catch (error) {
@@ -26,9 +26,50 @@ export const userLogin = createAsyncThunk(
 	async (data, { rejectWithValue }) => {
 		try {
 			const res = await api.post("/api/v1/auth/login", data);
-			typeof window !== undefined &&
-				localStorage.setItem("token", res.data.userToken);
-				
+			setToken(res.data.token);
+
+			return res.data;
+		} catch (error) {
+			// return custom error message from API if any
+			if (error.response && error.response.data.message) {
+				return rejectWithValue(error.response.data.message);
+			} else {
+				return rejectWithValue(error.message);
+			}
+		}
+	}
+);
+
+export const getUser = createAsyncThunk(
+	"auth/getMe",
+	async (data, { rejectWithValue }) => {
+		const token = getToken();
+		console.log(token);
+		if (!token) {
+			return { loading: false };
+		}
+		try {
+			const res = await api.get("/api/v1/auth/getMe");
+
+			return { ...res.data, token };
+		} catch (error) {
+			// return custom error message from API if any
+			if (error.response && error.response.data.message) {
+				return rejectWithValue(error.response.data.message);
+			} else {
+				return rejectWithValue(error.message);
+			}
+		}
+	}
+);
+
+export const userLogout = createAsyncThunk(
+	"auth/logout",
+	async (data, { rejectWithValue }) => {
+		try {
+			const res = await api.get("/api/v1/auth/logout");
+			typeof window !== undefined && localStorage.removeItem("token");
+
 			return res.data;
 		} catch (error) {
 			// return custom error message from API if any

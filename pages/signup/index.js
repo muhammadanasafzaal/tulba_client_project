@@ -25,8 +25,6 @@ const Signup = () => {
 	);
 	const dispatch = useDispatch();
 
-	console.log(loading, userInfo, error, success);
-
 	const handleSignup = async () => {
 		let body = {
 			name,
@@ -41,8 +39,8 @@ const Signup = () => {
 	};
 
 	useEffect(() => {
-		success && userInfo && router.push("/profile");
-	}, [success, userInfo, router]);
+		userInfo && router.push("/profile");
+	}, [userInfo, router]);
   
   useEffect(() => {
     error && alert(error)

@@ -17,7 +17,7 @@ import { useRouter } from "next/router";
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-  const router = useRouter()
+  	const router = useRouter()
 
 	const { loading, userInfo, error } = useSelector(
 		(state) => state.auth

@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { registerUser, userLogin } from "./authActions";
+import { registerUser, userLogin, getUser, userLogout } from "./authActions";
 
 const initialState = {
 	loading: false,
-	userInfo: {}, // for user object
+	userInfo: null, // for user object
 	userToken: null, // for storing the JWT
 	error: null,
 	success: false, // for monitoring the registration process.
+	loggedOut: false
 };
 
 const authSlice = createSlice({
@@ -20,7 +21,7 @@ const authSlice = createSlice({
 			state.error = null;
 		},
 		[registerUser.fulfilled]: (state, { payload }) => {
-			state.userInfo = payload.data.user;
+			state.userInfo = payload.data?.user;
 			state.userToken = payload.token;
 			state.loading = false;
 			state.success = true; // registration successful
@@ -35,12 +36,40 @@ const authSlice = createSlice({
 			state.error = null;
 		},
 		[userLogin.fulfilled]: (state, { payload }) => {
-			console.log(payload);
 			state.loading = false;
-			state.userInfo = payload.data.user;
+			state.userInfo = payload.data?.user;
 			state.userToken = payload.token;
 		},
 		[userLogin.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload;
+		},
+		// Get user
+		[getUser.pending]: (state) => {
+			state.loading = true;
+			state.error = null;
+		},
+		[getUser.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.userInfo = payload.data?.user || null;
+			state.userToken = payload.token || null;
+		},
+		[getUser.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload;
+		},
+		// logout user
+		[userLogout.pending]: (state) => {
+			state.loading = true;
+			state.error = null;
+		},
+		[userLogout.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.userInfo = null;
+			state.userToken = null;
+			state.loggedOut = true
+		},
+		[userLogout.rejected]: (state, { payload }) => {
 			state.loading = false;
 			state.error = payload;
 		},

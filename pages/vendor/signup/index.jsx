@@ -1,44 +1,48 @@
 import Button from "components/form/button";
 import InputField from "components/form/inputfield";
-import styles from "/styles/authentication/Login.module.scss";
+import styles from "/styles/authentication/Signup.module.scss";
 import Image from "next/image";
 import googlelogo from "public/assests/GoogleLogo.svg";
 import facebooklogo from "public/assests/facebooklogo.svg";
 import Link from "next/link";
 import { useState } from "react";
-import { api } from "../../services/api";
 import { IoIosArrowDropleft } from "react-icons/io";
 import "bootstrap/dist/css/bootstrap.css";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "redux/auth/authActions";
+import { registerUser } from "redux/auth/authActions";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Loader from "utils/Loader";
 import { toast } from "react-hot-toast";
 import { resetError } from "redux/auth/authSlice";
+import Loader from "utils/Loader";
 
-const Login = () => {
+const Signup = () => {
+	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [passwordConfirm, setpasswordConfirm] = useState("");
 	const router = useRouter();
 
-	const { loading, userInfo, error } = useSelector((state) => state.auth);
+	const { loading, userInfo, error } = useSelector(
+		(state) => state.auth
+	);
 	const dispatch = useDispatch();
 
-	const handleLogin = async () => {
+	const handleSignup = async () => {
 		let body = {
+			name,
 			email,
 			password,
+			passwordConfirm,
+			userRole: "vendor",
+			status: "active",
 		};
 
-		dispatch(userLogin(body));
+		dispatch(registerUser(body));
 	};
 
 	useEffect(() => {
-		if(userInfo) {
-			toast.success("Welcome Back")
-			router.push("/profile");
-		}
+		userInfo && router.push("/vendor/signup/details");
 	}, [userInfo]);
 
 	useEffect(() => {
@@ -50,24 +54,39 @@ const Login = () => {
 
 	return (
 		<div
-			className={`${styles.loginin_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
+			className={`${styles.signup_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
 		>
-			<Loader loading={loading} />
-			<div className={`${styles.login_nested} bg-white p-6`}>
-				<div className={styles.login_heading}>
+			<Loader loading = {loading}/>
+			<div className={`${styles.signup_nested} bg-white p-6`}>
+				<div className={styles.signup_heading}>
 					<div className={`${styles.backpage}`}>
 						<Link href='/'>
 							<IoIosArrowDropleft className='text-3xl cursor-pointer ml-2' />
 						</Link>
 					</div>
-					<h1 className='text-center text-black text-2xl leading-10'>Log in</h1>
+					<h1 className='text-center text-black text-2xl leading-10'>
+						Are You A Vendor?
+					</h1>
 					<p className='text-center leading-4'>
 						Enter your details to get started
 					</p>
 				</div>
+				{/* <div className={styles.signup_heading}>
+					<div className={`${styles.backpage}`}>
+						<Link href='/'>
+							<IoIosArrowDropleft className='text-3xl cursor-pointer ml-2' />
+						</Link>
+					</div>
+					<h1 className='text-center text-black text-2xl leading-10'>
+						Create Your New Account
+					</h1>
+					<p className='text-center leading-4'>
+						Enter your details to get started
+					</p>
+				</div> */}
 				{/* soical Link section */}
 
-				<div className={styles.soical_links}>
+				{/* <div className={styles.soical_links}>
 					<p className='text-center text-base py-6'>Continue With</p>
 
 					<div className='flex justify-center items-center w-full gap-6'>
@@ -96,7 +115,7 @@ const Login = () => {
 							<span className='text-base leading-6 text-black'>Facebook</span>
 						</div>
 					</div>
-				</div>
+				</div> */}
 
 				{/* or Section */}
 				<div
@@ -107,8 +126,17 @@ const Login = () => {
 					<div></div>
 				</div>
 				{/* From section */}
-				<form className={` ${styles.form_login}`}>
-					<div className={styles.login_inputbox}>
+				<form className={` ${styles.form_signup}`}>
+					<div className={styles.signup_inputbox}>
+						<InputField
+							placeholder='Name'
+							type='text'
+							label='Name'
+							value={name}
+							onChange={(e) => setName(e.target.value)}
+						/>
+					</div>
+					<div className={styles.signup_inputbox}>
 						<InputField
 							placeholder='Email'
 							type='email'
@@ -117,7 +145,7 @@ const Login = () => {
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</div>
-					<div className={styles.login_inputbox}>
+					<div className={styles.signup_inputbox}>
 						<InputField
 							placeholder='Password'
 							type='password'
@@ -126,41 +154,31 @@ const Login = () => {
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
-					<div
-						className={`flex justify-between py-2 px-4 my-3 items-center ${styles.btnlink}`}
-					>
-						<label
-							htmlFor='remindercheck'
-							className='flex items-center text-base leading-5'
-						>
-							<input
-								type='checkbox'
-								id='remindercheck'
-								className='mr-2 bg-white mb-1'
-							/>
-							Remember Me
-						</label>
-						<div>
-							<Link href='/forgotpassword' className='text-base leading-5'>
-								Forgot Password?
-							</Link>
-						</div>
+					<div className={styles.signup_inputbox}>
+						<InputField
+							placeholder='Confirm password'
+							type='password'
+							label='Confirm Password'
+							value={passwordConfirm}
+							onChange={(e) => setpasswordConfirm(e.target.value)}
+						/>
 					</div>
-					<div className={` ${styles.btn_login}`} onClick={() => handleLogin()}>
+					<div className={` ${styles.btn_signup}`}>
 						<Button
-							disabled={loading}
 							type='button'
-							value={"Login"}
+							value={"Next"}
+							onClick={() => handleSignup()}
 							padding='12px 0px'
+							disabled={loading}
 						/>
 					</div>
 				</form>
 				<div className={` text-center ${styles.login_link}`}>
-					Don’t have an account ? <Link href='/signup'>Sign up</Link>
+					Already have an account! <Link href='/login'>Log in</Link>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Login;
+export default Signup;

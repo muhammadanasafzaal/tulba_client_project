@@ -1,14 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from 'styles/checklist/Main.module.scss';
 import Image from 'next/image';
 import checkList from '../../../public/assests/checklist/checklist.png';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
+import AddTaskModal from 'components/popup/checkList_popup';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getTasks } from 'redux/task/taskActions';
+import Loader from 'utils/Loader';
+import { getWeddings } from 'redux/wedding/weddingActions';
+import { toast } from 'react-hot-toast';
 
 const Main = () => {
+    const [modalShow, setModalShow] = useState(false);
+    const [selectedWedding, setSelectedWedding] = useState(null)
+    const weddingState = useSelector(state => state.wedding);
+    const { loading, list } = useSelector((state) => state.task);
+    const dispatch = useDispatch();
+
+    const handleOpenModal = () => {
+        if(!selectedWedding) {
+            toast.error("Please select a wedding first");
+            return
+        }
+
+        setModalShow(true);
+    } 
+
+    useEffect(() => {
+        dispatch(getWeddings());
+    }, []);
+
+    useEffect(() => {
+        if(selectedWedding) {
+            dispatch(getTasks(selectedWedding));
+        }
+    }, [selectedWedding]);
+
+    // console.log(list);
+
     const tasks = ['one', 'one', 'one', 'one', 'one', 'one'];
     return (
         <div className={styles.main}>
+            <Loader loading = {loading || weddingState.loading}/>
             <div className={styles.first} >
                 <div className={styles.titleContainer}>
                     <div className={styles.icon}>
@@ -81,8 +116,25 @@ const Main = () => {
             <div className={styles.second} >
                 <div className={styles.top}>
                     <div className={styles.heading}> <span></span> Tasks</div>
-                    <div className={styles.button}> + Add Your New Task</div>
+                    <div onClick={handleOpenModal} className={styles.button}> + Add Your New Task</div>
                     <div></div>
+                    <div className='bg-white p-2 flex border border-gray-200 rounded'>
+                        <select
+                            className='bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
+                            name='weddingSelect'
+                            onChange={(e) => setSelectedWedding(e.target.value)}
+                            // onChange={handleChange}
+                        >
+                            <option hidden value={null}>
+                                Select wedding 
+                            </option>
+                            {weddingState.list.map((c, _i) => (
+                                <option key={_i} value={c.id}>
+                                    {c.groom} & {c.bride}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
                 <div className={styles.desc}>
                     Add your daily Tasks here and get them processed, see the Status.
@@ -96,10 +148,11 @@ const Main = () => {
                 </div>
 
                 <div className={styles.gray} >
-                    {tasks.map((item, index) => (
+                    {list.length === 0 && <div>No tasks found </div>}
+                    {list.map((item, index) => (
                         <div key={index} className={styles.task}>
                             <div className={styles.corner}></div>
-                            <div className={styles.middle}>Get the Dress from the Mall, Akbar Store</div>
+                            <div className={styles.middle}>{item.name}</div>
                             <div className={styles.corner}> <div></div> </div>
                         </div>
                     ))}
@@ -137,6 +190,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
+            <AddTaskModal selectedWedding = {selectedWedding} show={modalShow} onHide={() => setModalShow(false)} setModalShow = {setModalShow}/>
         </div>
     );
 };

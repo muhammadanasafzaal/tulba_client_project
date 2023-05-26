@@ -7,13 +7,17 @@ const initialState = {
 	userToken: null, // for storing the JWT
 	error: null,
 	success: false, // for monitoring the registration process.
-	loggedOut: false
 };
 
 const authSlice = createSlice({
 	name: "auth",
 	initialState,
-	reducers: {},
+	reducers: {
+		resetError: (state) => {
+			state.error = null;
+			state.loading = false;
+		},
+	},
 	extraReducers: {
 		// register user
 		[registerUser.pending]: (state) => {
@@ -56,7 +60,7 @@ const authSlice = createSlice({
 		},
 		[getUser.rejected]: (state, { payload }) => {
 			state.loading = false;
-			state.error = payload;
+			// state.error = payload;
 		},
 		// logout user
 		[userLogout.pending]: (state) => {
@@ -67,7 +71,6 @@ const authSlice = createSlice({
 			state.loading = false;
 			state.userInfo = null;
 			state.userToken = null;
-			state.loggedOut = true
 		},
 		[userLogout.rejected]: (state, { payload }) => {
 			state.loading = false;
@@ -75,5 +78,7 @@ const authSlice = createSlice({
 		},
 	},
 });
+
+export const { resetError } = authSlice.actions;
 
 export default authSlice.reducer;

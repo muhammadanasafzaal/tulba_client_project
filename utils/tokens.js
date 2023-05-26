@@ -10,3 +10,7 @@ export const getToken = () => {
 	const token = localStorage.getItem("token");
 	return token || null;
 };
+
+export const removeToken = () => {
+	typeof window !== undefined && localStorage.removeItem("token");
+};

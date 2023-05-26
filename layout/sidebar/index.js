@@ -21,7 +21,7 @@ const Sidebar = ({ setOpen, open }) => {
   };
   const handleSubMenu2 = () => {
     setOpen(false);
-    router.push("/Rsvp");
+    router.push("/rsvp");
   };
   const handleSubMenu3 = () => {
     setOpen(false);

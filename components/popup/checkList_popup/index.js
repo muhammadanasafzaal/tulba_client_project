@@ -6,39 +6,29 @@ import styles from "/styles/modal/guestModal.module.scss";
 import React, { useEffect, useState } from "react";
 import { api } from "services/api";
 import { useDispatch, useSelector } from "react-redux";
-import { createRsvp, getRsvp } from "redux/rsvp/rsvpActions";
-import { resetError, resetSuccess } from "redux/rsvp/rsvpSlice";
+import { resetError, resetSuccess } from "redux/task/taskSlice";
 import { toast } from "react-hot-toast";
 import Loader from "utils/Loader";
+import { createTask, getTasks } from "redux/task/taskActions";
 
-const AddGuestModal = (props) => {
-	const [guestData, setGuestData] = useState();
-	const { loading, list, success, error } = useSelector((state) => state.rsvp);
+const AddTaskModal = (props) => {
+	const [taskData, setTaskData] = useState();
+	const { loading, success, error } = useSelector((state) => state.rsvp);
 	const dispatch = useDispatch();
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setGuestData({ ...guestData, [name]: value });
+		setTaskData({ ...taskData, [name]: value });
 	};
 
 	const onSubmit = async () => {
-		const body = {
-			weddingId: props.selectedWedding,
-			weddingEventId: props.selectedWeddingEvent,
-			guestData
-		}
-		dispatch(createRsvp(body));
+		dispatch(createTask({weddingId: props.selectedWedding, taskData}));
 	};
 
 	useEffect(() => {
 		if (success) {
 			toast.success("Successfully added");
-
-			const body = {
-				weddingId: props.selectedWedding,
-				weddingEventId: props.selectedWeddingEvent,
-			};
-			dispatch(getRsvp(body));
+			dispatch(getTasks(props.selectedWedding));
 			dispatch(resetSuccess());
 			props.setModalShow(false);
 		}
@@ -65,33 +55,42 @@ const AddGuestModal = (props) => {
 					<span className='d-flex justify-content-between  items-center'>
 						<div className='d-flex justify-content-start  items-center'>
 							<RiTodoFill className={` ${styles.icon} `} />
-							<span className={`${styles.head} `}>Add New Guest</span>
+							<span className={`${styles.head} `}>Add New Task</span>
 						</div>
 						<div onClick={props.onHide} className={styles.closeButton}>
 							X
 						</div>
 					</span>
-					<p className={styles.subtitle}>Create new guest for your rsvp list</p>
+					<p className={styles.subtitle}>Create new task for you task list</p>
+					<Form.Group className='mb-2' controlId='formGroupEmail'>
+						<Form.Label>Name</Form.Label>
+						<Form.Control
+							name='name'
+							onChange={handleChange}
+							type='text'
+							placeholder='Task name'
+						/>
+					</Form.Group>
 					<Row>
 						<Col md={6}>
 							<Form.Group className='mb-2' controlId='formGroupEmail'>
-								<Form.Label>Name</Form.Label>
+								<Form.Label>Date</Form.Label>
 								<Form.Control
-									name='name'
+									name='taskDate'
 									onChange={handleChange}
-									type='name'
-									placeholder='John Doe'
+									type='date'
+									placeholder='Date'
 								/>
 							</Form.Group>
 						</Col>
 						<Col md={6}>
 							<Form.Group className='mb-2' controlId='formGroupEmail'>
-								<Form.Label>Mobile</Form.Label>
+								<Form.Label>Time</Form.Label>
 								<Form.Control
-									name='mobile'
+									name='taskTime'
 									onChange={handleChange}
-									type='text'
-									placeholder='+1234'
+									type='time'
+									placeholder='Time'
 								/>
 							</Form.Group>
 						</Col>
@@ -101,12 +100,12 @@ const AddGuestModal = (props) => {
                         <Form.Control type="file" placeholder="Enter avatar" />
                     </Form.Group> */}
 					<Form.Group className='mb-2' controlId='formGroupEmail'>
-						<Form.Label>Email</Form.Label>
+						<Form.Label>Notes</Form.Label>
 						<Form.Control
-							name='email'
+							name='notes'
 							onChange={handleChange}
-							type='email'
-							placeholder='name@example.com'
+							type='text'
+							placeholder='Description'
 						/>
 					</Form.Group>
 					{/* <Form.Group className="mb-2" controlId="formGroupEmail">
@@ -118,7 +117,7 @@ const AddGuestModal = (props) => {
 					<Col md={3}></Col>
 					<Col md={6}>
 						<Button className={styles.btn} variant='danger' onClick={onSubmit}>
-							Add Guest
+							Add Task
 						</Button>
 					</Col>
 					{/* <Col md={6}>
@@ -130,4 +129,4 @@ const AddGuestModal = (props) => {
 	);
 };
 
-export default AddGuestModal;
+export default AddTaskModal;

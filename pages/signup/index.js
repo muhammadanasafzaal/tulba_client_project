@@ -12,6 +12,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "redux/auth/authActions";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Loader from "utils/Loader";
+import { toast } from "react-hot-toast";
+import { resetError } from "redux/auth/authSlice";
 
 const Signup = () => {
 	const [name, setName] = useState("");
@@ -20,7 +23,7 @@ const Signup = () => {
 	const [passwordConfirm, setpasswordConfirm] = useState("");
 	const router = useRouter();
 
-	const { loading, userInfo, error, success } = useSelector(
+	const { loading, userInfo, error } = useSelector(
 		(state) => state.auth
 	);
 	const dispatch = useDispatch();
@@ -40,16 +43,20 @@ const Signup = () => {
 
 	useEffect(() => {
 		userInfo && router.push("/profile");
-	}, [userInfo, router]);
+	}, [userInfo]);
   
   useEffect(() => {
-    error && alert(error)
+    if (error) {
+			toast.error(error || "Something went wrong");
+			dispatch(resetError());
+		}
   }, [error])
 
 	return (
 		<div
 			className={`${styles.signup_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
 		>
+			<Loader loading={loading} />
 			<div className={`${styles.signup_nested} bg-white p-6`}>
 				<div className={styles.signup_heading}>
 					<div className={`${styles.backpage}`}>

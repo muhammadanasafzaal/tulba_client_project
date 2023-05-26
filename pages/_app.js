@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Provider } from "react-redux";
 import store from "redux/store";
 import Common from "components/Common";
+import { Toaster } from "react-hot-toast";
 // import 'bootstrap/dist/css/bootstrap.css';
 
 function MyApp({ Component, pageProps }) {
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
       <Common />
+      <Toaster />
     </Provider>
   );
 }

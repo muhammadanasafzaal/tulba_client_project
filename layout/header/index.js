@@ -20,17 +20,12 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [modalShow, setModalShow] = React.useState(false);
   const [showSearch, setShowSearch] = React.useState(false);
-  const { userInfo, loggedOut } = useSelector((state) => state.auth);
+  const { userInfo } = useSelector((state) => state.auth);
 	const dispatch = useDispatch()
-	const router = useRouter()
 
 	const handleLogout = () => {
 		dispatch(userLogout())
 	}
-
-	useEffect(() => {
-		loggedOut && router.push("/")
-	}, [loggedOut]);
 
   return (
     // <Container fluid className='px-5'>
@@ -55,7 +50,7 @@ const Header = () => {
               className={style.headerTop_vendor}
               style={{ textDecoration: "none", color: "black" }}
             >
-              <Link href="/Vendor">
+              <Link href="/vendor/signup">
                 <a
                   style={{
                     textDecoration: "none !important",
@@ -96,7 +91,7 @@ const Header = () => {
                           <Link href={"/shop-invitation"}>Catering</Link>
                         </li>
                         <li className={style.nav__submenu_item}>
-                          <Link href={"/Rsvp"}>Decoration</Link>
+                          <Link href={"/rsvp"}>Decoration</Link>
                         </li>
 
                         <li className={style.nav__submenu_item}>
@@ -120,7 +115,7 @@ const Header = () => {
                           <Link href={"/checklist"}>Checklist</Link>
                         </li>
                         <li className={style.nav__submenu_item}>
-                          <Link href={"/Rsvp"}>Rsvp</Link>
+                          <Link href={"/rsvp"}>Rsvp</Link>
                         </li>
                       </ul>
                     </li>

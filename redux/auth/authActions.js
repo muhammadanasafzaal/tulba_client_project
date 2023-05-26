@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "services/api";
-import { getToken, setToken } from "utils/tokens";
+import { getToken, removeToken, setToken } from "utils/tokens";
 
 export const registerUser = createAsyncThunk(
 	"auth/register",
@@ -53,6 +53,7 @@ export const getUser = createAsyncThunk(
 
 			return { ...res.data, token };
 		} catch (error) {
+			removeToken();
 			// return custom error message from API if any
 			if (error.response && error.response.data.message) {
 				return rejectWithValue(error.response.data.message);
@@ -68,7 +69,8 @@ export const userLogout = createAsyncThunk(
 	async (data, { rejectWithValue }) => {
 		try {
 			const res = await api.get("/api/v1/auth/logout");
-			typeof window !== undefined && localStorage.removeItem("token");
+			removeToken();
+			if (typeof window !== undefined) window.location.href = "/";
 
 			return res.data;
 		} catch (error) {

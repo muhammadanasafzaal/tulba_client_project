@@ -9,7 +9,7 @@ const Banner = () => {
   return (
     <Container fluid className="my-5 p-0">
       <Row style={{ marginTop: "-50px" }}>
-        <Col lg={6} className={` ${styles.banner}`}>
+        <Col lg={4} className={` ${styles.banner}`}>
           <Breadcrumb>
             <Breadcrumb.Item href="/" className={styles.brdcrumb}>
               Home

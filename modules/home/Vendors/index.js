@@ -57,28 +57,28 @@ const Vendors = () => {
                   <VendorCard
                     imgsrc="/../assests/home_img/card.svg"
                     title="Nikkah Nama Style 1"
-                    onclick="/nikkah-templates"
+                    onclick="/nikkah-card-red"
                   />
                 </div>
                 <div>
                   <VendorCard
                     imgsrc="/../assests/home_img/card.svg"
                     title="Nikkah Nama Style 2"
-                    onclick="/nikkah-templates"
+                    onclick="/nikkah-card-yellow"
                   />
                 </div>
                 <div>
                   <VendorCard
                     imgsrc="/../assests/home_img/invitationcard.svg"
                     title="Invitation Card 1"
-                    onclick="/nikkah-templates"
+                    onclick="/asthetical"
                   />
                 </div>
                 <div>
                   <VendorCard
                     imgsrc="/../assests/home_img/invitationcard.svg"
                     title="Invitation Card 1"
-                    onclick="/nikkah-templates"
+                    onclick="/asthetical"
                   />
                 </div>
               </Slider>

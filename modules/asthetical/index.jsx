@@ -72,14 +72,12 @@ const Asthetical = () => {
               <span className={styles.check}>Free Quick Change Date.</span>
             </div>
             <div>
-              <Link href="/">
-                <Button className={styles.as_btn}>
-                  <div className="d-flex justify-content-center">
-                    <Image src={Img} />
-                    <p className="my-3"> Get a free sample from us</p>
-                  </div>
-                </Button>
-              </Link>
+              <Button className={styles.as_btn}>
+                <div className="d-flex justify-content-center">
+                  <Image src={Img} />
+                  <p className="my-3"> Get a free sample from us</p>
+                </div>
+              </Button>
             </div>
             <div className="my-5">
               <hr className="my-5" />

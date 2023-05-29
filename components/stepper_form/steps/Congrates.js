@@ -62,11 +62,11 @@ export default function Congrates() {
 				>
 					{success ? "Your account has been created." : "Something went wrong"}
 				</div>
-				<Link href='/' className='mt-10'>
+				{/* <Link href='/' className='mt-10'> */}
 					<button className='h-10 px-5 text-[#F85757] transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-[#F85757] hover:text-white'>
 						Close
 					</button>
-				</Link>
+				{/* </Link> */}
 			</div>
 		</div>
 	);

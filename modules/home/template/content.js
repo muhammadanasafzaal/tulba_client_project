@@ -31,7 +31,7 @@ const Content = (props) => {
                                 <li>{props.li_two}</li>
                                 <span className="d-flex justify-content-start">
                                     <li>{props.li_three}
-                                        <Link href="/event">
+                                        <Link href={props.link}>
                                             <button  variant="danger"
                                                 className={styles.libtn}> see more
                                             </button>
@@ -63,10 +63,10 @@ const Content2 = (props) => {
                                 <li>{props.li_two}</li>
                                 <span className="d-flex justify-content-start">
                                     <li>{props.li_three}
-                                        <Link href="/castle">
-                                            <Button variant="danger"
+                                        <Link href={props.link}>
+                                            <button variant="danger"
                                                 className={styles.libtn}> see more
-                                            </Button>
+                                            </button>
 
                                         </Link>
                                     </li>

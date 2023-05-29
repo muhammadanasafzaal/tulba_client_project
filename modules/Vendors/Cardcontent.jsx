@@ -66,8 +66,8 @@ const Cardcontent = (props) => {
                   );
                 }}
               >
-                {[1, 2, 3, 4].map((e) => (
-                  <div>
+                {[1, 2, 3, 4].map((e, _i) => (
+                  <div key = {_i}>
                     <Image
                       src={props.imgsrc}
                       width={"303px"}

@@ -52,7 +52,7 @@ const Sidebar = ({ setOpen, open }) => {
         <div className={style.sd_body}>
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/Vendors">
+              <Link href="/vendors">
                 <a className={style.item}>Vendors </a>
               </Link>
               <div
@@ -66,9 +66,18 @@ const Sidebar = ({ setOpen, open }) => {
             </div>
             {vendors && (
               <div className={style.submenu}>
-                <div onClick={handleSubMenu1}>Wedding Store</div>
-                <div onClick={handleSubMenu2}>RSVP</div>
-                <div onClick={handleSubMenu3}>CheckOut</div>
+                <Link href = "/vendors">
+                  <div>Catering</div>
+                </Link>
+                <Link href = "/vendors">
+                  <div>Decoration</div>
+                </Link>
+                <Link href = "/vendors">
+                  <div>Florist</div>
+                </Link>
+                <Link href = "/vendors">
+                  <div>Venue</div>
+                </Link>
               </div>
             )}
           </div>
@@ -89,15 +98,19 @@ const Sidebar = ({ setOpen, open }) => {
             </div>
             {planningTools && (
               <div className={style.submenu}>
-                <div onClick={handleSubMenu4}>Check List</div>
-                <div onClick={handleSubMenu2}>RSVP</div>
+                <Link href = "/checklist">
+                  <div >Check List</div>
+                </Link>
+                <Link href = "/rsvp">
+                  <div>RSVP</div>
+                </Link>
               </div>
             )}
           </div>
 
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/event">
+              <Link href="/template">
                 <a className={style.item}>Event Website </a>
               </Link>
             </div>
@@ -113,7 +126,7 @@ const Sidebar = ({ setOpen, open }) => {
 
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/shop-invitation">
+              <Link href="/nikkah-templates">
                 <a className={style.item}>Nikkah Templates </a>
               </Link>
             </div>

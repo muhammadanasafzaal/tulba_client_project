@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const PlanCards = ({
@@ -9,6 +10,7 @@ const PlanCards = ({
   text,
   btnTextColor,
   width,
+  link
 }) => {
   console.log(primaryColor);
   return (
@@ -36,12 +38,14 @@ const PlanCards = ({
           {headingText}
         </span>
         <span>{text}</span>
-        <div
-          style={{ backgroundColor: primaryColor, color: btnTextColor }}
-          className=" text-lg inline self-start px-3 py-2 rounded-[35px] cursor-pointer hover:opacity-80 hover:shadow-xl"
-        >
-          Learn More
-        </div>
+        <Link href={link}>
+          <div
+            style={{ backgroundColor: primaryColor, color: btnTextColor }}
+            className=" text-lg inline self-start px-3 py-2 rounded-[35px] cursor-pointer hover:opacity-80 hover:shadow-xl"
+          >
+            Learn More
+          </div>
+        </Link>
       </div>
     </div>
   );

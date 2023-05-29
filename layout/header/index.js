@@ -50,7 +50,7 @@ const Header = () => {
               className={style.headerTop_vendor}
               style={{ textDecoration: "none", color: "black" }}
             >
-              <Link href="/vendor/signup">
+              <Link href="/vendors/signup">
                 <a
                   style={{
                     textDecoration: "none !important",
@@ -84,27 +84,27 @@ const Header = () => {
                   <ul className={`flex items-center ${style.ui_list}`}>
                     <li className={style.vendros}>
                       <span className="flex gap-1 items-center">
-                        <Link href="/Vendors">Vendors</Link> <IoIosArrowDown />
+                        <Link href="/vendors">Vendors</Link> <IoIosArrowDown />
                       </span>{" "}
                       <ul className={style.nav__submenu}>
                         <li className={style.nav__submenu_item}>
-                          <Link href={"/shop-invitation"}>Catering</Link>
+                          <Link href={"/vendors"}>Catering</Link>
                         </li>
                         <li className={style.nav__submenu_item}>
-                          <Link href={"/rsvp"}>Decoration</Link>
+                          <Link href={"/vendors"}>Decoration</Link>
                         </li>
 
                         <li className={style.nav__submenu_item}>
-                          <Link href={"/checkout"}>Florist</Link>
+                          <Link href={"/vendors"}>Florist</Link>
                         </li>
                         <li className={style.nav__submenu_item}>
-                          <Link href={"/checkout"}>Venue</Link>
+                          <Link href={"/vendors"}>Venue</Link>
                         </li>
                       </ul>
                     </li>
                     <li className={style.planning_tools}>
                       <span className="flex gap-1 items-center">
-                        <Link href="/event">Planning Tools</Link>{" "}
+                        <Link href="#">Planning Tools</Link>{" "}
                         <IoIosArrowDown />
                       </span>
                       <ul className={style.nav__submenu}>
@@ -120,7 +120,7 @@ const Header = () => {
                       </ul>
                     </li>
                     <li>
-                      <a href="#/">Event Website</a>
+                      <Link href="/template">Event Website</Link>
                     </li>
                     <li>
                       <Link href={"/shop-invitation"}>Shop Invitation</Link>

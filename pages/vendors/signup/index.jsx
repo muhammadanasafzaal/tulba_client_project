@@ -42,7 +42,7 @@ const Signup = () => {
 	};
 
 	useEffect(() => {
-		userInfo && router.push("/vendor/signup/details");
+		userInfo && router.push("/vendors/signup/details");
 	}, [userInfo]);
 
 	useEffect(() => {

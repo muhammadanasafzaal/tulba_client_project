@@ -1,6 +1,7 @@
 export const setToken = (token) => {
 	if (window !== undefined) {
 		localStorage.setItem("token", token);
+		
 	}
 };
 

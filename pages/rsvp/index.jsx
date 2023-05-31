@@ -4,6 +4,7 @@ import React from "react";
 import Footer from "layout/footer";
 import Header from "layout/header";
 import "bootstrap/dist/css/bootstrap.css";
+import withAuth from "hoc/withAuth";
 
 const Rsvp = () => {
   return (
@@ -16,4 +17,4 @@ const Rsvp = () => {
   );
 };
 
-export default Rsvp;
+export default withAuth(Rsvp);

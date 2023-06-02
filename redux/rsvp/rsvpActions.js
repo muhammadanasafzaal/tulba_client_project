@@ -45,3 +45,44 @@ export const getRsvp = createAsyncThunk(
 		}
 	}
 );
+
+export const updateRsvp = createAsyncThunk(
+	"rsvp/update",
+	async (data, { rejectWithValue }) => {
+		try {
+			const res = await api.patch(
+				`/api/v1/weddings/${data.weddingId}/weddingEvents/${data.weddingEventId}/rsvp/${data.guestData.id}`,
+				data.guestData
+			);
+
+			return res.data;
+		} catch (error) {
+			// return custom error message from backend if present
+			if (error.response && error.response.data.message) {
+				return rejectWithValue(error.response.data.message);
+			} else {
+				return rejectWithValue(error.message);
+			}
+		}
+	}
+);
+
+export const deleteRsvp = createAsyncThunk(
+	"rsvp/delete",
+	async (data, { rejectWithValue }) => {
+		try {
+			const res = await api.delete(
+				`/api/v1/weddings/${data.weddingId}/weddingEvents/${data.weddingEventId}/rsvp/${data.id}`
+			);
+
+			return res.data;
+		} catch (error) {
+			// return custom error message from backend if present
+			if (error.response && error.response.data.message) {
+				return rejectWithValue(error.response.data.message);
+			} else {
+				return rejectWithValue(error.message);
+			}
+		}
+	}
+);

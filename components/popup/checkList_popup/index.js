@@ -9,11 +9,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { resetError, resetSuccess } from "redux/task/taskSlice";
 import { toast } from "react-hot-toast";
 import Loader from "utils/Loader";
-import { createTask, getTasks } from "redux/task/taskActions";
+import {
+	createTask,
+	deleteTask,
+	getTasks,
+	updateTask,
+} from "redux/task/taskActions";
 
 const AddTaskModal = (props) => {
-	const [taskData, setTaskData] = useState();
-	const { loading, success, error } = useSelector((state) => state.rsvp);
+	const [taskData, setTaskData] = useState(props.modalData);
+	const [isEdit, setIsEdit] = useState(props.isEdit);
+	const { loading, success, error } = useSelector((state) => state.task);
 	const dispatch = useDispatch();
 
 	const handleChange = (e) => {
@@ -22,17 +28,32 @@ const AddTaskModal = (props) => {
 	};
 
 	const onSubmit = async () => {
-		dispatch(createTask({weddingId: props.selectedWedding, taskData}));
+		dispatch(createTask({ weddingId: props.selectedWedding, taskData }));
+	};
+
+	const handleUpdate = () => {
+		dispatch(updateTask({ weddingId: props.selectedWedding, taskData }));
+	};
+
+	const handleDelete = () => {
+		dispatch(deleteTask({ weddingId: props.selectedWedding, id: taskData.id }));
 	};
 
 	useEffect(() => {
 		if (success) {
-			toast.success("Successfully added");
+			toast.success("Success");
 			dispatch(getTasks(props.selectedWedding));
 			dispatch(resetSuccess());
-			props.setModalShow(false);
+			props.handleReset();
 		}
-	}, [success, props]);
+	}, [success]);
+
+	useEffect(() => {
+		setIsEdit(props.isEdit);
+		setTaskData(props.modalData);
+	}, [props.isEdit, props.modalData]);
+
+	console.log(taskData);
 
 	useEffect(() => {
 		if (error) {
@@ -55,7 +76,9 @@ const AddTaskModal = (props) => {
 					<span className='d-flex justify-content-between  items-center'>
 						<div className='d-flex justify-content-start  items-center'>
 							<RiTodoFill className={` ${styles.icon} `} />
-							<span className={`${styles.head} `}>Add New Task</span>
+							<span className={`${styles.head} `}>
+								{isEdit ? "Update" : "Add New"} Task
+							</span>
 						</div>
 						<div onClick={props.onHide} className={styles.closeButton}>
 							X
@@ -69,6 +92,7 @@ const AddTaskModal = (props) => {
 							onChange={handleChange}
 							type='text'
 							placeholder='Task name'
+							value={taskData?.name || ""}
 						/>
 					</Form.Group>
 					<Row>
@@ -80,6 +104,7 @@ const AddTaskModal = (props) => {
 									onChange={handleChange}
 									type='date'
 									placeholder='Date'
+									value={taskData?.taskDate?.split("T")[0] || ""}
 								/>
 							</Form.Group>
 						</Col>
@@ -91,6 +116,7 @@ const AddTaskModal = (props) => {
 									onChange={handleChange}
 									type='time'
 									placeholder='Time'
+									value={taskData?.taskTime || ""}
 								/>
 							</Form.Group>
 						</Col>
@@ -106,6 +132,7 @@ const AddTaskModal = (props) => {
 							onChange={handleChange}
 							type='text'
 							placeholder='Description'
+							value={taskData?.notes || ""}
 						/>
 					</Form.Group>
 					{/* <Form.Group className="mb-2" controlId="formGroupEmail">
@@ -113,17 +140,44 @@ const AddTaskModal = (props) => {
                         <Form.Control type="email" placeholder="Enter venue" />
                     </Form.Group> */}
 				</Modal.Body>
-				<Row>
-					<Col md={3}></Col>
-					<Col md={6}>
-						<Button className={styles.btn} variant='danger' onClick={onSubmit}>
-							Add Task
-						</Button>
-					</Col>
-					{/* <Col md={6}>
-                        <Button className={styles.btn} variant="danger" onClick={props.onHide}>Close</Button>
-                    </Col> */}
-				</Row>
+				{isEdit ? (
+					<Row>
+						<Col md={6}>
+							<Button
+								className={styles.btn}
+								variant='danger'
+								onClick={handleDelete}
+							>
+								Delete
+							</Button>
+						</Col>
+						<Col md={6}>
+							<Button
+								className={styles.btn}
+								onClick={handleUpdate}
+								variant='danger'
+							>
+								Update Task
+							</Button>
+						</Col>
+					</Row>
+				) : (
+					<Row>
+						<Col md={3}></Col>
+						<Col md={6}>
+							<Button
+								className={styles.btn}
+								variant='danger'
+								onClick={onSubmit}
+							>
+								Add Task
+							</Button>
+						</Col>
+						{/* <Col md={6}>
+							<Button className={styles.btn} variant="danger" onClick={props.onHide}>Close</Button>
+						</Col> */}
+					</Row>
+				)}
 			</Modal>
 		</div>
 	);

@@ -17,6 +17,7 @@ import { getWeddings } from "redux/wedding/weddingActions";
 import { getWeddingEvents } from "redux/weddingEvent/weddingEventActions";
 import { toast } from "react-hot-toast";
 import { resetList } from "redux/rsvp/rsvpSlice";
+import { FaEdit } from "react-icons/fa";
 
 let active = 2;
 let items = [];
@@ -32,6 +33,8 @@ function BasicExample() {
 	const [modalShow, setModalShow] = useState(false);
 	const [selectedWedding, setSelectedWedding] = useState(null);
 	const [selectedWeddingEvent, setSelectedWeddingEvent] = useState(null);
+	const [isEdit, setIsEdit] = useState(false);
+	const [rsvpData, setRsvpData] = useState(null);
 	const weddingState = useSelector((state) => state.wedding);
 	const weddingEventState = useSelector((state) => state.weddingEvent);
 	const { loading, list } = useSelector((state) => state.rsvp);
@@ -43,8 +46,16 @@ function BasicExample() {
 			return;
 		}
 
+		setRsvpData(null);
+		setIsEdit(false);
 		setModalShow(true);
 	};
+
+	const handleOpenEdit = (item) => {
+		setIsEdit(true);
+		setRsvpData(item);
+		setModalShow(true);
+	}
 
 	useEffect(() => {
 		dispatch(getWeddings());
@@ -53,8 +64,8 @@ function BasicExample() {
 	useEffect(() => {
 		if (selectedWedding) {
 			dispatch(getWeddingEvents(selectedWedding));
-      setSelectedWeddingEvent(null);
-      dispatch(resetList());
+			setSelectedWeddingEvent(null);
+			dispatch(resetList());
 		}
 	}, [selectedWedding]);
 
@@ -63,7 +74,7 @@ function BasicExample() {
 			const body = {
 				weddingId: selectedWedding,
 				weddingEventId: selectedWeddingEvent,
-			}
+			};
 			dispatch(getRsvp(body));
 		}
 	}, [selectedWeddingEvent]);
@@ -81,6 +92,8 @@ function BasicExample() {
 				setModalShow={setModalShow}
 				selectedWedding={selectedWedding}
 				selectedWeddingEvent={selectedWeddingEvent}
+				isEdit = {isEdit}
+				rsvpData = {rsvpData}
 			/>
 			<Row>
 				<Col lg={8} className={`p-0 ${styles.rsvp}`}>
@@ -131,7 +144,7 @@ function BasicExample() {
 							<Col lg={6}>
 								<div className='bg-white p-2 flex border border-gray-200 rounded'>
 									<select
-                    // key={Math.random()}
+										// key={Math.random()}
 										className='bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
 										name='weddingEventSelect'
 										onChange={(e) => setSelectedWeddingEvent(e.target.value)}
@@ -162,6 +175,7 @@ function BasicExample() {
 								<th>Mobile</th>
 								<th>Email</th>
 								<th>Invited</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -172,6 +186,13 @@ function BasicExample() {
 									<td>{i?.mobile}</td>
 									<td>{i?.email}</td>
 									<td>{i?.isInvited ? "Yes" : "No"}</td>
+									<td>
+										<FaEdit
+											onClick={() => handleOpenEdit(i)}
+											className='cursor-pointer m-1'
+											size='1.5em'
+										/>
+									</td>
 								</tr>
 							))}
 						</tbody>

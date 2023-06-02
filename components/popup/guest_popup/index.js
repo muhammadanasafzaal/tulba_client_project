@@ -4,16 +4,21 @@ import styles from "/styles/modal/guestModal.module.scss";
 
 // render(<App />);
 import React, { useEffect, useState } from "react";
-import { api } from "services/api";
 import { useDispatch, useSelector } from "react-redux";
-import { createRsvp, getRsvp } from "redux/rsvp/rsvpActions";
+import {
+	createRsvp,
+	deleteRsvp,
+	getRsvp,
+	updateRsvp,
+} from "redux/rsvp/rsvpActions";
 import { resetError, resetSuccess } from "redux/rsvp/rsvpSlice";
 import { toast } from "react-hot-toast";
 import Loader from "utils/Loader";
 
 const AddGuestModal = (props) => {
-	const [guestData, setGuestData] = useState();
-	const { loading, list, success, error } = useSelector((state) => state.rsvp);
+	const [guestData, setGuestData] = useState(props.rsvpData);
+	const [isEdit, setIsEdit] = useState(props.isEdit);
+	const { loading, success, error } = useSelector((state) => state.rsvp);
 	const dispatch = useDispatch();
 
 	const handleChange = (e) => {
@@ -25,14 +30,23 @@ const AddGuestModal = (props) => {
 		const body = {
 			weddingId: props.selectedWedding,
 			weddingEventId: props.selectedWeddingEvent,
-			guestData
-		}
-		dispatch(createRsvp(body));
+			guestData,
+		};
+		isEdit ? dispatch(updateRsvp(body)) : dispatch(createRsvp(body));
+	};
+
+	const handleDelete = async () => {
+		const body = {
+			weddingId: props.selectedWedding,
+			weddingEventId: props.selectedWeddingEvent,
+			id: guestData.id,
+		};
+		dispatch(deleteRsvp(body));
 	};
 
 	useEffect(() => {
 		if (success) {
-			toast.success("Successfully added");
+			toast.success("Success");
 
 			const body = {
 				weddingId: props.selectedWedding,
@@ -52,6 +66,11 @@ const AddGuestModal = (props) => {
 		}
 	}, [error]);
 
+	useEffect(() => {
+		setIsEdit(props.isEdit);
+		setGuestData(props.rsvpData);
+	}, [props]);
+
 	return (
 		<div className='absolute left-20  '>
 			<Loader loading={loading} />
@@ -65,13 +84,19 @@ const AddGuestModal = (props) => {
 					<span className='d-flex justify-content-between  items-center'>
 						<div className='d-flex justify-content-start  items-center'>
 							<RiTodoFill className={` ${styles.icon} `} />
-							<span className={`${styles.head} `}>Add New Guest</span>
+							<span className={`${styles.head} `}>
+								{isEdit ? "Update info" : "Add New Guest"}
+							</span>
 						</div>
 						<div onClick={props.onHide} className={styles.closeButton}>
 							X
 						</div>
 					</span>
-					<p className={styles.subtitle}>Create new guest for your rsvp list</p>
+					<p className={styles.subtitle}>
+						{isEdit
+							? "Update guest info for your rsvp list"
+							: "Create new guest for your rsvp list"}
+					</p>
 					<Row>
 						<Col md={6}>
 							<Form.Group className='mb-2' controlId='formGroupEmail'>
@@ -81,6 +106,7 @@ const AddGuestModal = (props) => {
 									onChange={handleChange}
 									type='name'
 									placeholder='John Doe'
+									value={guestData?.name || ""}
 								/>
 							</Form.Group>
 						</Col>
@@ -92,6 +118,7 @@ const AddGuestModal = (props) => {
 									onChange={handleChange}
 									type='text'
 									placeholder='+1234'
+									value={guestData?.mobile || ""}
 								/>
 							</Form.Group>
 						</Col>
@@ -107,6 +134,7 @@ const AddGuestModal = (props) => {
 							onChange={handleChange}
 							type='email'
 							placeholder='name@example.com'
+							value={guestData?.email || ""}
 						/>
 					</Form.Group>
 					{/* <Form.Group className="mb-2" controlId="formGroupEmail">
@@ -114,17 +142,41 @@ const AddGuestModal = (props) => {
                         <Form.Control type="email" placeholder="Enter venue" />
                     </Form.Group> */}
 				</Modal.Body>
-				<Row>
-					<Col md={3}></Col>
-					<Col md={6}>
-						<Button className={styles.btn} variant='danger' onClick={onSubmit}>
-							Add Guest
-						</Button>
-					</Col>
-					{/* <Col md={6}>
-                        <Button className={styles.btn} variant="danger" onClick={props.onHide}>Close</Button>
-                    </Col> */}
-				</Row>
+				{isEdit ? (
+					<Row>
+						<Col md={6}>
+							<Button
+								className={styles.btn}
+								variant='danger'
+								onClick={handleDelete}
+							>
+								Delete
+							</Button>
+						</Col>
+						<Col md={6}>
+							<Button
+								className={styles.btn}
+								onClick={onSubmit}
+								variant='danger'
+							>
+								Update
+							</Button>
+						</Col>
+					</Row>
+				) : (
+					<Row>
+						<Col md={3}></Col>
+						<Col md={6}>
+							<Button
+								className={styles.btn}
+								variant='danger'
+								onClick={onSubmit}
+							>
+								Add guest
+							</Button>
+						</Col>
+					</Row>
+				)}
 			</Modal>
 		</div>
 	);

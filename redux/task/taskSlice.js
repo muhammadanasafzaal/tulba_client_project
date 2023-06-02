@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createTask, getTasks } from "./taskActions";
+import { createTask, deleteTask, getTasks, updateTask } from "./taskActions";
 
 const initialState = {
 	loading: false,
@@ -41,13 +41,38 @@ const taskSlice = createSlice({
 			state.error = null;
 		},
 		[getTasks.fulfilled]: (state, { payload }) => {
-			console.log(payload);
 			state.list = payload.data;
 			state.loading = false;
 		},
 		[getTasks.rejected]: (state, { payload }) => {
 			state.loading = false;
 			state.list = []
+		},
+		//update list
+		[updateTask.pending]: (state) => {
+			state.loading = true;
+			state.error = null;
+		},
+		[updateTask.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.success = true;
+		},
+		[updateTask.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload
+		},
+		//update list
+		[deleteTask.pending]: (state) => {
+			state.loading = true;
+			state.error = null;
+		},
+		[deleteTask.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.success = true;
+		},
+		[deleteTask.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload
 		},
 	},
 });

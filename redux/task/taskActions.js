@@ -40,3 +40,43 @@ export const getTasks = createAsyncThunk(
 		}
 	}
 );
+
+export const updateTask = createAsyncThunk(
+	"task/update",
+	async (data, { rejectWithValue }) => {
+		try {
+			const res = await api.patch(
+				`/api/v1/weddings/${data.weddingId}/taskList/${data.taskData.id}`,
+				data.taskData
+			);
+
+			return res.data;
+		} catch (error) {
+			// return custom error message from backend if present
+			if (error.response && error.response.data.message) {
+				return rejectWithValue(error.response.data.message);
+			} else {
+				return rejectWithValue(error.message);
+			}
+		}
+	}
+);
+
+export const deleteTask = createAsyncThunk(
+	"task/delete",
+	async (data, { rejectWithValue }) => {
+		try {
+			const res = await api.delete(
+				`/api/v1/weddings/${data.weddingId}/taskList/${data.id}`);
+
+			return res.data;
+		} catch (error) {
+			// return custom error message from backend if present
+			if (error.response && error.response.data.message) {
+				return rejectWithValue(error.response.data.message);
+			} else {
+				return rejectWithValue(error.message);
+			}
+		}
+	}
+);

@@ -11,9 +11,13 @@ import { getTasks } from 'redux/task/taskActions';
 import Loader from 'utils/Loader';
 import { getWeddings } from 'redux/wedding/weddingActions';
 import { toast } from 'react-hot-toast';
+import { AiFillEdit } from 'react-icons/ai';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 const Main = () => {
     const [modalShow, setModalShow] = useState(false);
+    const [isEdit, setIsEdit] = useState(false);
+    const [modalData, setModalData] = useState(null);
     const [selectedWedding, setSelectedWedding] = useState(null)
     const weddingState = useSelector(state => state.wedding);
     const { loading, list } = useSelector((state) => state.task);
@@ -25,8 +29,22 @@ const Main = () => {
             return
         }
 
+        setModalData(null)
+        setIsEdit(false);
         setModalShow(true);
-    } 
+    }
+
+    const handleOpenEdit = (data) => {
+        setIsEdit(true);
+        setModalData(data);
+        setModalShow(true);
+    }
+
+    const handleReset = () => {
+        setIsEdit(false);
+        setModalData(null);
+        setModalShow(false);
+    }
 
     useEffect(() => {
         dispatch(getWeddings());
@@ -152,8 +170,12 @@ const Main = () => {
                     {list.map((item, index) => (
                         <div key={index} className={styles.task}>
                             <div className={styles.corner}></div>
-                            <div className={styles.middle}>{item.name}</div>
                             <div className={styles.corner}> <div></div> </div>
+                            <div className={styles.middle}>{item.name}</div>
+                            <FaEdit onClick={() => handleOpenEdit(item)} className='cursor-pointer' size="1.5em"/>
+                            {/* <div className='flex gap-4 mr-5'>
+                                <FaTrash className='cursor-pointer' size="1.5em" color='red'/>
+                            </div> */}
                         </div>
                     ))}
 
@@ -190,7 +212,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-            <AddTaskModal selectedWedding = {selectedWedding} show={modalShow} onHide={() => setModalShow(false)} setModalShow = {setModalShow}/>
+            <AddTaskModal selectedWedding = {selectedWedding} show={modalShow} onHide={() => setModalShow(false)} handleReset = {handleReset} isEdit = {isEdit} modalData= {modalData}/>
         </div>
     );
 };

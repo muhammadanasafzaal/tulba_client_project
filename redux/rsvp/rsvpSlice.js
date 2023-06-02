@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createRsvp, getRsvp } from "./rsvpActions";
+import { createRsvp, deleteRsvp, getRsvp, updateRsvp } from "./rsvpActions";
 
 const initialState = {
 	loading: false,
@@ -21,9 +21,9 @@ const rsvpSlice = createSlice({
 			state.loading = false;
 		},
 		resetList: (state) => {
-			state.success = null
-			state.list = []
-		}
+			state.success = null;
+			state.list = [];
+		},
 	},
 	extraReducers: {
 		// add rsvp
@@ -50,7 +50,33 @@ const rsvpSlice = createSlice({
 		},
 		[getRsvp.rejected]: (state, { payload }) => {
 			state.loading = false;
-			state.list = []
+			state.list = [];
+		},
+		//update list
+		[updateRsvp.pending]: (state) => {
+			state.loading = true;
+			state.error = null;
+		},
+		[updateRsvp.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.success = true;
+		},
+		[updateRsvp.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload;
+		},
+		//update list
+		[deleteRsvp.pending]: (state) => {
+			state.loading = true;
+			state.error = null;
+		},
+		[deleteRsvp.fulfilled]: (state, { payload }) => {
+			state.loading = false;
+			state.success = true;
+		},
+		[deleteRsvp.rejected]: (state, { payload }) => {
+			state.loading = false;
+			state.error = payload;
 		},
 	},
 });

@@ -70,7 +70,6 @@ export const userLogout = createAsyncThunk(
 		try {
 			const res = await api.get("/api/v1/auth/logout");
 			removeToken();
-			if (typeof window !== undefined) window.location.href = "/";
 
 			return res.data;
 		} catch (error) {

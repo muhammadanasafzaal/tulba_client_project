@@ -1,15 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { StepperContext } from "./../../../modules/profile/contexts/StepperContext";
 import CITIES from "data/locations";
 
-export default function Details() {
-	const { nikkahData, setNikkahData } = useContext(StepperContext);
+export default function Walima() {
+	const { walimaData, setWalimaData } = useContext(StepperContext);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setNikkahData({ ...nikkahData, [name]: value });
+		setWalimaData({ ...walimaData, [name]: value });
 	};
-
 	return (
 		<div className='flex flex-col mt-12'>
 			<div className='w-full mx-2 flex-1'>
@@ -21,13 +20,13 @@ export default function Details() {
 						className='bg-white p-1 px-2 appearance-none outline-none w-full text-gray-800 cursor-not-allowed'
 						name='type'
 						disabled
-						value={nikkahData["type"] || null}
+						value={walimaData["type"] || null}
 					>
 						<option hidden value={null}>
 							Event Type
 						</option>
-						<option value="nikaah" selected>
-							Nikaah
+						<option value='walima' selected>
+							Walima
 						</option>
 					</select>
 				</div>
@@ -41,7 +40,7 @@ export default function Details() {
 						className='bg-white p-1 px-2 appearance-none outline-none w-full text-gray-800'
 						name='eventLocation'
 						onChange={handleChange}
-						value={nikkahData["eventLocation"] || null}
+						value={walimaData["eventLocation"] || null}
 					>
 						<option hidden value={null}>
 							Select Location
@@ -62,7 +61,7 @@ export default function Details() {
 					<input
 						type='date'
 						onChange={handleChange}
-						value={nikkahData["eventDate"]?.split("T")?.[0] || ""}
+						value={walimaData["eventDate"]?.split("T")?.[0] || ""}
 						name='eventDate'
 						placeholder='Event Date'
 						className='bg-white p-1 px-2 appearance-none outline-none w-full text-gray-800'
@@ -76,7 +75,7 @@ export default function Details() {
 				<div className='bg-white my-2 p-1 flex border border-gray-200 rounded'>
 					<input
 						onChange={handleChange}
-						value={nikkahData["venue"] || ""}
+						value={walimaData["venue"] || ""}
 						name='venue'
 						placeholder='Venue'
 						className='bg-white p-1 px-2 appearance-none outline-none w-full text-gray-800'

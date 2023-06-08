@@ -104,7 +104,7 @@ const Header = () => {
                     </li>
                     <li className={style.planning_tools}>
                       <span className="flex gap-1 items-center">
-                        <Link href="#">Planning Tools</Link>{" "}
+                        <Link href="/event">Planning Tools</Link>{" "}
                         <IoIosArrowDown />
                       </span>
                       <ul className={style.nav__submenu}>
@@ -120,13 +120,13 @@ const Header = () => {
                       </ul>
                     </li>
                     <li>
-                      <Link href="/template">Event Website</Link>
+                      <Link href="/event-website">Event Website</Link>
                     </li>
                     <li>
                       <Link href={"/shop-invitation"}>Shop Invitation</Link>
                     </li>
                     <li>
-                      <Link href={"/nikkah-templates"}>Nikkah Template</Link>
+                      <Link href={"/nikkah-templates"}>Shop Nikkah Templates</Link>
                     </li>
                   </ul>
                   {userInfo ? 

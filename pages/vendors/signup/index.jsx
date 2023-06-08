@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import { toast } from "react-hot-toast";
 import { resetError } from "redux/auth/authSlice";
 import Loader from "utils/Loader";
+import { validateEmail, validatePassword } from "utils/functions";
 
 const Signup = () => {
 	const [name, setName] = useState("");
@@ -29,6 +30,21 @@ const Signup = () => {
 	const dispatch = useDispatch();
 
 	const handleSignup = async () => {
+		if(!validateEmail(email)) {
+			toast.error("Please input a valid email!");
+			return
+		}
+
+		if(!validatePassword(password)) {
+			toast.error("Password doesn't meet all the requirements");
+			return
+		}
+
+		if(password !== passwordConfirm) {
+			toast.error("Passwords do not match")
+			return
+		}
+
 		let body = {
 			name,
 			email,
@@ -56,7 +72,7 @@ const Signup = () => {
 		<div
 			className={`${styles.signup_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
 		>
-			<Loader loading = {loading}/>
+			<Loader loading={loading} />
 			<div className={`${styles.signup_nested} bg-white p-6`}>
 				<div className={styles.signup_heading}>
 					<div className={`${styles.backpage}`}>
@@ -121,9 +137,9 @@ const Signup = () => {
 				<div
 					className={` flex justify-center gap-2 items-center my-7 ${styles.or_section}`}
 				>
-					<div></div>
+					{/* <div></div>
 					<p>Or</p>
-					<div></div>
+					<div></div> */}
 				</div>
 				{/* From section */}
 				<form className={` ${styles.form_signup}`}>
@@ -153,6 +169,13 @@ const Signup = () => {
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
+					</div>
+					<div className={styles.signup_inputbox}>
+						<li>At least 8 characters</li>
+						<li>Has 1 uppercase letter</li>
+						<li>Has 1 lowercase letter</li>
+						<li>Has 1 number</li>
+						<li>Has 1 symbol</li>
 					</div>
 					<div className={styles.signup_inputbox}>
 						<InputField

@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import Loader from "utils/Loader";
 import { toast } from "react-hot-toast";
 import { resetError } from "redux/auth/authSlice";
+import { validateEmail, validatePassword } from "utils/functions";
 
 const Signup = () => {
 	const [name, setName] = useState("");
@@ -23,12 +24,25 @@ const Signup = () => {
 	const [passwordConfirm, setpasswordConfirm] = useState("");
 	const router = useRouter();
 
-	const { loading, userInfo, error } = useSelector(
-		(state) => state.auth
-	);
+	const { loading, userInfo, error } = useSelector((state) => state.auth);
 	const dispatch = useDispatch();
 
 	const handleSignup = async () => {
+		if (!validateEmail(email)) {
+			toast.error("Please input a valid email!");
+			return;
+		}
+
+		if (!validatePassword(password)) {
+			toast.error("Password doesn't meet all the requirements");
+			return;
+		}
+
+		if (password !== passwordConfirm) {
+			toast.error("Passwords do not match");
+			return;
+		}
+
 		let body = {
 			name,
 			email,
@@ -44,13 +58,22 @@ const Signup = () => {
 	useEffect(() => {
 		userInfo && router.push("/profile");
 	}, [userInfo]);
-  
-  useEffect(() => {
-    if (error) {
+
+	useEffect(() => {
+		if (error) {
 			toast.error(error || "Something went wrong");
 			dispatch(resetError());
 		}
-  }, [error])
+	}, [error]);
+
+	useEffect(() => {
+		const { name, email } = router.query;
+		if (name || email) {
+			setName(name || "");
+			setEmail(email || "");
+			document.getElementById("password")?.focus();
+		}
+	}, [router]);
 
 	return (
 		<div
@@ -134,12 +157,20 @@ const Signup = () => {
 					</div>
 					<div className={styles.signup_inputbox}>
 						<InputField
+							labeluse="password"
 							placeholder='Password'
 							type='password'
 							label='Password'
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
+					</div>
+					<div className={styles.signup_inputbox}>
+						<li>At least 8 characters</li>
+						<li>Has 1 uppercase letter</li>
+						<li>Has 1 lowercase letter</li>
+						<li>Has 1 number</li>
+						<li>Has 1 symbol</li>
 					</div>
 					<div className={styles.signup_inputbox}>
 						<InputField
@@ -154,7 +185,7 @@ const Signup = () => {
 						<Button
 							type='button'
 							value={"Sign up"}
-							onClick={() => handleSignup()}
+							onClick={handleSignup}
 							padding='12px 0px'
 							disabled={loading}
 						/>

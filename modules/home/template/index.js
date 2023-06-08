@@ -18,7 +18,7 @@ const Template = () => {
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
                 li_three="Designed to match your wedding website "
-                link = "/template"
+                link = "/event-website"
               />
               <Content2
                 imgsrc="/../assests/home_img/1-04.svg"
@@ -36,7 +36,7 @@ const Template = () => {
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
                 li_three="Designed to match your wedding website "
-                link = "/checklist"
+                link = "#signup"
               />
               <Content2
                 imgsrc="/../assests/home_img/1-03.svg"
@@ -45,7 +45,7 @@ const Template = () => {
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
                 li_three="Designed to match your wedding website "
-                link = "/shop-invitation"
+                link = "#signup"
               />
             </Col>
           </Row>

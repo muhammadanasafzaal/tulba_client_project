@@ -6,3 +6,33 @@ export function validateEmail(email) {
 	// Return true if the email address matches the regular expression
 	return regex.test(email);
 }
+
+export function validatePassword(password) {
+	// Check if the password is at least 8 characters long.
+	if (password.length < 8) {
+		return false;
+	}
+
+	// Check if the password has at least one uppercase letter.
+	if (!/[A-Z]/.test(password)) {
+		return false;
+	}
+
+	// Check if the password has at least one lowercase letter.
+	if (!/[a-z]/.test(password)) {
+		return false;
+	}
+
+	// Check if the password has at least one number.
+	if (!/\d/.test(password)) {
+		return false;
+	}
+
+	// Check if the password has at least one symbol.
+	if (!/[!@#$%^&*()_+]/.test(password)) {
+		return false;
+	}
+
+	// If all of the checks pass, the password is valid.
+	return true;
+}

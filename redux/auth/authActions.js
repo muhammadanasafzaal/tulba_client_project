@@ -71,6 +71,8 @@ export const userLogout = createAsyncThunk(
 			const res = await api.get("/api/v1/auth/logout");
 			removeToken();
 
+			if (typeof window !== undefined) window.location.href = "/";
+
 			return res.data;
 		} catch (error) {
 			// return custom error message from API if any

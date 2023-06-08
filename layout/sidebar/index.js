@@ -110,7 +110,7 @@ const Sidebar = ({ setOpen, open }) => {
 
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <Link href="/template">
+              <Link href="/event-website">
                 <a className={style.item}>Event Website </a>
               </Link>
             </div>
@@ -127,7 +127,7 @@ const Sidebar = ({ setOpen, open }) => {
           <div className={style.mainItem}>
             <div className={style.menu}>
               <Link href="/nikkah-templates">
-                <a className={style.item}>Nikkah Templates </a>
+                <a className={style.item}>Shop Nikkah Templates </a>
               </Link>
             </div>
           </div>

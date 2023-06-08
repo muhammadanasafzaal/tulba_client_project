@@ -36,7 +36,7 @@ const Login = () => {
 
 	useEffect(() => {
 		if(userInfo) {
-			toast.success("Welcome Back")
+			toast.success(`Welcome Back ${userInfo?.name || ""}`)
 			router.push("/profile");
 		}
 	}, [userInfo]);

@@ -14,8 +14,8 @@ const Banner = () => {
             <Breadcrumb.Item href="/" className={styles.brdcrumb}>
               Home
             </Breadcrumb.Item>
-            <Breadcrumb.Item href="#" className={styles.brdcrumb}>
-              Event Planner
+            <Breadcrumb.Item href="/event" className={styles.brdcrumb}>
+              Planning Tools
             </Breadcrumb.Item>
             <Breadcrumb.Item active className={styles.actbrdcrumb}>
               RSVP List

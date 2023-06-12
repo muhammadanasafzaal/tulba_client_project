@@ -187,21 +187,23 @@ const Header = () => {
               </div>
             </Navbar>
           ) : (
-            <div className={style.searchContainer}>
-              <div>
-                <input placeholder="Search" />
-              </div>
-              <div
-                className={style.closeIcon}
-                onClick={() => setShowSearch(!showSearch)}
-              >
-                <Image
-                  alt="close"
-                  src={closeIcon}
+            <Navbar>
+              <div className={`${style.searchContainer}`}>
+                <div>
+                  <input className="bg-white" placeholder="Search" />
+                </div>
+                <div
+                  className={style.closeIcon}
                   onClick={() => setShowSearch(!showSearch)}
-                />
+                >
+                  <Image
+                    alt="close"
+                    src={closeIcon}
+                    onClick={() => setShowSearch(!showSearch)}
+                  />
+                </div>
               </div>
-            </div>
+            </Navbar>
           )}
         </div>
         <div className={style.sidebar_option}>

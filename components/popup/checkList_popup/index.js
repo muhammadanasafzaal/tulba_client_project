@@ -19,6 +19,7 @@ import {
 const AddTaskModal = (props) => {
 	const [taskData, setTaskData] = useState(props.modalData);
 	const [isEdit, setIsEdit] = useState(props.isEdit);
+	const [isDelete, setIsDelete] = useState(props.isDelete);
 	const { loading, success, error } = useSelector((state) => state.task);
 	const dispatch = useDispatch();
 
@@ -43,17 +44,16 @@ const AddTaskModal = (props) => {
 		if (success) {
 			toast.success("Success");
 			dispatch(getTasks(props.selectedWedding));
-			dispatch(resetSuccess());
 			props.handleReset();
+			dispatch(resetSuccess());
 		}
 	}, [success]);
 
 	useEffect(() => {
 		setIsEdit(props.isEdit);
 		setTaskData(props.modalData);
-	}, [props.isEdit, props.modalData]);
-
-	console.log(taskData);
+		setIsDelete(props.isDelete);
+	}, [props]);
 
 	useEffect(() => {
 		if (error) {
@@ -62,6 +62,46 @@ const AddTaskModal = (props) => {
 			dispatch(resetError());
 		}
 	}, [error]);
+
+	if (isDelete)
+		return (
+			<div className='absolute left-20  '>
+				<Loader loading={loading} />
+				<Modal
+					{...props}
+					size='md'
+					aria-labelledby='contained-modal-title-vcenter'
+					className='pro-modal '
+				>
+					<Modal.Body>
+						<span className='d-flex justify-between  items-center'>
+							<div className='d-flex justify-between  items-center'>
+								<RiTodoFill className={` ${styles.icon} `} />
+								<div className='ml-3'>
+									<span className={`${styles.head} `}>Are you sure?</span>
+									<p className='text-xs ml-1'>This action can not be undone.</p>
+								</div>
+							</div>
+							<div onClick={props.onHide} className={styles.closeButton}>
+								X
+							</div>
+						</span>
+					</Modal.Body>
+					<Row>
+						<Col md={3}></Col>
+						<Col md={6}>
+							<Button
+								className={styles.btn}
+								variant='danger'
+								onClick={handleDelete}
+							>
+								Delete
+							</Button>
+						</Col>
+					</Row>
+				</Modal>
+			</div>
+		);
 
 	return (
 		<div className='absolute left-20  '>
@@ -142,15 +182,7 @@ const AddTaskModal = (props) => {
 				</Modal.Body>
 				{isEdit ? (
 					<Row>
-						<Col md={6}>
-							<Button
-								className={styles.btn}
-								variant='danger'
-								onClick={handleDelete}
-							>
-								Delete
-							</Button>
-						</Col>
+						<Col md={3}></Col>
 						<Col md={6}>
 							<Button
 								className={styles.btn}

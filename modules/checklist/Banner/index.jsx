@@ -2,20 +2,20 @@ import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Image from "next/image";
-// import Img from "public/assests/RSVP/banner.svg";
+import Img from "public/assests/RSVP/banner.svg";
 import styles from "/styles/checklist/Banner.module.scss";
 
 const Banner = () => {
   return (
-    <Container fluid className="my-5 p-0">
+    <Container fluid className="mt-5 mb-2 p-0">
       <Row style={{ marginTop: "-50px" }}>
         <Col lg={6} className={` ${styles.banner}`}>
           <Breadcrumb>
             <Breadcrumb.Item href="/" className={styles.brdcrumb}>
               Home
             </Breadcrumb.Item>
-            <Breadcrumb.Item href="#" className={styles.brdcrumb}>
-              Event Planner
+            <Breadcrumb.Item href="/event" className={styles.brdcrumb}>
+              Planning Tools
             </Breadcrumb.Item>
             <Breadcrumb.Item active className={styles.actbrdcrumb}>
               Checklist
@@ -38,11 +38,12 @@ const Banner = () => {
           </div>
         </Col>
         <Col lg={6}>
-          <div className={styles.banner_img}></div>
-          {/* <Image 
+          {/* <div className={styles.banner_img}></div> */}
+          <Image 
             src={Img}
             layout="responsive"
-            /> */}
+            alt="checklist Cover"
+            />
         </Col>
       </Row>
     </Container>

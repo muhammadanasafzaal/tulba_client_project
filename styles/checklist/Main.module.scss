@@ -150,17 +150,24 @@ $deviceMaxWidth: 1024px;
 
     .gray {
       background: rgb(241, 237, 237);
-      height: 300px;
+      height: 320px;
+      overflow-y: scroll;
       margin: 20px 0px;
       border-radius: 20px;
       padding: 10px;
-      overflow-y: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .task {
-        height: 60px;
+        // height: 60px;
         background-color: #fff;
-        padding: 4px 10px;
+        padding: 15px 5px;
         display: flex;
+        gap: 5px;
         align-items: center;
         border-radius: 20px;
         margin-bottom: 10px;
@@ -172,6 +179,16 @@ $deviceMaxWidth: 1024px;
             width: 0.5rem;
             height: 0.5rem;
             background-color: rgb(26, 195, 26);
+            border-radius: 50px;
+          }
+        }
+        .cornerYellow {
+          width: 5%;
+
+          div {
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: rgb(255, 162, 0);
             border-radius: 50px;
           }
         }

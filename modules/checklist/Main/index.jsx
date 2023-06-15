@@ -14,6 +14,7 @@ import { toast } from "react-hot-toast";
 import { AiFillEdit } from "react-icons/ai";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { BsCheck2Circle } from "react-icons/bs";
+import Button from "components/form/button";
 
 const Main = () => {
 	const [modalShow, setModalShow] = useState(false);
@@ -74,37 +75,44 @@ const Main = () => {
 		}
 	}, [selectedWedding]);
 
-	// console.log(list);
+	useEffect(() => {
+		if (weddingState?.list.length > 0) {
+			setSelectedWedding(weddingState?.list[0].id);
+		}
+	}, [weddingState?.list]);
+
+	console.log(list);
+	console.log(selectedWedding);
 
 	const tasks = ["one", "one", "one", "one", "one", "one"];
 	return (
 		<div className={styles.main}>
 			<Loader loading={loading || weddingState.loading} />
-			<div className={styles.first}>
+			{/* <div className={styles.first}>
 				<div className={styles.titleContainer}>
 					<div className={styles.icon}>
-						{/* <Image
+						<Image
                             src={checkList}
                             width={"100%"}
                             height={"100%"}
                             layout="responsive"
                             objectFit='cover'
                             alt=''
-                        /> */}
+                        />
 					</div>
 					<div className={styles.title}>Checklist</div>
 				</div>
 
 				<div className={styles.date}>
 					<div className={styles.icon}>
-						{/* <Image
+						<Image
                             src={checkList}
                             width={"100%"}
                             height={"100%"}
                             layout="responsive"
                             objectFit='cover'
                             alt=''
-                        /> */}
+                        />
 					</div>
 					<div className={styles.title}>Date</div>
 				</div>
@@ -120,22 +128,19 @@ const Main = () => {
 				</div>
 				<div className={styles.status}>
 					<div className={styles.icon}>
-						{/* <Image
+						<Image
                             src={checkList}
                             width={"100%"}
                             height={"100%"}
                             layout="responsive"
                             objectFit='cover'
                             alt=''
-                        /> */}
+                        />
 					</div>
 					<div className={styles.title}>Status</div>
 				</div>
-				<div className={styles.subStatus}>
-					<div>Done</div>
-					<div>Pending</div>
-				</div>
-			</div>
+				
+			</div> */}
 			<div className={styles.second}>
 				<div className={styles.top}>
 					<div className={styles.heading}>Tasks</div>
@@ -143,8 +148,8 @@ const Main = () => {
 						{" "}
 						+ Add Your New Task
 					</div>
-					<div></div>
-					<div className='bg-white p-2 flex border border-gray-200 rounded'>
+					{/* <div></div> */}
+					{/* <div className='bg-white p-2 flex border border-gray-200 rounded'>
 						<select
 							className='bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
 							name='weddingSelect'
@@ -160,6 +165,16 @@ const Main = () => {
 								</option>
 							))}
 						</select>
+					</div> */}
+					<div
+						className={`${styles.subStatus} flex items-center gap-2 self-end ml-auto`}
+					>
+						<div className={styles.btn_header2}>
+							<Button value={"Done"} />
+						</div>
+						<div className={styles.btn_header2}>
+							<Button value={"Pending"} />
+						</div>
 					</div>
 				</div>
 				<div className={styles.desc}>

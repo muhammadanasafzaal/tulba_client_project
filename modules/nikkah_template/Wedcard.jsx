@@ -305,10 +305,10 @@ const Wedcard = () => {
                   <div className="cursor-pointer">
                     <div className={` ${styles.wed_card}`}>
                       <Image
-                        src={Vector}
+                        src={"/assests/home_img/nikkah.png"}
                         layout="fixed"
                         width={"280px"}
-                        height={"320px"}
+                        height={"300px"}
                         alt="template"
                       />
                     </div>
@@ -356,10 +356,10 @@ const Wedcard = () => {
                   <div className="cursor-pointer">
                     <div className={`${styles.wed_card}`}>
                       <Image
-                        src={Vector}
+                        src={"/assests/home_img/nikkah.png"}
                         layout="fixed"
                         width={"280px"}
-                        height={"320px"}
+                        height={"300px"}
                         alt="template"
                       />
                     </div>

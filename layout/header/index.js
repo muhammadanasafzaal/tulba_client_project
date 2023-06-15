@@ -8,7 +8,7 @@ import Button from "components/form/button";
 import MyVerticallyCenteredModal from "components/popup/profile_popup";
 import Sidebar from "layout/sidebar";
 import Link from "next/link";
-import { Container, Row, Col, Navbar } from "react-bootstrap";
+import { Container, Row, Col, Navbar, Dropdown } from "react-bootstrap";
 import searchIcon from "public/assests/searchIcon.svg";
 import closeIcon from "public/assests/close.svg";
 import "bootstrap/dist/css/bootstrap.css";
@@ -17,201 +17,235 @@ import { userLogout } from "redux/auth/authActions";
 import { useRouter } from "next/router";
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
-  const [modalShow, setModalShow] = React.useState(false);
-  const [showSearch, setShowSearch] = React.useState(false);
-  const { userInfo } = useSelector((state) => state.auth);
-	const dispatch = useDispatch()
+	const [open, setOpen] = useState(false);
+	const [modalShow, setModalShow] = React.useState(false);
+	const [showSearch, setShowSearch] = React.useState(false);
+	const [showDropdown, setShowDropdown] = useState(false);
+	const { userInfo } = useSelector((state) => state.auth);
+	const dispatch = useDispatch();
 
 	const handleLogout = () => {
-		dispatch(userLogout())
-	}
+		dispatch(userLogout());
+	};
 
-  return (
-    // <Container fluid className='px-5'>
-    <Container>
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+	return (
+		// <Container fluid className='px-5'>
+		<Container>
+			<MyVerticallyCenteredModal
+				show={modalShow}
+				onHide={() => setModalShow(false)}
+			/>
 
-      <div className={`${style.Header_section} w-full`}>
-        <div className={style.nested_header}>
-          <div
-            className={`flex items-center justify-between  ${style.header_top}`}
-          >
-            <div className={`${style.reg_date}`}>
-              <p>7 Shaaban 1443AH &nbsp;</p>
-              <p> |&nbsp; Thursday , 10 March 2022</p>
-            </div>
-            {/* <div className={style.headerTop_vendor}  onClick={() => setModalShow(true)}>Are You A Vendor? */}
-            {/* </div> */}
-            <div
-              className={style.headerTop_vendor}
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <Link href="/vendors/signup">
-                <a
-                  style={{
-                    textDecoration: "none !important",
-                    color: "black",
-                  }}
-                >
-                  {" "}
-                  Are You A Vendor?
-                </a>
-              </Link>
-            </div>
-          </div>
-          {!showSearch ? (
-            <Navbar>
-              <div
-                className={` flex items-center justify-between w-full ${style.header_bottom}`}
-              >
-                <div>
-                  <Link href="/">
-                    <Image
-                      src={tulbalogo}
-                      alt="tulbalogo"
-                      loading="lazy"
-                      className="h-12 w-12"
-                    />
-                  </Link>
-                </div>
-                <div
-                  className={`flex  gap-2 !sm:hidden !md:hidden ${style.mobile}`}
-                >
-                  <ul className={`flex items-center ${style.ui_list}`}>
-                    <li className={style.vendros}>
-                      <span className="flex gap-1 items-center">
-                        <Link href="/vendors">Vendors</Link> <IoIosArrowDown />
-                      </span>{" "}
-                      <ul className={style.nav__submenu}>
-                        <li className={style.nav__submenu_item}>
-                          <Link href={"/vendors"}>Catering</Link>
-                        </li>
-                        <li className={style.nav__submenu_item}>
-                          <Link href={"/vendors"}>Decoration</Link>
-                        </li>
+			<div className={`${style.Header_section} w-full`}>
+				<div className={style.nested_header}>
+					<div
+						className={`flex items-center justify-between  ${style.header_top}`}
+					>
+						<div className={`${style.reg_date}`}>
+							<p>7 Shaaban 1443AH &nbsp;</p>
+							<p> |&nbsp; Thursday , 10 March 2022</p>
+						</div>
+						{/* <div className={style.headerTop_vendor}  onClick={() => setModalShow(true)}>Are You A Vendor? */}
+						{/* </div> */}
+						<div
+							className={style.headerTop_vendor}
+							style={{ textDecoration: "none", color: "black" }}
+						>
+							<Link href='/vendors/signup'>
+								<a
+									style={{
+										textDecoration: "none !important",
+										color: "black",
+									}}
+								>
+									{" "}
+									Are You A Vendor?
+								</a>
+							</Link>
+						</div>
+					</div>
+					{!showSearch ? (
+						<Navbar>
+							<div
+								className={` flex items-center justify-between w-full ${style.header_bottom}`}
+							>
+								<div>
+									<Link href='/'>
+										<Image
+											src={tulbalogo}
+											alt='tulbalogo'
+											loading='lazy'
+											className='h-12 w-12'
+										/>
+									</Link>
+								</div>
+								<div
+									className={`flex  gap-2 !sm:hidden !md:hidden ${style.mobile}`}
+								>
+									<ul className={`flex items-center ${style.ui_list}`}>
+										<li className={style.vendros}>
+											<span className='flex gap-1 items-center'>
+												<Link href='/vendors'>Vendors</Link> <IoIosArrowDown />
+											</span>{" "}
+											<ul className={style.nav__submenu}>
+												<li className={style.nav__submenu_item}>
+													<Link href={"/vendors"}>Catering</Link>
+												</li>
+												<li className={style.nav__submenu_item}>
+													<Link href={"/vendors"}>Decoration</Link>
+												</li>
 
-                        <li className={style.nav__submenu_item}>
-                          <Link href={"/vendors"}>Florist</Link>
-                        </li>
-                        <li className={style.nav__submenu_item}>
-                          <Link href={"/vendors"}>Venue</Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className={style.planning_tools}>
-                      <span className="flex gap-1 items-center">
-                        <Link href="/event">Planning Tools</Link>{" "}
-                        <IoIosArrowDown />
-                      </span>
-                      <ul className={style.nav__submenu}>
-                        {/* <li className={style.nav__submenu_item}>
+												<li className={style.nav__submenu_item}>
+													<Link href={"/vendors"}>Florist</Link>
+												</li>
+												<li className={style.nav__submenu_item}>
+													<Link href={"/vendors"}>Venue</Link>
+												</li>
+											</ul>
+										</li>
+										<li className={style.planning_tools}>
+											<span className='flex gap-1 items-center'>
+												<Link href='/event'>Planning Tools</Link>{" "}
+												<IoIosArrowDown />
+											</span>
+											<ul className={style.nav__submenu}>
+												{/* <li className={style.nav__submenu_item}>
                       <a>Events</a>
                     </li> */}
-                        <li className={style.nav__submenu_item}>
-                          <Link href={"/checklist"}>Checklist</Link>
-                        </li>
-                        <li className={style.nav__submenu_item}>
-                          <Link href={"/rsvp"}>Rsvp</Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <Link href="/event-website">Event Website</Link>
-                    </li>
-                    <li>
-                      <Link href={"/shop-invitation"}>Shop Invitation</Link>
-                    </li>
-                    <li>
-                      <Link href={"/nikkah-templates"}>Shop Nikkah Templates</Link>
-                    </li>
-                  </ul>
-                  {userInfo ? 
-									<>
-										<div className={style.btn_header} onClick={handleLogout}>
-                      <Button value={"Log out"} />
-                  	</div>
-									</> 
-									: 
-									<>
-                  	<div className={style.btn_header2}>
-                    	<Link href={"/login"}>
-                      	<Button value={"Log in"} />
-                    	</Link>
-                  	</div>
-										<div className={style.btn_header}>
-											<Link href={"/signup"}>
-												<Button value={"Sign up"} />
+												<li className={style.nav__submenu_item}>
+													<Link href={"/checklist"}>Checklist</Link>
+												</li>
+												<li className={style.nav__submenu_item}>
+													<Link href={"/rsvp"}>Rsvp</Link>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<Link href='/event-website'>Event Website</Link>
+										</li>
+										<li>
+											<Link href={"/shop-invitation"}>Shop Invitation</Link>
+										</li>
+										<li>
+											<Link href={"/nikkah-templates"}>
+												Shop Nikkah Templates
 											</Link>
+										</li>
+									</ul>
+									{userInfo ? (
+										<>
+											<Dropdown
+												autoClose
+												drop='down'
+												show={showDropdown}
+												onToggle={() => setShowDropdown(!showDropdown)}
+											>
+												<Dropdown.Toggle
+													as={() => (
+														<img
+															src={"/assests/home_img/Male 1.svg"}
+															style={{
+																width: "50px",
+																height: "50px",
+																cursor: "pointer",
+															}}
+															alt='avatar'
+															onClick={() => setShowDropdown(!showDropdown)}
+														/>
+													)}
+												/>
+
+												<Dropdown.Menu style={{ marginLeft: "-50%" }}>
+													<Dropdown.Item className='dd_item'>
+														<Link href='/profile'>
+															<div>Profile</div>
+														</Link>
+													</Dropdown.Item>
+
+													<Dropdown.Item className={style.btn_dropdown}>
+														<div onClick={handleLogout}>Log out</div>
+													</Dropdown.Item>
+												</Dropdown.Menu>
+											</Dropdown>
+										</>
+									) : (
+										<>
+											<div className={style.btn_header2}>
+												<Link href={"/login"}>
+													<Button value={"Log in"} />
+												</Link>
+											</div>
+											<div className={style.btn_header}>
+												<Link href={"/signup"}>
+													<Button value={"Sign up"} />
+												</Link>
+											</div>
+										</>
+									)}
+									<div className={style.searchIcon}>
+										<Image
+											alt='search'
+											src={searchIcon}
+											onClick={() => setShowSearch(!showSearch)}
+										/>
+									</div>
+									{/* Cart */}
+									<div className='flex align-items-center justify-center'>
+										<div
+											onClick={() => setOpen(true)}
+											className={`${
+												open
+													? style.menu_btn
+													: `${style.menu_btn} ${style.menu_btn} `
+											}`}
+											style={{
+												padding: "0px !important",
+												marginBottom: "30px",
+											}}
+										>
+											<div className={style.menu_childSidebar}></div>
 										</div>
-                  </>}
-                  <div className={style.searchIcon}>
-                    <Image
-                      alt="search"
-                      src={searchIcon}
-                      onClick={() => setShowSearch(!showSearch)}
-                    />
-                  </div>
-                  {/* Cart */}
-                  <div className="flex align-items-center justify-center">
-                    <div
-                      onClick={() => setOpen(true)}
-                      className={`${
-                        open
-                          ? style.menu_btn
-                          : `${style.menu_btn} ${style.menu_btn} `
-                      }`}
-                      style={{
-                        padding: "0px !important",
-                        marginBottom: "30px",
-                      }}
-                    >
-                      <div className={style.menu_childSidebar}></div>
-                    </div>
-                    <div
-                      onClick={() => setModalShow(true)}
-                      className={`cursor-pointer ${style.cart} `}
-                    >
-                      <Image
-                        src={cart}
-                        className={style.cartImage}
-                        alt="cart"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Navbar>
-          ) : (
-            <Navbar>
-              <div className={`${style.searchContainer}`}>
-                <div>
-                  <input className="bg-white" placeholder="Search" />
-                </div>
-                <div
-                  className={style.closeIcon}
-                  onClick={() => setShowSearch(!showSearch)}
-                >
-                  <Image
-                    alt="close"
-                    src={closeIcon}
-                    onClick={() => setShowSearch(!showSearch)}
-                  />
-                </div>
-              </div>
-            </Navbar>
-          )}
-        </div>
-        <div className={style.sidebar_option}>
-          <Sidebar setOpen={setOpen} open={open} />
-        </div>
-      </div>
-    </Container>
-  );
+										<div
+											onClick={() => setModalShow(true)}
+											className={`cursor-pointer ${style.cart} `}
+										>
+											<Image
+												src={cart}
+												className={style.cartImage}
+												alt='cart'
+												loading='lazy'
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</Navbar>
+					) : (
+						<Navbar>
+							<div className={`${style.searchContainer}`}>
+								<div>
+									<input className='bg-white' placeholder='Search' />
+								</div>
+								<div
+									className={style.closeIcon}
+									onClick={() => setShowSearch(!showSearch)}
+								>
+									<Image
+										alt='close'
+										src={closeIcon}
+										onClick={() => setShowSearch(!showSearch)}
+									/>
+								</div>
+							</div>
+						</Navbar>
+					)}
+				</div>
+				<div className={style.sidebar_option}>
+					<Sidebar setOpen={setOpen} open={open} />
+				</div>
+			</div>
+		</Container>
+	);
 };
 
 export default Header;

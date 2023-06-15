@@ -27,10 +27,8 @@ const Banner = () => {
 				<div className='flex-1 lg:flex-[0.5] px-[6%] md:pl-[6%] z-10 '>
 					<div>
 						<Breadcrumb>
-							<Breadcrumb.Item href='/' style={{ textDecoration: "none" }}>
-								<span className='text-[#666666] font-normal text-sm no-underline'>
-									Home
-								</span>
+							<Breadcrumb.Item href='/' className='brdcrumb'>
+								Home
 							</Breadcrumb.Item>
 							<Breadcrumb.Item
 								active
@@ -40,7 +38,7 @@ const Banner = () => {
 							</Breadcrumb.Item>
 						</Breadcrumb>
 					</div>
-					<div id="signup">
+					<div id='signup'>
 						<h1
 							style={{ fontFamily: "DM Serif Display" }}
 							className=' leading-loose text-5xl font-bold'
@@ -54,7 +52,10 @@ const Banner = () => {
 							</h5>
 							<Row className={`g-2 my-5 flex gap-0 ${styles.form}`}>
 								<Col md={4} className='btstrp p-0'>
-									<FloatingLabel controlId='floatingInputGrid' label='Full Name'>
+									<FloatingLabel
+										controlId='floatingInputGrid'
+										label='Full Name'
+									>
 										<Form.Control
 											type='text'
 											placeholder='Name'

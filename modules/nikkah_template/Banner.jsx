@@ -6,27 +6,23 @@ import styles from "/styles/Rsvp/Rsvp.module.scss";
 const Banner = () => {
   return (
     <>
-      <Container fluid className="my-5">
-        <Row style={{ marginTop: "-50px" }}>
-          <Col lg={6} className={`px-[4%] ${styles.banner}`}>
+      <Container fluid className="my-2">
+        <Row>
+          <Col lg={6} className={`px-[5%] banner`}>
             <Breadcrumb>
-              <Breadcrumb.Item href="/" className={styles.brdcrumb}>
+              <Breadcrumb.Item href="/" className="brdcrumb">
                 Home
               </Breadcrumb.Item>
-              <Breadcrumb.Item active className={styles.actbrdcrumb}>
+              <Breadcrumb.Item active className="actbrdcrumb">
                 Shop Nikkah Templates
               </Breadcrumb.Item>
             </Breadcrumb>
-            <div>
-              <h5>We got the best tools for your event, so hop on.</h5>
+            <div className="mb-[100px]">
               <h1>SHOP NIKKAH TEMPLATES</h1>
-              <p className={styles.bannerText}>
+              <p className="bannerText">
                 Get your items according to your budegt with our classic budget
                 planner
               </p>
-              {/* <Button 
-              className={`my-4 ${styles.btn} !hidden`}
-              >Browse More</Button> */}
             </div>
           </Col>
           <Col lg={6} className="p-0">

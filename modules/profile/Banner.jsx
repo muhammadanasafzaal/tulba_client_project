@@ -32,17 +32,22 @@ const Banner = () => {
 		try {
 			const res = await api.get("/api/v1/weddings");
 			setUserData(removeEmpty(res?.data?.data[0]));
-			console.log(res.data);
+			return res?.data?.data[0].id;
 		} catch (e) {
 			console.log(e);
 			setShowSteps(true);
+			return false;
 		} finally {
 			setLoading(false);
 		}
 	};
 
 	useEffect(() => {
-		getWedding();
+		const fetchData = async () => {
+			const wed_id = await getWedding();
+			wed_id && (await getEvents(wed_id));
+		};
+		fetchData();
 	}, []);
 
 	const steps = ["Add Groom & Bride Info", "Nikkah", "Walima"];
@@ -108,11 +113,10 @@ const Banner = () => {
 		);
 	}
 
-	const getEvents = async () => {
+	const getEvents = async (id = userData?.id) => {
+		console.log(id);
 		try {
-			const res = await api.get(
-				`/api/v1/weddings/${userData.id}/weddingEvents`
-			);
+			const res = await api.get(`/api/v1/weddings/${id}/weddingEvents`);
 
 			res.data?.data?.map((i) => {
 				if (i.type === "walima") setWalimaData(removeEmpty(i));
@@ -212,6 +216,48 @@ const Banner = () => {
 						)}
 					</Col>
 				</Row>
+				{!showSteps && (
+					<Row className='mt-5'>
+						<Col lg={6}>
+							<div className='shadow rounded py-3 px-5 pb-4'>
+								<h5 className='text-center text-[#f85757] mb-3'>Nikkah</h5>
+								<div className='flex'>
+									<div className='font-bold w-[100px]'>Date: </div>
+									<div className=''>
+										{nikkahData?.eventDate?.split("T")[0] || "N/A"}
+									</div>
+								</div>
+								<div className='flex my-2'>
+									<div className='font-bold w-[100px]'>Location: </div>
+									<div className=''>{nikkahData?.eventLocation || "N/A"}</div>
+								</div>
+								<div className='flex'>
+									<div className='font-bold w-[100px]'>Venue: </div>
+									<div className=''>{nikkahData?.venue || "N/A"}</div>
+								</div>
+							</div>
+						</Col>
+						<Col lg={6}>
+							<div className='shadow rounded py-3 px-5 pb-4'>
+								<h5 className='text-center text-[#f85757] mb-3'>Walima</h5>
+								<div className='flex'>
+									<div className='font-bold w-[100px]'>Date: </div>
+									<div className=''>
+										{walimaData?.eventDate?.split("T")[0] || "N/A"}
+									</div>
+								</div>
+								<div className='flex my-2'>
+									<div className='font-bold w-[100px]'>Location: </div>
+									<div className=''>{walimaData?.eventLocation || "N/A"}</div>
+								</div>
+								<div className='flex'>
+									<div className='font-bold w-[100px]'>Venue: </div>
+									<div className=''>{walimaData?.venue || "N/A"}</div>
+								</div>
+							</div>
+						</Col>
+					</Row>
+				)}
 				{showSteps && (
 					<Row className='my-5'>
 						<p className='text-center text-base'>

@@ -18,7 +18,7 @@ const InputField = (props) => {
           onChange={props.onChange}
           value={props.vlaue}
           autoFocus={false}
-          bordered={"false"}
+          // bordered={"false"}
           className="inputfield"
           style={{
             height: props.height,

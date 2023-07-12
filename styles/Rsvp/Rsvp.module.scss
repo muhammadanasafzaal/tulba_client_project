@@ -290,3 +290,11 @@ $deviceMaxWidth: 1024px;
   height: 100%;
   width: 100%;
 }
+
+.tagline{
+  display: block;
+
+  @media screen and (max-width:767px){
+    display:none;
+  }
+}

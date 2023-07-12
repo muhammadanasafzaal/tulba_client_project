@@ -13,13 +13,13 @@ import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from "react-redux";
 
 
-const index = () => {
+const VendorProfile = () => {
 
   //const router = useRouter();
   // const data = router.query;
   const vendorData = useSelector((state) => state.vendorData);
 
-  console.log(vendorData, 'vendor data')
+  // console.log(vendorData, 'vendor data')
 
   return (
     <div>
@@ -35,4 +35,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default VendorProfile;

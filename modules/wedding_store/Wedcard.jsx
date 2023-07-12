@@ -17,7 +17,6 @@ import {
   GiNestedHearts,
   GiLargeDress,
 } from "react-icons/gi";
-import Link from "next/link";
 import MultiRangeSlider from "components/multi_range_slider";
 
 let active = 2;
@@ -47,8 +46,7 @@ const Wedcard = () => {
                 }}
                 className={styles.closeButton}
               >
-                {" "}
-                X{" "}
+                x
               </div>{" "}
             </div>
             <div
@@ -99,7 +97,7 @@ const Wedcard = () => {
               onClick={() => showPrice(!price)}
               className={`flex justify-between items-center ${
                 styles.sideBarList
-              } ${price && styles.actvelink}`}
+              } ${price && styles.actvelink} `}
             >
               <span>Price</span>
 
@@ -229,7 +227,7 @@ const Wedcard = () => {
               </div>
 
               {price && (
-                <div className={styles.expandable}>
+                <div className={`p-0 ${styles.expandable}`}>
                   <MultiRangeSlider min="0" max="1000" step="10" />
                 </div>
               )}
@@ -297,11 +295,13 @@ const Wedcard = () => {
                 Shop Our hand crafted Invitations
               </h3>
               <h5 className={`m-1 ${styles.number}`}>
-                (1,000+ relevant results )
+                (1,000+ relevant results)
               </h5>
             </div>
             <Row>
-              <Col lg={4} md={6} className="my-2">
+              {[1,2,3,4,5,6,7,8,9].map((item, index)=>{
+                return(
+              <Col lg={4} md={6} className="my-2" key={index}>
                 <div className={` ${styles.wed_card}`}>
                   <Image
                     src={Vector}
@@ -315,6 +315,53 @@ const Wedcard = () => {
                   className={`d-flex justify-content-between ${styles.wed_content}`}
                 >
                   <h1 className="mx-3 my-2">The Asthetcal</h1>
+                  <div className="d-flex justify-content-end">
+                    <AiFillStar className={` my-3 ${styles.star}`} />
+                    <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
+                      5
+                    </span>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-center justify-content-md-start  my-2">
+                  <h4 className="mx-3">$300.00</h4>
+                  <h6 className="my-1">( 20% off )</h6>
+                </div>
+                <div className="d-flex  justify-content-center justify-content-md-start   my-1 mx-3">
+                  <div className={`mx-1 ${styles.circle_blue}`}></div>
+                  <div className={`mx-1 ${styles.circle_green}`}></div>
+                  <div className={`mx-1 ${styles.circle_pink}`}></div>
+                </div>
+
+                <div className="flex flex-row justify-evenly my-1 mx-1">
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Buy Now
+                    </Button>
+                  </div>
+
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Add to Cart
+                    </Button>
+                  </div>
+                </div>
+              </Col>
+              )
+              })}
+              {/* <Col lg={4} md={6} className="my-2">
+                <div className={`${styles.wed_card}`}>
+                  <Image
+                    src={Vector}
+                    layout="fixed"
+                    width={"280px"}
+                    height={"320px"}
+                    alt="template"
+                  />
+                </div>
+                <div
+                  className={`d-flex justify-content-between ${styles.wed_content}`}
+                >
+                  <h1 className="mx-3 my-2">The Asthetcal</h1>
 
                   <div className="d-flex justify-content-end">
                     <AiFillStar className={` my-3 ${styles.star}`} />
@@ -327,20 +374,18 @@ const Wedcard = () => {
                   <h4 className="mx-3">$300.00</h4>
                   <h6 className="my-1">( 20% off )</h6>
                 </div>
-                <div className="d-flex justify-content-start  my-1 mx-3">
+                <div className="d-flex justify-content-center justify-content-md-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
                   <div className={`mx-1 ${styles.circle_green}`}></div>
                   <div className={`mx-1 ${styles.circle_pink}`}></div>
                 </div>
-                {/* asthetical */}
+
                 <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Buy Now
+                    </Button>
+                  </div>
 
                   <div>
                     <Button className={stylesButton.btn1} variant="danger">
@@ -382,202 +427,11 @@ const Wedcard = () => {
                 </div>
 
                 <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
                   <div>
                     <Button className={stylesButton.btn1} variant="danger">
-                      Add to Cart
+                      Buy Now
                     </Button>
                   </div>
-                </div>
-              </Col>
-              <Col lg={4} md={6} className="my-2">
-                <div className={`${styles.wed_card}`}>
-                  <Image
-                    src={Vector}
-                    layout="fixed"
-                    width={"280px"}
-                    height={"320px"}
-                    alt="template"
-                  />
-                </div>
-                <div
-                  className={`d-flex justify-content-between ${styles.wed_content}`}
-                >
-                  <h1 className="mx-3 my-2">The Asthetcal</h1>
-
-                  <div className="d-flex justify-content-end">
-                    <AiFillStar className={` my-3 ${styles.star}`} />
-                    <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
-                      5
-                    </span>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-start  my-2">
-                  <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1">( 20% off )</h6>
-                </div>
-                <div className="d-flex justify-content-start  my-1 mx-3">
-                  <div className={`mx-1 ${styles.circle_blue}`}></div>
-                  <div className={`mx-1 ${styles.circle_green}`}></div>
-                  <div className={`mx-1 ${styles.circle_pink}`}></div>
-                </div>
-
-                <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
-                  <div>
-                    <Button className={stylesButton.btn1} variant="danger">
-                      Add to Cart
-                    </Button>
-                  </div>
-                </div>
-              </Col>
-              <Col lg={4} md={6} className="my-2">
-                <div className={` ${styles.wed_card}`}>
-                  <Image
-                    src={Vector}
-                    layout="fixed"
-                    width={"280px"}
-                    height={"320px"}
-                    alt="template"
-                  />
-                </div>
-                <div
-                  className={`d-flex justify-content-between ${styles.wed_content}`}
-                >
-                  <h1 className="mx-3 my-2">The Asthetcal</h1>
-
-                  <div className="d-flex justify-content-end">
-                    <AiFillStar className={` my-3 ${styles.star}`} />
-                    <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
-                      5
-                    </span>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-start  my-2">
-                  <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1">( 20% off )</h6>
-                </div>
-                <div className="d-flex justify-content-start  my-1 mx-3">
-                  <div className={`mx-1 ${styles.circle_blue}`}></div>
-                  <div className={`mx-1 ${styles.circle_green}`}></div>
-                  <div className={`mx-1 ${styles.circle_pink}`}></div>
-                </div>
-
-                <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
-
-                  <div>
-                    <Button className={stylesButton.btn1} variant="danger">
-                      Add to Cart
-                    </Button>
-                  </div>
-                </div>
-              </Col>
-              <Col lg={4} md={6} className="my-2">
-                <div className={`${styles.wed_card}`}>
-                  <Image
-                    src={Vector}
-                    layout="fixed"
-                    width={"280px"}
-                    height={"320px"}
-                    alt="template"
-                  />
-                </div>
-                <div
-                  className={`d-flex justify-content-between ${styles.wed_content}`}
-                >
-                  <h1 className="mx-3 my-2">The Asthetcal</h1>
-
-                  <div className="d-flex justify-content-end">
-                    <AiFillStar className={` my-3 ${styles.star}`} />
-                    <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
-                      5
-                    </span>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-start  my-2">
-                  <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1">( 20% off )</h6>
-                </div>
-                <div className="d-flex justify-content-start  my-1 mx-3">
-                  <div className={`mx-1 ${styles.circle_blue}`}></div>
-                  <div className={`mx-1 ${styles.circle_green}`}></div>
-                  <div className={`mx-1 ${styles.circle_pink}`}></div>
-                </div>
-
-                <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
-                  <div>
-                    <Button className={stylesButton.btn1} variant="danger">
-                      Add to Cart
-                    </Button>
-                  </div>
-                </div>
-              </Col>
-              <Col lg={4} md={6} className="my-2">
-                <div className={`${styles.wed_card}`}>
-                  <Image
-                    src={Vector}
-                    layout="fixed"
-                    width={"280px"}
-                    height={"320px"}
-                    alt="template"
-                  />
-                </div>
-                <div
-                  className={`d-flex justify-content-between ${styles.wed_content}`}
-                >
-                  <h1 className="mx-3 my-2">The Asthetcal</h1>
-
-                  <div className="d-flex justify-content-end">
-                    <AiFillStar className={` my-3 ${styles.star}`} />
-                    <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
-                      5
-                    </span>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-start  my-2">
-                  <h4 className="mx-3">$300.00</h4>
-                  <h6 className="my-1">( 20% off )</h6>
-                </div>
-                <div className="d-flex justify-content-start  my-1 mx-3">
-                  <div className={`mx-1 ${styles.circle_blue}`}></div>
-                  <div className={`mx-1 ${styles.circle_green}`}></div>
-                  <div className={`mx-1 ${styles.circle_pink}`}></div>
-                </div>
-
-                <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
 
                   <div>
                     <Button className={stylesButton.btn1} variant="danger">
@@ -619,13 +473,12 @@ const Wedcard = () => {
                 </div>
 
                 <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Buy Now
+                    </Button>
+                  </div>
+
                   <div>
                     <Button className={stylesButton.btn1} variant="danger">
                       Add to Cart
@@ -666,13 +519,149 @@ const Wedcard = () => {
                 </div>
 
                 <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Buy Now
+                    </Button>
+                  </div>
+
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Add to Cart
+                    </Button>
+                  </div>
+                </div>
+              </Col>
+              <Col lg={4} md={6} className="my-2">
+                <div className={`${styles.wed_card}`}>
+                  <Image
+                    src={Vector}
+                    layout="fixed"
+                    width={"280px"}
+                    height={"320px"}
+                    alt="template"
+                  />
+                </div>
+                <div
+                  className={`d-flex justify-content-between ${styles.wed_content}`}
+                >
+                  <h1 className="mx-3 my-2">The Asthetcal</h1>
+
+                  <div className="d-flex justify-content-end">
+                    <AiFillStar className={` my-3 ${styles.star}`} />
+                    <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
+                      5
+                    </span>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-start  my-2">
+                  <h4 className="mx-3">$300.00</h4>
+                  <h6 className="my-1">( 20% off )</h6>
+                </div>
+                <div className="d-flex justify-content-start  my-1 mx-3">
+                  <div className={`mx-1 ${styles.circle_blue}`}></div>
+                  <div className={`mx-1 ${styles.circle_green}`}></div>
+                  <div className={`mx-1 ${styles.circle_pink}`}></div>
+                </div>
+
+                <div className="flex flex-row justify-evenly my-1 mx-1">
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Buy Now
+                    </Button>
+                  </div>
+
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Add to Cart
+                    </Button>
+                  </div>
+                </div>
+              </Col>
+              <Col lg={4} md={6} className="my-2">
+                <div className={` ${styles.wed_card}`}>
+                  <Image
+                    src={Vector}
+                    layout="fixed"
+                    width={"280px"}
+                    height={"320px"}
+                    alt="template"
+                  />
+                </div>
+                <div
+                  className={`d-flex justify-content-between ${styles.wed_content}`}
+                >
+                  <h1 className="mx-3 my-2">The Asthetcal</h1>
+
+                  <div className="d-flex justify-content-end">
+                    <AiFillStar className={` my-3 ${styles.star}`} />
+                    <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
+                      5
+                    </span>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-start  my-2">
+                  <h4 className="mx-3">$300.00</h4>
+                  <h6 className="my-1">( 20% off )</h6>
+                </div>
+                <div className="d-flex justify-content-start  my-1 mx-3">
+                  <div className={`mx-1 ${styles.circle_blue}`}></div>
+                  <div className={`mx-1 ${styles.circle_green}`}></div>
+                  <div className={`mx-1 ${styles.circle_pink}`}></div>
+                </div>
+
+                <div className="flex flex-row justify-evenly my-1 mx-1">
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Buy Now
+                    </Button>
+                  </div>
+
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Add to Cart
+                    </Button>
+                  </div>
+                </div>
+              </Col>
+              <Col lg={4} md={6} className="my-2">
+                <div className={`${styles.wed_card}`}>
+                  <Image
+                    src={Vector}
+                    layout="fixed"
+                    width={"280px"}
+                    height={"320px"}
+                    alt="template"
+                  />
+                </div>
+                <div
+                  className={`d-flex justify-content-between ${styles.wed_content}`}
+                >
+                  <h1 className="mx-3 my-2">The Asthetcal</h1>
+
+                  <div className="d-flex justify-content-end">
+                    <AiFillStar className={` my-3 ${styles.star}`} />
+                    <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
+                      5
+                    </span>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-start  my-2">
+                  <h4 className="mx-3">$300.00</h4>
+                  <h6 className="my-1">( 20% off )</h6>
+                </div>
+                <div className="d-flex justify-content-start  my-1 mx-3">
+                  <div className={`mx-1 ${styles.circle_blue}`}></div>
+                  <div className={`mx-1 ${styles.circle_green}`}></div>
+                  <div className={`mx-1 ${styles.circle_pink}`}></div>
+                </div>
+
+                <div className="flex flex-row justify-evenly my-1 mx-1">
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Buy Now
+                    </Button>
+                  </div>
 
                   <div>
                     <Button className={stylesButton.btn1} variant="danger">
@@ -714,13 +703,11 @@ const Wedcard = () => {
                 </div>
 
                 <div className="flex flex-row justify-evenly my-1 mx-1">
-                  <Link href="/asthetical">
-                    <div>
-                      <Button className={stylesButton.btn1} variant="danger">
-                        Buy Now
-                      </Button>
-                    </div>
-                  </Link>
+                  <div>
+                    <Button className={stylesButton.btn1} variant="danger">
+                      Buy Now
+                    </Button>
+                  </div>
 
                   <div>
                     <Button className={stylesButton.btn1} variant="danger">
@@ -728,7 +715,7 @@ const Wedcard = () => {
                     </Button>
                   </div>
                 </div>
-              </Col>
+              </Col> */}
               <Col lg={12} className="">
                 <div className="d-flex justify-content-end p-5">
                   <Pagination size="md">{items}</Pagination>

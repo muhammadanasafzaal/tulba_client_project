@@ -41,7 +41,7 @@ const SpecialEvent = () => {
       </div>
       <div>
         <div className="bg-[#253659] py-3 px-8 rounded-xl cursor-pointer hover:shadow-xl">
-          Register Now
+          Accept/Reject Invitation
         </div>
       </div>
     </div>

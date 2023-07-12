@@ -34,7 +34,7 @@ const SideBar = () => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   return (
-    <div className="mt-5">
+    <div className="mt-md-5 mt-2">
       {mobileCard && (
         <div className="w-screen">
           <div className={styles.mobileCard}>
@@ -141,8 +141,7 @@ const SideBar = () => {
                     className={`hidden text-black bg-white`}
                   >
                     {cities.map((item, index) => (
-                      <option className="bg-white" key={index} value={item}>
-                        {item}
+                      <option className="bg-white" key={index} value={item.value}>
                       </option>
                     ))}
                   </datalist>

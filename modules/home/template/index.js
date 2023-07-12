@@ -13,7 +13,7 @@ const Template = () => {
             <Col>
               <Content
                 imgsrc="/../assests/home_img/1-02.svg"
-                head="Advanced Website Templates"
+                head="Create Your Website"
                 ques="Choose the template website of event."
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
@@ -21,7 +21,7 @@ const Template = () => {
               />
               <Content2
                 imgsrc="/../assests/home_img/1-04.svg"
-                head="Advanced Website Templates"
+                head="Shop Invitations"
                 ques="Browse Invitation Cards and Nikkah templates"
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
@@ -29,7 +29,7 @@ const Template = () => {
               />
               <Content
                 imgsrc="/../assests/home_img/1-01.svg"
-                head="Advanced Website Templates"
+                head="Create Your Own Todo List"
                 ques="Manage all your things with Checklist manager."
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
@@ -37,7 +37,7 @@ const Template = () => {
               />
               <Content2
                 imgsrc="/../assests/home_img/1-03.svg"
-                head="Advanced Website Templates"
+                head="Free Digital Invitations"
                 ques="Invite the RSVP and your guests with your cards."
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"

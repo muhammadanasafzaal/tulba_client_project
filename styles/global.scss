@@ -147,6 +147,23 @@ input[type="checkbox"] {
   background-image: none !important;
 }
 
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+
+.input-container input {
+  padding: 10px;
+}
+
+// .input-container datalist {
+//   position: absolute;
+//   bottom: 0;
+//   background-color: white;
+//   border: 1px solid #ccc;
+//   width: 100%;
+// }
+
 .rsvptable table {
   @media (max-width: 767px) {
     display: block;

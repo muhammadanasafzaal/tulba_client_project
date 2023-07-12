@@ -17,14 +17,30 @@ import { BiMap, BiDish } from "react-icons/bi";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { useState } from "react";
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { useDispatch } from "react-redux";
+import { vendorData } from "../../redux/appSlice";
+
+
 const Cardcontent = (props) => {
+
+  const router = useRouter()
+  const dispatch = useDispatch();
+
   const [favourite, setFavourite] = useState(false);
+
+  const navigateVendor = () => {
+    router.push('/vendor-profile')
+    // window.location.href = 'https://tulba-client-omega.vercel.app/vendors/profile/demo';
+    dispatch(vendorData(props))
+  }
 
   return (
     <>
       <Container fluid>
         <Row>
-          <Col>
+          <Col onClick={navigateVendor}>
             <div className={`relative ${styles.browse}`}>
               {!favourite && (
                 <AiOutlineHeart

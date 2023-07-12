@@ -13,7 +13,9 @@ import CastleForm from './CastleForm';
 const cities = ['Abbottabad', 'Astore', 'Attock', 'Awaran', 'Badin', 'Bagh', 'Bahawalnagar', 'Bahawalpur', 'Bajaur', 'Bannu', 'Barkhan', 'Batagram', 'Bhakkar', 'Bhimber', 'Buner', 'Chagai', 'Chakwal', 'Charsadda', 'Chiniot', 'Dadu', 'Darel', 'Dera-Bugti', 'Dera-Ghazi-Khan', 'Dera-Ismail-Khan', 'Diamer', 'Duki', 'Faisalabad', '', 'Ghizer', 'Ghotki', 'Gilgit', 'Gujranwala', 'Gujrat', 'Gupis', 'Yasin', 'Gwadar', 'Hafizabad', 'Hangu', 'Haripur', 'Harnai', 'Hattian', 'Haveli', 'Hunza', 'Hyderabad', 'Islamabad', 'Jacobabad', 'Jafarabad', 'Jamshoro', 'JhalMagsi', 'Jhang', 'Jhelum', 'Kachhi', 'Kalat', 'Karachi-Central', 'Karachi-East', 'Karachi-South', 'Karachi-West', 'Karak', 'Kashmore', 'Kasur', 'Kech', 'Khairpur', 'Khanewal', 'Kharan', 'Kharmang', 'Khushab', 'Khuzdar', 'Khyber', 'Killa-Abdullah', 'Kohat', 'Kohlu', 'Kolai-Pallas', 'Korangi', 'Kotli', 'Kurram', 'Lahore', 'Lakki-Marwat', 'Larkana', 'Lasbela', 'Layyah', 'Lodhran', 'Loralai', 'Lower-Chitral', 'Lower-Dir', 'Lower-Kohistan', 'Malakand', 'Malir', 'Mandi-Bahauddin', 'Mansehra', 'Mardan', 'Mastung', 'Matiari', 'Mianwali', 'Mirpur-Khas', 'Mirpur', 'Mohmand', 'Multan', 'Musakhel', 'Muzaffarabad', 'Muzaffargarh', 'Nagar', 'Nankana-Sahib', 'Narowal', 'Naseerabad', 'Naushahro-Firoze', 'Neelum', 'North-Waziristan', 'Nowshera', 'Nushki', 'Okara', 'Orakzai', 'Pakpattan', 'Panjgur', 'Peshawar', 'Pishin', 'Poonch', 'Qambar-Shahdadkot', 'Qilla-Saifullah', 'Quetta', 'Rahim-Yar-Khan', 'Rajanpur', 'Rawalpindi', 'Roundu', 'Sahiwal', 'Sanghar', 'Sargodha', 'Shaheed-Benazirabad', 'Shaheed', 'Sikandarabad', 'Shangla', 'Sheikhupura', 'Sherani', 'Shigar', 'Shikarpur', 'Sialkot', 'Sibi', 'Skardu', 'Sohbatpur', 'South', 'Waziristan', 'Sudhnutti', 'Sujawal', 'Sukkur', 'Swabi', 'Swat', 'Tando', 'Allahyar', 'Tando', 'Muhammad', 'Khan', 'Tangir', 'Tank', 'Tharparkar', 'Thatta', 'Toba', 'Tek', 'Singh', 'Tor', 'Ghar', 'Umerkot', 'Upper', 'Chitral', 'Upper', 'Dir', 'Upper', 'Kohistan', 'Vehari', 'Washuk', 'Zhob', 'Ziarat'];
 
 
-const Banner = () => {
+const Banner = ({ vendor }) => {
+    console.log(vendor, 'vendor')
+
     return (
         <>
             <Container className={`my-5 ${styles.castlebanner}`}>
@@ -62,7 +64,7 @@ const Banner = () => {
 
                                     />
 
-                                    <datalist id="locations" className={`hidden text-black bg-white`} >
+                                    <datalist  id="locations" className={`hidden text-black bg-white`} >
                                         {cities.map((item, index) =>
                                             (<option className='bg-white' key={index} value={item}>{item}</option>)
                                         )}
@@ -83,11 +85,11 @@ const Banner = () => {
                 </Row>
                 <Row>
                     <Col lg={4}>
-                        <h2>The Groomy Castle</h2>
+                        <h2>{vendor?.btn}</h2>
                     </Col>
                     <Col lg={6}>
                         <div className="d-flex justify-content-start">
-                            <h4>$200</h4>
+                            <h4>{vendor?.price}</h4>
                             <span>/ PER EVENT</span>
                         </div>
                     </Col>
@@ -127,7 +129,7 @@ const Banner = () => {
                 </Row>
                 <Row>
                     <Col lg={8}>
-                        <Castle_carousel />
+                        <Castle_carousel vendor={vendor} />
                     </Col>
 
                     <Col lg={4}>

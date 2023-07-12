@@ -14,6 +14,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { AiOutlineSearch } from "react-icons/ai";
 import "bootstrap/dist/css/bootstrap.css";
+import React, { useCallback, useState, useEffect } from 'react'
+
 
 const cities = [
   "Abbottabad",
@@ -189,8 +191,66 @@ const cities = [
 ];
 
 const HomeTopSection = () => {
+
+  const [locationList, setLocationList] = useState(false)
+  const [selectedLocation, setSelectedLocation] = useState(null)
+
+  const handleLocation = useCallback(() => {
+    setLocationList((current) => !current)
+  },[])
+
+  const closeLocationList = () => {
+    setLocationList(false)
+  }
+
+  const selectLocation = (location) => {
+    setSelectedLocation(location)
+  }
+
   return (
     <>
+      <style jsx>
+      {`
+        .locations {
+          position: absolute;
+          width: 100%;
+          z-index: 10;
+          border-radius: 3px;
+          background: #fff;
+          border: 1px solid #e4e4e4;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          max-height: 300px;
+        }
+        .locations > .list{
+          overflow-y: auto;
+          max-height: 250px;
+          padding: 10px 10px;
+        }
+        .locations > .list > p{
+          width:100%;
+          transition:0.2s ease-out;
+        }
+        .locations > .list > p:hover {
+          cursor: pointer;
+          background: whitesmoke;
+          width: 100%;
+          border-radius: 5px;
+          margin-bottom: 0.5rem !important;
+          font-weight:bold;
+        }
+        .locations > .close{
+          text-align: right;
+          margin-bottom:0.5rem;
+        }
+        .locations > .close > span{
+          font-size: 15px;
+          padding: 0px 8px 4px 8px;
+          border-radius: 50%;
+          cursor: pointer;
+          font-weight:bold;
+        }
+      `}
+      </style>
       <Container>
         <Row>
           <Col lg={8} md={12} sm={12} xs={12} className={` ${styles.order2}`}>
@@ -260,10 +320,27 @@ const HomeTopSection = () => {
                       list="locations"
                       placeholder="Search Vendors, Catering"
                       className={styles.input2}
+                      onClick={handleLocation}
+                      value={selectedLocation}
                       // <AiOutlineSearch />
                     />
 
-                    <datalist
+                    { locationList && <div
+                      className="locations"
+                    >
+                      <div className="close">
+                        <span onClick={closeLocationList}>x</span>
+                      </div>
+                      <div className="list">
+                        {cities.map((item, index) => (
+                          <p  key={index} onClick={()=> selectLocation(item)}>
+                            {item}
+                          </p>
+                        ))}
+                      </div>
+                    </div>}
+
+                    {/* <datalist
                       id="locations"
                       className={`hidden text-black bg-white`}
                     >
@@ -272,7 +349,7 @@ const HomeTopSection = () => {
                           {item}
                         </option>
                       ))}
-                    </datalist>
+                    </datalist> */}
                   </FloatingLabel>
                 </Col>
 

@@ -10,7 +10,9 @@ import {
 import styles from "/styles/home/Index.module.scss";
 import imageone from "public/assests/home_img/Download.svg";
 import arabian2 from "public/assests/home_img/arabian.jpg";
+import working from "public/assests/home_img/working.jpg";
 import invitation from "public/assests/home_img/invitation.png";
+import invitationcard from "public/assests/home_img/invitationcard.svg";
 import nikkah from "public/assests/home_img/nikkah.png";
 import checklist from "public/assests/home_img/Checklist.jpg";
 import PlanCard4 from "public/assests/home_img/planCard4.png";
@@ -23,7 +25,7 @@ const Plan = () => {
       id: 1,
       primaryColor: "#FA5856",
       secondaryColor: "#FEE7E6",
-      image: arabian2,
+      image: working,
       headingText: "Vendor Search",
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
@@ -32,7 +34,7 @@ const Plan = () => {
       id: 2,
       primaryColor: "#F5C989",
       secondaryColor: "#FDF4E7",
-      image: arabian2,
+      image: invitationcard,
       headingText: "Shop Invitation Cards",
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#000",

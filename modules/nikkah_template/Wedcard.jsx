@@ -299,6 +299,8 @@ const Wedcard = () => {
               </h5>
             </div>
             <Row>
+              {[1,2,3,4,5,6,7,8,9].map(()=>{
+                return(
               <Col lg={4} md={6} className="my-2">
                 <div className={` ${styles.wed_card}`}>
                   <Image
@@ -320,11 +322,11 @@ const Wedcard = () => {
                     </span>
                   </div>
                 </div>
-                <div className="d-flex justify-content-start  my-2">
+                <div className="d-flex justify-content-center justify-content-md-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
                   <h6 className="my-1">( 20% off )</h6>
                 </div>
-                <div className="d-flex justify-content-start  my-1 mx-3">
+                <div className="d-flex  justify-content-center justify-content-md-start   my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
                   <div className={`mx-1 ${styles.circle_green}`}></div>
                   <div className={`mx-1 ${styles.circle_pink}`}></div>
@@ -344,7 +346,9 @@ const Wedcard = () => {
                   </div>
                 </div>
               </Col>
-              <Col lg={4} md={6} className="my-2">
+              )
+              })}
+              {/* <Col lg={4} md={6} className="my-2">
                 <div className={`${styles.wed_card}`}>
                   <Image
                     src={Vector}
@@ -370,7 +374,7 @@ const Wedcard = () => {
                   <h4 className="mx-3">$300.00</h4>
                   <h6 className="my-1">( 20% off )</h6>
                 </div>
-                <div className="d-flex justify-content-start  my-1 mx-3">
+                <div className="d-flex justify-content-center justify-content-md-start  my-1 mx-3">
                   <div className={`mx-1 ${styles.circle_blue}`}></div>
                   <div className={`mx-1 ${styles.circle_green}`}></div>
                   <div className={`mx-1 ${styles.circle_pink}`}></div>
@@ -711,7 +715,7 @@ const Wedcard = () => {
                     </Button>
                   </div>
                 </div>
-              </Col>
+              </Col> */}
               <Col lg={12} className="">
                 <div className="d-flex justify-content-end p-5">
                   <Pagination size="md">{items}</Pagination>

@@ -99,6 +99,8 @@
     font-weight: 600;
   }
   button {
+    height: fit-content;
+    width: fit-content;
     border: 3px solid #f85757;
     border-radius: 20px;
     background: #f85757;
@@ -152,7 +154,7 @@
     display: block;
     position: absolute;
     background: #fff;
-    height: 140vh;
+    // height: 140vh;
     width: 100%;
     z-index: 9999;
     // border-radius: 20px;
@@ -296,11 +298,18 @@
   border-radius: 0px;
   width: 280px;
   height: 300px;
+  @media screen and (max-width: 767px) {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .wed_content {
   width: 280px;
-
+  @media screen and (max-width: 767px) {
+    width: 100% !important;
+  }
   h1 {
     font-family: "DM Serif Display";
     font-style: normal;

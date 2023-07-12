@@ -212,17 +212,22 @@ $deviceMaxWidth: 1024px;
       margin-top: 16px;
     }
   }
-  .brdcrumb a {
-    color: #666666;
-    font-weight: 400;
-    font-size: 14px;
-    text-decoration: none;
-  }
-  .actbrdcrumb {
-    color: #f85757;
-    font-weight: 600;
-    font-size: 14px;
-    margin-top: 2px;
+  .bread_crumb{
+    @media (max-width: 767px) {
+      display: none;
+    }
+    .brdcrumb a {
+      color: #666666;
+      font-weight: 400;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .actbrdcrumb {
+      color: #f85757;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 2px;
+    }
   }
   .head_border {
     background: #f85757;

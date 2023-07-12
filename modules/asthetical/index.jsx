@@ -21,7 +21,7 @@ const Asthetical = () => {
       <Container>
         <Row>
           <Col lg={12} className={` ${styles.banner}`}>
-            <Breadcrumb>
+            <Breadcrumb  >
               <Breadcrumb.Item href="#" className={styles.brdcrumb}>
                 Home
               </Breadcrumb.Item>
@@ -46,7 +46,7 @@ const Asthetical = () => {
               </h6>
             </div>
             <p>Made by Tulba Designers</p>
-            <h5 className="my-5">What’s good in this ?</h5>
+            {/* <h5 className="my-5">What’s good in this ?</h5>
             <div>
               <input type="checkbox" className="bg-white" name="" id="" />
               <span className={styles.check}>Print on both sides</span>
@@ -70,7 +70,7 @@ const Asthetical = () => {
             <div>
               <input type="checkbox" className="bg-white" name="" id="" />
               <span className={styles.check}>Free Quick Change Date.</span>
-            </div>
+            </div> */}
             <div>
               <Link href="/">
                 <Button className={styles.as_btn}>
@@ -326,7 +326,7 @@ const Asthetical = () => {
                   Sillhoutte: <p className={styles.text}> {sillhoutte}</p>{" "}
                 </div>
               </div>
-              <div>Assets??</div>
+              {/* <div>Assets??</div> */}
             </div>
             <div className={styles.quantityContainer}>
               <div>
@@ -342,7 +342,7 @@ const Asthetical = () => {
                 </div>
                 <div className={styles.button}>
                   {" "}
-                  <Link href="/checkout">Select Design &nbsp; $10</Link>{" "}
+                  <Link href="/checkout">Buy now</Link>{" "}
                 </div>
               </div>
             </div>

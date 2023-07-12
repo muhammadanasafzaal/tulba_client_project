@@ -55,7 +55,7 @@ const Header = () => {
             </div>
           </div>
           {!showSearch ? (
-            <Navbar>
+            <Navbar className={style.navbar_style}>
               <div
                 className={` flex items-center justify-between w-full ${style.header_bottom}`}
               >

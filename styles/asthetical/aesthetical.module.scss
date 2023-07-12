@@ -8,6 +8,8 @@ $deviceMaxWidth: 1024px;
   width: 40%;
   @media (max-width: 767px) {
     width: 90%;
+    // background-color: #f85757;
+    display: none;
   }
   @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth) {
     width: 100%;
@@ -267,15 +269,15 @@ $deviceMaxWidth: 1024px;
         }
       }
       .button {
-        border: 2px solid #f85757;
+        // border: 2px solid #f85757;
         border-radius: 5px;
-        color: #f85757;
+        background-color: #f85757;
         padding: 3px 10px;
         font-weight: 600;
         cursor: pointer;
 
         a {
-          color: black;
+          color: #fff;
           text-decoration: none;
         }
 

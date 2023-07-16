@@ -29,6 +29,7 @@ const Plan = () => {
       headingText: "Vendor Search",
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
+      link: "/vendors"
     },
     {
       id: 2,
@@ -38,6 +39,7 @@ const Plan = () => {
       headingText: "Shop Invitation Cards",
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#000",
+      link: "/shop-invitation"
     },
     {
       id: 3,
@@ -47,6 +49,7 @@ const Plan = () => {
       headingText: "Shop Nikkah Templates",
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
+      link: "/nikkah-templates"
     },
   ];
 
@@ -60,6 +63,7 @@ const Plan = () => {
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
       width: "400px",
+      link: "/template"
     },
     {
       id: 5,
@@ -70,6 +74,7 @@ const Plan = () => {
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#000",
       width: "80px",
+      link: "/checklist"
     },
 
     {
@@ -80,6 +85,7 @@ const Plan = () => {
       headingText: "Guest List/RSVP",
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
+      link: "/rsvp"
     },
   ];
 
@@ -94,6 +100,7 @@ const Plan = () => {
           headingText={e.headingText}
           text={e.text}
           btnTextColor={e.btnTextColor}
+          link={e.link}
         />
       ))}
       <div></div>
@@ -106,6 +113,7 @@ const Plan = () => {
           headingText={e.headingText}
           text={e.text}
           btnTextColor={e.btnTextColor}
+          link={e.link}
         />
       ))}
     </div>

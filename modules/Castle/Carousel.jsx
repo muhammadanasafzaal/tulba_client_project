@@ -7,8 +7,7 @@ const Castle_carousel = ({ vendor }) => {
 
             <Carousel>
                 <div>
-                    <img src={vendor?.imgsrc}
-                    />
+                    <img src={vendor?.imgsrc} alt="" />
                 </div>
                 {/* { vendor?.map((item)=>{
                 return (
@@ -24,44 +23,44 @@ const Castle_carousel = ({ vendor }) => {
                     />
                 </div> 
                 <div>   
-                    <img src="../assests/castle/Rectangle 267.svg" 
+                    <img src="/assests/castle/Rectangle 267.svg" 
                     />
                 </div>
                  <div>   
-                    <img src="../assests/castle/Rectangle 267.svg" 
+                    <img src="/assests/castle/Rectangle 267.svg" 
                     />
                 </div>
                  <div>   
-                    <img src="../assests/castle/Rectangle 267.svg" 
+                    <img src="/assests/castle/Rectangle 267.svg" 
                     />
                 </div> 
                 <div>   
-                    <img src="../assests/castle/Rectangle 267.svg" 
+                    <img src="/assests/castle/Rectangle 267.svg" 
                     />
                 </div> 
                 <div>   
-                    <img src="../assests/castle/Rectangle 267.svg" 
+                    <img src="/assests/castle/Rectangle 267.svg" 
                     />
                 </div>
                  <div>   
-                    <img src="../assests/castle/Rectangle 267.svg" 
+                    <img src="/assests/castle/Rectangle 267.svg" 
                     />
                 </div>
                 
                 <div>   
-                    <img src="../assests/asthetical/temp2.svg"/>
+                    <img src="/assests/asthetical/temp2.svg"/>
                 </div>
                 <div>   
-                    <img src="../assests/asthetical/temp3.svg"/>
+                    <img src="/assests/asthetical/temp3.svg"/>
                 </div>
                 <div>   
-                    <img src="../assests/asthetical/temp4.svg"/>
+                    <img src="/assests/asthetical/temp4.svg"/>
                 </div>
                 <div>   
-                    <img src="../assests/asthetical/temp5.svg"/>
+                    <img src="/assests/asthetical/temp5.svg"/>
                 </div>
                 <div>   
-                    <img src="../assests/asthetical/temp6.svg"/>
+                    <img src="/assests/asthetical/temp6.svg"/>
                 </div>
                 <div>   
                     <img src="../assests/asthetical/temp3.svg"/>

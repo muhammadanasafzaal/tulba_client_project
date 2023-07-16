@@ -10,7 +10,7 @@ const BrowseCard = (props) => {
   return (
     <>
 
-    <Link href="/castle">
+    <Link href="/vendors/profile/demo">
 
       <div className={`mx-2 cursor-pointer ${styles.browse}`}>
         <Image

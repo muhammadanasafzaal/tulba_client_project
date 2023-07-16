@@ -10,25 +10,49 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import { useState } from "react";
 import { api } from "./../../services/api";
+import { toast } from "react-hot-toast";
+import { validateEmail } from "utils/functions";
+import Loader from "utils/Loader";
 
 const ForgotPassword = () => {
+  const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState("");
 
   const handleForgot = async () => {
-    let body = {
-      email,
-    };
+    if(!validateEmail(email)) {
+      toast.error("Please input a valid email");
+      return;
+    }
 
-    let res = await api.post("", body);
+    try {
+      setLoading(true);
+      const body = {
+        email,
+      };
+      await api.post("/api/v1/auth/forgotPassword", body);
+
+      toast.success("We have sent you an email with further instructions");
+      setEmail("");
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+				toast.error(error.response.data.message);
+			} else {
+				toast.error(error.message);
+			}
+    } finally {
+      setLoading(false)
+    }
+
   };
 
   return (
     <div
       className={`${styles.forgotpassword_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
     >
+      <Loader loading = {loading}/>
       <div className={`${styles.forgotpassword_nested} bg-white p-6`}>
         <div className={`${styles.backpage}`}>
-          <Link href="/loginin">
+          <Link href="/login">
             <IoIosArrowDropleft className="text-3xl cursor-pointer ml-2" />
           </Link>
         </div>
@@ -57,7 +81,7 @@ const ForgotPassword = () => {
             className={`${styles.btn_forgotpassword}`}
             onClick={() => handleForgot()}
           >
-            <Button type="button" value={"Send Email"} padding="12px 0px" />
+            <Button disabled = {loading} type="button" value={"Send Email"} padding="12px 0px" />
           </div>
         </form>
       </div>

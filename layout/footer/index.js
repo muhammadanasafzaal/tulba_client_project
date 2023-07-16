@@ -43,7 +43,7 @@ const Footer = () => {
             <ul>
               <li>
                 {" "}
-                <Link href={"/loginin"}>Login</Link>{" "}
+                <Link href={"/login"}>Login</Link>{" "}
               </li>
               <li>
                 <Link href={"/signup"}>Sign up</Link>{" "}

@@ -16,7 +16,7 @@ const InputField = (props) => {
           placeholder={props.placeholder}
           type={props.type}
           onChange={props.onChange}
-          value={props.vlaue}
+          value={props.value}
           autoFocus={false}
           // bordered={"false"}
           className="inputfield"

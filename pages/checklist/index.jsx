@@ -4,6 +4,7 @@ import Banner from "modules/checklist/Banner";
 import Main from "modules/checklist/Main";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import withAuth from "hoc/withAuth";
 
 const CheckList = () => {
   return (
@@ -16,4 +17,4 @@ const CheckList = () => {
   );
 };
 
-export default CheckList;
+export default withAuth(CheckList);

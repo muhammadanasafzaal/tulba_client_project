@@ -3,14 +3,27 @@ import generalReducer from "./../redux/appSlice";
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
-
+import authReducer from "./auth/authSlice";
+import rsvpReducer from "./rsvp/rsvpSlice";
+import taskReducer from "./task/taskSlice";
+import weddingReducer from "./wedding/weddingSlice";
+import weddingEventReducer from "./weddingEvent/weddingEventSlice";
 
 const persistConfig = {
   key: 'root',
   storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, generalReducer)
+const reducers = {
+	vendor: generalReducer,
+	auth: authReducer,
+	rsvp: rsvpReducer,
+	task: taskReducer,
+	wedding: weddingReducer,
+	weddingEvent: weddingEventReducer
+}
+
+const persistedReducer = persistReducer(persistConfig, reducers)
 
 
 export const store = configureStore({

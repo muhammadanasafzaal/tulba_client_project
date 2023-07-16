@@ -99,6 +99,9 @@
           &:hover {
             box-shadow: 0 0 0 4px rgb(248 87 87 / 14%);
           }
+          &:focus {
+            box-shadow: 0 0 0 4px rgb(248 87 87 / 14%);
+          }
         }
         label {
           padding-left: 4px;

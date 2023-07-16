@@ -3,6 +3,10 @@ import Image from "next/image";
 import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Provider } from "react-redux";
+import store from "redux/store";
+import Common from "components/Common";
+import { Toaster } from "react-hot-toast";
 // import 'bootstrap/dist/css/bootstrap.css';
 import { store, persistor } from "../redux/store";
 import { Provider } from "react-redux";
@@ -24,6 +28,8 @@ function MyApp({ Component, pageProps }) {
           />
         </Head>
         <Component {...pageProps} />
+        <Common />
+        <Toaster />
       </PersistGate>
     </Provider>
   );

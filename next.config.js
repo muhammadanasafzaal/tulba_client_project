@@ -12,7 +12,7 @@ module.exports = (phase) => {
 			images: {
 				domains: [process.env.API_URL],
 				domains: [process.env.API_URL],
-				hostname: process.env.API_HOST,
+				//hostname: process.env.API_HOST,
 			},
 			env: {
 				base_url: process.env.API_URL,

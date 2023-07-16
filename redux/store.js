@@ -23,13 +23,21 @@ const reducers = {
 	weddingEvent: weddingEventReducer
 }
 
-const persistedReducer = persistReducer(persistConfig, reducers)
+const persistedReducer = persistReducer(persistConfig, generalReducer)
 
 
-export const store = configureStore({
-  reducer: persistedReducer,
+const store = configureStore({
+	reducer: {
+		vendor: generalReducer,
+		auth: authReducer,
+		rsvp: rsvpReducer,
+		task: taskReducer,
+		wedding: weddingReducer,
+		weddingEvent: weddingEventReducer
+	},
   middleware: [thunk]
 })
 
-export const persistor = persistStore(store)
+export default store
+// export const persistor = persistStore(store)
 

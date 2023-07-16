@@ -3,19 +3,18 @@ import Image from "next/image";
 import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Provider } from "react-redux";
-import store from "redux/store";
 import Common from "components/Common";
 import { Toaster } from "react-hot-toast";
 // import 'bootstrap/dist/css/bootstrap.css';
-import { store, persistor } from "../redux/store";
+// import { store, persistor } from "../redux/store";
+import store from "../redux/store";
 import { Provider } from "react-redux";
 import { PersistGate } from 'redux-persist/integration/react';
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
         <Head>
           <title>Tulba</title>
           <meta name="description" content="And we created you in pairs" />
@@ -30,7 +29,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
         <Common />
         <Toaster />
-      </PersistGate>
+      {/* </PersistGate> */}
     </Provider>
   );
 }

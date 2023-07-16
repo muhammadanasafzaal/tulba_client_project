@@ -15,6 +15,7 @@ import Button from "react-bootstrap/Button";
 import { AiOutlineSearch } from "react-icons/ai";
 import "bootstrap/dist/css/bootstrap.css";
 import CITIES from "data/locations";
+import { useState, useCallback } from "react";
 
 const HomeTopSection = () => {
 
@@ -151,7 +152,7 @@ const HomeTopSection = () => {
                       // <AiOutlineSearch />
                     />
 
-                    { locationList && <div
+                    {/* { locationList && <div
                       className="locations"
                     >
                       <div className="close">
@@ -164,9 +165,9 @@ const HomeTopSection = () => {
                           </p>
                         ))}
                       </div>
-                    </div>}
+                    </div>} */}
 
-                    {/* <datalist
+                    <datalist
                       id="locations"
                       className={`hidden text-black bg-white`}
                     >
@@ -175,7 +176,7 @@ const HomeTopSection = () => {
                           {item}
                         </option>
                       ))}
-                    </datalist> */}
+                    </datalist>
                   </FloatingLabel>
                 </Col>
 

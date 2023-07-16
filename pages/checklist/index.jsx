@@ -18,3 +18,4 @@ const CheckList = () => {
 };
 
 export default withAuth(CheckList);
+

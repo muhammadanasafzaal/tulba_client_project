@@ -3,8 +3,17 @@ import Calender from "../../public/assests/nikkah-card/calender.png";
 import Location from "../../public/assests/nikkah-card/location.png";
 import Envelope from "../../public/assests/nikkah-card/envelope.png";
 import Image from "next/image";
+import ConfirmationModal from "components/popup/confirmation_popup";
+import { useState } from "react";
 
 const SpecialEvent = () => {
+  const [modalShow, setModalShow] = useState(false);
+  const handelOpenModal = () => {
+    setModalShow(true);
+  }
+  const handleReset = () => {
+    setModalShow(false);
+  };
   return (
     <div
       style={{ fontFamily: "DM Serif Display" }}
@@ -40,10 +49,15 @@ const SpecialEvent = () => {
         </div>
       </div>
       <div>
-        <div className="bg-[#f85757] py-3 px-8 rounded-xl cursor-pointer text-white hover:shadow-xl">
-        Accept/Reject Invitation
+        <div className="bg-[#f85757] py-3 px-8 rounded-xl cursor-pointer text-white hover:shadow-xl" onClick={handelOpenModal}>
+          Accept/Reject Invitation
         </div>
       </div>
+      <ConfirmationModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        handleReset={handleReset}
+      />
     </div>
   );
 };

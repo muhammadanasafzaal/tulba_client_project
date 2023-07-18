@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-
+import searchIcon from "public/assests/searchIcon.svg";
 const Sidebar = ({ setOpen, open }) => {
   const router = useRouter();
   const [vendors, setVendors] = useState(false);
@@ -50,6 +50,19 @@ const Sidebar = ({ setOpen, open }) => {
           </div>
         </div>
         <div className={style.sd_body}>
+        <div className={style.mainItem}>
+            <div className={style.menu}>
+              <div className={style.item} >
+                <div style={{display:'flex', justifyContent:'center', alignItems:'center', borderWidth:1, borderRadius:20, padding:10, width:'100%'}} >
+              <Image
+                      alt="search"
+                      src={searchIcon}
+                      />
+                <p style={{fontSize:14,marginLeft:5}} >Search gifts, vendors, couples...</p>
+                      </div>
+              </div>
+            </div>
+          </div>
           <div className={style.mainItem}>
             <div className={style.menu}>
               <Link href="/vendors">
@@ -131,6 +144,7 @@ const Sidebar = ({ setOpen, open }) => {
               </Link>
             </div>
           </div>
+          
         </div>
       </div>
       <div

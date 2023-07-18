@@ -17,7 +17,7 @@ const Save_date = () => {
       <Container>
         <Row>
           <Col lg={12} className={`mx-5 ${style.banner}`}>
-            <Breadcrumb>
+            {/* <Breadcrumb>
               <Breadcrumb.Item href="#" className={style.brdcrumb}>
                 Home
               </Breadcrumb.Item>
@@ -27,7 +27,7 @@ const Save_date = () => {
               <Breadcrumb.Item active className={style.actbrdcrumb}>
                 Asthetical
               </Breadcrumb.Item>
-            </Breadcrumb>
+            </Breadcrumb> */}
           </Col>
           <Col lg={6}>
             <Image src={Img} />

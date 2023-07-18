@@ -19,7 +19,7 @@ const Asthetical = () => {
   return (
     <div>
       <Container>
-        <Row>
+        {/* <Row>
           <Col lg={12} className={` ${styles.banner}`}>
             <Breadcrumb  >
               <Breadcrumb.Item href="#" className={styles.brdcrumb}>
@@ -33,7 +33,7 @@ const Asthetical = () => {
               </Breadcrumb.Item>
             </Breadcrumb>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col lg={6} md={8} sm={12}>
             <MyCarousel />

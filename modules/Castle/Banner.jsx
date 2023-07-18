@@ -18,7 +18,7 @@ const Banner = ({ vendor }) => {
 
     return (
         <>
-            <Container className={`my-5 ${styles.castlebanner}`}>
+            <Container className={`my-md-5 my-sm-5 ${styles.castlebanner}`}>
                 <Row>
                     <Col lg={6}>
                         <Row className="g-2 my-5">
@@ -33,7 +33,7 @@ const Banner = ({ vendor }) => {
                                     />
                                 </FloatingLabel>
                             </Col>
-                            <Col md={5} className="btstrp p-0">
+                            <Col md={4} className="btstrp p-0">
                                 {/* <FloatingLabel
                                     controlId="floatingSelectGrid"
                                     label="Select Location"
@@ -71,15 +71,15 @@ const Banner = ({ vendor }) => {
                                     </datalist>
                                 </FloatingLabel>
                             </Col>
-                            <Col md={2} className="p-0">
+                            <Col md={3} className="p-0">
                                 <Button className={`py-3 ${styles.inputbtn}`}>Search here</Button>
                             </Col>
                         </Row>
-                        <Breadcrumb className={style.banner}>
-                            <Breadcrumb.Item href="#" className={style.brdcrumb}>Home</Breadcrumb.Item>
-                            <Breadcrumb.Item href="#" className={style.brdcrumb}>Vendors</Breadcrumb.Item>
-                            <Breadcrumb.Item active className={style.actbrdcrumb}>The Groomy</Breadcrumb.Item>
-                        </Breadcrumb>
+                            {/* <Breadcrumb className={style.banner}>
+                                <Breadcrumb.Item href="#" className={style.brdcrumb}>Home</Breadcrumb.Item>
+                                <Breadcrumb.Item href="#" className={style.brdcrumb}>Vendors</Breadcrumb.Item>
+                                <Breadcrumb.Item active className={style.actbrdcrumb}>The Groomy</Breadcrumb.Item>
+                            </Breadcrumb> */}
 
                     </Col>
                 </Row>

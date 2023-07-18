@@ -21,6 +21,22 @@ const Main = () => {
 	const [isEdit, setIsEdit] = useState(false);
 	const [isDelete, setIsDelete] = useState(false);
 	const [modalData, setModalData] = useState(null);
+
+	const [tmpTaskList, setTmpTaskList] = useState(
+		[
+			{
+				id:1,
+				task:'Plan Budget',
+				desc: 'something about task'
+			},
+			{
+				id:2,
+				task:'Select Vendor',
+				desc: 'something about task'
+			}
+		]
+	)
+
 	const [selectedWedding, setSelectedWedding] = useState(null);
 	const weddingState = useSelector((state) => state.wedding);
 	const { loading, list } = useSelector((state) => state.task);
@@ -84,6 +100,7 @@ const Main = () => {
 	console.log(list);
 	console.log(selectedWedding);
 
+
 	const tasks = ["one", "one", "one", "one", "one", "one"];
 	return (
 		<div className={styles.main}>
@@ -141,6 +158,75 @@ const Main = () => {
 				</div>
 				
 			</div> */}
+			            <div className={styles.first} >
+                <div className={styles.titleContainer} style={{ display:'none' }}>
+                    <div className={styles.icon}>
+                        {/* <Image
+                            src={checkList}
+                            width={"100%"}
+                            height={"100%"}
+                            layout="responsive"
+                            objectFit='cover'
+                            alt=''
+                        /> */}
+                    </div>
+                    <div className={styles.title}>Checklist</div>
+                </div>
+                <div className={styles.search} style={{ display:'none' }}>
+                    <p>Search All Your Tasks here</p>
+                    <div>
+                        {/* <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                        </div> */}
+                        <input type="search" name="search" id="search" placeholder='Search..' />
+                    </div>
+                </div>
+
+                <div className={styles.date}>
+                    <div className={styles.icon}>
+                        {/* <Image
+                            src={checkList}
+                            width={"100%"}
+                            height={"100%"}
+                            layout="responsive"
+                            objectFit='cover'
+                            alt=''
+                        /> */}
+                    </div>
+                    <div className={styles.title}>Date</div>
+
+                </div>
+                <div className={styles.list}>
+
+                    <ul>
+                        <li>From 1 to 3 Months</li>
+                        <li>From 2 to 4 Months</li>
+                        <li>From 3 to 6 Months</li>
+                        <li>From 2 to 6 Months</li>
+                        <li>From 12 to 9 Months</li>
+                        <li>From 4 to 12 Months</li>
+                    </ul>
+                </div>
+                <div className={styles.status}>
+                    <div className={styles.icon}>
+                        {/* <Image
+                            src={checkList}
+                            width={"100%"}
+                            height={"100%"}
+                            layout="responsive"
+                            objectFit='cover'
+                            alt=''
+                        /> */}
+                    </div>
+                    <div className={styles.title}>Status</div>
+                </div>
+                <div className={styles.subStatus}>
+                    <div>Success</div>
+                    <div>In Process</div>
+                </div>
+            </div>
 			<div className={styles.second}>
 				<div className={styles.top}>
 					<div className={styles.heading}>Tasks</div>
@@ -195,8 +281,34 @@ const Main = () => {
 					<div className='mr-4 text-sm cursor-pointer font-bold'>Clear All</div>
 				</div>
 
-				<div className={styles.gray}>
-					{list.length === 0 && <div>No tasks found </div>}
+				<div className={`${styles.gray}`}>
+					{tmpTaskList.map((item,index)=>{
+						return( 
+							<div className="row p-2 mx-1 mb-2 bg-light" 
+							style={{borderRadius: '20px'}} key={index}>
+								<div className="col-12 col-md-2 d-flex justify-content-center align-items-center">
+									<span className="active-indicator"></span>
+								</div>
+								<div className="col-12 col-md-8">
+									<small>{item.task}</small> | <small style={{color:'#bfbfbf'}}>{item.desc}</small>
+								</div>
+								<div className="col-12 col-md-2">
+									<FaEdit
+										onClick={() => handleOpenEdit(item)}
+										className='cursor-pointer'
+										size='1.2em'
+									/>
+									{/* <FaTrash
+										onClick={() => handleOpenDelete(item)}
+										className='cursor-pointer'
+										size='1.5em'
+										color='#f85757'
+									/> */}
+								</div>
+							</div>
+						)
+					})}
+					{/* {list.length === 0 && <div>No tasks found </div>}
 					{list.map((item, index) => (
 						<div key={index} className={styles.task}>
 							<div className={styles.corner}></div>
@@ -231,7 +343,7 @@ const Main = () => {
 								/>
 							</div>
 						</div>
-					))}
+					))} */}
 				</div>
 			</div>
 			<div className={styles.third}>

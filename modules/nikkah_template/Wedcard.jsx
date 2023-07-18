@@ -294,11 +294,12 @@ const Wedcard = () => {
               </h5>
             </div>
             <Row>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item,index) => {
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(() => {
                 return (
-                  <Col lg={4} md={6} className="my-2" key={index}>
-                    <Link href="/nikkah-card-yellow">
-                      <div className="cursor-pointer">
+                  <Col lg={4} md={6} className="my-2" >
+                    {/* <Link href="/"> */}
+                    <div className="cursor-pointer">
+                      <Link href="/asthetical">
                         <div className={` ${styles.wed_card}`}>
                           <Image
                             src={"/assests/home_img/nikkah.png"}
@@ -308,38 +309,39 @@ const Wedcard = () => {
                             alt="template"
                           />
                         </div>
-                        <div
-                          className={`d-flex justify-content-between ${styles.wed_content}`}
-                        >
-                          <h1 className="mx-3 my-2">Yellow card</h1>
-                          <div className="d-flex justify-content-end">
-                            <AiFillStar className={` my-3 ${styles.star}`} />
-                            <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
-                              5
-                            </span>
-                          </div>
-                        </div>
-                        <div className="d-flex justify-content-start  my-2">
-                          <h4 className="mx-3">$300.00</h4>
-                          <h6 className="my-1">( 20% off )</h6>
-                        </div>
-                        <div className="d-flex justify-content-start  my-1 mx-3">
-                          <div className={`mx-1 ${styles.circle_blue}`}></div>
-                          <div className={`mx-1 ${styles.circle_green}`}></div>
-                          <div className={`mx-1 ${styles.circle_pink}`}></div>
+                      </Link>
+                      <div
+                        className={`d-flex justify-content-between ${styles.wed_content}`}
+                      >
+                        <h1 className="mx-3 my-2">Yellow card</h1>
+                        <div className="d-flex justify-content-end">
+                          <AiFillStar className={` my-3 ${styles.star}`} />
+                          <span className={`my-2  mx-2 pt-2 ${styles.myspan}`}>
+                            5
+                          </span>
                         </div>
                       </div>
-                      {/* </div> */}
-                      <div className="d-flex justify-content-center justify-content-md-start  my-2">
+                      <div className="d-flex justify-content-start  my-2">
                         <h4 className="mx-3">$300.00</h4>
                         <h6 className="my-1">( 20% off )</h6>
                       </div>
-                      <div className="d-flex  justify-content-center justify-content-md-start   my-1 mx-3">
+                      <div className="d-flex justify-content-start  my-1 mx-3">
                         <div className={`mx-1 ${styles.circle_blue}`}></div>
                         <div className={`mx-1 ${styles.circle_green}`}></div>
                         <div className={`mx-1 ${styles.circle_pink}`}></div>
                       </div>
-                    </Link>
+                    </div>
+                    {/* </div> */}
+                    <div className="d-flex justify-content-center justify-content-md-start  my-2">
+                      <h4 className="mx-3">$300.00</h4>
+                      <h6 className="my-1">( 20% off )</h6>
+                    </div>
+                    <div className="d-flex  justify-content-center justify-content-md-start   my-1 mx-3">
+                      <div className={`mx-1 ${styles.circle_blue}`}></div>
+                      <div className={`mx-1 ${styles.circle_green}`}></div>
+                      <div className={`mx-1 ${styles.circle_pink}`}></div>
+                    </div>
+                    {/* </Link> */}
 
                     <div className="flex flex-row justify-evenly my-1 mx-1">
                       <div>
@@ -391,7 +393,6 @@ const Wedcard = () => {
                       <div className={`mx-1 ${styles.circle_pink}`}></div>
                     </div>
                   </div>
-<<<<<<< HEAD
                 </div>
                 <div className="d-flex justify-content-start  my-2">
                   <h4 className="mx-3">$300.00</h4>
@@ -402,9 +403,6 @@ const Wedcard = () => {
                   <div className={`mx-1 ${styles.circle_green}`}></div>
                   <div className={`mx-1 ${styles.circle_pink}`}></div>
                 </div>
-=======
-                </Link>
->>>>>>> 3e2275e286a2796c8f613f75a3bb6c30d6761fb0
 
                 <div className="flex flex-row justify-evenly my-1 mx-1">
                   <div>

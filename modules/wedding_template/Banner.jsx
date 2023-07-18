@@ -13,7 +13,7 @@ const Banner = () => {
               <Breadcrumb.Item href="/" className="brdcrumb">Home</Breadcrumb.Item>
               <Breadcrumb.Item active className="actbrdcrumb">Event Website</Breadcrumb.Item>
             </Breadcrumb>
-            <div className='mb-[100px]'>
+            <div className='mb-3 mb-md-5'>
               <h1>Event Website</h1>
               <p>
                 Get your items according to your budegt with our classic budget planner

@@ -26,7 +26,7 @@ const Banner = () => {
 			<div className='flex flex-1  '>
 				<div className='flex-1 lg:flex-[0.5] px-[6%] md:pl-[6%] z-10 '>
 					<div>
-						<Breadcrumb>
+						{/* <Breadcrumb>
 							<Breadcrumb.Item href='/' className='brdcrumb'>
 								Home
 							</Breadcrumb.Item>
@@ -36,7 +36,7 @@ const Banner = () => {
 							>
 								Event Planner
 							</Breadcrumb.Item>
-						</Breadcrumb>
+						</Breadcrumb> */}
 					</div>
 					<div id='signup'>
 						<h1

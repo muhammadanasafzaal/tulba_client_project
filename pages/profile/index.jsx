@@ -15,4 +15,5 @@ const Profile = () => (
 	</div>
 );
 
-export default withAuth(Profile);
+// export default withAuth(Profile);
+export default Profile;

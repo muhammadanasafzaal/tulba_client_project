@@ -13,17 +13,23 @@ import Browse from "modules/home/Browse";
 ////////////////////
 import { Provider } from "react-redux";
 import store from "redux/store";
+import React, { useRef } from 'react';
+
+
 // import "bootstrap/dist/css/bootstrap.css";
 
 // import Signup from "./signup";
 // import Login from "./loginin";
 // import ForgotPassword from "./forgotpassword";
 export default function Home() {
+
+	const bodyRef = useRef(null);
+
 	return (
 		<Provider store={store}>
-			<div className={styles.mainPage_section}>
+			<div className={styles.mainPage_section} ref={bodyRef}>
 				<Header />
-				<HomeTopSection />
+				<HomeTopSection bodyRef={bodyRef}/>
 				<Plan />
 				<Browse />
 				<Template />

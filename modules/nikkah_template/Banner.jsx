@@ -9,15 +9,15 @@ const Banner = () => {
       <Container fluid className="my-2">
         <Row>
           <Col lg={6} className={`px-[5%] banner`}>
-            <Breadcrumb className={ styles.bread_crumb}>
+            {/* <Breadcrumb className={ styles.bread_crumb}>
               <Breadcrumb.Item href="/" className="brdcrumb">
                 Home
               </Breadcrumb.Item>
               <Breadcrumb.Item active className="actbrdcrumb">
                 Shop Nikkah Templates
               </Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="mb-[100px]">
+            </Breadcrumb> */}
+            <div className="mb-3 mb-md-5">
               <h1>SHOP NIKKAH TEMPLATES</h1>
               <p className="bannerText">
                 Get your items according to your budegt with our classic budget

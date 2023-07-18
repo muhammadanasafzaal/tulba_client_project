@@ -15,16 +15,21 @@ import Button from "react-bootstrap/Button";
 import { AiOutlineSearch } from "react-icons/ai";
 import "bootstrap/dist/css/bootstrap.css";
 import CITIES from "data/locations";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef  } from "react";
 
-const HomeTopSection = () => {
+const HomeTopSection = ({ bodyRef }) => {
 
   const [locationList, setLocationList] = useState(false)
   const [selectedLocation, setSelectedLocation] = useState(null)
 
-  const handleLocation = useCallback(() => {
+
+  const handleLocationClick = useCallback(() => {
     setLocationList((current) => !current)
   },[])
+
+  const handleLocationChange = (e) => {
+    setSelectedLocation(e)  
+  }
 
   const closeLocationList = () => {
     setLocationList(false)
@@ -34,10 +39,33 @@ const HomeTopSection = () => {
     setSelectedLocation(location)
   }
 
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      if((!event.target.classList.contains('location') && !event.target.classList.contains('close') 
+      && !event.target.classList.contains('list')) && !event.target.classList.contains('city')
+      && !event.target.classList.contains('form-control')){
+        if(locationList){
+          setLocationList(false)
+        }
+      }
+    };
+
+    document.body.addEventListener('click', handleClick);
+
+    return () => {
+      document.body.removeEventListener('click', handleClick);
+    };
+  }, [locationList]);
+  
+
   return (
     <>
       <style jsx>
       {`
+        // .input{
+        //   padding: 0.6rem;
+        // }
         .locations {
           position: absolute;
           width: 100%;
@@ -78,7 +106,7 @@ const HomeTopSection = () => {
         }
       `}
       </style>
-      <Container>
+      <Container >
         <Row>
           <Col lg={8} md={12} sm={12} xs={12} className={` ${styles.order2}`}>
             <div className={`my-2  ${styles.top_head} `}>
@@ -140,19 +168,19 @@ const HomeTopSection = () => {
                 <Col md={4} className="btstrp p-0">
                   <FloatingLabel
                     controlId="floatingInputGrid"
-                    label="Search Location"
                   >
-                    <Form.Control
-                      type="text"
-                      list="locations"
-                      placeholder="Search Vendors, Catering"
-                      className={styles.input2}
-                      onClick={handleLocation}
-                      value={selectedLocation}
-                      // <AiOutlineSearch />
-                    />
+                    <div className={styles.input2} style={{padding: '0.6rem'}} onClick={handleLocationClick}>
+                      <Form.Control
+                        type="text"
+                        list="locations"
+                        placeholder="Search Vendors, Catering"
+                        onChange={(e) => handleLocationChange(e.target.value)}
+                        value={selectedLocation}
+                        // <AiOutlineSearch />
+                      />
+                    </div>
 
-                    {/* { locationList && <div
+                    { locationList && <div
                       className="locations"
                     >
                       <div className="close">
@@ -160,14 +188,14 @@ const HomeTopSection = () => {
                       </div>
                       <div className="list">
                         {CITIES.map((item, index) => (
-                          <p  key={index} onClick={()=> selectLocation(item)}>
+                          <p className="city" key={index} onClick={()=> selectLocation(item)}>
                             {item}
                           </p>
                         ))}
                       </div>
-                    </div>} */}
+                    </div>}
 
-                    <datalist
+                    {/* <datalist
                       id="locations"
                       className={`hidden text-black bg-white`}
                     >
@@ -176,12 +204,12 @@ const HomeTopSection = () => {
                           {item}
                         </option>
                       ))}
-                    </datalist>
+                    </datalist> */}
                   </FloatingLabel>
                 </Col>
 
                 <Col md={2} sm={12} className="p-0">
-                  <Button className={`px-2 ${styles.inputbtn}`}>
+                  <Button className={`px-2 ml-md-3 ${styles.inputbtn}`}>
                     Search here
                   </Button>
                 </Col>

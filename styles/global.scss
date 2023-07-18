@@ -448,3 +448,41 @@ td {
     color: white !important;
   }
 }
+
+.cta{
+  padding-top: 0.6rem !important;
+  margin: 0 auto;
+  margin-top: 1rem;
+  display: block;
+}
+
+.cp{
+  cursor: pointer;
+}
+
+.active-indicator{
+  display: block;
+  height: 7px;
+  width: 7px;
+  background: #4bb543;
+  border-radius: 50%;
+}
+.inactive-indicator{
+  display: block;
+  height: 7px;
+  width: 7px;
+  background: #4bb543;
+  border-radius: 50%;
+}
+
+@media screen and (max-width:768px){
+  .text-xs-center{
+    text-align: center;
+  }
+  .w-xs-100{
+    width: 100% !important;
+  }
+  .flex-xs-column{
+    flex-direction: column !important;
+  }
+}

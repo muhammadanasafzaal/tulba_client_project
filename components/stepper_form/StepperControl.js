@@ -1,6 +1,6 @@
 const StepperControl = ({ isEdit, handleClick, currentStep, steps }) => {
 	return (
-		<div className='container flex justify-between mx-2 mt-4 mb-8'>
+		<div className='container flex justify-between mx-md-2 mt-4 mb-8'>
 			{/* back button */}
 			<button
 				onClick={() => handleClick()}

@@ -9,15 +9,15 @@ const Banner = () => {
 			<Container fluid className='my-2'>
 				<Row>
 					<Col lg={6} className={`px-[5%] banner`}>
-						<Breadcrumb className={styles.bread_crumb}>
+						{/* <Breadcrumb className={styles.bread_crumb}>
 							<Breadcrumb.Item href='/' className='brdcrumb'>
 								Home
 							</Breadcrumb.Item>
 							<Breadcrumb.Item active className='actbrdcrumb'>
 								Shop Invites
 							</Breadcrumb.Item>
-						</Breadcrumb>
-						<div className='mb-[100px]'>
+						</Breadcrumb> */}
+						<div className='mb-3 mb-md-5'>
               <h5 className="mt-5 mt-md-3">We got the best tools for your event, so hop on.</h5>
 							<h1>Shop Invitation Cards</h1>
 							<p className={styles.bannerText}>

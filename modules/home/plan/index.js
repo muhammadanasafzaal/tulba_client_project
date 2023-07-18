@@ -11,6 +11,7 @@ import styles from "/styles/home/Index.module.scss";
 import imageone from "public/assests/home_img/Download.svg";
 import arabian2 from "public/assests/home_img/arabian.jpg";
 import working from "public/assests/home_img/working.jpg";
+import vendor_search from "public/assests/home_img/vendor_search.png";
 import invitation from "public/assests/home_img/invitation.png";
 import invitationcard from "public/assests/home_img/invitationcard.svg";
 import nikkah from "public/assests/home_img/nikkah.png";
@@ -25,7 +26,7 @@ const Plan = () => {
       id: 1,
       primaryColor: "#FA5856",
       secondaryColor: "#FEE7E6",
-      image: working,
+      image: vendor_search,
       headingText: "Vendor Search",
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
@@ -63,7 +64,7 @@ const Plan = () => {
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
       width: "400px",
-      link: "/template"
+      link: "/event-website"
     },
     {
       id: 5,

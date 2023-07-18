@@ -8,14 +8,14 @@ import styles from "styles/Form/Form.module.scss";
 const Form_checkout = () => {
   return (
     <>
-      <Container className={`my-5 ${styles.forms}`}>
-        <Row className="flex justify-between items-center gap">
+      <Container className={`my-5 mt-md-5 mt-2 ${styles.forms}`}>
+        <Row className="flex justify-between items-center gap p-3 p-md-1">
           <Col lg={6} sm={12} className="checkForms p-0">
             <h1>CheckOut</h1>
             <p className="mb-5">All orders of your carts are here.</p>
             <Form>
-              <Row className="mb-3">
-                <Form.Group as={Col} lg={6} sm={12} controlId="formGridEmail">
+              <Row>
+                <Form.Group as={Col} lg={6} sm={12} controlId="formGridEmail" className="mb-3">
                   <Form.Label>First Name</Form.Label>
                   <Form.Control type="text" value="Waleed" />
                 </Form.Group>
@@ -25,13 +25,14 @@ const Form_checkout = () => {
                   lg={6}
                   sm={12}
                   controlId="formGridPassword"
+                  className="mb-3"
                 >
                   <Form.Label>Last Name</Form.Label>
                   <Form.Control type="text" />
                 </Form.Group>
               </Row>
-              <Row className="mb-3">
-                <Form.Group as={Col} lg={6} sm={12} controlId="formGridEmail">
+              <Row>
+                <Form.Group as={Col} lg={6} sm={12} controlId="formGridEmail" className="mb-3">
                   <Form.Label>Email Address</Form.Label>
                   <Form.Control type="email" />
                 </Form.Group>
@@ -41,29 +42,30 @@ const Form_checkout = () => {
                   lg={6}
                   sm={12}
                   controlId="formGridPassword"
+                  className="mb-3"
                 >
                   <Form.Label>Address</Form.Label>
                   <Form.Control type="text" />
                 </Form.Group>
               </Row>
 
-              <Row className="mb-3">
-                <Form.Group as={Col} lg={4} sm={12} controlId="formGridCity">
+              <Row>
+                <Form.Group as={Col} lg={4} sm={12} controlId="formGridCity" className="mb-3">
                   <Form.Label>Apt</Form.Label>
                   <Form.Control />
                 </Form.Group>
 
-                <Form.Group as={Col} lg={4} sm={12} controlId="formGridCity">
+                <Form.Group as={Col} lg={4} sm={12} controlId="formGridCity" className="mb-3">
                   <Form.Label>City</Form.Label>
                   <Form.Control />
                 </Form.Group>
 
-                <Form.Group as={Col} lg={4} sm={12} controlId="formGridZip">
+                <Form.Group as={Col} lg={4} sm={12} controlId="formGridZip" className="mb-3">
                   <Form.Label>Zip Code</Form.Label>
                   <Form.Control />
                 </Form.Group>
               </Row>
-              <Row className="mb-3">
+              <Row>
                 <Col lg={8}>
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Phone Number</Form.Label>
@@ -118,6 +120,7 @@ const Form_checkout = () => {
                   <Button
                     variant="outline-danger"
                     className={`mt-2 w-28 ${styles.applyBtn} `}
+                    style={{width:'100% !important'}}
                   >
                     Apply Now
                   </Button>{" "}

@@ -9,11 +9,11 @@ const Banner = () => {
         <Container fluid className="my-2">
         <Row>
           <Col lg={6} className={`px-[5%] banner`}>
-            <Breadcrumb>
+            {/* <Breadcrumb>
               <Breadcrumb.Item href="/"  className="brdcrumb">Home</Breadcrumb.Item>
               <Breadcrumb.Item active className="actbrdcrumb">Event Website</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className='mb-[100px]'>
+            </Breadcrumb> */}
+            <div className='mb-3 mb-md-5'>
               <h1>Event Website</h1>
               <p>
               Get your items according to your budegt with our classic budget planner

@@ -13,11 +13,11 @@ const Banner = () => {
       <Container fluid >
         <Row>
           <Col lg={6} className={`px-[5%] banner`}>
-            <Breadcrumb>
+            {/* <Breadcrumb>
               <Breadcrumb.Item href="#" className="brdcrumb"><Link href='/'>Home </Link></Breadcrumb.Item>
               <Breadcrumb.Item active className="actbrdcrumb">Vendors</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="mb-[100px]">
+            </Breadcrumb> */}
+            <div className="mb-3 mb-md-5">
               <h1>Vendors</h1>
               <p className="bannerText">
                 Browse through the many vendors of your choice and <br />

@@ -17,4 +17,5 @@ const CheckList = () => {
   );
 };
 
-export default withAuth(CheckList);
+// export default withAuth(CheckList);
+export default CheckList;

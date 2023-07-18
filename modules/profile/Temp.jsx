@@ -212,7 +212,7 @@ const Temp = () => {
                     />
                   </div>
                   <div className="mx-2">
-                    <h5>Got Started with hand picked recs</h5>
+                    <h5>Your Invites & Nikkah</h5>
                     <span className={styles.para}>
                       Dummy text of the printing and lorem ipsum.dummy text of the
                       printing and lorem ipsum.

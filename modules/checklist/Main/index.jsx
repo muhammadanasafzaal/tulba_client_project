@@ -3,6 +3,7 @@ import styles from "styles/checklist/Main.module.scss";
 import Image from "next/image";
 import checkList from "../../../public/assests/checklist/checklist.png";
 import { Progress } from "react-sweet-progress";
+import Pagination from "react-bootstrap/Pagination";
 import "react-sweet-progress/lib/style.css";
 import AddTaskModal from "components/popup/checkList_popup";
 import { useState } from "react";
@@ -345,6 +346,10 @@ const Main = () => {
 						</div>
 					))} */}
 				</div>
+
+				{/* <div className='d-flex justify-content-center py-5'>
+					<Pagination size='md'>test</Pagination>
+				</div> */}
 			</div>
 			<div className={styles.third}>
 				<div>icon</div>

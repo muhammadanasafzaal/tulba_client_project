@@ -21,7 +21,7 @@ const Banner = ({ vendor }) => {
             <Container className={`my-md-5 my-sm-5 ${styles.castlebanner}`}>
                 <Row>
                     <Col lg={6}>
-                        <Row className="g-2 my-5">
+                        <Row className="g-2 my-md-5">
                             <Col md={5} className="btstrp p-0">
                                 <FloatingLabel
                                     controlId="floatingInputGrid"

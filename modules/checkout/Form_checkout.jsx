@@ -73,10 +73,13 @@ const Form_checkout = () => {
                   </Form.Group>
                 </Col>
               </Row>
-
-              <Button type="submit" className={`mt-4 ${styles.check_btn}`}>
-                Continue
-              </Button>
+              <Row>
+                <Col lg={12} className="d-flex justify-content-md-start justify-content-center">
+                  <Button type="submit" className={`mb-3 mt-4 ${styles.check_btn}`}>
+                    Continue
+                  </Button>
+                </Col>
+              </Row>
             </Form>
           </Col>
           <Col lg={6} sm={12} xs={12} className="p-0">

@@ -238,7 +238,7 @@ const Asthetical = () => {
 
               <div className={styles.buttons}>
                 <div
-                  className={`${styles.button} ${
+                  className={`mb-3 ${styles.button} ${
                     paperType === "Smooth" ? styles.active : ""
                   } `}
                   onClick={() => {
@@ -248,7 +248,7 @@ const Asthetical = () => {
                   Smooth
                 </div>
                 <div
-                  className={`${styles.button} ${
+                  className={`mb-3 ${styles.button} ${
                     paperType === "EggShell" ? styles.active : ""
                   } `}
                   onClick={() => {
@@ -258,7 +258,7 @@ const Asthetical = () => {
                   EggShell
                 </div>
                 <div
-                  className={`${styles.button} ${
+                  className={`mb-3 ${styles.button} ${
                     paperType === "Recycle" ? styles.active : ""
                   } `}
                   onClick={() => {
@@ -268,7 +268,7 @@ const Asthetical = () => {
                   Recycle
                 </div>
                 <div
-                  className={`${styles.button} ${
+                  className={`mb-3 ${styles.button} ${
                     paperType === "Pearlescent" ? styles.active : ""
                   } `}
                   onClick={() => {
@@ -278,7 +278,7 @@ const Asthetical = () => {
                   Pearlescent
                 </div>
                 <div
-                  className={`${styles.button} ${
+                  className={`mb-3 ${styles.button} ${
                     paperType === "Linen" ? styles.active : ""
                   } `}
                   onClick={() => {
@@ -288,7 +288,7 @@ const Asthetical = () => {
                   Linen
                 </div>
                 <div
-                  className={`${styles.button} ${
+                  className={`mb-3 ${styles.button} ${
                     paperType === "Natural" ? styles.active : ""
                   } `}
                   onClick={() => {
@@ -298,7 +298,7 @@ const Asthetical = () => {
                   Natural
                 </div>
                 <div
-                  className={`${styles.button} ${
+                  className={`mb-3 ${styles.button} ${
                     paperType === "Double Thick" ? styles.active : ""
                   } `}
                   onClick={() => {
@@ -308,7 +308,7 @@ const Asthetical = () => {
                   Double Thick
                 </div>
                 <div
-                  className={`${styles.button} ${
+                  className={`mb-3 ${styles.button} ${
                     paperType === "Triple Thick" ? styles.active : ""
                   } `}
                   onClick={() => {

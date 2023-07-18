@@ -96,16 +96,16 @@ function BasicExample() {
 				rsvpData={rsvpData}
 			/>
 			<Row>
-				<Col lg={8} className={`p-0 ${styles.rsvp}`}>
+				<Col lg={8} className={`p-md-0 ${styles.rsvp}`}>
 					<Row>
-						<Col lg={4} className='p-0'>
+						<Col lg={4} className='p-md-0'>
 							<span className='d-flex justify-content-start'>
 								<RiTodoFill className={`mt-4 ${styles.icon}`} />
 								<span className={styles.head}>RSVP LIST</span>
 							</span>
 							<p className=''>Your Invitations to the guests details</p>
 						</Col>
-						<Col lg={5} className='p-0'>
+						<Col lg={5} className='p-md-0'>
 							<Button onClick={handleOpenModal} className={styles.btn}>
 								+ Add New Guest
 							</Button>

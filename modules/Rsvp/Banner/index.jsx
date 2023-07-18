@@ -4,6 +4,7 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Image from "next/image";
 // import Img from "public/assests/RSVP/banner.svg";
 import styles from "/styles/Rsvp/Rsvp.module.scss";
+import SummaryTable from "modules/SummaryTable";
 
 const Banner = () => {
 	return (
@@ -37,6 +38,12 @@ const Banner = () => {
             /> */}
 				</Col>
 			</Row>
+			<Col lg={4}>
+
+				<div className={styles.bannerSummary} >
+					<SummaryTable list={[]} />
+				</div>
+			</Col>
 		</Container>
 	);
 };

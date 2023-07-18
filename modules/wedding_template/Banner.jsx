@@ -6,17 +6,17 @@ import styles from "/styles/Rsvp/Rsvp.module.scss";
 const Banner = () => {
   return (
     <div>
-        <Container fluid className="my-2">
+      <Container fluid className="my-2">
         <Row>
           <Col lg={6} className={`px-[5%] banner`}>
             <Breadcrumb>
-              <Breadcrumb.Item href="/"  className="brdcrumb">Home</Breadcrumb.Item>
+              <Breadcrumb.Item href="/" className="brdcrumb">Home</Breadcrumb.Item>
               <Breadcrumb.Item active className="actbrdcrumb">Event Website</Breadcrumb.Item>
             </Breadcrumb>
             <div className='mb-[100px]'>
               <h1>Event Website</h1>
               <p>
-              Get your items according to your budegt with our classic budget planner
+                Get your items according to your budegt with our classic budget planner
               </p>
             </div>
           </Col>

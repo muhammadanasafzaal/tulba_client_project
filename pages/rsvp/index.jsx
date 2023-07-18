@@ -17,4 +17,5 @@ const Rsvp = () => {
   );
 };
 
-export default withAuth(Rsvp);
+// export default withAuth(Rsvp);
+export default Rsvp;

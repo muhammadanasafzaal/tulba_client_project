@@ -18,6 +18,7 @@ import { getWeddingEvents } from "redux/weddingEvent/weddingEventActions";
 import { toast } from "react-hot-toast";
 import { resetList } from "redux/rsvp/rsvpSlice";
 import { FaEdit } from "react-icons/fa";
+import SummaryTable from "modules/SummaryTable";
 
 let active = 2;
 let items = [];
@@ -39,7 +40,6 @@ function BasicExample() {
 	const weddingEventState = useSelector((state) => state.weddingEvent);
 	const { loading, list } = useSelector((state) => state.rsvp);
 	const dispatch = useDispatch();
-
 	const handleOpenModal = () => {
 		if (!selectedWedding || !selectedWeddingEvent) {
 			toast.error("Please select wedding and wedding event");
@@ -92,8 +92,8 @@ function BasicExample() {
 				setModalShow={setModalShow}
 				selectedWedding={selectedWedding}
 				selectedWeddingEvent={selectedWeddingEvent}
-				isEdit = {isEdit}
-				rsvpData = {rsvpData}
+				isEdit={isEdit}
+				rsvpData={rsvpData}
 			/>
 			<Row>
 				<Col lg={8} className={`p-0 ${styles.rsvp}`}>
@@ -122,13 +122,13 @@ function BasicExample() {
               </FloatingLabel> */}
 						{/* </Col> */}
 						<Row className='mt-2'>
-							<Col lg={6}>
+							{/* <Col lg={6}>
 								<div className='bg-white p-2 flex border border-gray-200 rounded'>
 									<select
 										className='bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
 										name='weddingSelect'
 										onChange={(e) => setSelectedWedding(e.target.value)}
-										// onChange={handleChange}
+									// onChange={handleChange}
 									>
 										<option hidden value={null}>
 											Select wedding
@@ -140,7 +140,7 @@ function BasicExample() {
 										))}
 									</select>
 								</div>
-							</Col>
+							</Col> */}
 							<Col lg={6}>
 								<div className='bg-white p-2 flex border border-gray-200 rounded'>
 									<select
@@ -148,7 +148,7 @@ function BasicExample() {
 										className='bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
 										name='weddingEventSelect'
 										onChange={(e) => setSelectedWeddingEvent(e.target.value)}
-										// onChange={handleChange}
+									// onChange={handleChange}
 									>
 										<option hidden value={null}>
 											Select event
@@ -197,32 +197,15 @@ function BasicExample() {
 							))}
 						</tbody>
 					</Table>
-				</Col>
-				<Col lg={4}>
-					<div
-						className={`d-flex justify-content-center align-items-center flex-column text-center ${styles.guest}`}
-					>
-						<div>
-							<h5>Total Guest</h5>
-							<h2>{list.length}</h2>
-						</div>
-						<div>
-							<h5>Coming</h5>
-							<h2>0</h2>
-						</div>
-						<div>
-							<h5>Not Coming</h5>
-							<h2>0</h2>
-						</div>
-						<div>
-							<h5>Pending Invites</h5>
-							<h2>0</h2>
-						</div>
+					<div className='d-flex justify-content-center py-5'>
+						<Pagination size='md'>{items}</Pagination>
 					</div>
 				</Col>
-				<Col lg={12} className=''>
-					<div className='d-flex justify-content-end py-5'>
-						<Pagination size='md'>{items}</Pagination>
+				{/* <Col lg={12} className=''>
+				</Col> */}
+				<Col lg={4}>
+					<div className={styles.bottomSummaryTable} >
+						<SummaryTable list={list} />
 					</div>
 				</Col>
 			</Row>

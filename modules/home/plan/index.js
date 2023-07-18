@@ -63,7 +63,7 @@ const Plan = () => {
       text: "Browse through venues, catering, decor & more with our most economical platform for make your dream wedding comes true.",
       btnTextColor: "#fff",
       width: "400px",
-      link: "/template"
+      link: "/event"
     },
     {
       id: 5,

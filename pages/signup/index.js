@@ -16,12 +16,14 @@ import Loader from "utils/Loader";
 import { toast } from "react-hot-toast";
 import { resetError } from "redux/auth/authSlice";
 import { validateEmail, validatePassword } from "utils/functions";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Signup = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [passwordConfirm, setpasswordConfirm] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
 	const router = useRouter();
 
 	const { loading, userInfo, error } = useSelector((state) => state.auth);
@@ -75,124 +77,147 @@ const Signup = () => {
 		}
 	}, [router]);
 
+	const formik = useFormik({
+		initialValues: {
+			email: "",
+			password: "",
+			confirmPassword: "",
+		},
+		validationSchema: Yup.object().shape({
+			name: Yup.string().required("Name is required"),
+			email: Yup.string()
+				.email("Email is invalid")
+				.required("Email is required"),
+			password: Yup.string()
+				.required("Password is required")
+				.min(8)
+		}),
+		onSubmit: async (values) => {
+			const { name, email, password } = values;
+			console.log("values", values);
+		},
+	});
+
+	const passwordStrength = {
+		length: formik.values.password.length >= 8,
+		uppercase: /[A-Z]/.test(formik.values.password),
+		lowercase: /[a-z]/.test(formik.values.password),
+		number: /[0-9]/.test(formik.values.password),
+		symbol: /[!@#$%^&*]/.test(formik.values.password),
+	};
+
 	return (
-		<div
-			className={`${styles.signup_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}
-		>
+		<div className={`${styles.signup_container} flex flex-col justify-center items-center w-full bg-slate-100 min-h-screen`}>
 			<Loader loading={loading} />
 			<div className={`${styles.signup_nested} bg-white p-6`}>
 				<div className={styles.signup_heading}>
 					<div className={`${styles.backpage}`}>
-						<Link href='/'>
-							<IoIosArrowDropleft className='text-3xl cursor-pointer ml-2' />
+						<Link href="/">
+							<IoIosArrowDropleft className="text-3xl cursor-pointer ml-2" />
 						</Link>
 					</div>
-					<h1 className='text-center text-black text-2xl leading-10'>
-						Create Your New Account
-					</h1>
-					<p className='text-center leading-4'>
-						Enter your details to get started
-					</p>
+					<h1 className="text-center text-black text-2xl leading-10">Create Your New Account</h1>
+					<p className="text-center leading-4">Enter your details to get started</p>
 				</div>
-				{/* soical Link section */}
 
+				{/* Social Link section */}
 				<div className={styles.soical_links}>
-					<p className='text-center text-base py-6'>Continue With</p>
-
-					<div className='flex justify-center items-center w-full gap-6'>
-						<div
-							className={`flex gap-2 justify-center items-center cursor-pointer ${styles.social_data}`}
-						>
-							<Image
-								src={googlelogo}
-								alt='googlelogo'
-								width={"20px"}
-								height={"20px"}
-								loading='lazy'
-							/>{" "}
-							<span className='text-base leading-6 text-black'>Google</span>
+					<p className="text-center text-base py-6">Continue With</p>
+					<div className="flex justify-center items-center w-full gap-6">
+						<div className={`flex gap-2 justify-center items-center cursor-pointer ${styles.social_data}`}>
+							<Image src={googlelogo} alt="googlelogo" width={"20px"} height={"20px"} loading="lazy" />
+							<span className="text-base leading-6 text-black">Google</span>
 						</div>
-						<div
-							className={`flex gap-2 justify-center items-center cursor-pointer ${styles.social_data}`}
-						>
-							<Image
-								src={facebooklogo}
-								alt='googlelogo'
-								width={"20px"}
-								height={"20px"}
-								loading='lazy'
-							/>{" "}
-							<span className='text-base leading-6 text-black'>Facebook</span>
+						<div className={`flex gap-2 justify-center items-center cursor-pointer ${styles.social_data}`}>
+							<Image src={facebooklogo} alt="googlelogo" width={"20px"} height={"20px"} loading="lazy" />
+							<span className="text-base leading-6 text-black">Facebook</span>
 						</div>
 					</div>
 				</div>
 
-				{/* or Section */}
-				<div
-					className={` flex justify-center gap-2 items-center my-7 ${styles.or_section}`}
-				>
+				{/* Or Section */}
+				<div className={`flex justify-center gap-2 items-center my-7 ${styles.or_section}`}>
 					<div></div>
 					<p>Or</p>
 					<div></div>
 				</div>
-				{/* From section */}
-				<form className={` ${styles.form_signup}`}>
+
+				{/* Form section */}
+				<form className={`${styles.form_signup}`} onSubmit={formik.handleSubmit}>
 					<div className={styles.signup_inputbox}>
 						<InputField
-							placeholder='Name'
-							type='text'
-							label='Name'
-							value={name}
-							onChange={(e) => setName(e.target.value)}
+							placeholder="Name"
+							type="text"
+							label="Name"
+							value={formik?.values?.name}
+							onChange={formik.handleChange("name")}
 						/>
 					</div>
 					<div className={styles.signup_inputbox}>
 						<InputField
-							placeholder='Email'
-							type='email'
-							label='Email'
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
+							placeholder="Email"
+							type="email"
+							label="Email"
+							value={formik?.values?.email}
+							onChange={formik.handleChange("email")}
 						/>
 					</div>
 					<div className={styles.signup_inputbox}>
 						<InputField
 							labeluse="password"
-							placeholder='Password'
-							type='password'
-							label='Password'
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
+							placeholder="Password"
+							type="password"
+							label="Password"
+							value={formik?.values?.password}
+							onChange={formik.handleChange("password")}
 						/>
 					</div>
 					<div className={styles.signup_inputbox}>
-						<li>At least 8 characters</li>
-						<li>Has 1 uppercase letter</li>
-						<li>Has 1 lowercase letter</li>
-						<li>Has 1 number</li>
-						<li>Has 1 symbol</li>
+						<li style={{ color: !!formik.values.password.length && (passwordStrength.length ? "#4bb543" : "#FF0000") }}>
+							At least 8 characters
+						</li>
+						<li
+							style={{ color: !!formik.values.password.length && (passwordStrength.uppercase ? "#4bb543" : "#FF0000") }}
+						>
+							Has 1 uppercase letter
+						</li>
+						<li
+							style={{ color: !!formik.values.password.length && (passwordStrength.lowercase ? "#4bb543" : "#FF0000") }}>
+							Has 1 lowercase letter
+						</li>
+						<li
+							style={{ color: !!formik.values.password.length && (passwordStrength.number ? "#4bb543" : "#FF0000") }}
+						>
+							Has 1 number
+						</li>
+						<li
+							style={{ color: !!formik.values.password.length && (passwordStrength.symbol ? "#4bb543" : "#FF0000") }}
+
+						>
+							Has 1 symbol
+						</li>
 					</div>
 					<div className={styles.signup_inputbox}>
 						<InputField
-							placeholder='Confirm password'
-							type='password'
-							label='Confirm Password'
-							value={passwordConfirm}
-							onChange={(e) => setpasswordConfirm(e.target.value)}
+							placeholder="Confirm password"
+							type="password"
+							label="Confirm Password"
+							value={confirmPassword}
+							onChange={(e) => setConfirmPassword(e.target.value)}
 						/>
 					</div>
 					<div className={` ${styles.btn_signup}`}>
 						<Button
-							type='button'
 							value={"Sign up"}
-							onClick={handleSignup}
-							padding='12px 0px'
+							padding="12px 0px"
 							disabled={loading}
+							type="submit"
 						/>
 					</div>
 				</form>
-				<div className={` text-center ${styles.login_link}`}>
-					Already have an account! <Link href='/login'>Log in</Link>
+
+				<div className={`text-center ${styles.login_link}`}>
+					Already have an account! <Link href="/login">Log in</Link>
 				</div>
 			</div>
 		</div>

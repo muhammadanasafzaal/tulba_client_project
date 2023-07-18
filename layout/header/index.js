@@ -121,7 +121,7 @@ const Header = () => {
                     </li>
                   </ul>
                   <div className={style.btn_header2}>
-                    <Link href={"/loginin"}>
+                    <Link href={"/login"}>
                       <Button value={"Log in"} />
                     </Link>
                   </div>
@@ -141,11 +141,10 @@ const Header = () => {
                   <div className="flex align-items-center justify-center">
                     <div
                       onClick={() => setOpen(true)}
-                      className={`${
-                        open
+                      className={`${open
                           ? style.menu_btn
                           : `${style.menu_btn} ${style.menu_btn} `
-                      }`}
+                        }`}
                       style={{
                         padding: "0px !important",
                         marginBottom: "30px",

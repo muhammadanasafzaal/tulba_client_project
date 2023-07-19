@@ -1,5 +1,5 @@
 import { Button, Col, Modal, Row } from "react-bootstrap";
-import { MdLabelImportantOutline } from "react-icons/Md";
+// import { MdLabelImportantOutline } from "react-icons/Md";
 import styles from "/styles/modal/confirmationModal.module.scss";
 
 // render(<App />);
@@ -17,7 +17,7 @@ const ConfirmationModal = (props) => {
                 <Modal.Body>
                     <div className='d-flex justify-content-between  items-center'>
                         <div className='d-flex justify-content-start  items-center'>
-                            <MdLabelImportantOutline className={` ${styles.icon} `} />
+                            {/* <MdLabelImportantOutline className={` ${styles.icon} `} /> */}
                             <span className={`${styles.head} `}>Confirmation
                             </span>
                         </div>

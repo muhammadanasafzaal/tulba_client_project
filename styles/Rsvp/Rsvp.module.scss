@@ -311,16 +311,12 @@ $deviceMaxWidth: 1024px;
   width: 100%;
 }
 
+
+
 /* .bannerText {
   line-height: 1.875rem;
   font-weight: 400;
 } */
-
-@media (max-width: 767px) {
-  .bannerText {
-    display: none;
-  }
-}
 
 .inputShadow {
   box-shadow: -19px 5px 57px -12px rgba(31, 30, 30, 0.75);
@@ -420,5 +416,14 @@ $deviceMaxWidth: 1024px;
   @media (max-width: 768px) {
     margin-left: 0px;
     width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .bannerText {
+    display: none;
+  }
+  .wedbanner_img, .banner_img{
+    height: 200px !important;
   }
 }

@@ -24,6 +24,7 @@ const Signup = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
+	const [confirmPassError, setConfirmPassError] = useState(false)
 	const router = useRouter();
 
 	const { loading, userInfo, error } = useSelector((state) => state.auth);
@@ -77,33 +78,93 @@ const Signup = () => {
 		}
 	}, [router]);
 
-	const formik = useFormik({
-		initialValues: {
-			email: "",
-			password: "",
-			confirmPassword: "",
-		},
-		validationSchema: Yup.object().shape({
-			name: Yup.string().required("Name is required"),
-			email: Yup.string()
-				.email("Email is invalid")
-				.required("Email is required"),
-			password: Yup.string()
-				.required("Password is required")
-				.min(8)
-		}),
-		onSubmit: async (values) => {
-			const { name, email, password } = values;
-			console.log("values", values);
+	// const formik = useFormik({
+	// 	initialValues: {
+	// 		email: "",
+	// 		password: "",
+	// 		confirmPassword: "",
+	// 	},
+	// 	validationSchema: Yup.object().shape({
+	// 		name: Yup.string().required("Name is required"),
+	// 		email: Yup.string()
+	// 			.email("Email is invalid")
+	// 			.required("Email is required"),
+	// 		password: Yup.string()
+	// 			.required("Password is required")
+	// 			.min(8)
+	// 	}),
+	// 	onSubmit: async (values) => {
+	// 		const { name, email, password } = values;
+	// 		console.log("values", values);
+	// 	},
+	// });
+
+	const signUpSchema = Yup.object({
+		name: Yup.string()
+			.min(2, 'Name must be at least 5 characters long')
+			.max(15, 'Name must not exceed 10 characters')
+			.required("Please provide name")
+			.matches(
+				/^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/gi,
+					'Name can only contain Latin letters.'
+				),
+		email: Yup.string()
+			.email('Email is invalid')
+			.required("Please provide email"),
+		password: Yup.string()
+			.min(5, 'Password must be at least 5 characters long')
+			.max(10, 'Password must not exceed 10 characters')
+			.required("Please provide password"),
+		confirmpassword: Yup.string()
+		.required("Please confirm password"),
+	})
+
+	const signUp = (values) => {}
+
+	const initialValues = {
+		name: "",
+		email: "",
+		password: "",
+		confirmpassword: ""
+	  };
+	
+	const { values, errors, touched, handleChange, handleSubmit } = useFormik({
+		initialValues: initialValues,
+		validationSchema: signUpSchema,
+		onSubmit: (values, action) => {
+			console.log(values);
+
+			if(values.confirmpassword == confirmPassword){
+				signUp(values)
+				.unwrap()
+				.then((res) => { 
+				console.log(res)
+				alert('Registered successfully')
+
+				// navigate('/login')
+				})
+				.then((error) => {
+				if(error){
+					console.log(error)
+					alert('Registeration error')
+				}
+				})
+				
+				action.resetForm();
+			}
+			else {
+				setConfirmPassError(true)
+				console.log(confirmPassError)
+			}
 		},
 	});
 
 	const passwordStrength = {
-		length: formik.values.password.length >= 8,
-		uppercase: /[A-Z]/.test(formik.values.password),
-		lowercase: /[a-z]/.test(formik.values.password),
-		number: /[0-9]/.test(formik.values.password),
-		symbol: /[!@#$%^&*]/.test(formik.values.password),
+		length: values.password.length >= 8,
+		uppercase: /[A-Z]/.test(values.password),
+		lowercase: /[a-z]/.test(values.password),
+		number: /[0-9]/.test(values.password),
+		symbol: /[!@#$%^&*]/.test(values.password),
 	};
 
 	return (
@@ -143,24 +204,36 @@ const Signup = () => {
 				</div>
 
 				{/* Form section */}
-				<form className={`${styles.form_signup}`} onSubmit={formik.handleSubmit}>
+				<form className={`${styles.form_signup}`} onSubmit={handleSubmit}>
 					<div className={styles.signup_inputbox}>
 						<InputField
 							placeholder="Name"
 							type="text"
 							label="Name"
-							value={formik?.values?.name}
-							onChange={formik.handleChange("name")}
+							value={values.name}
+							name="name"
+							onChange={handleChange}
 						/>
+						<div className="error">
+							{errors.name && touched.name ? (
+								<p className="form-error">{errors.name}</p>
+							) : null}
+						</div>
 					</div>
 					<div className={styles.signup_inputbox}>
 						<InputField
 							placeholder="Email"
 							type="email"
 							label="Email"
-							value={formik?.values?.email}
-							onChange={formik.handleChange("email")}
+							name="email"
+							value={values?.email}
+							onChange={handleChange}
 						/>
+						<div className="error">
+							{errors.email && touched.email ? (
+								<p className="form-error">{errors.email}</p>
+							) : null}
+						</div>
 					</div>
 					<div className={styles.signup_inputbox}>
 						<InputField
@@ -168,30 +241,36 @@ const Signup = () => {
 							placeholder="Password"
 							type="password"
 							label="Password"
-							value={formik?.values?.password}
-							onChange={formik.handleChange("password")}
+							name="password"
+							value={values?.password}
+							onChange={handleChange}
 						/>
+						<div className="error">
+							{errors.password && touched.password ? (
+								<p className="form-error">{errors.password}</p>
+							) : null}
+						</div>
 					</div>
 					<div className={styles.signup_inputbox}>
-						<li style={{ color: !!formik.values.password.length && (passwordStrength.length ? "#4bb543" : "#FF0000") }}>
+						<li style={{ color: !!values.password.length && (passwordStrength.length ? "#4bb543" : "#FF0000") }}>
 							At least 8 characters
 						</li>
 						<li
-							style={{ color: !!formik.values.password.length && (passwordStrength.uppercase ? "#4bb543" : "#FF0000") }}
+							style={{ color: !!values.password.length && (passwordStrength.uppercase ? "#4bb543" : "#FF0000") }}
 						>
 							Has 1 uppercase letter
 						</li>
 						<li
-							style={{ color: !!formik.values.password.length && (passwordStrength.lowercase ? "#4bb543" : "#FF0000") }}>
+							style={{ color: !!values.password.length && (passwordStrength.lowercase ? "#4bb543" : "#FF0000") }}>
 							Has 1 lowercase letter
 						</li>
 						<li
-							style={{ color: !!formik.values.password.length && (passwordStrength.number ? "#4bb543" : "#FF0000") }}
+							style={{ color: !!values.password.length && (passwordStrength.number ? "#4bb543" : "#FF0000") }}
 						>
 							Has 1 number
 						</li>
 						<li
-							style={{ color: !!formik.values.password.length && (passwordStrength.symbol ? "#4bb543" : "#FF0000") }}
+							style={{ color: !!values.password.length && (passwordStrength.symbol ? "#4bb543" : "#FF0000") }}
 
 						>
 							Has 1 symbol
@@ -202,9 +281,16 @@ const Signup = () => {
 							placeholder="Confirm password"
 							type="password"
 							label="Confirm Password"
-							value={confirmPassword}
-							onChange={(e) => setConfirmPassword(e.target.value)}
+							name="confirmpassword"
+							value={values?.confirmpassword}
+							onChange={handleChange}
 						/>
+						<div className="error">
+							{errors.confirmpassword && touched.confirmpassword ? (
+								<p className="form-error">{errors.confirmpassword}</p>
+							) : null}
+							{confirmPassError && <span>Passwords do not match</span>}
+						</div>
 					</div>
 					<div className={` ${styles.btn_signup}`}>
 						<Button

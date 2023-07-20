@@ -32,10 +32,12 @@
       border-bottom: 1px #dddddd solid;
       background-size: 100% 200%;
       transition: background 1s;
+
       &:hover {
         color: #f85757;
       }
     }
+
     .actvelink {
       cursor: pointer;
       background: #f85757;
@@ -55,23 +57,28 @@
       transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
       overflow: hidden;
       box-sizing: border-box;
+
       div {
         display: flex;
         align-items: center;
         margin: 1rem 0;
         gap: 3px;
+
         input {
           cursor: pointer;
         }
+
         input[type="checkbox"]:before {
           background: #fff;
 
           border-radius: 3px;
+
           &:hover {
             scale: 110%;
             cursor: pointer;
           }
         }
+
         label {
           color: #000;
           font-family: $GiloryRegular !important;
@@ -95,9 +102,11 @@
 
 .filterButton {
   display: none;
+
   span {
     font-weight: 600;
   }
+
   button {
     height: fit-content;
     width: fit-content;
@@ -109,6 +118,7 @@
     padding: 5px 10px;
     font-weight: 600;
     font-family: $GiloryBold;
+
     &:hover {
       background: #fff;
       color: #f85757;
@@ -144,6 +154,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     &:hover {
       background-color: #fff;
       color: #f85757;
@@ -167,6 +178,7 @@
 
   div {
     padding: 2% 6%;
+
     .sideBarList {
       color: #000000;
       gap: 2px;
@@ -180,10 +192,12 @@
       background: linear-gradient(#fff, #fff 50%, #f85757 50%, #f85757);
       background-size: 100% 200%;
       transition: background 1s;
+
       &:hover {
         color: #f85757;
       }
     }
+
     .actvelink {
       cursor: pointer;
       background: #f85757;
@@ -203,22 +217,27 @@
       transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
       overflow: hidden;
       box-sizing: border-box;
+
       div {
         display: flex;
         align-items: center;
         gap: 3px;
+
         input {
           cursor: pointer;
         }
+
         input[type="checkbox"]:before {
           background: #fff;
 
           border-radius: 3px;
+
           &:hover {
             scale: 110%;
             cursor: pointer;
           }
         }
+
         span {
           color: #000;
           font-family: $GiloryRegular;
@@ -248,6 +267,7 @@
   background: #f5f6f7 !important;
   border: none !important;
   box-shadow: none !important;
+
   label {
     font-family: $GiloryBold !important;
     font-size: 20px !important;
@@ -298,6 +318,7 @@
   border-radius: 0px;
   width: 280px;
   height: 300px;
+
   @media screen and (max-width: 767px) {
     width: 100% !important;
     display: flex;
@@ -307,9 +328,11 @@
 
 .wed_content {
   width: 280px;
+
   @media screen and (max-width: 767px) {
     width: 100% !important;
   }
+
   h1 {
     font-family: "DM Serif Display";
     font-style: normal;
@@ -395,11 +418,16 @@
     margin-top: 3px;
   }
 }
+
 .number {
   margin-bottom: 20px;
 }
+
 @media screen and (max-width: 767px) {
   .number {
     display: none;
+  }
+  .vendorbanner_img{
+    height: 200px;
   }
 }

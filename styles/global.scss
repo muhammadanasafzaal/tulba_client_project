@@ -480,6 +480,11 @@ td {
   border-radius: 10px;
   padding: 0.5rem 1rem !important;
 }
+
+.error{
+  color: red;
+}
+
 @media screen and (max-width:768px){
   .text-xs-center{
     text-align: center;
@@ -492,5 +497,11 @@ td {
   }
   .align-items-xs-center{
     align-items: center !important;
+  }
+  .order-xs-1{
+    order:1 !important;
+  }
+  .order-xs-2{
+    order:2 !important;
   }
 }

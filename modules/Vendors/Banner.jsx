@@ -12,12 +12,12 @@ const Banner = () => {
     <>
       <Container fluid >
         <Row>
-          <Col lg={6} className={`px-[5%] banner`}>
+          <Col lg={6} className={`order-xs-2 px-[5%] banner`}>
             {/* <Breadcrumb>
               <Breadcrumb.Item href="#" className="brdcrumb"><Link href='/'>Home </Link></Breadcrumb.Item>
               <Breadcrumb.Item active className="actbrdcrumb">Vendors</Breadcrumb.Item>
             </Breadcrumb> */}
-            <div className="mb-3 mb-md-5">
+            <div className="text-center text-md-start mb-3 mb-md-5">
               <h1>Vendors</h1>
               <p className="bannerText">
                 Browse through the many vendors of your choice and <br />
@@ -25,7 +25,7 @@ const Banner = () => {
               </p>
             </div>
           </Col>
-          <Col lg={6} className="p-0">
+          <Col lg={6} className="order-xs-1 mb-2 p-0">
             <div className={style.vendorbanner_img}></div>
           </Col>
         </Row>

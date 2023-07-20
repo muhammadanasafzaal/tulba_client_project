@@ -158,3 +158,9 @@ font-weight: 500;
   height: 70%;
   width: 100%;
 }
+
+@media screen and (max-width:767px){
+  .banner_img{
+    height: 200px;
+  }
+}

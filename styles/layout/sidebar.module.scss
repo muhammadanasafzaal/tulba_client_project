@@ -1,6 +1,13 @@
 @import "../fonts/font.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 .sidebar {
+  @media (max-width: 768px) {
+    left: -100%;
+    border-right: 1px solid #000;
+    border-left: 0px;
+  }
+
   width: 300px;
   min-height: 100vh;
   // box-shadow: 0px 4px 8px rgba(0 0 0 / 16%);
@@ -13,19 +20,27 @@
   color: white;
   border-left: 1px solid #000;
 }
+
 .sidebar.active {
+  @media (max-width: 768px) {
+    left: 0;
+  }
+
   right: 0;
 }
+
 .sd_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
+
   svg {
     color: #f85757 !important;
     font-size: 24px !important;
     font-weight: 100 !important;
   }
+
   img {
     width: 140px !important;
   }
@@ -43,10 +58,12 @@
   visibility: hidden;
   z-index: 99999;
 }
+
 .sidebar_overlay.active {
   opacity: 1;
   visibility: visible;
 }
+
 .sd_body {
   padding: 15px 20px;
   max-height: calc(100vh - 67px);
@@ -56,6 +73,7 @@
     display: flex;
     flex-direction: column;
     font-weight: 700;
+
     .menu {
       display: flex;
       color: #f85757;
@@ -63,11 +81,13 @@
       justify-content: flex-start;
       padding: 10px 0;
       gap: 5%;
+
       .item {
         text-decoration: none;
         color: #f85757;
       }
     }
+
     .submenu {
       @keyframes translateX {
         0% {
@@ -84,14 +104,15 @@
           transform: translateX(0px);
         }
       }
-     
-       transform-origin: top center;
-       animation: translateX 300ms ease-in-out forwards;
+
+      transform-origin: top center;
+      animation: translateX 300ms ease-in-out forwards;
 
       div {
         background-color: #f85757 !important;
         padding: 5px 5px 5px 10%;
-        &::after{
+
+        &::after {
           scale: 110%;
         }
       }

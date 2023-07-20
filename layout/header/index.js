@@ -12,6 +12,7 @@ import { Container, Row, Col, Navbar } from "react-bootstrap";
 import searchIcon from "public/assests/searchIcon.svg";
 import closeIcon from "public/assests/close.svg";
 import "bootstrap/dist/css/bootstrap.css";
+import userprofile from 'public/assests/header/userprofile.png'
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -57,9 +58,25 @@ const Header = () => {
           {!showSearch ? (
             <Navbar className={style.navbar_style}>
               <div
-                className={` flex items-center justify-between w-full ${style.header_bottom}`}
+                className={` flex ${style.header_bottom} items-center justify-between w-full   `}
               >
-                <div>
+                <div className={style.user_image_container} >
+                  {/* <Image
+                    // className={style.user_image_container}
+                    alt="user"
+                    src={userprofile}
+                    style={{ height: 100, width: 100  }}
+                    width={100}
+                    height={100}
+                  /> */}
+                  <div className={style.user_img} >
+                    <Image
+                      alt="user"
+                      src={userprofile}
+                    />
+                  </div>
+                </div>
+                <div className={style.logo} >
                   <Link href="/">
                     <Image
                       src={tulbalogo}
@@ -142,8 +159,8 @@ const Header = () => {
                     <div
                       onClick={() => setOpen(true)}
                       className={`${open
-                          ? style.menu_btn
-                          : `${style.menu_btn} ${style.menu_btn} `
+                        ? style.menu_btn
+                        : `${style.menu_btn} ${style.menu_btn} `
                         }`}
                       style={{
                         padding: "0px !important",

@@ -15,7 +15,7 @@ const AboutEvent = () => {
       style={{ fontFamily: "DM Serif Display" }}
     >
       <div className=" m-auto  flex flex-col justify-center text-white gap-[5%] lg:flex-row ">
-        <div className="w-9/12 flex justify-center lg:w-1/2">
+        <div className="w-12/12 flex justify-center lg:w-1/2">
           <div className="d-flex align-items-center" style={{ minHeight: 'auto !important' }}>
             <Image className="w-full " src={About} />
           </div>

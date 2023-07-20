@@ -37,29 +37,31 @@ const Sidebar = ({ setOpen, open }) => {
       <div
         className={`${style.sidebar} ${open == true ? `${style.active}` : ""}`}
       >
-        <div className={style.sd_header}>
-          <Image
-            src={logo}
-            alt="tulbalogo"
-            loading="lazy"
-            className="h-12 w-12"
-          />
+        <div className={`${style.sd_header} pb-0`}>
+          <div className="mt-2" style={{ width: '100px', height:'auto' }}>
+            <Image
+              src={logo}
+              alt="tulbalogo"
+              loading="lazy"
+              className="h-6 w-6"
+            />
+          </div>
           <div className={style.cros_btn} onClick={setOpen}>
             <ImCross />
             {/* <div>  <Image src={cart} alt="cart" loading="lazy" /></div> */}
           </div>
         </div>
         <div className={style.sd_body}>
-        <div className={style.mainItem}>
+          <div className={style.mainItem}>
             <div className={style.menu}>
               <div className={style.item} >
-                <div style={{display:'flex', justifyContent:'center', alignItems:'center', borderWidth:1, borderRadius:20, padding:10, width:'100%'}} >
-              <Image
-                      alt="search"
-                      src={searchIcon}
-                      />
-                <p style={{fontSize:14,marginLeft:5}} >Search gifts, vendors, couples...</p>
-                      </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 20, padding: 10, width: '100%' }} >
+                  <Image
+                    alt="search"
+                    src={searchIcon}
+                  />
+                  <p style={{ fontSize: 14, marginLeft: 5 }} >Search gifts, vendors, couples...</p>
+                </div>
               </div>
             </div>
           </div>
@@ -79,16 +81,16 @@ const Sidebar = ({ setOpen, open }) => {
             </div>
             {vendors && (
               <div className={style.submenu}>
-                <Link href = "/vendors">
+                <Link href="/vendors">
                   <div>Catering</div>
                 </Link>
-                <Link href = "/vendors">
+                <Link href="/vendors">
                   <div>Decoration</div>
                 </Link>
-                <Link href = "/vendors">
+                <Link href="/vendors">
                   <div>Florist</div>
                 </Link>
-                <Link href = "/vendors">
+                <Link href="/vendors">
                   <div>Venue</div>
                 </Link>
               </div>
@@ -111,10 +113,10 @@ const Sidebar = ({ setOpen, open }) => {
             </div>
             {planningTools && (
               <div className={style.submenu}>
-                <Link href = "/checklist">
+                <Link href="/checklist">
                   <div >Check List</div>
                 </Link>
-                <Link href = "/rsvp">
+                <Link href="/rsvp">
                   <div>RSVP</div>
                 </Link>
               </div>
@@ -144,13 +146,12 @@ const Sidebar = ({ setOpen, open }) => {
               </Link>
             </div>
           </div>
-          
+
         </div>
       </div>
       <div
-        className={`${style.sidebar_overlay} ${
-          open == true ? `${style.active}` : ""
-        }`}
+        className={`${style.sidebar_overlay} ${open == true ? `${style.active}` : ""
+          }`}
         onClick={setOpen}
       ></div>
     </div>

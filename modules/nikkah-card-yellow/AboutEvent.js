@@ -28,11 +28,11 @@ const AboutEvent = () => {
             The event will start at 9pm and we have buffet arrangements with valet parking. There is separate arrangements for females.
             Please be on time.
           </div>
-          <div className="font-serif self-center lg:self-start my-4 ">
+          {/* <div className="font-serif self-center lg:self-start my-4 ">
             <span className="bg-[#f85757] font-sans px-7 py-2 rounded-lg cursor-pointer hover:shadow-lg ">
               Add to Your Calender
             </span>
-          </div>
+          </div> */}
           <div className="mt-3 flex flex-col gap-6 items-center lg:flex-row">
             <div className="flex flex-col items-center">
               <div className="w-12 h-12">

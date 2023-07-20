@@ -51,8 +51,9 @@ const Banner = ({ vendor }) => {
                                 </FloatingLabel> */}
                                 <FloatingLabel
                                     controlId="floatingInputGrid"
-                                    label="Search Location">
-
+                                    label="Search Location"
+                                    >
+                                        
                                     <Form.Control
                                         type="text"
                                         list='locations'

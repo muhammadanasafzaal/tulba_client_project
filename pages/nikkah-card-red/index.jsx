@@ -13,7 +13,7 @@ const NikkahTemplate = () => {
       <CardSection />
       <SpecialEvent />
       <AboutEvent />
-      <InfoForm />
+      {/* <InfoForm /> */}
     </div>
   );
 };

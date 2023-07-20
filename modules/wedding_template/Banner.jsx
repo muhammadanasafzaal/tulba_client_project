@@ -9,7 +9,7 @@ const Banner = () => {
       <Container fluid className="my-2">
         <Row>
           <Col lg={6} className={`order-xs-2 px-[5%] banner`}>
-            <Breadcrumb className='d-md-block d-none'>
+            <Breadcrumb className='d-lg-block d-md-block d-sm-block d-none'>
               <Breadcrumb.Item href="/" className="brdcrumb">Home</Breadcrumb.Item>
               <Breadcrumb.Item active className="actbrdcrumb">Event Website</Breadcrumb.Item>
             </Breadcrumb>

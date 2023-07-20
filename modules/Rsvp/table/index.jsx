@@ -36,6 +36,18 @@ function BasicExample() {
 	const [selectedWeddingEvent, setSelectedWeddingEvent] = useState(null);
 	const [isEdit, setIsEdit] = useState(false);
 	const [rsvpData, setRsvpData] = useState(null);
+	const [weddingEvents, setWeddingEvents] = useState([
+		{
+			id:1,
+			type: "Nikkah",
+			date: 'November 11, 2023'
+		},
+		{
+			id:2,
+			type: "Valima",
+			date: 'November 18, 2023'
+		}
+	])
 	const weddingState = useSelector((state) => state.wedding);
 	const weddingEventState = useSelector((state) => state.weddingEvent);
 	const { loading, list } = useSelector((state) => state.rsvp);
@@ -80,6 +92,7 @@ function BasicExample() {
 	}, [selectedWeddingEvent]);
 
 	console.log("weddingEvents", weddingEventState.list);
+	
 
 	return (
 		<Container className={`my-5 ${styles.rsvp_page}`}>
@@ -153,7 +166,12 @@ function BasicExample() {
 										<option hidden value={null}>
 											Select event
 										</option>
-										{weddingEventState?.list?.map((c, _i) => (
+										{/* {weddingEventState?.list?.map((c, _i) => (
+											<option key={c.id} value={c.id}>
+												{c.type} <sub>{c.date}</sub>
+											</option>
+										))} */}
+										{weddingEvents.map((c, _i) => (
 											<option key={c.id} value={c.id}>
 												{c.type} <sub>{c.date}</sub>
 											</option>

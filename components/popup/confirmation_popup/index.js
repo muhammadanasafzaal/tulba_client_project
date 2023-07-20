@@ -15,7 +15,7 @@ const ConfirmationModal = (props) => {
                 className='pro-modal '
             >
                 <Modal.Body>
-                    <div className='d-flex justify-content-between  items-center'>
+                    <div className='px-1 mb-md-1 mb-2 d-flex justify-content-between  items-center'>
                         <div className='d-flex justify-content-start  items-center'>
                             {/* <MdLabelImportantOutline className={` ${styles.icon} `} /> */}
                             <span className={`${styles.head} `}>Confirmation

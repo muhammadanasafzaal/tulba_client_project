@@ -27,17 +27,14 @@ const Banner = () => {
 				<div className="row">
 					<div className='order-xs-2 col-12 col-md-6 px-[6%]'>
 						{/* <div> */}
-							<Breadcrumb className="d-none d-md-block">
-								<Breadcrumb.Item href='/' className='brdcrumb'>
-									Home
-								</Breadcrumb.Item>
-								<Breadcrumb.Item
-									active
-									className='text-[#f85757] font-semibold font-sm '
-								>
-									Event Planner
-								</Breadcrumb.Item>
-							</Breadcrumb>
+						<Breadcrumb className="d-none d-lg-block d-md-block d-sm-block">
+							<Breadcrumb.Item className='brdcrumb'>
+								Home
+							</Breadcrumb.Item>
+							<Breadcrumb.Item className='brdcrumb'>
+								Event Planner
+							</Breadcrumb.Item>
+						</Breadcrumb>
 						{/* </div> */}
 						<div className="text-center text-md-start" id='signup'>
 							<h1

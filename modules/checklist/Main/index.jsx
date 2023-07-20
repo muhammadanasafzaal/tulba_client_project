@@ -22,17 +22,13 @@ const Main = () => {
 	const [isEdit, setIsEdit] = useState(false);
 	const [isDelete, setIsDelete] = useState(false);
 	const [modalData, setModalData] = useState(null);
+	const [taskStatus, setTaskStatus] = useState(false)
 
 	const [tmpTaskList, setTmpTaskList] = useState(
 		[
 			{
 				id: 1,
 				task: 'Plan Budget',
-				desc: 'something about task'
-			},
-			{
-				id: 2,
-				task: 'Select Vendor',
 				desc: 'something about task'
 			}
 		]
@@ -290,12 +286,16 @@ const Main = () => {
 							<div className="row p-2 mx-1 mb-2 bg-light"
 								style={{ borderRadius: '20px' }} key={index}>
 								<div className="col-2 d-flex justify-content-center align-items-center">
-									<span className="active-indicator"></span>
+									<span className={taskStatus ? 'active-indicator' : 'inactive-indicator'}></span>
 								</div>
 								<div className="col-8 d-flex align-items-center">
 									<small>{item.task}</small> &nbsp;| <small className="ml-2" style={{ color: '#bfbfbf' }}>{item.desc}</small>
 								</div>
 								<div className="col-2 d-flex align-items-center">
+									<span>
+										{/* <label for="status">Horns</label> */}
+										<input className="mt-2	 mr-2" type="checkbox" id="status" name="status" onClick={()=>setTaskStatus(!taskStatus)} />
+									</span>
 									<FaEdit
 										onClick={() => handleOpenEdit(item)}
 										className='cursor-pointer'

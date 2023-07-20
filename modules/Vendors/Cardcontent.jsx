@@ -31,7 +31,7 @@ const Cardcontent = (props) => {
   const [favourite, setFavourite] = useState(false);
 
   const navigateVendor = () => {
-    router.push('/vendor-profile')
+    router.push('/vendors/profile/demo')
     // window.location.href = 'https://tulba-client-omega.vercel.app/vendors/profile/demo';
     dispatch(vendorData(props))
   }

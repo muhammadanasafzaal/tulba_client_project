@@ -18,7 +18,7 @@ const CardSection = () => {
         </div>
 
         <div>
-          <h2 className="font-bold text-[#253659]  tracking-widest">
+          <h2 className="text-md-start text-center font-bold text-[#253659]  tracking-widest">
             TOGETHER WITH THEIR FAMILIES
           </h2>
         </div>
@@ -33,11 +33,8 @@ const CardSection = () => {
         </div>
 
         <div>
-          <h2 className="font-bold text-[#253659]  capitalize  tracking-widest">
-            REQUEST THE HONOUR OF YOUR
-          </h2>
-          <h2 className="font-bold text-[#253659]  capitalize  tracking-widest">
-            PRESENCE AT THEIR WEDDING
+          <h2 className="text-md-start text-center font-bold text-[#253659]  capitalize  tracking-widest">
+            REQUEST THE HONOUR OF YOUR <br className="d-lg-block d-md-block d-sm-block d-none" />PRESENCE AT THEIR WEDDING
           </h2>
         </div>
 

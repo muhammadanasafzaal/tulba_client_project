@@ -32,13 +32,13 @@ const Header = () => {
           <div
             className={`flex items-center justify-between  ${style.header_top}`}
           >
-            <div className={`${style.reg_date}`}>
+            <div className={`${style.reg_date} my-2`}>
               <p>7 Shaaban 1443AH &nbsp;</p>
               <p> |&nbsp; Thursday , 10 March 2022</p>
             </div>
             {/* <div className={style.headerTop_vendor}  onClick={() => setModalShow(true)}>Are You A Vendor? */}
             {/* </div> */}
-            <div
+            {/* <div
               className={style.headerTop_vendor}
               style={{ textDecoration: "none", color: "black" }}
             >
@@ -53,7 +53,7 @@ const Header = () => {
                   Are You A Vendor?
                 </a>
               </Link>
-            </div>
+            </div> */}
           </div>
           {!showSearch ? (
             <Navbar className={style.navbar_style}>

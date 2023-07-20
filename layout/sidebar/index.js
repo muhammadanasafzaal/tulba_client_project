@@ -37,8 +37,24 @@ const Sidebar = ({ setOpen, open }) => {
       <div
         className={`${style.sidebar} ${open == true ? `${style.active}` : ""}`}
       >
+        <div
+          className={`${style.headerTop_vendor} px-4 pt-3`}
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <Link href="/login">
+            <a
+              style={{
+                textDecoration: "none !important",
+                color: "black",
+              }}
+            >
+              {" "}
+              Are You A Vendor?
+            </a>
+          </Link>
+        </div>
         <div className={`${style.sd_header} pb-0`}>
-          <div className="mt-2" style={{ width: '100px', height:'auto' }}>
+          <div className="mt-2" style={{ width: '100px', height: 'auto' }}>
             <Image
               src={logo}
               alt="tulbalogo"

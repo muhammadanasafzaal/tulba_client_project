@@ -471,7 +471,7 @@ td {
   display: block;
   height: 7px;
   width: 7px;
-  background: #4bb543;
+  background: yellow;
   border-radius: 50%;
 }
 
@@ -498,6 +498,9 @@ td {
   .align-items-xs-center{
     align-items: center !important;
   }
+  .justify-content-xs-center{
+    align-items: center !important;
+  }
   .order-xs-1{
     order:1 !important;
   }
@@ -505,3 +508,20 @@ td {
     order:2 !important;
   }
 }
+
+.brdcrumb a {
+  color: #666666;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.form-floating > label{ 
+  padding:1.5rem 1rem 1rem 2rem !important 
+}
+
+.bannerSubHeading{
+  font-weight: 600;
+  color: #f85757 !important;
+}
+

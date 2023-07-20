@@ -32,11 +32,11 @@ const AboutEvent = () => {
             {/* Hop on with us for the beloved functions and ceremony.  Now
             you can add them to your calendar. */}
           </div>
-          <div className="font-serif self-center lg:self-start my-4 ">
+          {/* <div className="font-serif self-center lg:self-start my-4 ">
             <span className="bg-[#f85757] font-sans px-7 py-2 rounded-lg cursor-pointer hover:shadow-lg ">
               Add to Your Calender
             </span>
-          </div>
+          </div> */}
           <div className=" flex flex-col mt-3 gap-6 items-center lg:flex-row">
             <div className="flex flex-col items-center">
               <div className="w-12 h-12">

@@ -9,6 +9,7 @@ import stroke from "public/assests/home_img/Red stroke.svg";
 import stroke1 from "public/assests/home_img/Blue stroke.svg";
 import Group from "public/assests/home_img/Group.svg";
 import temp from "public/assests/home_img/The Collage.svg";
+import HeroHomeMob from "public/assests/home_img/hero-home-mob.png";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -43,8 +44,7 @@ const HomeTopSection = ({ bodyRef }) => {
   useEffect(() => {
     const handleClick = (event) => {
       if((!event.target.classList.contains('location') && !event.target.classList.contains('close') 
-      && !event.target.classList.contains('list')) && !event.target.classList.contains('city')
-      && !event.target.classList.contains('form-control')){
+      && !event.target.classList.contains('list')) && !event.target.classList.contains('form-control')){
         if(locationList){
           setLocationList(false)
         }
@@ -108,15 +108,24 @@ const HomeTopSection = ({ bodyRef }) => {
       </style>
       <Container >
         <Row>
+        <Col lg={12} md={12} sm={12} xs={12}>
+          <div className="d-lg-none d-md-none d-sm-none d-block">
+            <Image
+              src={HeroHomeMob}
+              alt="googlelogo"
+              className={`img-fluid my-0`}
+            />
+          </div>
+        </Col>
           <Col lg={8} md={12} sm={12} xs={12} className={` ${styles.order2}`}>
             <div className={`my-2  ${styles.top_head} `}>
-              <div className="d-flex  justify-content-start">
+              {/* <div className="d-flex  justify-content-start">
                 <div className={`my-4  ${styles.head_border}`}></div>
                 <h4> WE got the best tools for your event, so hop on.</h4>
-              </div>
+              </div> */}
               <Row className="g-2">
                 <Col lg={12}>
-                  <div className="d-flex flex-wrap justify-content-start align-item-center">
+                  <div className="d-flex flex-wrap justify-content-xs-center justify-content-start align-item-center">
                     <span className={`mt-4  ${styles.headspan} `}>
                       When Your
                     </span>
@@ -135,7 +144,7 @@ const HomeTopSection = ({ bodyRef }) => {
 
               <Row>
                 <Col lg={12}>
-                  <div className="d-flex flex-wrap justify-content-start ">
+                  <div className="d-flex flex-wrap justify-content-xs-center justify-content-start ">
                     <span className="d-flex flex-column align-items-start mx-2">
                       <div className={styles.eventContainer}>
                         <span className={` ${styles.event}`}> Event </span>
@@ -147,7 +156,7 @@ const HomeTopSection = ({ bodyRef }) => {
                   </div>
                 </Col>
               </Row>
-              <p className="my-2 ">
+              <p className="mb-1 mt-3 bannerSubHeading text-start">
                 We got the best event planners and most economical setup for
                 event so lets do this together and make your event memorable.
               </p>
@@ -240,6 +249,7 @@ const HomeTopSection = ({ bodyRef }) => {
                 />{" "}
               </div>
             </div>
+
             {/* <div> */}
 
             {/* <Image

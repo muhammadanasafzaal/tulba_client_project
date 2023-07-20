@@ -9,7 +9,7 @@ const Banner = () => {
       <Container fluid className="my-2">
         <Row>
           <Col lg={6} className={`order-xs-2 px-[5%] banner`}>
-            <Breadcrumb className={`${styles.bread_crumb} d-none d-md-block`}>
+            <Breadcrumb className={`${styles.bread_crumb} d-none d-lg-block d-md-block d-sm-block`}>
               <Breadcrumb.Item href="/" className="brdcrumb">
                 Home
               </Breadcrumb.Item>

@@ -13,10 +13,10 @@ const Banner = () => {
       <Container fluid >
         <Row>
           <Col lg={6} className={`order-xs-2 px-[5%] banner`}>
-            {/* <Breadcrumb>
+            <Breadcrumb className="d-none d-lg-block d-lg-block d-md-block d-sm-block">
               <Breadcrumb.Item href="#" className="brdcrumb"><Link href='/'>Home </Link></Breadcrumb.Item>
-              <Breadcrumb.Item active className="actbrdcrumb">Vendors</Breadcrumb.Item>
-            </Breadcrumb> */}
+              <Breadcrumb.Item active className="actbrdcrumb mt-1">Vendors</Breadcrumb.Item>
+            </Breadcrumb>
             <div className="text-center text-md-start mb-3 mb-md-5">
               <h1>Vendors</h1>
               <p className="bannerText">

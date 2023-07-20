@@ -410,6 +410,7 @@ $deviceMaxWidth: 1024px;
   outline-style: none !important;
 }
 
+
 .form {
 
   // margin-left: 90px;
@@ -426,4 +427,10 @@ $deviceMaxWidth: 1024px;
   .wedbanner_img, .banner_img, .weddingbanner_img{
     height: 200px !important;
   }
+}
+
+
+
+.breadcrumb-item a {
+  text-decoration: none !important;
 }

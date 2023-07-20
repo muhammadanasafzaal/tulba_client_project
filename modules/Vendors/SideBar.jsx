@@ -63,19 +63,19 @@ const SideBar = () => {
             {paper && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" className="bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>Catering</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>Decoration</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>Florist</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span> sdds</span>
                 </div>
               </div>
@@ -94,19 +94,19 @@ const SideBar = () => {
             {price && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" className="bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>$1-$10</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>$11-$20</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>$20-$30</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>$30-$50</span>
                 </div>
               </div>

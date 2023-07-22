@@ -44,7 +44,7 @@ const Banner = () => {
 								Event Planner
 							</h1>
 							<div>
-								<h5 style={{ fontFamily: "DM Serif Display" }} className='my-3'>
+								<h5 style={{ fontFamily: "DM Serif Display", color: '#f85757' }} className='my-3'>
 									Plan your wedding with our platform for free, just enter your
 									name and email to get started
 								</h5>

@@ -374,7 +374,7 @@ const Wedcard = () => {
                 <div
                   className={`d-flex justify-content-between ${styles.wed_content}`}
                 >
-                  <h1 className="mx-3 my-2">The Asthetcal</h1>
+                  <h1 className="mx-3 my-2">The Aesthetical</h1>
 
                       <div className="d-flex justify-content-end">
                         <AiFillStar className={` my-3 ${styles.star}`} />

@@ -125,7 +125,7 @@ const HomeTopSection = ({ bodyRef }) => {
               </div> */}
               <Row className="g-2">
                 <Col lg={12}>
-                  <div className="d-flex flex-wrap justify-content-xs-center justify-content-start align-item-center">
+                  <div className="d-flex flex-wrap justify-content-xs-center justify-content-md-start align-item-center">
                     <span className={`mt-4  ${styles.headspan} `}>
                       When Your
                     </span>
@@ -144,7 +144,7 @@ const HomeTopSection = ({ bodyRef }) => {
 
               <Row>
                 <Col lg={12}>
-                  <div className="d-flex flex-wrap justify-content-xs-center justify-content-start ">
+                  <div className="d-flex flex-wrap justify-content-xs-center justify-content-md-start ">
                     <span className="d-flex flex-column align-items-start mx-2">
                       <div className={styles.eventContainer}>
                         <span className={` ${styles.event}`}> Event </span>
@@ -156,7 +156,7 @@ const HomeTopSection = ({ bodyRef }) => {
                   </div>
                 </Col>
               </Row>
-              <p className="mb-1 mt-3 bannerSubHeading text-start">
+              <p className="mb-1 mt-3 bannerSubHeading text-center text-md-start">
                 We got the best event planners and most economical setup for
                 event so lets do this together and make your event memorable.
               </p>

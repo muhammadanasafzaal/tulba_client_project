@@ -423,6 +423,10 @@
   margin-bottom: 20px;
 }
 
+.form-floating > label{ 
+  padding:1.5rem 1rem 1rem 2rem !important; 
+}
+
 @media screen and (max-width: 767px) {
   .number {
     display: none;
@@ -431,3 +435,4 @@
     height: 200px;
   }
 }
+

@@ -499,7 +499,7 @@ td {
     align-items: center !important;
   }
   .justify-content-xs-center{
-    align-items: center !important;
+    justify-content: center !important;
   }
   .order-xs-1{
     order:1 !important;
@@ -517,7 +517,7 @@ td {
 }
 
 .form-floating > label{ 
-  padding:1.5rem 1rem 1rem 2rem !important 
+  padding:1rem 1rem 1rem 2rem !important 
 }
 
 .bannerSubHeading{

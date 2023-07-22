@@ -70,17 +70,19 @@ const Sidebar = ({ setOpen, open }) => {
         <div className={style.sd_body}>
           <div className={style.mainItem}>
             <div className={style.menu}>
-              <div className={style.item} >
+              <div className={style.searchBar} >
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderRadius: 20, padding: 10, width: '100%' }} >
                   <Image
                     alt="search"
                     src={searchIcon}
                   />
-                  <p style={{ fontSize: 14, marginLeft: 5 }} >Search gifts, vendors, couples...</p>
+                  {/* <p style={{ fontSize: 14, marginLeft: 5 }} >Search gifts, vendors, couples...</p> */}
+                  <input placeholder="Search gifts, vendors, couples..." />
                 </div>
               </div>
             </div>
           </div>
+          <hr style={{ color: '#f85757', }} />
           <div className={style.mainItem}>
             <div className={style.menu}>
               <Link href="/vendors">

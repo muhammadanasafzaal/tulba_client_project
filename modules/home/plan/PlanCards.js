@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import styles from "/styles/Home.module.scss";
 
 const PlanCards = ({
   primaryColor,
@@ -32,7 +33,7 @@ const PlanCards = ({
 
       <div
         style={{ backgroundColor: secondaryColor }}
-        className="w-96 h-72 p-8 rounded-3xl flex flex-col gap-6"
+        className={"w-96 h-72 p-8 rounded-3xl flex flex-col gap-6 " + styles.card_container}
       >
         <span style={{ fontFamily: "DM Serif Display" }} className="text-3xl">
           {headingText}

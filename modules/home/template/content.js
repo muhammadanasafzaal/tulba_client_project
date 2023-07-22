@@ -23,7 +23,7 @@ const Content = (props) => {
                             />
                             {/* </div> */}
                         </Col>
-                        <Col md={7} sm={12} xs={12} className="mt-0">
+                        <Col md={7} sm={12} xs={12} className="mt-2">
                             <h5 className={styles.head}> {props.head}</h5>
                             <h2>{props.ques}</h2>
                             <ul>
@@ -32,7 +32,7 @@ const Content = (props) => {
                                 <span className="d-flex justify-content-start">
                                     <li>{props.li_three}
                                         <Link href={props.link}>
-                                            <button  variant="danger"
+                                            <button variant="danger"
                                                 className={styles.libtn}> see more
                                             </button>
 
@@ -55,7 +55,7 @@ const Content2 = (props) => {
             <div className="my-0">
                 <Container>
                     <Row>
-                        <Col md={6} sm={12} xs={12} className={`mt-0 ${styles.ImgOrder1}`}>
+                        <Col md={6} sm={12} xs={12} className={`mt-3 ${styles.ImgOrder1}`}>
                             <h5 className={styles.head_blue}>{props.head}</h5>
                             <h2>{props.ques}</h2>
                             <ul>
@@ -74,7 +74,7 @@ const Content2 = (props) => {
                             </ul>
                         </Col>
 
-                        <Col md={6} sm={12} xs={12}className={`mt-0 ${styles.ImgOrder2}`}>
+                        <Col md={6} sm={12} xs={12} className={`mt-0 ${styles.ImgOrder2}`}>
                             {/* <div className={styles.background_blue}> */}
                             <Image
                                 src={props.imgsrc}

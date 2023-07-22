@@ -60,9 +60,8 @@ const Cardcontent = (props) => {
                 renderArrowPrev={(clickHandler, hasPrev) => {
                   return (
                     <div
-                      className={`${
-                        hasPrev ? "absolute" : "hidden"
-                      } top-0 bottom-0 left-0 flex justify-center items-center py-3 opacity-80 hover:opacity-100 cursor-pointer z-20`}
+                      className={`${hasPrev ? "absolute" : "hidden"
+                        } top-0 bottom-0 left-0 flex justify-center items-center py-3 opacity-80 hover:opacity-100 cursor-pointer z-20`}
                       onClick={clickHandler}
                     >
                       <AiOutlineLeft className="w-6 h-6 mx-2  text-white" />
@@ -72,9 +71,8 @@ const Cardcontent = (props) => {
                 renderArrowNext={(clickHandler, hasNext) => {
                   return (
                     <div
-                      className={`${
-                        hasNext ? "absolute" : "hidden"
-                      } top-0 bottom-0 right-0 flex justify-center items-center py-3 opacity-80 hover:opacity-100 cursor-pointer z-20`}
+                      className={`${hasNext ? "absolute" : "hidden"
+                        } top-0 bottom-0 right-0 flex justify-center items-center py-3 opacity-80 hover:opacity-100 cursor-pointer z-20`}
                       onClick={clickHandler}
                     >
                       <AiOutlineRight className="w-6 h-6 mx-2  text-white" />
@@ -83,7 +81,7 @@ const Cardcontent = (props) => {
                 }}
               >
                 {[1, 2, 3, 4].map((e, _i) => (
-                  <div key = {_i}>
+                  <div key={_i}>
                     <Image
                       src={props.imgsrc}
                       width={"303px"}
@@ -117,7 +115,7 @@ const Cardcontent = (props) => {
                   <span className={`  ${styles.myspan}`}>5</span>
                 </div>
               </div>
-              <h1 className="mx-3">The Asthetcal</h1>
+              <h1 className="mx-3">The Aesthetical</h1>
               <div className="d-flex justify-content-start align-items-center">
                 <BiMap className={` ${styles.map1}`} />
                 <span>Bekasi, Jawa Barat Hall Al khema</span>

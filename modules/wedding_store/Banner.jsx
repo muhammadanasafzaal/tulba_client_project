@@ -18,7 +18,7 @@ const Banner = () => {
 							</Breadcrumb.Item>
 						</Breadcrumb> */}
 						<div className='mb-3 mb-md-5'>
-							<h5 className="mt-md-5 ">We got the best tools for your event, so hop on.</h5>
+							{/* <h5 className="mt-md-5 ">We got the best tools for your event, so hop on.</h5> */}
 							<h1>Shop Invitation Cards</h1>
 							<p className={styles.bannerText}>
 								Get your items according to your budegt with our classic budget

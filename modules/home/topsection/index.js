@@ -11,12 +11,14 @@ import Group from "public/assests/home_img/Group.svg";
 import temp from "public/assests/home_img/The Collage.svg";
 import HeroHomeMob from "public/assests/home_img/hero-home-mob.png";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Form from "react-bootstrap/Form";
+import Form from "react-bootstrap/Form"
+import InputGroup from 'react-bootstrap/InputGroup';
 import Button from "react-bootstrap/Button";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineLocationMarker } from "react-icons/ai";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 import "bootstrap/dist/css/bootstrap.css";
 import CITIES from "data/locations";
-import { useState, useCallback, useEffect, useRef  } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 const HomeTopSection = ({ bodyRef }) => {
 
@@ -26,10 +28,10 @@ const HomeTopSection = ({ bodyRef }) => {
 
   const handleLocationClick = useCallback(() => {
     setLocationList((current) => !current)
-  },[])
+  }, [])
 
   const handleLocationChange = (e) => {
-    setSelectedLocation(e)  
+    setSelectedLocation(e)
   }
 
   const closeLocationList = () => {
@@ -43,9 +45,9 @@ const HomeTopSection = ({ bodyRef }) => {
 
   useEffect(() => {
     const handleClick = (event) => {
-      if((!event.target.classList.contains('location') && !event.target.classList.contains('close') 
-      && !event.target.classList.contains('list')) && !event.target.classList.contains('form-control')){
-        if(locationList){
+      if ((!event.target.classList.contains('location') && !event.target.classList.contains('close')
+        && !event.target.classList.contains('list')) && !event.target.classList.contains('form-control')) {
+        if (locationList) {
           setLocationList(false)
         }
       }
@@ -57,12 +59,12 @@ const HomeTopSection = ({ bodyRef }) => {
       document.body.removeEventListener('click', handleClick);
     };
   }, [locationList]);
-  
+
 
   return (
     <>
       <style jsx>
-      {`
+        {`
         // .input{
         //   padding: 0.6rem;
         // }
@@ -108,15 +110,15 @@ const HomeTopSection = ({ bodyRef }) => {
       </style>
       <Container >
         <Row>
-        <Col lg={12} md={12} sm={12} xs={12}>
-          <div className="d-lg-none d-md-none d-sm-none d-block">
-            <Image
-              src={HeroHomeMob}
-              alt="googlelogo"
-              className={`img-fluid my-0`}
-            />
-          </div>
-        </Col>
+          <Col lg={12} md={12} sm={12} xs={12} className="px-xs-0">
+            <div className="d-lg-none d-md-none d-sm-none d-block img-container">
+              <Image
+                src={HeroHomeMob}
+                alt="googlelogo"
+                className={`img-fluid my-0`}
+              />
+            </div>
+          </Col>
           <Col lg={8} md={12} sm={12} xs={12} className={` ${styles.order2}`}>
             <div className={`my-2  ${styles.top_head} `}>
               {/* <div className="d-flex  justify-content-start">
@@ -162,49 +164,79 @@ const HomeTopSection = ({ bodyRef }) => {
               </p>
               <Row className={`g-2 my-5 flex gap-0 ${styles.form}`}>
                 <Col md={4} className="btstrp p-0">
-                  <FloatingLabel
-                    controlId="floatingInputGrid"
-                    label="Search Vendors, Catering"
-                  >
-                    <Form.Control
-                      type="text"
-                      placeholder="Search Vendors, Catering"
-                      className={styles.input}
-                      // <AiOutlineSearch />
-                    />
-                  </FloatingLabel>
+                  <Form.Group as={Col}>
+                    <InputGroup>
+                      <InputGroup.Text
+                        style={{
+                          color: '#f85757',
+                          backgroundColor: 'transparent',
+                          borderRight: 'none',
+                          fontSize: '1.5rem'
+                            }}
+                        id="basic-addon1">
+                        <AiOutlineSearch />
+                      </InputGroup.Text>
+                      <FloatingLabel
+                        controlId="floatingInputGrid"
+                        label="Search Vendors, Catering"
+                      >
+                        <div className={styles.input} style={{ padding: '0.6rem' }}>
+                          <Form.Control
+                            type="text"
+                          //className={styles.input}
+                          // <AiOutlineSearch />
+                          />
+                        </div>
+                      </FloatingLabel>
+                    </InputGroup>
+                  </Form.Group>
+
                 </Col>
                 <Col md={4} className="btstrp p-0">
-                  <FloatingLabel
-                    controlId="floatingInputGrid"
-                  >
-                    <div className={styles.input2} style={{padding: '0.6rem'}} onClick={handleLocationClick}>
-                      <Form.Control
-                        type="text"
-                        list="locations"
-                        placeholder="Search Vendors, Catering"
-                        onChange={(e) => handleLocationChange(e.target.value)}
-                        value={selectedLocation}
-                        // <AiOutlineSearch />
-                      />
-                    </div>
+                  <Form.Group as={Col}>
+                    <InputGroup>
+                      <InputGroup.Text
+                        style={{
+                          color: '#f85757',
+                          backgroundColor: 'transparent',
+                          borderRight: 'none',
+                          fontSize: '1.5rem'
+                        }}
 
-                    { locationList && <div
-                      className="locations"
-                    >
-                      <div className="close">
-                        <span onClick={closeLocationList}>x</span>
-                      </div>
-                      <div className="list">
-                        {CITIES.map((item, index) => (
-                          <p className="city" key={index} onClick={()=> selectLocation(item)}>
-                            {item}
-                          </p>
-                        ))}
-                      </div>
-                    </div>}
+                        className="custom-input-prepend"
+                        id="basic-addon1">
+                        <HiOutlineLocationMarker />
+                      </InputGroup.Text>
+                      <FloatingLabel
+                        controlId="floatingInputGrid"
+                      >
+                        <div className={styles.input2} style={{ padding: '0.6rem' }} onClick={handleLocationClick}>
+                          <Form.Control
+                            type="text"
+                            list="locations"
+                            placeholder="Search Vendors, Catering"
+                            onChange={(e) => handleLocationChange(e.target.value)}
+                            value={selectedLocation}
+                          // <AiOutlineSearch />
+                          />
+                        </div>
 
-                    {/* <datalist
+                        {locationList && <div
+                          className="locations"
+                        >
+                          <div className="close">
+                            <span onClick={closeLocationList}>x</span>
+                          </div>
+                          <div className="list">
+                            {CITIES.map((item, index) => (
+                              <p className="city" key={index} onClick={() => selectLocation(item)}>
+                                {item}
+                              </p>
+                            ))}
+                          </div>
+                        </div>}
+
+                        {/* <datalist
                       id="locations"
                       className={`hidden text-black bg-white`}
                     >
@@ -214,11 +246,13 @@ const HomeTopSection = ({ bodyRef }) => {
                         </option>
                       ))}
                     </datalist> */}
-                  </FloatingLabel>
+                      </FloatingLabel>
+                    </InputGroup>
+                  </Form.Group>
                 </Col>
 
-                <Col md={2} sm={12} className="p-0">
-                  <Button className={`px-2 ml-md-3 ${styles.inputbtn}`}>
+                <Col md={2} sm={12}>
+                  <Button className={`p-3 ml-md-3 ${styles.inputbtn}`}>
                     Search here
                   </Button>
                 </Col>

@@ -127,12 +127,14 @@ const SideBar = () => {
                 <FloatingLabel
                   controlId="floatingInputGrid"
                   label="Search Location"
+                  id="vendor-filter-search"
                 >
                   <Form.Control
                     type="text"
                     list="locations"
                     placeholder="Search Vendors, Catering"
                     className={styles.input}
+
                     // <AiOutlineSearch />
                   />
 

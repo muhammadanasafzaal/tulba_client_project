@@ -87,15 +87,22 @@
   .input {
     // box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
     border: 1px solid lightgrey !important;
-    border-right: 1px solid #f85757 !important;
+    // border-right: 1px solid #f85757 !important;
 
     background-color: "white";
     // height: 100%;
     color: "black";
     width: 100%;
     padding: 5px 0px;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    // border-top-left-radius: 12px;
+    // border-bottom-left-radius: 12px;
+    border-right: 1px solid #dedede !important;
+    border-left: 1px solid transparent !important;
+    
+    @media screen and (max-width:767px){
+      border-top-right-radius: 5px !important;
+      border-bottom-right-radius: 5px !important;
+    }
   }
   .input:focus {
     outline-style: none !important;
@@ -113,7 +120,21 @@
     padding: 5px 0px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    border-left: 1px solid transparent !important;
+    // border-top-right-radius: 12px !important;
+  
+
+    // @media screen and (max-width:767px){
+      border-top-right-radius: 5px !important;
+      border-bottom-right-radius: 5px !important;
+    // }
   }
+
+  .custom-input-prepend {
+    color: #f85757 !important;
+    background-color: transparent !important;
+    border-right: none !important;
+  } 
 
   .input::placeholder {
     color: "black";
@@ -123,10 +144,10 @@
     background: #f85757;
     border-radius: 12px;
     border: 1px solid #f85757;
-    padding: 17px 40px;
-    transform: translateX(-15px);
+    // padding: 17px 40px;
+    // transform: translateX(-15px);
     font-size: 15px;
-    width: 150px;
+    // width: 150px;
 
     &:hover {
       color: #f85757;

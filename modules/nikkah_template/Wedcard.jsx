@@ -67,28 +67,28 @@ const Wedcard = () => {
             {paper && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" className="bg-white" id="matte" />
-                  <label htmlFor="matte">Matte</label>
+                  <input type="checkbox" className="mr-2 bg-white" id="matte" />
+                  <label htmlFor="matte" className="mb-1">Matte</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="glossy" />
-                  <label htmlFor="glossy">Glossy</label>
+                  <input type="checkbox" className="mr-2 bg-white" id="glossy" />
+                  <label htmlFor="glossy" >Glossy</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="handmade" />
-                  <label htmlFor="handmade">Handmade</label>
+                  <input type="checkbox" className="mr-2 bg-white" id="handmade" />
+                  <label htmlFor="handmade" >Handmade</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="mylar" />
-                  <label htmlFor="mylar">Mylar</label>
+                  <input type="checkbox" className="mr-2 bg-white" id="mylar" />
+                  <label htmlFor="mylar" >Mylar</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="recycled" />
-                  <label htmlFor="recycled">Recycled</label>
+                  <input type="checkbox" className="mr-2 bg-white" id="recycled" />
+                  <label htmlFor="recycled ">Recycled</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="parchment" />
-                  <label htmlFor="parchment">Parchment</label>
+                  <input type="checkbox" className="mr-2 bg-white" id="parchment" />
+                  <label htmlFor="parchment" >Parchment</label>
                 </div>
               </div>
             )}
@@ -130,13 +130,13 @@ const Wedcard = () => {
             {type && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" className="bg-white" id="cards" />
+                  <input type="checkbox" className="bg-white mr-2" id="cards" />
                   <label htmlFor="cards">Cards</label>
                 </div>
                 <div>
                   <input
                     type="checkbox"
-                    className="bg-white"
+                    className="bg-white mr-2"
                     id="boxed-gifting"
                   />
                   <label htmlFor="boxed-gifting">Boxed Gifting</label>
@@ -144,7 +144,7 @@ const Wedcard = () => {
                 <div>
                   <input
                     type="checkbox"
-                    className="bg-white"
+                    className="bg-white mr-2"
                     id="novel-concepts"
                   />
                   <label htmlFor="novel-concepts">Novel Concepts</label>
@@ -178,23 +178,23 @@ const Wedcard = () => {
               {paper && (
                 <div className={styles.expandable}>
                   <div>
-                    <input type="checkbox" className="bg-white" id="matte" />
+                    <input type="checkbox" className="mr-2 bg-white" id="matte" />
                     <label htmlFor="matte">Matte</label>
                   </div>
                   <div>
-                    <input type="checkbox" className="bg-white" id="glossy" />
+                    <input type="checkbox" className="mr-2 bg-white" id="glossy" />
                     <label htmlFor="glossy">Glossy</label>
                   </div>
                   <div>
-                    <input type="checkbox" className="bg-white" id="handmade" />
+                    <input type="checkbox" className="mr-2 bg-white" id="handmade" />
                     <label htmlFor="handmade">Handmade</label>
                   </div>
                   <div>
-                    <input type="checkbox" className="bg-white" id="mylar" />
+                    <input type="checkbox" className="mr-2 bg-white" id="mylar" />
                     <label htmlFor="mylar">Mylar</label>
                   </div>
                   <div>
-                    <input type="checkbox" className="bg-white" id="recycled" />
+                    <input type="checkbox" className="mr-2 bg-white" id="recycled" />
                     <label htmlFor="recycled">Recycled</label>
                   </div>
                   <div>

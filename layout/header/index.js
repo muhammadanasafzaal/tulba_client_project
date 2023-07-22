@@ -92,7 +92,7 @@ const Header = () => {
                   <ul className={`flex items-center ${style.ui_list}`}>
                     <li className={style.vendros}>
                       <span className="flex gap-1 items-center">
-                        <Link href="/Vendors">Vendors</Link> <IoIosArrowDown />
+                        <Link href="/vendors">Vendors</Link> <IoIosArrowDown />
                       </span>{" "}
                       <ul className={style.nav__submenu}>
                         <li className={style.nav__submenu_item}>
@@ -128,7 +128,7 @@ const Header = () => {
                       </ul>
                     </li>
                     <li>
-                      <a href="#/">Event Website</a>
+                      <a href="/event-website">Event Website</a>
                     </li>
                     <li>
                       <Link href={"/shop-invitation"}>Shop Invitation</Link>

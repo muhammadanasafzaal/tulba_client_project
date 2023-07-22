@@ -137,7 +137,8 @@ input[type="checkbox"] {
 
 .btstrp .form-control {
   border: none;
-  border-radius: 15px 0 0 15px;
+  // border-radius: 15px 0 0 15px;
+  border-radius: 15px;
 }
 
 .btstrp .form-select {
@@ -507,6 +508,15 @@ td {
   .order-xs-2{
     order:2 !important;
   }
+  .px-xs-0{
+    padding: 0 !important;
+  }
+  .d-xs-none{
+    display: none !important;
+  }
+  .img-container > span{
+    width: 100% !important;
+  }
 }
 
 .brdcrumb a {
@@ -516,12 +526,15 @@ td {
   text-decoration: none;
 }
 
-.form-floating > label{ 
-  padding:1rem 1rem 1rem 2rem !important 
-}
+// .form-floating > label{ 
+//   padding:1rem 1rem 1rem 2rem !important 
+// }
 
 .bannerSubHeading{
   font-weight: 600;
   color: #f85757 !important;
 }
 
+#vendor-filter-search > label{
+  padding:1.5rem 1rem 1rem 2rem !important
+}

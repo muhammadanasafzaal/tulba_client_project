@@ -181,8 +181,8 @@ const Main = () => {
 					</div>
 				</div>
 
-				<div className={styles.date}>
-					<div className={styles.icon}>
+				<div className={`${styles.date} justify-content-xs-center`}>
+					<div className={`${styles.icon} d-xs-none`}>
 						{/* <Image
                             src={checkList}
                             width={"100%"}
@@ -206,8 +206,8 @@ const Main = () => {
 						<li>From 4 to 12 Months</li>
 					</ul>
 				</div>
-				<div className={styles.status}>
-					<div className={styles.icon}>
+				<div className={`${styles.status} justify-content-xs-center`}>
+					<div className={`${styles.icon} d-xs-none`}>
 						{/* <Image
                             src={checkList}
                             width={"100%"}
@@ -285,13 +285,13 @@ const Main = () => {
 						return (
 							<div className="row p-2 mx-1 mb-2 bg-light"
 								style={{ borderRadius: '20px' }} key={index}>
-								<div className="col-2 d-flex justify-content-center align-items-center">
+								<div className="px-xs-0 col-1 col-md-2 col-sm-2 col-lg-2 d-flex justify-content-center align-items-center">
 									<span className={taskStatus ? 'active-indicator' : 'inactive-indicator'}></span>
 								</div>
-								<div className="col-8 d-flex align-items-center">
+								<div className="col-8 col-md-8 col-sm-8 col-lg-8 d-flex align-items-center">
 									<small>{item.task}</small> &nbsp;| <small className="ml-2" style={{ color: '#bfbfbf' }}>{item.desc}</small>
 								</div>
-								<div className="col-2 d-flex align-items-center">
+								<div className="col-3 col-md-2 col-sm-2 col-lg-2 d-flex align-items-center">
 									<span>
 										{/* <label for="status">Horns</label> */}
 										<input className="mt-2	 mr-2" type="checkbox" id="status" name="status" onClick={()=>setTaskStatus(!taskStatus)} />

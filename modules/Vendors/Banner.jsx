@@ -14,18 +14,22 @@ const Banner = () => {
         <Row>
           <Col lg={6} className={`order-xs-2 px-[5%] banner`}>
             <Breadcrumb className="d-none d-lg-block d-lg-block d-md-block d-sm-block">
-              <Breadcrumb.Item href="#" className="brdcrumb"><Link href='/'>Home </Link></Breadcrumb.Item>
-              <Breadcrumb.Item active className="actbrdcrumb mt-1">Vendors</Breadcrumb.Item>
+              <Breadcrumb.Item href="#" className="brdcrumb">
+                <Link href='/'>Home </Link>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item active className="actbrdcrumb brdcrumb mt-1">
+                <Link href='#'>Vendors </Link>
+              </Breadcrumb.Item>
             </Breadcrumb>
             <div className="text-center text-md-start mb-3 mb-md-5">
               <h1>Vendors</h1>
-              <p className="bannerText">
+              <h5 className="banner-subheading">
                 Browse through the many vendors of your choice and <br className="d-xs-none" />
                 get the ultimate venue for your ultmiate wedding
-              </p>
+              </h5>
             </div>
           </Col>
-          <Col lg={6} className="order-xs-1 mb-2 p-0">
+          <Col lg={6} className="order-xs-1 mb-2 p-0 d-xs-none">
             <div className={style.vendorbanner_img}></div>
           </Col>
         </Row>

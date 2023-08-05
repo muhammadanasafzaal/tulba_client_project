@@ -24,7 +24,12 @@ const HomeTopSection = ({ bodyRef }) => {
 
   const [locationList, setLocationList] = useState(false)
   const [selectedLocation, setSelectedLocation] = useState(null)
+  const [vendorSearch, setVendorSearch] = useState('')
 
+
+  const handleVendorSearch =(val)=> {
+    setVendorSearch(val)
+  }
 
   const handleLocationClick = useCallback(() => {
     setLocationList((current) => !current)
@@ -111,21 +116,63 @@ const HomeTopSection = ({ bodyRef }) => {
       <Container >
         <Row>
           <Col lg={12} md={12} sm={12} xs={12} className="px-xs-0">
-            <div className="d-lg-none d-md-none d-sm-none d-block img-container">
+            <div className="d-lg-none d-md-none d-sm-none d-block img-container relative">
               <Image
                 src={HeroHomeMob}
                 alt="googlelogo"
                 className={`img-fluid my-0`}
               />
+              <Container className="d-xs-block banner-text-xs-block">
+                <Row>
+                  <Col lg={8} md={12} sm={12} xs={12} className={` ${styles.order2}`}>
+                    <div className={`my-2  ${styles.top_head} `}>
+                      <Row className="g-2">
+                        <Col lg={12}>
+                          <div className="d-flex flex-wrap justify-content-xs-center justify-content-md-start align-item-center">
+                            <span className={`mt-4  ${styles.headspan} `}>
+                              When Your
+                            </span>
+                            <span className="d-flex flex-column align-items-start">
+                              <span className="ms-auto">
+                                <Image src={Group} />
+                              </span>
+                              <div className={styles.dreamContainer}>
+                                <span className={`${styles.dream}`}>Dream</span>
+                                <Image src={stroke} width={"100px"} />
+                              </div>
+                            </span>
+                          </div>
+                        </Col>
+                      </Row>
+
+                      <Row className="">
+                        <Col lg={12}>
+                          <div className="d-flex flex-wrap justify-content-xs-center justify-content-md-start ">
+                            <span className="d-flex flex-column align-items-start mx-2">
+                              <div className={styles.eventContainer}>
+                                <span className={` ${styles.event}`}> Event </span>
+                                <Image src={stroke1} width={"100px"} />
+                              </div>
+                            </span>
+                            <span className={styles.headspan2}>Comes True</span>
+                            <span className={`mt-5 ${styles.dot}`}></span>
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
             </div>
           </Col>
+
           <Col lg={8} md={12} sm={12} xs={12} className={` ${styles.order2}`}>
             <div className={`my-2  ${styles.top_head} `}>
               {/* <div className="d-flex  justify-content-start">
                 <div className={`my-4  ${styles.head_border}`}></div>
                 <h4> WE got the best tools for your event, so hop on.</h4>
               </div> */}
-              <Row className="g-2">
+              <Row className="g-2 d-xs-none">
                 <Col lg={12}>
                   <div className="d-flex flex-wrap justify-content-xs-center justify-content-md-start align-item-center">
                     <span className={`mt-4  ${styles.headspan} `}>
@@ -144,7 +191,7 @@ const HomeTopSection = ({ bodyRef }) => {
                 </Col>
               </Row>
 
-              <Row>
+              <Row className="d-xs-none">
                 <Col lg={12}>
                   <div className="d-flex flex-wrap justify-content-xs-center justify-content-md-start ">
                     <span className="d-flex flex-column align-items-start mx-2">
@@ -158,14 +205,14 @@ const HomeTopSection = ({ bodyRef }) => {
                   </div>
                 </Col>
               </Row>
-              <p className="mb-1 mt-3 bannerSubHeading text-center text-md-start">
+              <p className="mb-1 mt-3 banner-subheading text-center text-md-start d-xs-none">
                 We got the best event planners and most economical setup for
                 event so lets do this together and make your event memorable.
               </p>
-              <Row className={`g-2 my-5 flex gap-0 ${styles.form}`}>
+              <Row className={`g-2 mt-3 mb-5 my-md-5 flex gap-0 ${styles.form}`}>
                 <Col md={4} className="btstrp p-0">
                   <Form.Group as={Col}>
-                    <InputGroup>
+                    <InputGroup className="full-focus">
                       <InputGroup.Text
                         style={{
                           color: '#f85757',
@@ -178,11 +225,13 @@ const HomeTopSection = ({ bodyRef }) => {
                       </InputGroup.Text>
                       <FloatingLabel
                         controlId="floatingInputGrid"
-                        label="Search Vendors, Catering"
+                        label={!vendorSearch ? "Search Vendors, Catering" : null}
                       >
                         <div className={styles.input} style={{ padding: '0.6rem' }}>
                           <Form.Control
                             type="text"
+                            onChange={(e) => handleVendorSearch(e.target.value)}
+                            value={vendorSearch}
                           //className={styles.input}
                           // <AiOutlineSearch />
                           />
@@ -194,7 +243,7 @@ const HomeTopSection = ({ bodyRef }) => {
                 </Col>
                 <Col md={4} className="btstrp p-0">
                   <Form.Group as={Col}>
-                    <InputGroup>
+                    <InputGroup className="full-focus">
                       <InputGroup.Text
                         style={{
                           color: '#f85757',
@@ -203,18 +252,25 @@ const HomeTopSection = ({ bodyRef }) => {
                           fontSize: '1.5rem'
                         }}
 
-                        className="custom-input-prepend"
+                        className="
+                        br-left-red-md
+                        custom-input-prepend 
+                        br-left-md-none"
                         id="basic-addon1">
                         <HiOutlineLocationMarker />
                       </InputGroup.Text>
                       <FloatingLabel
                         controlId="floatingInputGrid"
                       >
-                        <div className={styles.input2} style={{ padding: '0.6rem' }} onClick={handleLocationClick}>
+                        <div className={`${styles.input2} br-right-md-none`} 
+                        style={{ 
+                          padding: '0.6rem',                               
+                        }} 
+                        onClick={handleLocationClick}>
                           <Form.Control
                             type="text"
                             list="locations"
-                            placeholder="Search Vendors, Catering"
+                            placeholder={"Search Location"}
                             onChange={(e) => handleLocationChange(e.target.value)}
                             value={selectedLocation}
                           // <AiOutlineSearch />
@@ -251,8 +307,8 @@ const HomeTopSection = ({ bodyRef }) => {
                   </Form.Group>
                 </Col>
 
-                <Col md={2} sm={12}>
-                  <Button className={`p-3 ml-md-3 ${styles.inputbtn}`}>
+                <Col md={2} sm={12} className="p-0">
+                  <Button className={`br-left-md-none p-3 ml-md-3 ${styles.inputbtn}`}>
                     Search here
                   </Button>
                 </Col>

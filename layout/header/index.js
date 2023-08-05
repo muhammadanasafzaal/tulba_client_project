@@ -36,8 +36,11 @@ const Header = () => {
               <p>7 Shaaban 1443AH &nbsp;</p>
               <p> |&nbsp; Thursday , 10 March 2022</p>
             </div>
-            {/* <div className={style.headerTop_vendor}  onClick={() => setModalShow(true)}>Are You A Vendor? */}
-            {/* </div> */}
+            <Link href="/vendors/signup" style={{background:'red'}} className={`${style.headerTop_vendor}`}>
+              <span className="d-xs-none" style={{color:"#333 !important", textTransform: 'uppercase', cursor:'pointer'}}>Are You A Vendor? </span>
+            </Link>
+            {/* <div className={`${style.headerTop_vendor} d-xs-none`}  >
+            </div> */}
             {/* <div
               className={style.headerTop_vendor}
               style={{ textDecoration: "none", color: "black" }}
@@ -60,20 +63,38 @@ const Header = () => {
               <div
                 className={` flex ${style.header_bottom} items-center justify-between w-full   `}
               >
-                <div className={style.user_image_container} >
-                  {/* <Image
-                    // className={style.user_image_container}
-                    alt="user"
-                    src={userprofile}
-                    style={{ height: 100, width: 100  }}
-                    width={100}
-                    height={100}
-                  /> */}
-                  <div className={style.user_img} >
-                    <Image
+                <div className="d-xs-flex d-md-none d-sm-none d-lg-none"> 
+                  <div className={`${style.user_image_container}`}>
+                    {/* <Image
+                      // className={style.user_image_container}
                       alt="user"
                       src={userprofile}
-                    />
+                      style={{ height: 100, width: 100  }}
+                      width={100}
+                      height={100}
+                    /> */}
+                    <div className={style.cart_img} >
+                      <Image
+                        alt="user"
+                        src={cart}
+                      />
+                    </div>
+                  </div>
+                  <div className={`${style.user_image_container} ml-2`} >
+                    {/* <Image
+                      // className={style.user_image_container}
+                      alt="user"
+                      src={userprofile}
+                      style={{ height: 100, width: 100  }}
+                      width={100}
+                      height={100}
+                    /> */}
+                    <div className={style.user_img} >
+                      <Image
+                        alt="user"
+                        src={userprofile}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className={style.logo} >

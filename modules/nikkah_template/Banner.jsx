@@ -13,7 +13,7 @@ const Banner = () => {
               <Breadcrumb.Item href="/" className="brdcrumb">
                 Home
               </Breadcrumb.Item>
-              <Breadcrumb.Item active className="actbrdcrumb">
+              <Breadcrumb.Item active className="actbrdcrumb brdcrumb">
                 Shop Nikkah Templates
               </Breadcrumb.Item>
             </Breadcrumb>
@@ -25,7 +25,7 @@ const Banner = () => {
               </p>
             </div>
           </Col>
-          <Col lg={6} className="order-xs-1 p-0 mb-3">
+          <Col lg={6} className="order-xs-1 p-0 mb-3 d-xs-none">
             <div className={styles.weddingbanner_img}></div>
           </Col>
         </Row>

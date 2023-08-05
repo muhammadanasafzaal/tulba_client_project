@@ -36,6 +36,7 @@ $deviceMaxWidth: 1024px;
       color: #404040;
       margin-left: 10px;
     }
+    
 
     .btn {
       background: #f85757;
@@ -57,7 +58,8 @@ $deviceMaxWidth: 1024px;
       }
 
       @media (max-width: 767px) {
-        width: 90%;
+        // width: 90%;
+        width: 100%;
       }
 
       @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth) {
@@ -72,6 +74,10 @@ $deviceMaxWidth: 1024px;
       color: #ffffff;
       text-align: center;
     }
+  }
+
+  .btnoutline{
+    position: relative;
   }
 }
 
@@ -285,29 +291,35 @@ $deviceMaxWidth: 1024px;
 }
 
 .banner_img {
-  background-image: url("../../public/assests/RSVP/banner.svg");
+  // background-image: url("../../public/assests/RSVP/banner.svg");
+  background-image: url("../../public/assests/RSVP/banner.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 70%;
+  // height: 70%;
+  height:180px;
   width: 100%;
 }
 
 .weddingbanner_img {
-  background-image: url("../../public/assests/shop-invitation/banner.svg");
+  // background-image: url("../../public/assests/shop-invitation/banner.svg");
+  background-image: url("../../public/assests/shop-invitation/banner.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 70%;
+  // height: 70%;
+  height:180px;
   width: 100%;
 }
 
 .wedbanner_img {
-  background-image: url("../../public/assests/weddingtemp/banner.svg");
+  // background-image: url("../../public/assests/weddingtemp/banner.svg");
+  background-image: url("../../public/assests/weddingtemp/banner.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 70%;
+  // height: 70%;
+  height:180px;
   width: 100%;
 }
 
@@ -331,11 +343,13 @@ $deviceMaxWidth: 1024px;
 }
 
 .banner_img {
-  background-image: url("../../public/assests/eventBanner.png");
+  // background-image: url("../../public/assests/RSVP/banner.svg");
+  background-image: url("../../public/assests/RSVP/banner.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 70%;
+  // height: 70%;
+  height:180px;
   width: 100%;
 }
 
@@ -434,3 +448,4 @@ $deviceMaxWidth: 1024px;
 .breadcrumb-item a {
   text-decoration: none !important;
 }
+

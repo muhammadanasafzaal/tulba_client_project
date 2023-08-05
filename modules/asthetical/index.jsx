@@ -76,7 +76,7 @@ const Asthetical = () => {
                 <Button className={styles.as_btn}>
                   <div className="d-flex justify-content-center">
                     <Image src={Img} />
-                    <p className="my-3"> Get a free sample from us</p>
+                    <p style={{marginTop:'1.3rem'}}> Get a free sample from us</p>
                   </div>
                 </Button>
               </Link>
@@ -84,7 +84,27 @@ const Asthetical = () => {
             <div className="my-5">
               <hr className="my-5" />
             </div>
-            <div>
+            <div 
+            className={`${styles.quantityContainer} mb-4 `} >
+              <div>
+                <p className={`${styles.text} ml-0`}>Quantity :</p>
+              </div>
+              <div className={styles.last} style={{ justifyContent: 'flex-start'}}>
+                <div className={`${styles.select} ml-0`}>
+                  <select name="" className="bg-white" id="">
+                    <option value="1">1</option>
+                    <option value="1">1</option>
+                    <option value="1">1</option>
+                  </select>
+                </div>
+                <div className={styles.button}>
+                  {" "}
+                  <Link href="/checkout">Buy now</Link>{" "}
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-2">              
               <div>
                 <div lg={3}>
                   Color: <p className={styles.text}> {color}</p>{" "}
@@ -327,24 +347,6 @@ const Asthetical = () => {
                 </div>
               </div>
               {/* <div>Assets??</div> */}
-            </div>
-            <div className={styles.quantityContainer}>
-              <div>
-                <p className={styles.text}>Quantity :</p>
-              </div>
-              <div className={styles.last}>
-                <div className={styles.select}>
-                  <select name="" className="bg-white" id="">
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                  </select>
-                </div>
-                <div className={styles.button}>
-                  {" "}
-                  <Link href="/checkout">Buy now</Link>{" "}
-                </div>
-              </div>
             </div>
           </Col>
         </Row>

@@ -20,7 +20,7 @@ const Banner = () => {
               </p>
             </div>
           </Col>
-          <Col lg={6} className='order-xs-1 mb-2'>
+          <Col lg={6} className='order-xs-1 mb-2 d-xs-none'>
             <div className={styles.wedbanner_img}></div>
             {/* <Image 
             src={Img}

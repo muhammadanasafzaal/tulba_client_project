@@ -8,22 +8,22 @@ const SummaryTable = (props) => {
     return (
 
         <div
-            className={`d-flex justify-content-center align-items-center flex-column text-center ${styles.guest}`}
+            className={`p-2 d-flex justify-content-center flex-md-column align-items-md-center align-items-end text-center ${styles.guest}`}
         >
             <div>
-                <h5>Total Guest</h5>
+                <h6>Total Guest</h6>
                 <h2>{list.length}</h2>
             </div>
             <div>
-                <h5>Coming</h5>
+                <h6>Coming</h6>
                 <h2>0</h2>
             </div>
             <div>
-                <h5>Not Coming</h5>
+                <h6>Not Coming</h6>
                 <h2>0</h2>
             </div>
             <div>
-                <h5>Pending Invites</h5>
+                <h6>Pending Invites</h6>
                 <h2>0</h2>
             </div>
         </div>

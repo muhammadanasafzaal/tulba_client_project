@@ -12,7 +12,7 @@ const NikkahCardYellow = () => {
       <CardSection />
       <SpecialEvent />
       <AboutEvent />
-      {/* <InfoForm /> */}
+      <InfoForm />
     </div>
   );
 };

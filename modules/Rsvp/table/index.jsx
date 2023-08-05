@@ -36,6 +36,7 @@ function BasicExample() {
 	const [selectedWeddingEvent, setSelectedWeddingEvent] = useState(null);
 	const [isEdit, setIsEdit] = useState(false);
 	const [rsvpData, setRsvpData] = useState(null);
+	const [rsvpStatus, setRsvpStatus] = useState(false)
 	const [weddingEvents, setWeddingEvents] = useState([
 		{
 			id:1,
@@ -47,6 +48,22 @@ function BasicExample() {
 			type: "Valima",
 			date: 'November 18, 2023'
 		}
+	])
+	const [tmpRsvp, setTmpRsvp] = useState([
+		{
+			id:1,
+			name: 'Ali Ahmed',
+			mobile:'+122121212',
+			email:'test@gmail.com',
+			isInvited: true
+		},
+		{
+			id:22,
+			name: 'Sarah Ahmed',
+			mobile:'+122121212',
+			email:'test2@gmail.com',
+			isInvited: true
+		},
 	])
 	const weddingState = useSelector((state) => state.wedding);
 	const weddingEventState = useSelector((state) => state.weddingEvent);
@@ -118,7 +135,7 @@ function BasicExample() {
 							</span>
 							<p className=''>Your Invitations to the guests details</p>
 						</Col>
-						<Col lg={5} className='p-md-0'>
+						<Col xs="12" lg={5} className='p-md-0'>
 							<Button onClick={handleOpenModal} className={styles.btn}>
 								+ Add New Guest
 							</Button>
@@ -134,7 +151,7 @@ function BasicExample() {
                 </Form.Select>
               </FloatingLabel> */}
 						{/* </Col> */}
-						<Row className='mt-2'>
+						{/* <Row className='mt-2'> */}
 							{/* <Col lg={6}>
 								<div className='bg-white p-2 flex border border-gray-200 rounded'>
 									<select
@@ -154,11 +171,11 @@ function BasicExample() {
 									</select>
 								</div>
 							</Col> */}
-							<Col lg={6}>
+							<Col xs="12" sm="6" md="6" className="mt-2">
 								<div className='bg-white p-2 flex border border-gray-200 rounded'>
 									<select
 										// key={Math.random()}
-										className='bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
+										className=' bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
 										name='weddingEventSelect'
 										onChange={(e) => setSelectedWeddingEvent(e.target.value)}
 									// onChange={handleChange}
@@ -179,7 +196,19 @@ function BasicExample() {
 									</select>
 								</div>
 							</Col>
-						</Row>
+							<Col className="d-xs-none" md="2"></Col>
+							<Col xs="8" sm="6" md="2" className="d-flex justify-start align-items-center mt-md-0 mt-2">
+								<button className="btnoutline p-2">
+									Done
+								</button>
+								<button className="btnoutline p-2 ml-2">
+									Pending
+								</button>
+							</Col>
+							<Col xs="4" sm="6" md="2" className="d-flex justify-end align-items-center">
+								<div className='text-sm cursor-pointer font-bold '>Clear All</div>
+							</Col>
+						{/* </Row> */}
 					</Row>
 					<Table
 						responsive
@@ -189,16 +218,18 @@ function BasicExample() {
 					>
 						<thead>
 							<tr>
-								<th>Name</th>
-								<th>Mobile</th>
+								<th></th>
+								<th></th>
+								{/* <th>Name</th> */}
+								{/* <th>Mobile</th>
 								<th>Email</th>
-								<th>Invited</th>
+								<th>Invited</th> */}
 								<th></th>
 							</tr>
 						</thead>
 						<tbody>
-							{list.length === 0 && <div>You do not have any guest yet.</div>}
-							{list.map((i, _i) => (
+							{/* {list.length === 0 && <div>You do not have any guest yet.</div>} */}
+							{/* {list.map((i, _i) => (
 								<tr key={_i}>
 									<td>{i?.name}</td>
 									<td>{i?.mobile}</td>
@@ -210,6 +241,39 @@ function BasicExample() {
 											className='cursor-pointer m-1'
 											size='1.5em'
 										/>
+									</td>
+								</tr>
+							))} */}
+
+							{tmpRsvp.map((i, _i) => (
+								<tr key={_i}>
+									<td className="relative">
+										<input 
+										type="checkbox" 
+										style={{
+											position:'absolute',
+											top:'18%',
+											left:'50%',
+											transform:'translate(-50%, -18%)'
+										}}
+										/>
+									</td>
+									<td className="text-start">
+										<p className="ms-0">{i?.name}</p>
+										<small className="d-block">{i?.mobile}</small>
+										<small>{i?.email}</small>
+									</td>
+									{/* <td>{i?.mobile}</td>
+									<td>{i?.email}</td>
+									<td>{i?.isInvited ? "Yes" : "No"}</td> */}
+									<td className="relative">
+										<div className="d-flex justify-center align-items-center mt-1">
+											<FaEdit
+												onClick={()=>setTaskStatus(!rsvpStatus)}
+												className='cursor-pointer d-inline ml-2'
+												size='1.5em'
+											/>
+										</div>
 									</td>
 								</tr>
 							))}

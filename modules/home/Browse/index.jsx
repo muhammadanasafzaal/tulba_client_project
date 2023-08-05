@@ -74,7 +74,7 @@ const Browse = () => {
             <Slider {...settings} className="carousel mb-5">
               <div>
                 <BrowseCard
-                  imgsrc="/assests/home_img/plan1.svg"
+                  imgsrc="/assests/home_img/plan1.jpeg"
                   btn="Indoor and OutDoor"
                   icon="/../assests/home_img/Vector.svg"
                   price="300 $/"
@@ -82,7 +82,7 @@ const Browse = () => {
               </div>
               <div>
                 <BrowseCard
-                  imgsrc="/assests/home_img/plan2.svg"
+                  imgsrc="/assests/home_img/plan2.jpeg"
                   btn="Indoor and OutDoor"
                   icon="/../assests/home_img/Vector.svg"
                   price="200 $/"
@@ -90,7 +90,7 @@ const Browse = () => {
               </div>
               <div>
                 <BrowseCard
-                  imgsrc="/../assests/home_img/plan3.svg"
+                  imgsrc="/../assests/home_img/plan3.jpeg"
                   btn="Indoor and OutDoor"
                   icon="/../assests/home_img/Vector.svg"
                   price="150 $/"
@@ -98,7 +98,7 @@ const Browse = () => {
               </div>
               <div>
                 <BrowseCard
-                  imgsrc="/../assests/home_img/plan4.svg"
+                  imgsrc="/../assests/home_img/plan4.jpeg"
                   btn="Indoor and OutDoor"
                   icon="/../assests/home_img/Vector.svg"
                   price="100 $/"

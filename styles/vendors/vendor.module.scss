@@ -305,11 +305,13 @@
 
 // }
 .vendorbanner_img {
-  background-image: url("../../public/assests/vendors/banner.svg");
+  // background-image: url("../../public/assests/vendors/banner.svg");
+  background-image: url("../../public/assests/vendors/banner.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 70%;
+  // height: 70%;
+  height:180px;
   width: 100%;
 }
 

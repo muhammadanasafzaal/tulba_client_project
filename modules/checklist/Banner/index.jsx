@@ -7,7 +7,8 @@ import styles from "/styles/checklist/Banner.module.scss";
 
 const Banner = () => {
 	return (
-		<Container fluid className='mt-2 mb-2 p-0'>
+		// <Container fluid className='mt-2 mb-2 p-0'>
+		<Container fluid>
 			<Row>
 				<Col lg={6} className={`order-xs-2 px-[5%] banner`}>
 					<Breadcrumb className="d-lg-block d-md-block d-sm-block d-none">
@@ -17,19 +18,19 @@ const Banner = () => {
 						<Breadcrumb.Item href='/event' className='brdcrumb'>
 							Planning Tools
 						</Breadcrumb.Item>
-						<Breadcrumb.Item active className='actbrdcrumb'>
+						<Breadcrumb.Item active className='actbrdcrumb brdcrumb'>
 							Checklist
 						</Breadcrumb.Item>
 					</Breadcrumb>
 					<div className='text-md-start text-center mb-3 mb-md-5'>
 						<h1 className='mb-2'>Checklist</h1>
-						<p>
+						<h5 className="banner-subheading">
 							Get Listed all your wedding items and see their progress on the
 							go.
-						</p>
+						</h5>
 					</div>
 				</Col>
-				<Col lg={6} className="order-xs-1 mb-2">
+				<Col lg={6} className="order-xs-1 mb-2 p-0 d-xs-none">
 					<div className={styles.banner_img}></div>
 					{/* <Image 
             src={Img}

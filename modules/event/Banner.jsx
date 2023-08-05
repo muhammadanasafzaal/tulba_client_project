@@ -25,7 +25,7 @@ const Banner = () => {
 		<>
 			<div className='container-fluid'>
 				<div className="row">
-					<div className='order-xs-2 col-12 col-md-6 px-[6%]'>
+					<div className='order-xs-2 col-12 col-md-6 banner px-[5%]'>
 						{/* <div> */}
 						<Breadcrumb className="d-none d-lg-block d-md-block d-sm-block">
 							<Breadcrumb.Item className='brdcrumb'>
@@ -36,19 +36,16 @@ const Banner = () => {
 							</Breadcrumb.Item>
 						</Breadcrumb>
 						{/* </div> */}
-						<div className="text-center text-md-start" id='signup'>
-							<h1
-								style={{ fontFamily: "DM Serif Display" }}
-								className=' leading-loose text-5xl mb-0 font-bold'
-							>
+						<div className="text-center text-md-start mb-3 mb-md-5" id='signup'>
+							<h1 className='mb-2'>
 								Event Planner
 							</h1>
 							<div>
-								<h5 style={{ fontFamily: "DM Serif Display", color: '#f85757' }} className='my-3'>
+								<h5 className='banner-subheading'>
 									Plan your wedding with our platform for free, just enter your
 									name and email to get started
 								</h5>
-								<Row className={`g-2 my-5 flex gap-0 ${styles.form}`}>
+								<Row className={`g-2 my-5 search-bar flex gap-0 ${styles.form}`}>
 									<Col md={4} className='btstrp p-0'>
 										<FloatingLabel
 											controlId='floatingInputGrid'
@@ -76,12 +73,18 @@ const Banner = () => {
 										</FloatingLabel>
 									</Col>
 
-									<Col md={2} sm={12} className='p-0'>
-										<Button
+									<Col md={4} sm={12} className="pl-0">
+										{/* <Button
 											onClick={handleSubmit}
 											className={`px-2 ${styles.inputbtn}`}
 										>
 											Start planning
+										</Button> */}
+
+										<Button 
+										className={`br-left-md-none btn btn-primary`}
+										onClick={handleSubmit}>
+											Start Planning
 										</Button>
 									</Col>
 								</Row>
@@ -172,7 +175,7 @@ const Banner = () => {
 							</div>
 						</div>
 					</div>
-					<div className='order-xs-1 col-12 col-md-6 relative '>
+					<div className='order-xs-1 col-12 col-md-6 relative p-0 d-xs-none'>
 						{/* <div className="absolute h-full w-[70%] right-[65%]  bg-white rounded-full"></div> */}
 						<div className={styles.banner_img}></div>
 					</div>

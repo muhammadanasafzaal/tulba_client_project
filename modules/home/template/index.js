@@ -31,12 +31,12 @@ const Template = () => {
               />
               <Content
                 imgsrc="/../assests/home_img/1-01.svg"
-                head="Create Your Own Todo List"
+                head="Create Your Own To-Do List"
                 ques="Manage all your things with Checklist manager."
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
                 li_three="Designed to match your wedding website "
-                link = "#signup"
+                link = "signup"
               />
               <Content2
                 imgsrc="/../assests/home_img/1-03.svg"
@@ -45,7 +45,7 @@ const Template = () => {
                 li_one="We got the best event planners and most economical setup for event."
                 li_two="Choose from hundreds of beautiful designs"
                 li_three="Designed to match your wedding website "
-                link = "#signup"
+                link = "  signup"
               />
             </Col>
           </Row>

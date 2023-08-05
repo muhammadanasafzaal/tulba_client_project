@@ -286,8 +286,9 @@ const Signup = () => {
 							onChange={handleChange}
 						/>
 						<div className="error">
-							{errors.confirmpassword && touched.confirmpassword ? (
-								<p className="form-error">{errors.confirmpassword}</p>
+							{values.confirmpassword && values.confirmpassword != values.password
+							? (
+								<p className="form-error">Passwords do not match</p>
 							) : null}
 							{confirmPassError && <span>Passwords do not match</span>}
 						</div>

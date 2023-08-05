@@ -8,7 +8,8 @@ import SummaryTable from "modules/SummaryTable";
 
 const Banner = () => {
 	return (
-		<Container fluid className='my-2 p-0'>
+		// <Container fluid className='my-2 p-0'>
+		<Container fluid>
 			<Row>
 				<Col lg={6} className={`order-xs-2 px-[5%] banner`}>
 					<Breadcrumb className="d-none d-lg-block d-md-block d-sm-block">
@@ -18,19 +19,19 @@ const Banner = () => {
 						<Breadcrumb.Item href='/event' className='brdcrumb'>
 							Planning Tools
 						</Breadcrumb.Item>
-						<Breadcrumb.Item active className='mt-1 actbrdcrumb'>
+						<Breadcrumb.Item active className='mt-1 actbrdcrumb brdcrumb'>
 							RSVP List
 						</Breadcrumb.Item>
 					</Breadcrumb>
 					<div className='text-center text-md-start mb-3 mb-md-5'>
 						<h1 className='mb-2'>RSVP List</h1>
-						<p className={styles.bannerText}>
+						<h5 className="banner-subheading">
 							Get Listed all your wedding items and see their progress on the
 							go.
-						</p>
+						</h5>
 					</div>
 				</Col>
-				<Col lg={6} className="order-xs-1 mb-2">
+				<Col lg={6} className="order-xs-1 mb-2 p-0 d-xs-none">
 					<div className={styles.banner_img}></div>
 					{/* <Image 
             src={Img}

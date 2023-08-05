@@ -35,7 +35,7 @@ const Wedcard = () => {
   const [mobileCard, showMobileCard] = useState(false);
 
   return (
-    <Container>
+    <Container className="mt-4">
       {mobileCard && (
         <div className="w-screen">
           <div className={styles.mobileCard}>

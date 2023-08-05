@@ -48,7 +48,7 @@ const Testimonial = () => {
           <Row>
             <Col>
               <div className={`text-center ${styles.template}`}>
-                <h5>Commnets about our clients / lets see them</h5>
+                <h5>Comments about our clients / lets see them</h5>
                 <h1 className="mt-3">What our customer says</h1>
               </div>
               <div>

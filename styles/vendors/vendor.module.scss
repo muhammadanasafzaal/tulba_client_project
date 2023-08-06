@@ -166,7 +166,7 @@
     position: absolute;
     background: #fff;
     // height: 140vh;
-    width: 100%;
+    width: 90%;
     z-index: 9999;
     // border-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -311,7 +311,7 @@
   background-position: center;
   background-repeat: no-repeat;
   // height: 70%;
-  height:180px;
+  height: 180px;
   width: 100%;
 }
 
@@ -425,16 +425,16 @@
   margin-bottom: 20px;
 }
 
-.form-floating > label{ 
-  padding:1.5rem 1rem 1rem 2rem !important; 
+.form-floating>label {
+  padding: 1.5rem 1rem 1rem 2rem !important;
 }
 
 @media screen and (max-width: 767px) {
   .number {
     display: none;
   }
-  .vendorbanner_img{
+
+  .vendorbanner_img {
     height: 200px;
   }
 }
-

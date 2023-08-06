@@ -22,7 +22,10 @@ const Banner = () => {
 							Checklist
 						</Breadcrumb.Item>
 					</Breadcrumb>
-					<div className='text-md-start text-center mb-3 mb-md-5'>
+					<div className="d-block brdcrumb d-sm-none" >
+						Wedding
+					</div>
+					<div className='text-start text-md-center mb-3 mb-md-5'>
 						<h1 className='mb-2'>Checklist</h1>
 						<h5 className="banner-subheading">
 							Get Listed all your wedding items and see their progress on the

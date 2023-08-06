@@ -21,7 +21,10 @@ const Banner = () => {
                 <Link href='#'>Vendors </Link>
               </Breadcrumb.Item>
             </Breadcrumb>
-            <div className="text-center text-md-start mb-3 mb-md-5">
+            <div className="d-block brdcrumb d-sm-none" >
+              Wedding
+            </div>
+            <div className="text-start text-md-center mb-3 mb-md-5">
               <h1>Vendors</h1>
               <h5 className="banner-subheading">
                 Browse through the many vendors of your choice and <br className="d-xs-none" />

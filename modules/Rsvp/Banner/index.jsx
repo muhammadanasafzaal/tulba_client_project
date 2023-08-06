@@ -23,7 +23,10 @@ const Banner = () => {
 							RSVP List
 						</Breadcrumb.Item>
 					</Breadcrumb>
-					<div className='text-center text-md-start mb-3 mb-md-5'>
+					<div className="d-block brdcrumb d-sm-none" >
+						Wedding
+					</div>
+					<div className='text-start text-md-center mb-3 mb-md-5'>
 						<h1 className='mb-2'>RSVP List</h1>
 						<h5 className="banner-subheading">
 							Get Listed all your wedding items and see their progress on the

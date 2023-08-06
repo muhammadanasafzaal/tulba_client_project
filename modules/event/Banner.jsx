@@ -36,10 +36,10 @@ const Banner = () => {
 							</Breadcrumb.Item>
 						</Breadcrumb>
 						<div className="d-block brdcrumb d-sm-none" >
-							Event Planner
+							Wedding
 						</div>
 						{/* </div> */}
-						<div className="text-center text-sm-start mb-3 mb-md-5" id='signup'>
+						<div className="text-start text-md-center mb-3 mb-md-5" id='signup'>
 							<h1 className='mb-2'>
 								Event Planner
 							</h1>

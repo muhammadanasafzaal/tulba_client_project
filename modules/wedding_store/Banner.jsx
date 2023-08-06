@@ -9,7 +9,7 @@ const Banner = () => {
 			<Container fluid>
 				<Row>
 					<Col lg={6} className={`px-[5%] banner`}>
-						<Breadcrumb className={`d-none d-lg-block d-lg-block d-md-block d-sm-block` } >
+						<Breadcrumb className={`d-none d-lg-block d-lg-block d-md-block d-sm-block`} >
 							<Breadcrumb.Item href='/' className='brdcrumb'>
 								Home
 							</Breadcrumb.Item>
@@ -17,7 +17,10 @@ const Banner = () => {
 								Shop Invites
 							</Breadcrumb.Item>
 						</Breadcrumb>
-						<div className='text-center text-md-start mb-3 mb-md-5'>
+						<div className="d-block brdcrumb d-sm-none" >
+							Wedding
+						</div>
+						<div className='text-start text-md-center mb-3 mb-md-5'>
 							{/* <h5 className="mt-md-5 ">We got the best tools for your event, so hop on.</h5> */}
 							<h1 className="mb-2">Shop Invitation Cards</h1>
 							<h5 className="banner-subheading">

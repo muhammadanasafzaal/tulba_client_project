@@ -17,9 +17,12 @@ const Banner = () => {
                 Shop Nikkah Templates
               </Breadcrumb.Item>
             </Breadcrumb>
-            <div className="text-center text-md-start mb-3 mb-md-5">
+            <div className="d-block brdcrumb d-sm-none" >
+              Wedding
+            </div>
+            <div className="text-start text-md-center mb-3 mb-md-5">
               <h1>Shop Nikkah Templates</h1>
-              <p className="bannerText">
+              <p className="banner-subheading">
                 Get your items according to your budegt with our classic budget
                 planner
               </p>

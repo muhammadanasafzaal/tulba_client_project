@@ -6,7 +6,7 @@ import styles from "/styles/Rsvp/Rsvp.module.scss";
 const Banner = () => {
   return (
     <>
-      <Container fluid className="my-2">
+      <Container fluid>
         <Row>
           <Col lg={6} className={`order-xs-2 px-[5%] banner`}>
             <Breadcrumb className={`${styles.bread_crumb} d-none d-lg-block d-md-block d-sm-block`}>
@@ -20,7 +20,7 @@ const Banner = () => {
             <div className="d-block brdcrumb d-sm-none" >
               Wedding
             </div>
-            <div className="text-start text-md-center mb-3 mb-md-5">
+            <div className="text-start mb-3 mb-md-5">
               <h1>Shop Nikkah Templates</h1>
               <p className="banner-subheading">
                 Get your items according to your budegt with our classic budget

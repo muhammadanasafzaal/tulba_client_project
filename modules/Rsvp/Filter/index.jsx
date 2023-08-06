@@ -63,11 +63,11 @@ const Filter = ({ isOnlyMobile }) => {
                         {paper && (
                             <div className={styles.expandable}>
                                 <div>
-                                    <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
+                                    <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>Yes</span>
                                 </div>
                                 <div>
-                                    <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
+                                    <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>No</span>
                                 </div>
                             </div>
@@ -86,15 +86,15 @@ const Filter = ({ isOnlyMobile }) => {
                         {price && (
                             <div className={styles.expandable}>
                                 <div>
-                                    <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
+                                    <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>Yes</span>
                                 </div>
                                 <div>
-                                    <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
+                                    <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>No</span>
                                 </div>
                                 <div>
-                                    <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
+                                    <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>Pending</span>
                                 </div>
                             </div>
@@ -113,9 +113,9 @@ const Filter = ({ isOnlyMobile }) => {
                         {type && (
                             <div className={styles.expandable}>
                                 <div className="flex flex-column" >
-                                    <input type="date" className='bg-white p-1 px-2 appearance-none outline-none w-full text-gray-800' />
+                                    <input type="date" className='bg-white p-1 px-2  outline-none w-full text-gray-800' />
                                     to
-                                    <input type="date" className='bg-white p-1 px-2 appearance-none outline-none w-full text-gray-800' />
+                                    <input type="date" className='bg-white p-1 px-2  outline-none w-full text-gray-800' />
                                 </div>
                             </div>
                         )}
@@ -142,11 +142,11 @@ const Filter = ({ isOnlyMobile }) => {
                     {paper && (
                         <div className={styles.expandable}>
                             <div>
-                                <input type="checkbox" className="bg-white appearance-none" />
+                                <input type="checkbox" className="bg-white " />
                                 <span>Yes </span>
                             </div>
                             <div>
-                                <input type="checkbox" className="bg-white appearance-none" />
+                                <input type="checkbox" className="bg-white " />
                                 <span>No</span>
                             </div>
                         </div>
@@ -165,15 +165,15 @@ const Filter = ({ isOnlyMobile }) => {
                     {price && (
                         <div className={styles.expandable}>
                             <div>
-                                <input type="checkbox" className="bg-white appearance-none" />
+                                <input type="checkbox" className="bg-white " />
                                 <span>Yes</span>
                             </div>
                             <div>
-                                <input type="checkbox" className="bg-white appearance-none" />
+                                <input type="checkbox" className="bg-white " />
                                 <span>No</span>
                             </div>
                             <div>
-                                <input type="checkbox" className="bg-white appearance-none" />
+                                <input type="checkbox" className="bg-white " />
                                 <span>Pending</span>
                             </div>
                         </div>
@@ -189,9 +189,9 @@ const Filter = ({ isOnlyMobile }) => {
                     {type && (
                         <div className={styles.expandable}>
                             <div className="flex flex-column" >
-                                <input type="date" className='bg-white p-1 px-2 appearance-none outline-none w-full text-gray-800' />
+                                <input type="date" className='bg-white p-1 px-2  outline-none w-full text-gray-800' />
                                 to
-                                <input type="date" className='bg-white p-1 px-2 appearance-none outline-none w-full text-gray-800' />
+                                <input type="date" className='bg-white p-1 px-2  outline-none w-full text-gray-800' />
                             </div>
                         </div>
                     )}

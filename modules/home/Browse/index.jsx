@@ -49,7 +49,7 @@ const Browse = () => {
         <Row>
           <Col md={12}>
             <div className={`my-4 text-center ${styles.mycards}`}>
-              <h5>Commnets about our clients / lets see them</h5>
+              <h5>Comments about our clients / lets see them</h5>
               <h1 className="my-4">Browse through our premium vendors</h1>
             </div>
             <div className={`my-5  ${styles.tools}`}>

@@ -64,38 +64,40 @@ const Header = () => {
                 className={` flex ${style.header_bottom} items-center justify-between w-full   `}
               >
                 <div className="d-xs-flex d-md-none d-sm-none d-lg-none">
-                  <div className={`${style.user_image_container}`}>
-                    {/* <Image
-                      // className={style.user_image_container}
-                      alt="user"
-                      src={userprofile}
-                      style={{ height: 100, width: 100  }}
-                      width={100}
-                      height={100}
-                    /> */}
-                    <div className={style.cart_img} >
-                      <Image
-                        alt="user"
-                        src={cart}
-                      />
-                    </div>
-                  </div>
-                  <div className={`${style.user_image_container} ml-2`} >
-                    {/* <Image
-                      // className={style.user_image_container}
-                      alt="user"
-                      src={userprofile}
-                      style={{ height: 100, width: 100  }}
-                      width={100}
-                      height={100}
-                    /> */}
-                    <div className={style.user_img} >
-                      <Image
+                    <div className={`${style.user_image_container}`}>
+                      {/* <Image
+                        // className={style.user_image_container}
                         alt="user"
                         src={userprofile}
-                      />
+                        style={{ height: 100, width: 100  }}
+                        width={100}
+                        height={100}
+                      /> */}
+                      <div className={style.cart_img} >
+                        <Image
+                          alt="user"
+                          src={cart}
+                        />
+                      </div>
                     </div>
-                  </div>
+                  <Link href="signup">
+                    <div className={`${style.user_image_container} ml-2`} >
+                      {/* <Image
+                        // className={style.user_image_container}
+                        alt="user"
+                        src={userprofile}
+                        style={{ height: 100, width: 100  }}
+                        width={100}
+                        height={100}
+                      /> */}
+                      <div className={style.user_img} >
+                        <Image
+                          alt="user"
+                          src={userprofile}
+                        />
+                      </div>
+                    </div>
+                  </Link>
                 </div>
                 <div className={style.logo} >
                   <Link href="/">

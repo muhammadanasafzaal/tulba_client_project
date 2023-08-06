@@ -39,7 +39,7 @@ const Banner = () => {
 							Wedding
 						</div>
 						{/* </div> */}
-						<div className="text-start text-md-center mb-3 mb-md-5" id='signup'>
+						<div className="text-start mb-3 mb-md-5" id='signup'>
 							<h1 className='mb-2'>
 								Event Planner
 							</h1>

@@ -292,7 +292,7 @@ const Main = () => {
 							className='bg-white py-2 px-3 text-gray-800 border-2 appearance-none mt-2 mt-md-0 '
 						/>
 					</div>
-					<div className='ml-4 mr-md-4  cursor-pointer font-bold  '>Clear All</div>
+					<div className='mt-md-0 mt-3 ml-4 mr-md-4 cursor-pointer font-bold'>Clear All</div>
 				</div>
 				<div className={`d-block d-md-none ${styles.third} w-100 p-2`} style={{ marginTop: 20 }}>
 					{/* <div>icon</div> */}

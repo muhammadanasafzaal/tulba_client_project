@@ -42,7 +42,7 @@ const InfoForm = () => {
           <div className="text-4xl">RSVP</div>
         </div>
       </div>
-      <div className="d-md-flex d-xs-block justify-center" style={{width:'100%'}}>
+      <div className="d-md-flex d-xs-none justify-center" style={{width:'100%'}}>
         <button className="btn btn-lg btn-primary text-white border-none mb-md-0 mb-2 w-xs-100" style={{background:'#f85757'}} onClick={handelOpenModal} >
           Yes, I'm coming!
         </button>

@@ -20,7 +20,7 @@ const Banner = () => {
 						<div className="d-block brdcrumb d-sm-none" >
 							Wedding
 						</div>
-						<div className='text-start text-md-center mb-3 mb-md-5'>
+						<div className='text-start mb-3 mb-md-5'>
 							{/* <h5 className="mt-md-5 ">We got the best tools for your event, so hop on.</h5> */}
 							<h1 className="mb-2">Shop Invitation Cards</h1>
 							<h5 className="banner-subheading">

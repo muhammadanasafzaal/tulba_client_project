@@ -16,7 +16,7 @@ const Banner = () => {
             <div className="d-block brdcrumb d-sm-none" >
               Wedding
             </div>
-            <div className='text-start text-md-center mb-3 mb-md-5'>
+            <div className='text-start mb-3 mb-md-5'>
               <h1>Event Website</h1>
               <p className='banner-subheading' >
                 Get your items according to your budegt with our classic budget planner

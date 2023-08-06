@@ -111,7 +111,7 @@ const Asthetical = () => {
                 </div>
               </div>
 
-              <div className={styles.colorContainer}>
+              <div className={`${styles.colorContainer} mt-2`}>
                 <div className={styles.white}>
                   <input
                     type="radio"

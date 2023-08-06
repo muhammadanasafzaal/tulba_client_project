@@ -36,8 +36,8 @@ const Header = () => {
               <p>7 Shaaban 1443AH &nbsp;</p>
               <p> |&nbsp; Thursday , 10 March 2022</p>
             </div>
-            <Link href="/vendors/signup" style={{background:'red'}} className={`${style.headerTop_vendor}`}>
-              <span className="d-xs-none" style={{color:"#333 !important", textTransform: 'uppercase', cursor:'pointer'}}>Are You A Vendor? </span>
+            <Link href="/vendors/signup" style={{ background: 'red' }} className={`${style.headerTop_vendor}`}>
+              <span className="d-xs-none" style={{ color: "#333 !important", textTransform: 'uppercase', cursor: 'pointer' }}>Are You A Vendor? </span>
             </Link>
             {/* <div className={`${style.headerTop_vendor} d-xs-none`}  >
             </div> */}
@@ -63,7 +63,7 @@ const Header = () => {
               <div
                 className={` flex ${style.header_bottom} items-center justify-between w-full   `}
               >
-                <div className="d-xs-flex d-md-none d-sm-none d-lg-none"> 
+                <div className="d-xs-flex d-md-none d-sm-none d-lg-none">
                   <div className={`${style.user_image_container}`}>
                     {/* <Image
                       // className={style.user_image_container}
@@ -209,7 +209,7 @@ const Header = () => {
           ) : (
             <div className={style.searchContainer}>
               <div>
-                <input placeholder="Search" />
+                <input placeholder="Search" className="appearance-none" />
               </div>
               <div
                 className={style.closeIcon}

@@ -77,7 +77,7 @@ const Sidebar = ({ setOpen, open }) => {
                     src={searchIcon}
                   />
                   {/* <p style={{ fontSize: 14, marginLeft: 5 }} >Search gifts, vendors, couples...</p> */}
-                  <input placeholder="Search gifts, vendors, couples..." />
+                  <input placeholder="Search gifts, vendors, couples..." className="appearance-none" />
                 </div>
               </div>
             </div>

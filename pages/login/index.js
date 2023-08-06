@@ -35,7 +35,7 @@ const Login = () => {
 	};
 
 	useEffect(() => {
-		if(userInfo) {
+		if (userInfo) {
 			toast.success(`Welcome Back ${userInfo?.name || ""}`)
 			router.push("/profile");
 		}
@@ -136,7 +136,7 @@ const Login = () => {
 							<input
 								type='checkbox'
 								id='remindercheck'
-								className='mr-2 bg-white mb-1'
+								className='mr-2 bg-white mb-1 appearance-none'
 							/>
 							Remember Me
 						</label>

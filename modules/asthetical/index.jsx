@@ -76,7 +76,7 @@ const Asthetical = () => {
                 <Button className={styles.as_btn}>
                   <div className="d-flex justify-content-center">
                     <Image src={Img} />
-                    <p style={{marginTop:'1.3rem'}}> Get a free sample from us</p>
+                    <p style={{ marginTop: '1.3rem' }}> Get a free sample from us</p>
                   </div>
                 </Button>
               </Link>
@@ -84,12 +84,12 @@ const Asthetical = () => {
             <div className="my-5">
               <hr className="my-5" />
             </div>
-            <div 
-            className={`${styles.quantityContainer} mb-4 `} >
+            <div
+              className={`${styles.quantityContainer} mb-4 `} >
               <div>
                 <p className={`${styles.text} ml-0`}>Quantity :</p>
               </div>
-              <div className={styles.last} style={{ justifyContent: 'flex-start'}}>
+              <div className={styles.last} style={{ justifyContent: 'flex-start' }}>
                 <div className={`${styles.select} ml-0`}>
                   <select name="" className="bg-white" id="">
                     <option value="1">1</option>
@@ -104,7 +104,7 @@ const Asthetical = () => {
               </div>
             </div>
 
-            <div className="mb-2">              
+            <div className="mb-2">
               <div>
                 <div lg={3}>
                   Color: <p className={styles.text}> {color}</p>{" "}
@@ -120,11 +120,14 @@ const Asthetical = () => {
                     onClick={() => {
                       setColor("White");
                     }}
+                    className="appearance-none"
+
                   />
                 </div>
 
                 <div className={styles.black}>
                   <input
+                    className="appearance-none"
                     type="radio"
                     id="color"
                     name="color"
@@ -145,9 +148,8 @@ const Asthetical = () => {
 
               <div className={styles.buttons}>
                 <div
-                  className={`${styles.button} ${
-                    type === "Paper" ? styles.active : ""
-                  } `}
+                  className={`${styles.button} ${type === "Paper" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setType("Paper");
                   }}
@@ -155,9 +157,8 @@ const Asthetical = () => {
                   Paper
                 </div>
                 <div
-                  className={`${styles.button} ${
-                    type === "Magnet" ? styles.active : ""
-                  } `}
+                  className={`${styles.button} ${type === "Magnet" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setType("Magnet");
                   }}
@@ -176,9 +177,8 @@ const Asthetical = () => {
 
               <div className={styles.buttons}>
                 <div
-                  className={`${styles.button} ${
-                    size === "Petito" ? styles.active : ""
-                  } `}
+                  className={`${styles.button} ${size === "Petito" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setSize("Petito");
                   }}
@@ -186,9 +186,8 @@ const Asthetical = () => {
                   Petito
                 </div>
                 <div
-                  className={`${styles.button} ${
-                    size === "Classic" ? styles.active : ""
-                  } `}
+                  className={`${styles.button} ${size === "Classic" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setSize("Classic");
                   }}
@@ -196,9 +195,8 @@ const Asthetical = () => {
                   Classic
                 </div>
                 <div
-                  className={`${styles.button} ${
-                    size === "Post Card" ? styles.active : ""
-                  } `}
+                  className={`${styles.button} ${size === "Post Card" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setSize("Post Card");
                   }}
@@ -217,9 +215,8 @@ const Asthetical = () => {
 
               <div className={styles.buttons}>
                 <div
-                  className={`${styles.button} ${
-                    foil === "None" ? styles.active : ""
-                  } `}
+                  className={`${styles.button} ${foil === "None" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setFoil("None");
                   }}
@@ -227,9 +224,8 @@ const Asthetical = () => {
                   None
                 </div>
                 <div
-                  className={`${styles.button} ${
-                    foil === "Yellow" ? styles.active : ""
-                  } `}
+                  className={`${styles.button} ${foil === "Yellow" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setFoil("Yellow");
                   }}
@@ -237,9 +233,8 @@ const Asthetical = () => {
                   Yellow
                 </div>
                 <div
-                  className={`${styles.button} ${
-                    foil === "Silver" ? styles.active : ""
-                  } `}
+                  className={`${styles.button} ${foil === "Silver" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setFoil("Silver");
                   }}
@@ -258,9 +253,8 @@ const Asthetical = () => {
 
               <div className={styles.buttons}>
                 <div
-                  className={`mb-3 ${styles.button} ${
-                    paperType === "Smooth" ? styles.active : ""
-                  } `}
+                  className={`mb-3 ${styles.button} ${paperType === "Smooth" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setPaperType("Smooth");
                   }}
@@ -268,9 +262,8 @@ const Asthetical = () => {
                   Smooth
                 </div>
                 <div
-                  className={`mb-3 ${styles.button} ${
-                    paperType === "EggShell" ? styles.active : ""
-                  } `}
+                  className={`mb-3 ${styles.button} ${paperType === "EggShell" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setPaperType("EggShell");
                   }}
@@ -278,9 +271,8 @@ const Asthetical = () => {
                   EggShell
                 </div>
                 <div
-                  className={`mb-3 ${styles.button} ${
-                    paperType === "Recycle" ? styles.active : ""
-                  } `}
+                  className={`mb-3 ${styles.button} ${paperType === "Recycle" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setPaperType("Recycle");
                   }}
@@ -288,9 +280,8 @@ const Asthetical = () => {
                   Recycle
                 </div>
                 <div
-                  className={`mb-3 ${styles.button} ${
-                    paperType === "Pearlescent" ? styles.active : ""
-                  } `}
+                  className={`mb-3 ${styles.button} ${paperType === "Pearlescent" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setPaperType("Pearlescent");
                   }}
@@ -298,9 +289,8 @@ const Asthetical = () => {
                   Pearlescent
                 </div>
                 <div
-                  className={`mb-3 ${styles.button} ${
-                    paperType === "Linen" ? styles.active : ""
-                  } `}
+                  className={`mb-3 ${styles.button} ${paperType === "Linen" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setPaperType("Linen");
                   }}
@@ -308,9 +298,8 @@ const Asthetical = () => {
                   Linen
                 </div>
                 <div
-                  className={`mb-3 ${styles.button} ${
-                    paperType === "Natural" ? styles.active : ""
-                  } `}
+                  className={`mb-3 ${styles.button} ${paperType === "Natural" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setPaperType("Natural");
                   }}
@@ -318,9 +307,8 @@ const Asthetical = () => {
                   Natural
                 </div>
                 <div
-                  className={`mb-3 ${styles.button} ${
-                    paperType === "Double Thick" ? styles.active : ""
-                  } `}
+                  className={`mb-3 ${styles.button} ${paperType === "Double Thick" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setPaperType("Double Thick");
                   }}
@@ -328,9 +316,8 @@ const Asthetical = () => {
                   Double Thick
                 </div>
                 <div
-                  className={`mb-3 ${styles.button} ${
-                    paperType === "Triple Thick" ? styles.active : ""
-                  } `}
+                  className={`mb-3 ${styles.button} ${paperType === "Triple Thick" ? styles.active : ""
+                    } `}
                   onClick={() => {
                     setPaperType("Triple Thick");
                   }}

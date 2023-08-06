@@ -19,7 +19,7 @@ const InputField = (props) => {
           value={props.value}
           autoFocus={false}
           // bordered={"false"}
-          className="inputfield"
+          className="inputfield appearance-none"
           style={{
             height: props.height,
             width: props.width,

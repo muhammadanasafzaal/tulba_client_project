@@ -35,8 +35,11 @@ const Banner = () => {
 								Event Planner
 							</Breadcrumb.Item>
 						</Breadcrumb>
+						<div className="d-block brdcrumb d-sm-none" >
+							Event Planner
+						</div>
 						{/* </div> */}
-						<div className="text-center text-md-start mb-3 mb-md-5" id='signup'>
+						<div className="text-center text-sm-start mb-3 mb-md-5" id='signup'>
 							<h1 className='mb-2'>
 								Event Planner
 							</h1>
@@ -81,9 +84,9 @@ const Banner = () => {
 											Start planning
 										</Button> */}
 
-										<Button 
-										className={`br-left-md-none btn btn-primary`}
-										onClick={handleSubmit}>
+										<Button
+											className={`br-left-md-none btn btn-primary`}
+											onClick={handleSubmit}>
 											Start Planning
 										</Button>
 									</Col>

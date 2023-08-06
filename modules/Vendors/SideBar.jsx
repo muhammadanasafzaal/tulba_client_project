@@ -12,7 +12,7 @@ import Vector from "public/assests/shop-invitation/weddingcard.png";
 import stylesButton from "/styles/modal/modal.module.scss";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { AiOutlineRight, AiOutlineDown } from "react-icons/ai";
-import {} from "react-icons/gi";
+import { } from "react-icons/gi";
 
 let active = 2;
 let items = [];
@@ -24,7 +24,7 @@ for (let number = 1; number <= 5; number++) {
   );
 }
 
-const SideBar = () => {
+const SideBar = ({ isOnlyMobile }) => {
   const [paper, showPaper] = useState(false);
   const [price, showPrice] = useState(false);
   const [type, showType] = useState(false);
@@ -63,19 +63,19 @@ const SideBar = () => {
             {paper && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
                   <span>Catering</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
                   <span>Decoration</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
                   <span>Florist</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
                   <span> sdds</span>
                 </div>
               </div>
@@ -94,19 +94,19 @@ const SideBar = () => {
             {price && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
                   <span>$1-$10</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
                   <span>$11-$20</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
                   <span>$20-$30</span>
                 </div>
                 <div>
-                  <input type="checkbox" className="mr-2 mt-1 bg-white" />
+                  <input type="checkbox" className="mr-2 mt-1 bg-white appearance-none" />
                   <span>$30-$50</span>
                 </div>
               </div>
@@ -135,7 +135,7 @@ const SideBar = () => {
                     placeholder="Search Vendors, Catering"
                     className={styles.input}
 
-                    // <AiOutlineSearch />
+                  // <AiOutlineSearch />
                   />
 
                   <datalist
@@ -154,14 +154,13 @@ const SideBar = () => {
         </div>
       )}
 
-      <Col md={12} className={styles.filterContainer}>
+      {!isOnlyMobile && <Col md={12} className={styles.filterContainer}>
         <h1>Categories</h1>
         <div>
           <div
             onClick={() => showPaper(!paper)}
-            className={`${styles.sideBarList} d-flex !flex ${
-              paper && styles.actvelink
-            } `}
+            className={`${styles.sideBarList} d-flex !flex ${paper && styles.actvelink
+              } `}
           >
             {!paper ? (
               <AiOutlineRight size={20} />
@@ -174,19 +173,19 @@ const SideBar = () => {
           {paper && (
             <div className={styles.expandable}>
               <div>
-                <input type="checkbox" className="bg-white" />
+                <input type="checkbox" className="bg-white appearance-none" />
                 <span>Catering </span>
               </div>
               <div>
-                <input type="checkbox" className="bg-white" />
+                <input type="checkbox" className="bg-white appearance-none" />
                 <span>Decoration</span>
               </div>
               <div>
-                <input type="checkbox" className="bg-white" />
+                <input type="checkbox" className="bg-white appearance-none" />
                 <span>Florist</span>
               </div>
               <div>
-                <input type="checkbox" className="bg-white" />
+                <input type="checkbox" className="bg-white appearance-none" />
                 <span>Venue</span>
               </div>
             </div>
@@ -205,19 +204,19 @@ const SideBar = () => {
           {price && (
             <div className={styles.expandable}>
               <div>
-                <input type="checkbox" className="bg-white" />
+                <input type="checkbox" className="bg-white appearance-none" />
                 <span>$1-$10</span>
               </div>
               <div>
-                <input type="checkbox" className="bg-white" />
+                <input type="checkbox" className="bg-white appearance-none" />
                 <span>$11-$20</span>
               </div>
               <div>
-                <input type="checkbox" className="bg-white" />
+                <input type="checkbox" className="bg-white appearance-none" />
                 <span>$20-$30</span>
               </div>
               <div>
-                <input type="checkbox" className="bg-white" />
+                <input type="checkbox" className="bg-white appearance-none" />
                 <span>$30-$50</span>
               </div>
             </div>
@@ -269,7 +268,7 @@ const SideBar = () => {
             </div>
           )}
         </div>
-      </Col>
+      </Col>}
 
       <Col md={3} className={styles.filterButton}>
         <span>1,000+ relevant results</span>

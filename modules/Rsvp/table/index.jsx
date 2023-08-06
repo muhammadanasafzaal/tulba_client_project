@@ -19,6 +19,7 @@ import { toast } from "react-hot-toast";
 import { resetList } from "redux/rsvp/rsvpSlice";
 import { FaEdit } from "react-icons/fa";
 import SummaryTable from "modules/SummaryTable";
+import Filter from "../Filter";
 
 let active = 2;
 let items = [];
@@ -39,29 +40,29 @@ function BasicExample() {
 	const [rsvpStatus, setRsvpStatus] = useState(false)
 	const [weddingEvents, setWeddingEvents] = useState([
 		{
-			id:1,
+			id: 1,
 			type: "Nikkah",
 			date: 'November 11, 2023'
 		},
 		{
-			id:2,
+			id: 2,
 			type: "Valima",
 			date: 'November 18, 2023'
 		}
 	])
 	const [tmpRsvp, setTmpRsvp] = useState([
 		{
-			id:1,
+			id: 1,
 			name: 'Ali Ahmed',
-			mobile:'+122121212',
-			email:'test@gmail.com',
+			mobile: '+122121212',
+			email: 'test@gmail.com',
 			isInvited: true
 		},
 		{
-			id:22,
+			id: 22,
 			name: 'Sarah Ahmed',
-			mobile:'+122121212',
-			email:'test2@gmail.com',
+			mobile: '+122121212',
+			email: 'test2@gmail.com',
 			isInvited: true
 		},
 	])
@@ -109,7 +110,7 @@ function BasicExample() {
 	}, [selectedWeddingEvent]);
 
 	console.log("weddingEvents", weddingEventState.list);
-	
+
 
 	return (
 		<Container className={`my-5 ${styles.rsvp_page}`}>
@@ -126,16 +127,19 @@ function BasicExample() {
 				rsvpData={rsvpData}
 			/>
 			<Row>
-				<Col lg={8} className={`p-md-0 ${styles.rsvp}`}>
+				<Col lg={3} className={` ${styles.vendors}`}>
+					<Filter />
+				</Col>
+				<Col lg={6} className={`p-md-0 ${styles.rsvp}`}>
 					<Row>
-						<Col lg={4} className='p-md-0'>
+						<Col lg={5} className='p-md-0'>
 							<span className='d-flex justify-content-start'>
 								<RiTodoFill className={`mt-4 ${styles.icon}`} />
 								<span className={styles.head}>RSVP LIST</span>
 							</span>
 							<p className=''>Your Invitations to the guests details</p>
 						</Col>
-						<Col xs="12" lg={5} className='p-md-0'>
+						<Col xs="12" lg={4} className='p-md-0'>
 							<Button onClick={handleOpenModal} className={styles.btn}>
 								+ Add New Guest
 							</Button>
@@ -152,7 +156,7 @@ function BasicExample() {
               </FloatingLabel> */}
 						{/* </Col> */}
 						{/* <Row className='mt-2'> */}
-							{/* <Col lg={6}>
+						{/* <Col lg={6}>
 								<div className='bg-white p-2 flex border border-gray-200 rounded'>
 									<select
 										className='bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
@@ -171,43 +175,43 @@ function BasicExample() {
 									</select>
 								</div>
 							</Col> */}
-							<Col xs="12" sm="6" md="6" className="mt-2">
-								<div className='bg-white p-2 flex border border-gray-200 rounded'>
-									<select
-										// key={Math.random()}
-										className=' bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
-										name='weddingEventSelect'
-										onChange={(e) => setSelectedWeddingEvent(e.target.value)}
-									// onChange={handleChange}
-									>
-										<option hidden value={null}>
-											Select event
-										</option>
-										{/* {weddingEventState?.list?.map((c, _i) => (
+						<Col xs="12" sm="6" md="6" className="mt-2">
+							<div className='bg-white p-2 flex border border-gray-200 rounded'>
+								<select
+									// key={Math.random()}
+									className=' bg-white p-1 px-2 outline-none w-full text-gray-800 cursor-pointer'
+									name='weddingEventSelect'
+									onChange={(e) => setSelectedWeddingEvent(e.target.value)}
+								// onChange={handleChange}
+								>
+									<option hidden value={null}>
+										Select event
+									</option>
+									{/* {weddingEventState?.list?.map((c, _i) => (
 											<option key={c.id} value={c.id}>
 												{c.type} <sub>{c.date}</sub>
 											</option>
 										))} */}
-										{weddingEvents.map((c, _i) => (
-											<option key={c.id} value={c.id}>
-												{c.type} <sub>{c.date}</sub>
-											</option>
-										))}
-									</select>
-								</div>
-							</Col>
-							<Col className="d-xs-none" md="2"></Col>
-							<Col xs="8" sm="6" md="2" className="d-flex justify-start align-items-center mt-md-0 mt-2">
-								<button className="btnoutline p-2">
-									Done
-								</button>
-								<button className="btnoutline p-2 ml-2">
-									Pending
-								</button>
-							</Col>
-							<Col xs="4" sm="6" md="2" className="d-flex justify-end align-items-center">
-								<div className='text-sm cursor-pointer font-bold '>Clear All</div>
-							</Col>
+									{weddingEvents.map((c, _i) => (
+										<option key={c.id} value={c.id}>
+											{c.type} <sub>{c.date}</sub>
+										</option>
+									))}
+								</select>
+							</div>
+						</Col>
+						{/* <Col className="d-xs-none" md="2"></Col>
+						<Col xs="8" sm="6" md="2" className="d-flex justify-start align-items-center mt-md-0 mt-2">
+							<button className="btnoutline p-2">
+								Done
+							</button>
+							<button className="btnoutline p-2 ml-2">
+								Pending
+							</button>
+						</Col>
+						<Col xs="4" sm="6" md="2" className="d-flex justify-end align-items-center">
+							<div className='text-sm cursor-pointer font-bold '>Clear All</div>
+						</Col> */}
 						{/* </Row> */}
 					</Row>
 					<Table
@@ -248,14 +252,15 @@ function BasicExample() {
 							{tmpRsvp.map((i, _i) => (
 								<tr key={_i}>
 									<td className="relative">
-										<input 
-										type="checkbox" 
-										style={{
-											position:'absolute',
-											top:'18%',
-											left:'50%',
-											transform:'translate(-50%, -18%)'
-										}}
+										<input
+											type="checkbox"
+											style={{
+												position: 'absolute',
+												top: '18%',
+												left: '50%',
+												transform: 'translate(-50%, -18%)'
+											}}
+										// className="appearance-none"
 										/>
 									</td>
 									<td className="text-start">
@@ -269,7 +274,7 @@ function BasicExample() {
 									<td className="relative">
 										<div className="d-flex justify-center align-items-center mt-1">
 											<FaEdit
-												onClick={()=>setTaskStatus(!rsvpStatus)}
+												onClick={() => setTaskStatus(!rsvpStatus)}
 												className='cursor-pointer d-inline ml-2'
 												size='1.5em'
 											/>
@@ -285,7 +290,7 @@ function BasicExample() {
 				</Col>
 				{/* <Col lg={12} className=''>
 				</Col> */}
-				<Col lg={4}>
+				<Col lg={3}>
 					<div className={styles.bottomSummaryTable} >
 						<SummaryTable list={list} />
 					</div>

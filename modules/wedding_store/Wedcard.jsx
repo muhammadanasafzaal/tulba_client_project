@@ -66,27 +66,27 @@ const Wedcard = () => {
             {paper && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" className="bg-white" id="matte" />
+                  <input type="checkbox" className="bg-white appearance-none" id="matte" />
                   <label htmlFor="matte">Matte</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="glossy" />
+                  <input type="checkbox" className="bg-white appearance-none" id="glossy" />
                   <label htmlFor="glossy">Glossy</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="handmade" />
+                  <input type="checkbox" className="bg-white appearance-none" id="handmade" />
                   <label htmlFor="handmade">Handmade</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="mylar" />
+                  <input type="checkbox" className="bg-white appearance-none" id="mylar" />
                   <label htmlFor="mylar">Mylar</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="recycled" />
+                  <input type="checkbox" className="bg-white appearance-none" id="recycled" />
                   <label htmlFor="recycled">Recycled</label>
                 </div>
                 <div>
-                  <input type="checkbox" className="bg-white" id="parchment" />
+                  <input type="checkbox" className="bg-white appearance-none" id="parchment" />
                   <label htmlFor="parchment">Parchment</label>
                 </div>
               </div>
@@ -108,7 +108,7 @@ const Wedcard = () => {
 
             {price && (
               <div className={`p-0 ${styles.expandable}`}>
-                <MultiRangeSlider min="0" max="1000" step="10" />
+                <MultiRangeSlider min="0" max="1000" step="10" values="0" />
               </div>
             )}
 
@@ -129,13 +129,13 @@ const Wedcard = () => {
             {type && (
               <div className={styles.expandable}>
                 <div>
-                  <input type="checkbox" className="bg-white" id="cards" />
+                  <input type="checkbox" className="bg-white appearance-none" id="cards" />
                   <label htmlFor="cards">Cards</label>
                 </div>
                 <div>
                   <input
                     type="checkbox"
-                    className="bg-white"
+                    className="bg-white appearance-none"
                     id="boxed-gifting"
                   />
                   <label htmlFor="boxed-gifting">Boxed Gifting</label>
@@ -143,7 +143,7 @@ const Wedcard = () => {
                 <div>
                   <input
                     type="checkbox"
-                    className="bg-white"
+                    className="bg-white appearance-none"
                     id="novel-concepts"
                   />
                   <label htmlFor="novel-concepts">Novel Concepts</label>
@@ -177,29 +177,29 @@ const Wedcard = () => {
               {paper && (
                 <div className={styles.expandable}>
                   <div>
-                    <input type="checkbox" className="bg-white" id="matte" />
+                    <input type="checkbox" className="bg-white appearance-none" id="matte" />
                     <label htmlFor="matte">Matte</label>
                   </div>
                   <div>
-                    <input type="checkbox" className="bg-white" id="glossy" />
+                    <input type="checkbox" className="bg-white appearance-none" id="glossy" />
                     <label htmlFor="glossy">Glossy</label>
                   </div>
                   <div>
-                    <input type="checkbox" className="bg-white" id="handmade" />
+                    <input type="checkbox" className="bg-white appearance-none" id="handmade" />
                     <label htmlFor="handmade">Handmade</label>
                   </div>
                   <div>
-                    <input type="checkbox" className="bg-white" id="mylar" />
+                    <input type="checkbox" className="bg-white appearance-none" id="mylar" />
                     <label htmlFor="mylar">Mylar</label>
                   </div>
                   <div>
-                    <input type="checkbox" className="bg-white" id="recycled" />
+                    <input type="checkbox" className="bg-white appearance-none" id="recycled" />
                     <label htmlFor="recycled">Recycled</label>
                   </div>
                   <div>
                     <input
                       type="checkbox"
-                      className="bg-white"
+                      className="bg-white appearance-none"
                       id="parchment"
                     />
                     <label htmlFor="parchment">Parchment</label>
@@ -223,7 +223,7 @@ const Wedcard = () => {
 
               {price && (
                 <div className={`p-0 ${styles.expandable}`}>
-                  <MultiRangeSlider min="0" max="1000" step="10" />
+                  <MultiRangeSlider min="0" max="1000" step="10" values="0" />
                 </div>
               )}
 
@@ -244,13 +244,13 @@ const Wedcard = () => {
               {type && (
                 <div className={styles.expandable}>
                   <div>
-                    <input type="checkbox" className="bg-white" id="cards" />
+                    <input type="checkbox" className="bg-white appearance-none" id="cards" />
                     <label htmlFor="cards">Cards</label>
                   </div>
                   <div>
                     <input
                       type="checkbox"
-                      className="bg-white"
+                      className="bg-white appearance-none"
                       id="boxed-gifting"
                     />
                     <label htmlFor="boxed-gifting">Boxed Gifting</label>
@@ -258,7 +258,7 @@ const Wedcard = () => {
                   <div>
                     <input
                       type="checkbox"
-                      className="bg-white"
+                      className="bg-white appearance-none"
                       id="novel-concepts"
                     />
                     <label htmlFor="novel-concepts">Novel Concepts</label>

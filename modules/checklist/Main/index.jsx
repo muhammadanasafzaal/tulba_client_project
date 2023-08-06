@@ -16,8 +16,20 @@ import { AiFillEdit } from "react-icons/ai";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { BsCheck2Circle } from "react-icons/bs";
 import Button from "components/form/button";
+import SideBar from "modules/Vendors/SideBar";
 
 const Main = () => {
+
+
+	let active = 2;
+	let items = [];
+	for (let number = 1; number <= 5; number++) {
+		items.push(
+			<Pagination.Item key={number} active={number === active}>
+				{number}
+			</Pagination.Item>
+		);
+	}
 	const [modalShow, setModalShow] = useState(false);
 	const [isEdit, setIsEdit] = useState(false);
 	const [isDelete, setIsDelete] = useState(false);
@@ -155,6 +167,9 @@ const Main = () => {
 				</div>
 				
 			</div> */}
+			<div style={{ width: '100%' }} className="d-block d-md-none" >
+				<SideBar isOnlyMobile={true} />
+			</div>
 			<div className={`${styles.first} mb-md-0 mb-5`} >
 				<div className={styles.titleContainer} style={{ display: 'none' }}>
 					<div className={styles.icon}>
@@ -170,14 +185,14 @@ const Main = () => {
 					<div className={styles.title}>Checklist</div>
 				</div>
 				<div className={styles.search} style={{ display: 'none' }}>
-					<p>Search All Your Tasks here</p>
+					<p  >Search All Your Tasks here</p>
 					<div>
 						{/* <div>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                             </svg>
                         </div> */}
-						<input type="search" name="search" id="search" placeholder='Search..' />
+						<input type="search" name="search" id="search" placeholder='Search..' className="appearance-none" />
 					</div>
 				</div>
 
@@ -219,7 +234,7 @@ const Main = () => {
 					</div>
 					<div className={styles.title}>Status</div>
 				</div>
-				<div className={styles.subStatus} style={{ gap: '0.5rem'}}>
+				<div className={styles.subStatus} style={{ gap: '0.5rem' }}>
 					<div className="btn-gray">Success</div>
 					<div className="btn-gray">In Process</div>
 				</div>
@@ -230,7 +245,7 @@ const Main = () => {
 					<div onClick={handleOpenModal} className={styles.button}>
 						{" "}
 						<small>
-						+ Add Your New Task
+							+ Add Your New Task
 						</small>
 					</div>
 					{/* <div></div> */}
@@ -274,12 +289,39 @@ const Main = () => {
 							// value={nikkahData["eventDate"]?.split("T")?.[0] || ""}
 							name='taskSearch'
 							placeholder='Search here'
-							className='bg-white py-2 px-3 text-gray-800 border-2'
+							className='bg-white py-2 px-3 text-gray-800 border-2 appearance-none mt-2 mt-md-0 '
 						/>
 					</div>
-					<div className='mr-4 text-sm cursor-pointer font-bold'>Clear All</div>
+					<div className='ml-4 mr-md-4  cursor-pointer font-bold  '>Clear All</div>
 				</div>
+				<div className={`d-block d-md-none ${styles.third} w-100 p-2`} style={{ marginTop: 20 }}>
+					{/* <div>icon</div> */}
+					{/* <div>
+					<span className={styles.one}>Checklist Completion</span>
+					<span className={styles.two}>Your progress of Checklist</span>
+				</div> */}
+					<div>
+						<div className={styles.three}>
+							<Progress
+								percent={88}
+								width={120}
+								theme={{
+									success: {
+										color: "f85757",
+									},
+									active: {
+										color: "#f85757",
+									},
+									default: {
+										color: "#f85757",
+									},
+								}}
+							/>
+						</div>
 
+						<div className={styles.four}>2 out of 10 tasks are completed</div>
+					</div>
+				</div>
 				<div className={`${styles.gray}`}>
 					{tmpTaskList.map((item, index) => {
 						return (
@@ -294,7 +336,7 @@ const Main = () => {
 								<div className="col-3 col-md-2 col-sm-2 col-lg-2 d-flex align-items-center">
 									<span>
 										{/* <label for="status">Horns</label> */}
-										<input className="mt-2	 mr-2" type="checkbox" id="status" name="status" onClick={()=>setTaskStatus(!taskStatus)} />
+										<input className="mt-2 mr-2 " type="checkbox" id="status" name="status" onClick={() => setTaskStatus(!taskStatus)} style={{ accentColor: "#4bb543 !important" }} />
 									</span>
 									<FaEdit
 										onClick={() => handleOpenEdit(item)}
@@ -348,17 +390,19 @@ const Main = () => {
 						</div>
 					))} */}
 				</div>
-
+				<div className='d-flex justify-content-center'>
+					<Pagination size='md'>{items}</Pagination>
+				</div>
 				{/* <div className='d-flex justify-content-center py-5'>
 					<Pagination size='md'>test</Pagination>
 				</div> */}
 			</div>
-			<div className={`${styles.third} w-100 p-2`}>
+			<div className={`d-none d-md-block ${styles.third} w-100 p-2`}>
 				{/* <div>icon</div> */}
-				<div>
+				{/* <div>
 					<span className={styles.one}>Checklist Completion</span>
 					<span className={styles.two}>Your progress of Checklist</span>
-				</div>
+				</div> */}
 				<div>
 					<div className={styles.three}>
 						<Progress

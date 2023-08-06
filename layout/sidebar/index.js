@@ -77,7 +77,23 @@ const Sidebar = ({ setOpen, open }) => {
                     src={searchIcon}
                   />
                   {/* <p style={{ fontSize: 14, marginLeft: 5 }} >Search gifts, vendors, couples...</p> */}
-                  <input placeholder="Search gifts, vendors, couples..." className="appearance-none" />
+                  <div style={{
+                    position: 'relative',
+                    width: '230px',
+                    height: "30px",
+                    background: '#fff'
+                  }}>
+                    <input 
+                    placeholder="Search gifts, vendors, couples..." 
+                    style={{
+                      position: 'absolute',
+                      width: '200px',
+                      top: '3px',
+                      color:'#333',
+                      background: 'transparent'
+                    }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

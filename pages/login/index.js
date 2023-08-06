@@ -133,12 +133,14 @@ const Login = () => {
 							htmlFor='remindercheck'
 							className='flex items-center text-base leading-5'
 						>
-							<input
-								type='checkbox'
-								id='remindercheck'
-								className='mr-2 bg-white mb-1 appearance-none'
-							/>
-							Remember Me
+							<div className="checkbox">
+								<input
+									type='checkbox'
+									id='remindercheck'
+									className='mr-2 bg-white mb-1'
+								/>
+								Remember Me
+							</div>
 						</label>
 						<div>
 							<Link href='/forgotpassword' className='text-base leading-5'>

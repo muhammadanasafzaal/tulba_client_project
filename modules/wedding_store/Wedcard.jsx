@@ -65,27 +65,27 @@ const Wedcard = () => {
 
             {paper && (
               <div className={styles.expandable}>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="bg-white appearance-none" id="matte" />
                   <label htmlFor="matte">Matte</label>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="bg-white appearance-none" id="glossy" />
                   <label htmlFor="glossy">Glossy</label>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="bg-white appearance-none" id="handmade" />
                   <label htmlFor="handmade">Handmade</label>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="bg-white appearance-none" id="mylar" />
                   <label htmlFor="mylar">Mylar</label>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="bg-white appearance-none" id="recycled" />
                   <label htmlFor="recycled">Recycled</label>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="bg-white appearance-none" id="parchment" />
                   <label htmlFor="parchment">Parchment</label>
                 </div>
@@ -128,11 +128,11 @@ const Wedcard = () => {
 
             {type && (
               <div className={styles.expandable}>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="bg-white appearance-none" id="cards" />
                   <label htmlFor="cards">Cards</label>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input
                     type="checkbox"
                     className="bg-white appearance-none"
@@ -140,7 +140,7 @@ const Wedcard = () => {
                   />
                   <label htmlFor="boxed-gifting">Boxed Gifting</label>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input
                     type="checkbox"
                     className="bg-white appearance-none"
@@ -176,27 +176,27 @@ const Wedcard = () => {
 
               {paper && (
                 <div className={styles.expandable}>
-                  <div>
+                  <div className="checkbox">
                     <input type="checkbox" className="bg-white appearance-none" id="matte" />
                     <label htmlFor="matte">Matte</label>
                   </div>
-                  <div>
+                  <div className="checkbox">
                     <input type="checkbox" className="bg-white appearance-none" id="glossy" />
                     <label htmlFor="glossy">Glossy</label>
                   </div>
-                  <div>
+                  <div className="checkbox">
                     <input type="checkbox" className="bg-white appearance-none" id="handmade" />
                     <label htmlFor="handmade">Handmade</label>
                   </div>
-                  <div>
+                  <div className="checkbox">
                     <input type="checkbox" className="bg-white appearance-none" id="mylar" />
                     <label htmlFor="mylar">Mylar</label>
                   </div>
-                  <div>
+                  <div className="checkbox">
                     <input type="checkbox" className="bg-white appearance-none" id="recycled" />
                     <label htmlFor="recycled">Recycled</label>
                   </div>
-                  <div>
+                  <div className="checkbox">
                     <input
                       type="checkbox"
                       className="bg-white appearance-none"
@@ -243,11 +243,11 @@ const Wedcard = () => {
 
               {type && (
                 <div className={styles.expandable}>
-                  <div>
+                  <div className="checkbox">
                     <input type="checkbox" className="bg-white appearance-none" id="cards" />
                     <label htmlFor="cards">Cards</label>
                   </div>
-                  <div>
+                  <div className="checkbox">
                     <input
                       type="checkbox"
                       className="bg-white appearance-none"
@@ -255,7 +255,7 @@ const Wedcard = () => {
                     />
                     <label htmlFor="boxed-gifting">Boxed Gifting</label>
                   </div>
-                  <div>
+                  <div className="checkbox">
                     <input
                       type="checkbox"
                       className="bg-white appearance-none"

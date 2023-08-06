@@ -62,11 +62,11 @@ const Filter = ({ isOnlyMobile }) => {
 
                         {paper && (
                             <div className={styles.expandable}>
-                                <div>
+                                <div className="checkbox">
                                     <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>Yes</span>
                                 </div>
-                                <div>
+                                <div className="checkbox">
                                     <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>No</span>
                                 </div>
@@ -85,15 +85,15 @@ const Filter = ({ isOnlyMobile }) => {
                         </div>
                         {price && (
                             <div className={styles.expandable}>
-                                <div>
+                                <div className="checkbox">
                                     <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>Yes</span>
                                 </div>
-                                <div>
+                                <div className="checkbox">
                                     <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>No</span>
                                 </div>
-                                <div>
+                                <div className="checkbox">
                                     <input type="checkbox" className="mr-2 mt-1 bg-white " />
                                     <span>Pending</span>
                                 </div>
@@ -141,11 +141,11 @@ const Filter = ({ isOnlyMobile }) => {
 
                     {paper && (
                         <div className={styles.expandable}>
-                            <div>
+                            <div className="checkbox">
                                 <input type="checkbox" className="bg-white " />
                                 <span>Yes </span>
                             </div>
-                            <div>
+                            <div className="checkbox">
                                 <input type="checkbox" className="bg-white " />
                                 <span>No</span>
                             </div>
@@ -164,15 +164,15 @@ const Filter = ({ isOnlyMobile }) => {
                     </div>
                     {price && (
                         <div className={styles.expandable}>
-                            <div>
+                            <div className="checkbox">
                                 <input type="checkbox" className="bg-white " />
                                 <span>Yes</span>
                             </div>
-                            <div>
+                            <div className="checkbox">
                                 <input type="checkbox" className="bg-white " />
                                 <span>No</span>
                             </div>
-                            <div>
+                            <div className="checkbox">
                                 <input type="checkbox" className="bg-white " />
                                 <span>Pending</span>
                             </div>

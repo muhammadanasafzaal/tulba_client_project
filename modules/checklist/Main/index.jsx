@@ -336,7 +336,10 @@ const Main = () => {
 								<div className="col-3 col-md-2 col-sm-2 col-lg-2 d-flex align-items-center">
 									<span>
 										{/* <label for="status">Horns</label> */}
-										<input className="mt-2 mr-2 " type="checkbox" id="status" name="status" onClick={() => setTaskStatus(!taskStatus)} style={{ accentColor: "#4bb543 !important" }} />
+										<div class="checkbox">
+											<input className={ `${taskStatus ? 'checked-green' : ''} mt-2 mr-2`} type="checkbox" id="status" name="status" onClick={() => setTaskStatus(!taskStatus)}  />
+											<span></span>
+										</div>
 									</span>
 									<FaEdit
 										onClick={() => handleOpenEdit(item)}

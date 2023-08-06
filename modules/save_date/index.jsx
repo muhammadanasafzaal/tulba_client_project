@@ -102,7 +102,10 @@ const Save_date = () => {
               <hr />
               <div className="d-flex">
                 <div className="my-1 mx-2">
-                  <input type="checkbox" className="bg-white appearance-none" name="" id="" />
+                  <div className="checkbox">
+                    <input type="checkbox" className="bg-white" name="" id="" />
+                    <span></span>
+                  </div>
                 </div>
                 <div>
                   <span>

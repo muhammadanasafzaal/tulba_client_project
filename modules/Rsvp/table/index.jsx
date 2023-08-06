@@ -252,19 +252,23 @@ function BasicExample() {
 							{tmpRsvp.map((i, _i) => (
 								<tr key={_i}>
 									<td className="relative">
-										<input
-											type="checkbox"
-											style={{
-												position: 'absolute',
-												top: '18%',
-												left: '50%',
-												transform: 'translate(-50%, -18%)'
-											}}
-										// className="appearance-none"
-										/>
+										<div className="checkbox">
+											<input
+												type="checkbox"
+												className="rsvp-list"
+												style={{
+													position: 'absolute',
+													top: '18%',
+													left: '50%',
+													transform: 'translate(-50%, -18%)'
+												}}
+											// className="appearance-none"
+											/>
+											<span></span>
+										</div>
 									</td>
 									<td className="text-start">
-										<p className="ms-0">{i?.name}</p>
+										<h6 className="ms-0 mt-2">{i?.name}</h6>
 										<small className="d-block">{i?.mobile}</small>
 										<small>{i?.email}</small>
 									</td>
@@ -272,7 +276,7 @@ function BasicExample() {
 									<td>{i?.email}</td>
 									<td>{i?.isInvited ? "Yes" : "No"}</td> */}
 									<td className="relative">
-										<div className="d-flex justify-center align-items-center mt-1">
+										<div className="d-flex justify-center align-items-center mt-2">
 											<FaEdit
 												onClick={() => setTaskStatus(!rsvpStatus)}
 												className='cursor-pointer d-inline ml-2'

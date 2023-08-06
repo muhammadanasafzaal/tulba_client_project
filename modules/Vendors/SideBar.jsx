@@ -62,19 +62,19 @@ const SideBar = ({ isOnlyMobile }) => {
 
             {paper && (
               <div className={styles.expandable}>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>Catering</span>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>Decoration</span>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>Florist</span>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span> sdds</span>
                 </div>
@@ -93,19 +93,19 @@ const SideBar = ({ isOnlyMobile }) => {
             </div>
             {price && (
               <div className={styles.expandable}>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>$1-$10</span>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>$11-$20</span>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>$20-$30</span>
                 </div>
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" className="mr-2 mt-1 bg-white" />
                   <span>$30-$50</span>
                 </div>
@@ -172,19 +172,19 @@ const SideBar = ({ isOnlyMobile }) => {
 
           {paper && (
             <div className={styles.expandable}>
-              <div>
+              <div className="checkbox">
                 <input type="checkbox" className="bg-white" />
                 <span>Catering </span>
               </div>
-              <div>
+              <div className="checkbox">
                 <input type="checkbox" className="bg-white" />
                 <span>Decoration</span>
               </div>
-              <div>
+              <div className="checkbox">
                 <input type="checkbox" className="bg-white" />
                 <span>Florist</span>
               </div>
-              <div>
+              <div className="checkbox">
                 <input type="checkbox" className="bg-white" />
                 <span>Venue</span>
               </div>
@@ -203,19 +203,19 @@ const SideBar = ({ isOnlyMobile }) => {
           </div>
           {price && (
             <div className={styles.expandable}>
-              <div>
+              <div className="checkbox">
                 <input type="checkbox" className="bg-white" />
                 <span>$1-$10</span>
               </div>
-              <div>
+              <div className="checkbox">
                 <input type="checkbox" className="bg-white" />
                 <span>$11-$20</span>
               </div>
-              <div>
+              <div className="checkbox">
                 <input type="checkbox" className="bg-white" />
                 <span>$20-$30</span>
               </div>
-              <div>
+              <div className="checkbox">
                 <input type="checkbox" className="bg-white" />
                 <span>$30-$50</span>
               </div>

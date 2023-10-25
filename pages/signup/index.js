@@ -18,18 +18,19 @@ import { resetError } from "redux/auth/authSlice";
 import { validateEmail, validatePassword } from "utils/functions";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { createUser, getAllRoles } from "services/auth";
+import { getRoles } from "redux/auth/authSlice";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPassword, setconfirmPassword] = useState("");
   const [confirmPassError, setConfirmPassError] = useState(false);
-  const [Values, setValues] = useState(false);
-  const [checkBox,setCheckBox]=useState(false);
   const router = useRouter();
 
   const { loading, userInfo, error } = useSelector((state) => state.auth);
+  const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const handleSignup = async () => {
@@ -59,7 +60,14 @@ const Signup = () => {
 
     dispatch(registerUser(body));
   };
-
+  const callGetRoles = async () => {
+    const data = await getAllRoles();
+    dispatch(getRoles(data));
+  };
+  useEffect(() => {
+    callGetRoles();
+    // console.log("useEffect",getAllRoles());
+  }, []);
   useEffect(() => {
     userInfo && router.push("/profile");
   }, [userInfo]);
@@ -80,26 +88,6 @@ const Signup = () => {
     }
   }, [router]);
 
-  // const formik = useFormik({
-  // 	initialValues: {
-  // 		email: "",
-  // 		password: "",
-  // 		confirmPassword: "",
-  // 	},
-  // 	validationSchema: Yup.object().shape({
-  // 		name: Yup.string().required("Name is required"),
-  // 		email: Yup.string()
-  // 			.email("Email is invalid")
-  // 			.required("Email is required"),
-  // 		password: Yup.string()
-  // 			.required("Password is required")
-  // 			.min(8)
-  // 	}),
-  // 	onSubmit: async (values) => {
-  // 		const { name, email, password } = values;
-  // 		console.log("values", values);
-  // 	},
-  // });
 
   const signUpSchema = Yup.object({
     name: Yup.string()
@@ -113,11 +101,13 @@ const Signup = () => {
     email: Yup.string()
       .email("Email is invalid")
       .required("Please provide email"),
+    gender: Yup.string().required("Please select gender"),
+    role: Yup.string().required("Please select role"),
     password: Yup.string()
       .min(5, "Password must be at least 5 characters long")
       .max(10, "Password must not exceed 10 characters")
       .required("Please provide password"),
-    confirmpassword: Yup.string().required("Please confirm password"),
+    confirmPassword: Yup.string().required("Please confirm password"),
   });
 
   const signUp = async (values) => {
@@ -128,35 +118,38 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
-    confirmpassword: "",
+    confirmPassword: "",
+    gender: "",
+    role: "",
   };
 
-  const { values, errors, touched, handleChange, handleSubmit } = useFormik({
-    initialValues: initialValues,
-    validationSchema: signUpSchema,
-    onSubmit: async (values, action) => {
-      console.log(values);
-      if (values.confirmpassword == confirmPassword) {
-        // await signUp(values)
-        // 	.then((res) => {
-        // 	console.log(res)
-        // 	alert('Registered successfully')
-        // 	// navigate('/login')
-        // 	})
-        // 	.catch((error) => {
-        // 	if(error){
-        // 		console.log(error)
-        // 		alert('Registeration error')
-        // 	}
-        // 	})
-        console.log("values:", values);
-        action.resetForm();
-      } else {
-        setConfirmPassError(true);
-        console.log(confirmPassError);
-      }
-    },
-  });
+  const { values, errors, touched, handleChange, handleSubmit, setFieldValue } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: signUpSchema,
+      onSubmit: async (values, action) => {
+        if (values.confirmPassword == values.password) {
+          console.log('values:',values)
+          await signUp(values)
+          	.then((res) => {
+          	console.log(res)
+          	alert('Registered successfully')
+          	// navigate('/login')
+          	})
+          	.catch((error) => {
+          	if(error){
+          		console.log(error)
+          		alert('Registeration error')
+          	}
+          	})
+          console.log("values:", values);
+          action.resetForm();
+        } else {
+          setConfirmPassError(true);
+          console.log(confirmPassError);
+        }
+      },
+    });
 
   const passwordStrength = {
     length: values.password.length >= 8,
@@ -258,73 +251,83 @@ const Signup = () => {
               ) : null}
             </div>
           </div>
-          <div style={{padding:"8px 14px"}}>
-          <div style={{fontWeight:"200",fontFamily:"gilorymedium",fontSize: "17px !important", lineHeight: "20px !important", color: "#666666 !important",padding:"0px 0px 0px 4px",paddingBottom:"8px"}}> Gender</div>
-          <div style={{display:"flex",flexDirection:"column"}}>
-  <div class="checkbox">
-            <input
-              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
-              type="checkbox"
-              id="status"
-              value="male"
-              checked={"male"===Values}
-              onChange={(e) => setValues(e.target.value)}
-            />
-            <span style={{padding:"5px 10px"}}>Male</span>
+          <div style={{ padding: "8px 14px" }}>
+            <div
+              style={{
+                fontWeight: "200",
+                fontFamily: "gilorymedium",
+                fontSize: "17px !important",
+                lineHeight: "20px !important",
+                color: "#666666 !important",
+                padding: "0px 0px 0px 4px",
+                paddingBottom: "8px",
+              }}
+            >
+              {" "}
+              Gender
             </div>
-          
-          <div class="checkbox">
-            <input
-              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
-              type="checkbox"
-              id="status"
-              value={"female"}
-              checked={"female"===Values}
-              onChange={(e) => setValues(e.target.value)}
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div class="checkbox">
+                <input
+                  className={`${true ? "checked-green" : ""} mt-2 mr-2`}
+                  type="checkbox"
+                  id="status"
+                  value="male"
+                  checked={"male" === values.gender}
+                  onChange={(e) => setFieldValue("gender", e.target.value)}
+                />
+                <span style={{ padding: "5px 10px" }}>Male</span>
+              </div>
 
-              />
-              <span style={{padding:"5px 10px"}}>Female</span>
+              <div class="checkbox">
+                <input
+                  className={`${true ? "checked-green" : ""} mt-2 mr-2`}
+                  type="checkbox"
+                  id="status"
+                  value={"female"}
+                  checked={"female" === values.gender}
+                  onChange={(e) => setFieldValue("gender", e.target.value)}
+                />
+                <span style={{ padding: "5px 10px" }}>Female</span>
+              </div>
+            </div>
           </div>
+          {errors.gender && touched.gender ? (
+            <p className="form-error">{errors.gender}</p>
+          ) : null}
+          <div style={{ padding: "8px 14px" }}>
+            <div
+              style={{
+                fontWeight: "200",
+                fontFamily: "gilorymedium",
+                fontSize: "17px !important",
+                lineHeight: "20px !important",
+                color: "#666666 !important",
+                padding: "0px 0px 0px 4px",
+                paddingBottom: "8px",
+              }}
+            >
+              Role
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {state?.auth?.allRoles?.map((item) => (
+                <div class="checkbox">
+                  <input
+                    className={`${true ? "checked-green" : ""} mt-2 mr-2`}
+                    type="checkbox"
+                    id={item?._id}
+                    value={item?._id}
+                    checked={values.role === item?._id}
+                    onChange={(e) => setFieldValue("role", e.target.value)}
+                  />
+                  <span style={{ padding: "5px 10px" }}>{item.role}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          </div>
-          <div style={{padding:"8px 14px"}}>
-          <div style={{fontWeight:"200",fontFamily:"gilorymedium",fontSize: "17px !important", lineHeight: "20px !important", color: "#666666 !important",padding:"0px 0px 0px 4px",paddingBottom:"8px"}}>Role</div>
-         <div style={{display:"flex",flexDirection:"column"}}>
-          <div class="checkbox">
-            <input
-              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
-              type="checkbox"
-              id="status"
-              value={"user"}
-              checked={"user"===checkBox}
-              onChange={(e) => setCheckBox(e.target.value)}
-            />
-            <span style={{padding:"5px 10px"}}>User</span>
-          </div>
-          <div class="checkbox">
-            <input
-              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
-              type="checkbox"
-              id="status"
-              value={"vendor"}
-              checked={"vendor"===checkBox}
-              onChange={(e) => setCheckBox(e.target.value)}
-            />
-            <span style={{padding:"5px 10px"}}>Vendor</span>
-          </div>
-          <div class="checkbox">
-            <input
-              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
-              type="checkbox"
-              id="status"
-              value={"guest"}
-              checked={"guest"===checkBox}
-              onChange={(e) => setCheckBox(e.target.value)}
-            />
-            <span style={{padding:"5px 10px"}}>Guest</span>
-          </div>
-          </div>
-          </div>
+          {errors.role && touched.role ? (
+            <p className="form-error">{errors.role}</p>
+          ) : null}
           <div className={styles.signup_inputbox}>
             <InputField
               labeluse="password"
@@ -393,16 +396,15 @@ const Signup = () => {
               placeholder="Confirm password"
               type="password"
               label="Confirm Password"
-              name="confirmpassword"
-              value={values?.confirmpassword}
+              name="confirmPassword"
+              value={values?.confirmPassword}
               onChange={handleChange}
             />
             <div className="error">
-              {values.confirmpassword &&
-              values.confirmpassword != values.password ? (
+              {values.confirmPassword &&
+              values.confirmPassword != values.password ? (
                 <p className="form-error">Passwords do not match</p>
               ) : null}
-              {confirmPassError && <span>Passwords do not match</span>}
             </div>
           </div>
           <div className={` ${styles.btn_signup}`}>

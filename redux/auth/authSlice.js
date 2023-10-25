@@ -2,11 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 import { registerUser, userLogin, getUser, userLogout } from "./authActions";
 
 const initialState = {
-	loading: true,
+	loading: false,
 	userInfo: null, // for user object
 	userToken: null, // for storing the JWT
 	error: null,
 	success: false, // for monitoring the registration process.
+	allRoles:[],
+	users:{}
+
 };
 
 const authSlice = createSlice({
@@ -17,6 +20,10 @@ const authSlice = createSlice({
 			state.error = null;
 			state.loading = false;
 		},
+		getRoles: (state, action) => {
+			console.log("actions",action.payload);
+			state.allRoles = action.payload;
+		  },
 	},
 	extraReducers: {
 		// register user
@@ -79,6 +86,6 @@ const authSlice = createSlice({
 	},
 });
 
-export const { resetError } = authSlice.actions;
+export const { resetError , getRoles} = authSlice.actions;
 
 export default authSlice.reducer;

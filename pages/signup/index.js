@@ -25,6 +25,8 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPassError, setConfirmPassError] = useState(false);
+  const [Values, setValues] = useState(false);
+  const [checkBox,setCheckBox]=useState(false);
   const router = useRouter();
 
   const { loading, userInfo, error } = useSelector((state) => state.auth);
@@ -256,52 +258,72 @@ const Signup = () => {
               ) : null}
             </div>
           </div>
-          <div  >Gender:</div>
+          <div style={{padding:"8px 14px"}}>
+          <div style={{fontWeight:"200",fontFamily:"gilorymedium",fontSize: "17px !important", lineHeight: "20px !important", color: "#666666 !important",padding:"0px 0px 0px 4px",paddingBottom:"8px"}}> Gender</div>
+          <div style={{display:"flex",flexDirection:"column"}}>
+  <div class="checkbox">
+            <input
+              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
+              type="checkbox"
+              id="status"
+              value="male"
+              checked={"male"===Values}
+              onChange={(e) => setValues(e.target.value)}
+            />
+            <span style={{padding:"5px 10px"}}>Male</span>
+            </div>
+          
           <div class="checkbox">
             <input
               className={`${true ? "checked-green" : ""} mt-2 mr-2`}
               type="checkbox"
               id="status"
-              name="status"
+              value={"female"}
+              checked={"female"===Values}
+              onChange={(e) => setValues(e.target.value)}
+
+              />
+              <span style={{padding:"5px 10px"}}>Female</span>
+          </div>
+          </div>
+          </div>
+          <div style={{padding:"8px 14px"}}>
+          <div style={{fontWeight:"200",fontFamily:"gilorymedium",fontSize: "17px !important", lineHeight: "20px !important", color: "#666666 !important",padding:"0px 0px 0px 4px",paddingBottom:"8px"}}>Role</div>
+         <div style={{display:"flex",flexDirection:"column"}}>
+          <div class="checkbox">
+            <input
+              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
+              type="checkbox"
+              id="status"
+              value={"user"}
+              checked={"user"===checkBox}
+              onChange={(e) => setCheckBox(e.target.value)}
             />
-            <span>Male</span>
+            <span style={{padding:"5px 10px"}}>User</span>
           </div>
           <div class="checkbox">
             <input
               className={`${true ? "checked-green" : ""} mt-2 mr-2`}
               type="checkbox"
               id="status"
-              name="status"
+              value={"vendor"}
+              checked={"vendor"===checkBox}
+              onChange={(e) => setCheckBox(e.target.value)}
             />
-            <span>Female</span>
-          </div>
-          <div>Role</div>
-          <div class="checkbox">
-            <input
-              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
-              type="checkbox"
-              id="status"
-              name="status"
-            />
-            <span>User</span>
+            <span style={{padding:"5px 10px"}}>Vendor</span>
           </div>
           <div class="checkbox">
             <input
               className={`${true ? "checked-green" : ""} mt-2 mr-2`}
               type="checkbox"
               id="status"
-              name="status"
+              value={"guest"}
+              checked={"guest"===checkBox}
+              onChange={(e) => setCheckBox(e.target.value)}
             />
-            <span>Vendor</span>
+            <span style={{padding:"5px 10px"}}>Guest</span>
           </div>
-          <div class="checkbox">
-            <input
-              className={`${true ? "checked-green" : ""} mt-2 mr-2`}
-              type="checkbox"
-              id="status"
-              name="status"
-            />
-            <span>Guest</span>
+          </div>
           </div>
           <div className={styles.signup_inputbox}>
             <InputField
